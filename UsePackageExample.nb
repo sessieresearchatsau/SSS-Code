@@ -1,0 +1,440 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19202,        432]
+NotebookOptionsPosition[     18278,        409]
+NotebookOutlinePosition[     18623,        424]
+CellTagsIndexPosition[     18580,        421]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", "$Packages", " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.7766929784101777`*^9, 3.776692988740811*^9}, {
+  3.7779081826202793`*^9, 
+  3.777908184753088*^9}},ExpressionUUID->"242fcd63-a973-468f-81a6-\
+9ccb891ddb4d"],
+
+Cell[BoxData[
+ RowBox[{"<<", 
+  "\"\<C:/Users/caviness/OneDrive - \
+southern.edu/bkup/Documents/Work/Research/SSS-Code/SSS.m\>\""}]], "Input",
+ CellChangeTimes->{{3.776692861292756*^9, 3.776692869751851*^9}, {
+  3.7766930389282503`*^9, 3.7766930678710365`*^9}, {3.7766932250911527`*^9, 
+  3.7766932534528303`*^9}, {3.7766933583461494`*^9, 3.776693383761817*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"5f81d612-8c15-4cb1-9413-b52afc30c28b"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Needs", "[", "\"\<SSS`\>\"", "]"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.776693515176175*^9, 3.7766935287022085`*^9}, {
+  3.7779081129185734`*^9, 
+  3.777908115641451*^9}},ExpressionUUID->"66154231-5f5d-4de6-8d66-\
+1411f0420931"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "SSS`*"}]], "Input",
+ CellChangeTimes->{{3.776693268740494*^9, 3.7766932820568743`*^9}, {
+   3.776693559033573*^9, 3.776693567096917*^9}, 3.777908105489436*^9},
+ CellLabel->"In[2]:=",ExpressionUUID->"80fb1f44-1a2f-445b-a91b-825a92100051"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["SSS`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {2., 8.}}], " ", 
+              StyleBox["SSS`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["SSS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-548b3c2a-5513-492f-9d10-fead294a7ed5", {
+                   "SSS", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSDisplay", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-548b3c2a-5513-492f-9d10-fead294a7ed5", {
+                   "SSSDisplay", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSEvolve", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-548b3c2a-5513-492f-9d10-fead294a7ed5", {
+                   "SSSEvolve", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["x", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-548b3c2a-5513-492f-9d10-fead294a7ed5", {"x", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.2375]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ CellChangeTimes->{3.7779082629523797`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"157cdebc-100e-47fb-91d2-587551e0d9c3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SSS", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<ABA\>\"", "\[Rule]", "\"\<AAB\>\""}], ",", 
+     RowBox[{"\"\<A\>\"", "\[Rule]", "\"\<ABA\>\""}]}], "}"}], ",", " ", 
+   "\"\<AB\>\"", ",", "25", ",", 
+   RowBox[{"EarlyReturn", "\[Rule]", "True"}], ",", 
+   RowBox[{"SSSMax", "\[Rule]", "25"}], ",", 
+   RowBox[{"NetMax", "\[Rule]", "65"}], ",", 
+   RowBox[{"NetSize", "\[Rule]", "500"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.777908122923932*^9, 3.7779081241237235`*^9}, 
+   3.7779081648393936`*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"d29c4b2b-cf76-4de2-8331-ab3bfdc6697e"],
+
+Cell[BoxData[
+ TemplateBox[{"  ","\"  \"",PaneBox[
+    TagBox[
+     GridBox[{{
+        GraphicsBox[{
+          RasterBox[CompressedData["
+1:eJztlk0KwjAUhAO6du/SM3gA7+ARBNce3I1HMHRnhQwSX2ZeOoEQ6JfmZ740
+9HR7XO+7Usqx1kOt+1rPS3le1m1Zyuvr+b/5Z7su/PnVOTsf9fOjzmf3s3V/
+ve+r8+h8ozk7v63n325RP/7/S6+fufzm84f2Fz2+Ftfzh9bPnl+Lj/eH1hft
+x/5y+7E/58/Mv5er+8nldz5/aP9zfZ/5/KH9sc/HWK7nD60/2o/9tbnzb7Wo
+H5+z/Wj51fODONuP/fVxth/76+POPzeP9jPWr16+0Zx9f6Lxf+N6+UZz55+b
+a92Pevmoc+efm78B4DGAuQ==
+           "], {{0, 0}, {14, 25}}, {0, 1}], {{Antialiasing -> False, 
+            GrayLevel[
+             NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+            
+            LineBox[{{{0, 25}, {14, 25}}, {{0, 24}, {14, 24}}, {{0, 23}, {14, 
+             23}}, {{0, 22}, {14, 22}}, {{0, 21}, {14, 21}}, {{0, 20}, {14, 
+             20}}, {{0, 19}, {14, 19}}, {{0, 18}, {14, 18}}, {{0, 17}, {14, 
+             17}}, {{0, 16}, {14, 16}}, {{0, 15}, {14, 15}}, {{0, 14}, {14, 
+             14}}, {{0, 13}, {14, 13}}, {{0, 12}, {14, 12}}, {{0, 11}, {14, 
+             11}}, {{0, 10}, {14, 10}}, {{0, 9}, {14, 9}}, {{0, 8}, {14, 
+             8}}, {{0, 7}, {14, 7}}, {{0, 6}, {14, 6}}, {{0, 5}, {14, 5}}, {{
+             0, 4}, {14, 4}}, {{0, 3}, {14, 3}}, {{0, 2}, {14, 2}}, {{0, 1}, {
+             14, 1}}, {{0, 0}, {14, 0}}}]}, {Antialiasing -> False, 
+            GrayLevel[
+             NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+            
+            LineBox[{{{0, 0}, {0, 25}}, {{1, 0}, {1, 25}}, {{2, 0}, {2, 
+             25}}, {{3, 0}, {3, 25}}, {{4, 0}, {4, 25}}, {{5, 0}, {5, 25}}, {{
+             6, 0}, {6, 25}}, {{7, 0}, {7, 25}}, {{8, 0}, {8, 25}}, {{9, 0}, {
+             9, 25}}, {{10, 0}, {10, 25}}, {{11, 0}, {11, 25}}, {{12, 0}, {12,
+              25}}, {{13, 0}, {13, 25}}, {{14, 0}, {14, 25}}}]}}}, Epilog -> {
+           InsetBox[
+            FormBox["2", TraditionalForm], {0.5, 24.5}]}, Frame -> False, 
+         FrameLabel -> {None, None}, 
+         FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+         Directive[
+           GrayLevel[0.5, 0.4]], ImageSize -> {Automatic, 300}, 
+         Method -> {
+          "DefaultBoundaryStyle" -> Automatic, 
+           "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "DefaultPlotStyle" -> Automatic}]}, {"\" \""}, {
+        TemplateBox[{
+          PanelBox[
+           TagBox[
+            GridBox[{{
+               GraphicsBox[{
+                 
+                 RasterBox[{{{0.85, 0.85, 0.85}, {1., 0., 0.}, {0.85, 0.85, 
+                  0.85}}}, {{0, 0}, {3, 1}}, {0, 1}], {{Antialiasing -> False, 
+                   GrayLevel[
+                    NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+                   LineBox[{{{0, 1}, {3, 1}}, {{0, 0}, {3, 0}}}]}, {
+                  Antialiasing -> False, 
+                   GrayLevel[
+                    NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+                   
+                   LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 
+                    1}}, {{3, 0}, {3, 1}}}]}}}, Frame -> False, 
+                FrameLabel -> {None, None}, 
+                FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+                Directive[
+                  GrayLevel[0.5, 0.4]], ImageSize -> {Automatic, 20}, 
+                Method -> {
+                 "DefaultBoundaryStyle" -> Automatic, 
+                  "DefaultGraphicsInteraction" -> {
+                   "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+                    "Effects" -> {
+                    "Highlight" -> {"ratio" -> 2}, 
+                    "HighlightPoint" -> {"ratio" -> 2}, 
+                    "Droplines" -> {
+                    "freeformCursorMode" -> True, 
+                    "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+                  "DefaultPlotStyle" -> Automatic}], 
+               "\"\[AlignmentMarker]\[Rule]\"", 
+               GraphicsBox[{
+                 
+                 RasterBox[{{{0.85, 0.85, 0.85}, {0.85, 0.85, 0.85}, {1., 0., 
+                  0.}}}, {{0, 0}, {3, 1}}, {0, 1}], {{Antialiasing -> False, 
+                   GrayLevel[
+                    NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+                   LineBox[{{{0, 1}, {3, 1}}, {{0, 0}, {3, 0}}}]}, {
+                  Antialiasing -> False, 
+                   GrayLevel[
+                    NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+                   
+                   LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 
+                    1}}, {{3, 0}, {3, 1}}}]}}}, Frame -> False, 
+                FrameLabel -> {None, None}, 
+                FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+                Directive[
+                  GrayLevel[0.5, 0.4]], ImageSize -> {Automatic, 20}, 
+                Method -> {
+                 "DefaultBoundaryStyle" -> Automatic, 
+                  "DefaultGraphicsInteraction" -> {
+                   "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+                    "Effects" -> {
+                    "Highlight" -> {"ratio" -> 2}, 
+                    "HighlightPoint" -> {"ratio" -> 2}, 
+                    "Droplines" -> {
+                    "freeformCursorMode" -> True, 
+                    "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+                  "DefaultPlotStyle" -> Automatic}]}, {
+               GraphicsBox[{
+                 
+                 RasterBox[{{{0.85, 0.85, 0.85}}}, {{0, 0}, {1, 1}}, {0, 
+                  1}], {{Antialiasing -> False, 
+                   GrayLevel[
+                    NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+                   LineBox[{{{0, 1}, {1, 1}}, {{0, 0}, {1, 0}}}]}, {
+                  Antialiasing -> False, 
+                   GrayLevel[
+                    NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+                   LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}}]}}}, Frame -> 
+                False, FrameLabel -> {None, None}, 
+                FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+                Directive[
+                  GrayLevel[0.5, 0.4]], ImageSize -> {Automatic, 20}, 
+                Method -> {
+                 "DefaultBoundaryStyle" -> Automatic, 
+                  "DefaultGraphicsInteraction" -> {
+                   "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+                    "Effects" -> {
+                    "Highlight" -> {"ratio" -> 2}, 
+                    "HighlightPoint" -> {"ratio" -> 2}, 
+                    "Droplines" -> {
+                    "freeformCursorMode" -> True, 
+                    "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+                  "DefaultPlotStyle" -> Automatic}], 
+               "\"\[AlignmentMarker]\[Rule]\"", 
+               GraphicsBox[{
+                 
+                 RasterBox[{{{0.85, 0.85, 0.85}, {1., 0., 0.}, {0.85, 0.85, 
+                  0.85}}}, {{0, 0}, {3, 1}}, {0, 1}], {{Antialiasing -> False, 
+                   GrayLevel[
+                    NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+                   LineBox[{{{0, 1}, {3, 1}}, {{0, 0}, {3, 0}}}]}, {
+                  Antialiasing -> False, 
+                   GrayLevel[
+                    NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+                   
+                   LineBox[{{{0, 0}, {0, 1}}, {{1, 0}, {1, 1}}, {{2, 0}, {2, 
+                    1}}, {{3, 0}, {3, 1}}}]}}}, Frame -> False, 
+                FrameLabel -> {None, None}, 
+                FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+                Directive[
+                  GrayLevel[0.5, 0.4]], ImageSize -> {Automatic, 20}, 
+                Method -> {
+                 "DefaultBoundaryStyle" -> Automatic, 
+                  "DefaultGraphicsInteraction" -> {
+                   "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+                    "Effects" -> {
+                    "Highlight" -> {"ratio" -> 2}, 
+                    "HighlightPoint" -> {"ratio" -> 2}, 
+                    "Droplines" -> {
+                    "freeformCursorMode" -> True, 
+                    "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+                  "DefaultPlotStyle" -> Automatic}]}}, 
+             GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> False,
+              GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"]],
+           "\"Substitution Rules:\""}, "Labeled", 
+         DisplayFunction -> (GridBox[{{
+             
+             ItemBox[#2, Alignment -> {Left, Inherited}, DefaultBaseStyle -> 
+              "PanelLabel"]}, {
+             TagBox[
+              ItemBox[
+               PaneBox[
+                TagBox[#, "SkipImageSizeLevel"], 
+                Alignment -> {Center, Baseline}, BaselinePosition -> 
+                Baseline], DefaultBaseStyle -> "Labeled"], 
+              "SkipImageSizeLevel"]}}, 
+           GridBoxAlignment -> {
+            "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+           False, GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+           BaselinePosition -> {2, 1}]& ), 
+         InterpretationFunction -> (RowBox[{"Labeled", "[", 
+            RowBox[{#, ",", 
+              RowBox[{"{", #2, "}"}], ",", 
+              RowBox[{"{", 
+                RowBox[{"{", 
+                  RowBox[{"Top", ",", "Left"}], "}"}], "}"}], ",", 
+              RowBox[{"DefaultLabelStyle", "\[Rule]", "\"PanelLabel\""}], ",", 
+              RowBox[{"LabelStyle", "\[Rule]", 
+                RowBox[{"{", "}"}]}], ",", 
+              RowBox[{"RotateLabel", "\[Rule]", "False"}], ",", 
+              RowBox[{"Spacings", "\[Rule]", "Automatic"}]}], "]"}]& )]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+      "Column", 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"], 
+    ImageSize -> Automatic, ImageSizeAction -> "ShrinkToFit"],
+   RowBox[{"GraphPlot", "[", 
+     RowBox[{
+       RowBox[{"Join", "[", 
+         RowBox[{
+           RowBox[{"{", "}"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}], ",", 
+           RowBox[{"Integer", "[", "]"}]}], "]"}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "500"}], ",", 
+       RowBox[{"VertexLabeling", "\[Rule]", "True"}]}], "]"}]},
+  "RowWithSeparators"]], "Output",
+ CellChangeTimes->{3.7779082842206836`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"0809f3c5-dce8-4b8d-8518-a113ddef90b8"]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{3832, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 248, 5, 28, "Input",ExpressionUUID->"242fcd63-a973-468f-81a6-9ccb891ddb4d"],
+Cell[809, 27, 440, 7, 28, "Input",ExpressionUUID->"5f81d612-8c15-4cb1-9413-b52afc30c28b"],
+Cell[1252, 36, 283, 6, 28, "Input",ExpressionUUID->"66154231-5f5d-4de6-8d66-1411f0420931"],
+Cell[CellGroupData[{
+Cell[1560, 46, 266, 4, 28, "Input",ExpressionUUID->"80fb1f44-1a2f-445b-a91b-825a92100051"],
+Cell[1829, 52, 3876, 98, 91, "Output",ExpressionUUID->"157cdebc-100e-47fb-91d2-587551e0d9c3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5742, 155, 626, 14, 28, "Input",ExpressionUUID->"d29c4b2b-cf76-4de2-8331-ab3bfdc6697e"],
+Cell[6371, 171, 11891, 235, 459, "Output",ExpressionUUID->"0809f3c5-dce8-4b8d-8518-a113ddef90b8"]
+}, Open  ]]
+}
+]
+*)
+
