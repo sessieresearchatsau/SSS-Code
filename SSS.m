@@ -338,8 +338,6 @@ Length[poslist]>=5, (* We may enough repeats in the history to test *)
 
 True, {$SSSVerdict,{$SSSRepetitionStart,$SSSRepetitionInterval}}
 ]]
-
-
 (* SSSEvolve *)
 
 (* And finally the evolve function, which will attempts do perform a specified number of single steps of the current SSS evolution, 
@@ -445,10 +443,53 @@ If[doTP,TreePlot[net,Top,1,Sequence@@Flatten[{ImageSize->NS,FilterRules[{opts}, 
 If[doGP3D,GraphPlot3D[net,Sequence@@Flatten[{ImageSize->NS,FilterRules[{opts}, Options[GraphPlot3D]],VertexLabeling->True}]],{}]
 },"  "]]
    
+SSSDisplay::usage="SSSDisplay[\!\(\*StyleBox[\"opts\",FontSlant->\"Italic\"]\)] displays the current SSS (sequential substitution system) and/or SSS causal network, typically after a call to SSS (or to SSSInitialize and SSSEvolve).
+
+Options:
+\tHideStart \[Rule] True | False | Best determines whether any initial, non-(pseudo-)repeating part of the SSS and/or causal network is suppressed.
+\tMin \[Rule] \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) cuts off the display before the first \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) steps of the system.  (Separate values can be specified for SSSMin and NetMin.)
+\tMax \[Rule] \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) cuts off the display after the first \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) steps of the system.  (Separate values can be specified for SSSMax and NetMax.)
+\tUseDistances \[Rule] False | True determines whether vertex distances are displayed with subscripted node numbers.
+
+\tHighlightMethod \[Rule] Dot | Frame | Number (or True) | None (or False) specifies how the matches in the SSS are highlighted. 
+
+\tShowRule \[Rule] Bottom | Top | Left | Right | None (or False) specifies where to place the rulelist icon relative to the SSS visual display (if shown).  
+
+\tSizes of display components are specified by the options NetSize, SSSSize, IconSize and ImageSize (which refers to the pane containing the SSS display and icon).
+
+\tNetMethod \[Rule] GraphPlot | LayeredGraphPlot | TreePlot | GraphPlot3D | All | NoSSS | list of methods, \n\t\twhere NoSSS generates no SSS display (causal network only) and the other choices specify how the causal network is to be shown.  
+
+(This function uses data stored in the global variables $SSSRuleSet, $SSSEvolution, $SSSHistory, $SSSMatchLengthHistory, and $SSSNet.)";   
    
-   
-   
-   SSS[rs:{___Rule},init_String,n_Integer?Positive,opts___] := 
+(* SSSInteractiveDisplay: Interactive use of common options for SSSDisplay *)
+
+SSSInteractiveDisplay := With[{mxmx=Max[List @@@ $SSSNet]},
+Manipulate[
+If[mx<mn,mx=mn+1];
+If[sssmx<sssmn,sssmx=sssmn+1];
+If[ntmx<ntmn,ntmx=ntmn+1];
+SSSDisplay[HideStart->hs,Min->mn,Max->mx,SSSMin->(sssmn/. 0->Automatic),SSSMax->(sssmx/. mxmx+1->Automatic),NetMin->(ntmn/. 0->Automatic),NetMax->(ntmx/.mxmx+1->Automatic),HighlightMethod->hlm,ShowRule->sr,NetMethod->Flatten[{nm,If[no,{NoSSS},{}]}],ImageSize->is,NetSize->{Automatic,ns},SSSSize->{Automatic,ssss},IconSize->{Automatic,cns},VertexLabeling->If[vl,Tooltip,True]],
+Grid[{{
+Control[{{hlm,Number,"HighlightMethod"},{Dot,Frame,Number,None}}],
+Control[{{sr,Bottom,"ShowRule"},{Bottom,Top,Left,Right}}],
+Control[{{nm,GraphPlot,"NetMethod"},{GraphPlot,LayeredGraphPlot,TreePlot,GraphPlot3D,All}}],
+Button["Save these options",
+CellPrint[ExpressionCell[Defer[SSSDisplay][HideStart->hs,Min->mn,Max->mx,SSSMin->(sssmn/. 0->Automatic),SSSMax->(sssmx/. mxmx+1->Automatic),NetMin->(ntmn/. 0->Automatic),NetMax->(ntmx/.mxmx+1->Automatic),HighlightMethod->hlm,ShowRule->sr,NetMethod->Flatten[{nm,If[no,{NoSSS},{}]}],ImageSize->is,NetSize->{Automatic,ns},SSSSize->{Automatic,ssss},IconSize->{Automatic,cns},VertexLabeling->If[vl,Tooltip,True]],"Input"]];
+SelectionMove[InputNotebook[],Previous,Cell];
+]
+}},Spacings->2],
+Grid[{{Control[{{mn,1,"Min"},1,mxmx,1,Appearance->"Labeled"}],Control[{{mx,mxmx,"Max"},1,mxmx,1,Appearance->"Labeled"}],Control[{{no,False,"NoSSS"},{False,True}}]},
+{Control[{{sssmn,0,"SSSMin"},0,mxmx,1,Appearance->"Labeled"}],Control[{{sssmx,mxmx+1,"SSSMax"},0,mxmx+1,1,Appearance->"Labeled"}],"(a NetMethod option)"},{Control[{{ntmn,0,"NetMin"},0,mxmx,1,Appearance->"Labeled"}],Control[{{ntmx,mxmx+1,"NetMax"},0,mxmx+1,1,Appearance->"Labeled"}],""},
+{Control[{{cns,20,"IconSize"},10,50,Appearance->"Labeled"}],Control[{{is,350,"ImageSize"},10,500,Appearance->"Labeled"}],Control[{{vl,True,"VertexLabeling\[Rule]Tooltip"},{False,True}}]},
+{Control[{{ssss,220,"SSSSize"},10,500,Appearance->"Labeled"}],Control[{{ns,400,"NetSize"},10,800,Appearance->"Labeled"}],Control[{{hs,False,"HideStart"},{False,True,Best}}]}
+},Alignment->Right,Spacings->2]
+]]
+
+SSSInteractiveDisplay::usage="SSSInteractiveDisplay provides an interactive display of the current SSS and causal network, with controls for easy adjustment of common options.  Click the button to create a SSSDisplay object with the selected options.";
+
+(* SSS: The default workhorse function to build and display SSSs and their causal networks.  (After use, they can be used and redisplayed without rebuilding, using SSSDisplay, etc.) *)      
+                  
+SSS[rs:{___Rule},init_String,n_Integer?Positive,opts___] := 
 If[SSSInitialize[rs,init], 
 SSSEvolve[n-1,Sequence@@FilterRules[{opts},Options[SSSEvolve]]]; 
 SSSDisplay[Sequence@@FilterRules[{opts},Options[SSSDisplay]]]
@@ -460,7 +501,282 @@ SSS::usage="SSS[\!\(\*StyleBox[\(\*StyleBox[\"rule\",FontSlant->\"Italic\"]set\)
 
 (After creation the current SSS can be displayed or manipulated without rebuilding, using SSSDisplay, SSSAnimate, or directly using the global variables $SSSRuleSet, $SSSEvolution and $SSSNet.)";
 
-   
+(* SSSAnimate, SSSAnimateByDistance *)
+
+SSSAnimate := Module[{g}, 
+g=SSSDisplay[VertexLabeling->True,NetMethod->{GraphPlot,NoSSS}][[1,1,1,1]];
+Animate[
+Graphics[g/.
+Text[Framed[n,_List],node_]:>
+Text[Framed[n,List[Rule[Background,Green],Rule[FrameStyle,Black],Rule[FrameMargins,Automatic]],RoundingRadius->10],
+node] /.
+Text[Framed[m:Except[n,_Integer],l_List],node_] :>Point[node],ImageSize->Large
+],
+{n,1,Length[$SSSEvolution],1,Appearance->"Labeled",AnimationRate->2,AnimationRunning->True}]]
+
+SSSAnimateByDistance := Module[{g,mx=Length[DistanceTally]},
+g=SSSDisplay[UseDistances->True,VertexLabeling->True,NetMethod->{GraphPlot,NoSSS}][[1,1,1,1]];
+Animate[
+Graphics[
+g/.Text[Framed[Subscript[n,s_Style],_List],node_]:>
+Text[Framed[Subscript[n,s],List[Rule[Background,Green],Rule[FrameStyle,Black],Rule[FrameMargins,Automatic]],RoundingRadius->10],
+node]/.
+Text[Framed[Subscript[m:Except[n,_Integer],s_Style],_List],node_] :>Point[node],ImageSize->Large
+],
+{n,1,mx,1,Appearance->"Labeled",AnimationRate->1,AnimationRunning->True}]]
+
+(* SSSInteractiveHistory *)
+
+ SSSInteractiveHistory := With[{mxmx=Length[$SSSEvolution]},
+Manipulate[
+mn=Min[Max[1,mn],mxmx];
+mx=Min[Max[1,mn,mx],mxmx];
+Grid@Transpose[{Range[mn,mx],If[showEvolution,$SSSEvolution[[mn;;mx]],Table["",{i,mn,mx}]],Append[$SSSHistory,""][[mn;;mx]],Append[$SSSMatchLengthHistory,""][[mn;;mx]]}],
+Grid[{{Control[{{mn,1,"Min"},1,mxmx,1,Appearance->"Labeled"}],Control[{{mx,mxmx,"Max"},1,mxmx,1,Appearance->"Labeled"}],
+Control[{showEvolution,{False,True}}],"Current Verdict: "<>$SSSVerdict<>", {start,interval} = "<>ToString[{$SSSRepetitionStart,$SSSRepetitionInterval}]}
+},Alignment->Right,Spacings->2]
+]];
+
+SSSInteractiveHistory::usage="SSSInteractiveHistory provides an interactive display of the current SSS and its history, with controls for easy adjustment of the region to display.";
+
+(* Initial string for a given ruleset: SSSInitialState (defines & uses nextLyndon, deBruijn) *)
+
+nextLyndon[k_,n_,w_List] := Module[{x=Table[0,{n}],l=Length[w],lastchar=n},
+x=w[[Mod[Range[1,n],l,1]]];   (* permute the digits appropriately *)
+While[lastchar>=0 && x[[lastchar]]==k-1,lastchar--];  (* back up past end trash *)
+If[lastchar==0,
+{}, (* nothing left, we're done *)
+x[[lastchar]]++;x[[;;lastchar]]  (* increment last digit, return appropriate part *)
+]];
+deBruijn[k_,n_] := deBruijn[k,n]=Module[{s,d=Divisors[n]},
+s=NestWhileList[nextLyndon[k,n,#]&,{0},#!={}&];
+Join @@ Select[s,MemberQ[d,Length[#]]&]
+];
+
+SSSInitialState[r_Rule] := Module[{lhs,k,n,chars,s,len},
+lhs=First[r];
+If[lhs=="",lhs="A"];
+chars=Union[Characters [lhs]];
+k=Length[chars];
+n=StringLength[lhs];
+s=deBruijn[k,n][[Mod[Range[k^n+n-1],k^n,1]]];
+StringJoin[s /. Thread[Range[k]-1->chars]]
+];
+
+SSSInitialState[rs:{Rule[_,_]...}] := Module[{lhs=First /@ rs,runs,bigruns,full=StringJoin[Union[SSSInitialState /@ rs]],dels},
+runs = Union[Flatten[StringJoin /@ Split[Characters[#]]& /@ lhs]]; (* runs of same character existing in lhs *)
+bigruns=Last /@ SplitBy[runs,StringTake[#,1]&]; (* biggest run of each character *)
+dels=StringJoin[#,StringTake[#,1]]& /@ bigruns; (* next bigger for each character *)
+FixedPoint[StringReplace[#,Thread[dels->bigruns]]&,full]  (* keep replacing the too big runs by the max allowed size, stop when no futher change *)
+];
+
+(* Universal Enumeration of SSS RuleSets:  from/toOldRuleSetRank, UniqueRuleSetQ *)
+
+fromOldRuleSetRank[iplusflag_Integer/;iplusflag>0] := Module[{i,extraflag,n,j,quaternaryDigits,numberOfEOS,chopPos,extra,ans={{1}},strings,ruleset},
+extraflag = OddQ[iplusflag];
+i=Quotient[iplusflag+1,2];       (* offset so i can start at 1 instead of 0 *)
+n=Floor[Log[4,3 i-2]];
+j=i-(4^n+2)/3;
+quaternaryDigits=IntegerDigits[j,4,n];
+Scan[
+Switch[#,
+0 ,ans=Join[ans,{{},{1}}] ,
+1,AppendTo[ans,{1}],
+2,AppendTo[ans[[-1]],1],
+3,ans[[-1]][[-1]]++
+]&,
+quaternaryDigits];
+strings=StringJoin @@@ (FromCharacterWeights /@ ans);
+If[extraflag,strings=Join[Most[strings],{"",Last[strings]}]];
+If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
+Rule @@@ Partition[strings,2,2]
+];
+
+toOldRuleSetRank[rs_List] := Module[{rl,wl,w,code="",extrabit=1},
+rl=Flatten[List @@@ rs];
+If[Last[rl]=="",rl=Most[rl]]; (* drop ultimate empty string, if needed *)
+If[Length[rl]>1 && rl[[-2]]=="",extrabit=0;rl=Drop[rl,{-2}]]; 
+(* remove "\[Rule]" and drop penultimate empty string, if needed *)
+(* wl=1+fromAlpha /@ rl; *)
+wl=ToCharacterWeights /@ rl; (* to lists of lists of numbers "A"\[Rule]1, etc., but ""\[Rule]{}, not 0 *)
+wl=wl /. 0->{};
+w=Total[Flatten[wl]]; (* weight of this rule set *)
+While[wl!={{1}},
+If[wl[[-1]][[-1]]>1, code="3"<>code; wl[[-1]][[-1]]--,
+If[wl[[-1]][[-1]]==1 && Length[wl[[-1]]]>1,  code="2"<>code; wl[[-1]]=Most[wl[[-1]]],
+If[Length[wl]>=2 && wl[[-2;;]]=={{},{1}}, code="0"<>code; wl=Drop[wl,-2],
+If[wl[[-1]]=={1},  code="1"<>code; wl=Drop[wl,-1]]]]]];
+2(FromDigits[code,4]+(4^(w-1)+2)/3)+extrabit-1](* add number of rulesets of smaller weights to reconstructed quaternary code, leftshift and add extrabit at the end, subtract 1 so we can start at 1 instead of at 2 (2 \[Times] basic ruleset number, which has a minimum of 1) *)
+
+UniqueRuleSetQ[n_Integer] := (n==toOldRuleSetRank[fromOldRuleSetRank[n]]);
+
+fromReducedRank[i_Integer/;i>0] := Module[{n,j,quinaryDigits,numberOfEOS,chopPos,extra,ans={{1}},strings,ruleset},
+n=Floor[Log[5,4i-3]];
+j=i-(5^n+3)/4;
+quinaryDigits=IntegerDigits[j,5,n];  (* the base-5 code for this ruleset will contain n digits, the ruleset weight is n+1 *)
+Scan[
+Switch[#,
+0 ,ans=Join[ans,{{},{},{1}}] ,
+1,ans=Join[ans,{{},{1}}] ,
+2,AppendTo[ans,{1}],
+3,AppendTo[ans[[-1]],1],
+4,ans[[-1]][[-1]]++
+]&,
+(* Print@quinaryDigits; *)
+quinaryDigits];
+strings=StringJoin @@@ (FromCharacterWeights /@ ans);
+If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
+Rule @@@ Partition[strings,2,2]
+];
+
+fromReducedRankShowSteps[i_Integer/;i>0] := Module[{n,j,quinaryDigits,numberOfEOS,chopPos,extra,ans={{1}},strings,ruleset},
+n=Floor[Log[5,4i-3]];
+j=i-(5^n+3)/4;
+quinaryDigits=IntegerDigits[j,5,n];
+Scan[
+Switch[#,
+0 ,ans=Join[ans,{{},{},{1}}] ,
+1,ans=Join[ans,{{},{1}}] ,
+2,AppendTo[ans,{1}],
+3,AppendTo[ans[[-1]],1],
+4,ans[[-1]][[-1]]++
+]&,
+quinaryDigits];
+strings=StringJoin @@@ (FromCharacterWeights /@ ans);
+If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
+{i,":"," w="<>ToString[n+1]<>", offset=(",Superscript[5,n]+3,")/4, reduced = "<>ToString[j]<>" = ",Subscript[Row@quinaryDigits,5]," => ",Rule @@@ Partition[strings,2,2]} 
+];
+
+toReducedRank[rs_List] := Module[{rl,wl,w,code=""},
+rl=Flatten[List @@@ rs];
+If[Last[rl]=="",rl=Most[rl]]; (* drop ultimate empty string, if needed *)
+(* wl=1+fromAlpha /@ rl; *)
+wl=ToCharacterWeights /@ rl; (* to lists of lists of numbers "A"\[Rule]1, etc., but ""\[Rule]{}, not 0 *)
+wl=wl /. 0->{};
+w=Total[Flatten[wl]]; (* weight of this rule set *)
+While[wl!={{1}},
+Which[
+wl[[-1]][[-1]]>1, code="4"<>code; wl[[-1]][[-1]]--,
+wl[[-1]][[-1]]==1 && Length[wl[[-1]]]>1,  code="3"<>code; wl[[-1]]=Most[wl[[-1]]],
+Length[wl]>=3 && wl[[-3;;]]=={{},{},{1}}, code="0"<>code; wl=Drop[wl,-3],
+Length[wl]>=2 && wl[[-2;;]]=={{},{1}}, code="1"<>code; wl=Drop[wl,-2],
+wl[[-1]]=={1},  code="2"<>code; wl=Drop[wl,-1]
+]
+];
+(FromDigits[code,5]+(5^(w-1)+3)/4)  (* add number of rulesets of smaller weights to reconstructed quinary code *)
+];
+
+fromReducedRankQuinaryCode[s_String] := Module[{n,j,quinaryDigits,numberOfEOS,chopPos,extra,ans={{1}},strings,ruleset},
+quinaryDigits=ToCharacterCode[s]-48;
+Scan[
+Switch[#,
+0 ,ans=Join[ans,{{},{},{1}}] ,
+1,ans=Join[ans,{{},{1}}] ,
+2,AppendTo[ans,{1}],
+3,AppendTo[ans[[-1]],1],
+4,ans[[-1]][[-1]]++
+]&,
+(* Print@quinaryDigits; *)
+quinaryDigits];
+strings=StringJoin @@@ (FromCharacterWeights /@ ans);
+If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
+Rule @@@ Partition[strings,2,2]
+];
+
+toReducedRankQuinaryCode[rs_List] := Module[{rl,wl,w,code=""},
+rl=Flatten[List @@@ rs];
+If[Last[rl]=="",rl=Most[rl]]; (* drop ultimate empty string, if needed *)
+(* wl=1+fromAlpha /@ rl; *)
+wl=ToCharacterWeights /@ rl; (* to lists of lists of numbers "A"\[Rule]1, etc., but ""\[Rule]{}, not 0 *)
+wl=wl /. 0->{};
+w=Total[Flatten[wl]]; (* weight of this rule set *)
+While[wl!={{1}},
+Which[
+wl[[-1]][[-1]]>1, code="4"<>code; wl[[-1]][[-1]]--,
+wl[[-1]][[-1]]==1 && Length[wl[[-1]]]>1,  code="3"<>code; wl[[-1]]=Most[wl[[-1]]],
+Length[wl]>=3 && wl[[-3;;]]=={{},{},{1}}, code="0"<>code; wl=Drop[wl,-3],
+Length[wl]>=2 && wl[[-2;;]]=={{},{1}}, code="1"<>code; wl=Drop[wl,-2],
+wl[[-1]]=={1},  code="2"<>code; wl=Drop[wl,-1]
+]
+];
+code
+];
+
+(* from/toGeneralizedRank (& fromGeneralizedRankShowSteps), overload SSS[n, steps, opts] *)
+
+fromGeneralizedRank[i_Integer/;i>0] := Module[{n,j,bit,quinaryDigits,numberOfEOS,chopPos,ans,strings,ruleset},
+n=Floor[Log[5,10i-5]];
+j=i-(5^n+5)/10;
+{bit,j}=QuotientRemainder[j,5^(n-1)];
+quinaryDigits=IntegerDigits[j,5,n-1];
+ans=Switch[bit,
+0,{{},{1}},
+1,{{1}}
+];
+Scan[
+Switch[#,
+0 ,ans=Join[ans,{{},{},{1}}] ,
+1,ans=Join[ans,{{},{1}}] ,
+2,AppendTo[ans,{1}],
+3,AppendTo[ans[[-1]],1],
+4,ans[[-1]][[-1]]++
+]&,
+quinaryDigits];
+strings=StringJoin @@@ (FromCharacterWeights /@ ans);
+If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
+(* {"i: ",i," n:",n," j: ",i-(5^n+5)/10,{bit,j},Flatten[{bit,quinaryDigits}],Rule @@@ Partition[strings,2,2]} *)
+ Rule @@@ Partition[strings,2,2]
+];
+      
+fromGeneralizedRankShowSteps[i_Integer/;i>0] := Module[{n,j,bit,quinaryDigits,numberOfEOS,chopPos,ans,strings,ruleset},
+n=Floor[Log[5,10i-5]];
+j=i-(5^n+5)/10;
+{bit,j}=QuotientRemainder[j,5^(n-1)];
+quinaryDigits=IntegerDigits[j,5,n-1];
+ans=Switch[bit,
+0,{{},{1}},
+1,{{1}}
+];
+Scan[
+Switch[#,
+0 ,ans=Join[ans,{{},{},{1}}] ,
+1,ans=Join[ans,{{},{1}}] ,
+2,AppendTo[ans,{1}],
+3,AppendTo[ans[[-1]],1],
+4,ans[[-1]][[-1]]++
+]&,
+quinaryDigits];
+strings=StringJoin @@@ (FromCharacterWeights /@ ans);
+If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
+{i,":"," w="<>ToString[n]<>", offset=(",Superscript[5,n]+5,")/10, reduced = "<>ToString[i-(5^n+5)/10]<>" = ",Subscript[bit,2],Subscript[Row@quinaryDigits,5]," => ",Rule @@@ Partition[strings,2,2]} 
+ ];
+
+toGeneralizedRank[rs_List] := Module[{rl,wl,w,bit,quincode=""},
+rl=Flatten[List @@@ rs];
+If[Last[rl]=="",rl=Most[rl]]; (* drop ultimate empty string, if needed *)
+(* wl=1+fromAlpha /@ rl; *)
+wl=ToCharacterWeights /@ rl; (* to lists of lists of numbers "A"\[Rule]1, etc., but ""\[Rule]{}, not 0 *)
+wl=wl /. 0->{};
+w=Total[Flatten[wl]]; (* weight of this rule set *)
+While[wl!={{1}} && wl!={{},{1}},
+Which[
+wl[[-1]][[-1]]>1, quincode="4"<>quincode; wl[[-1]][[-1]]--,
+wl[[-1]][[-1]]==1 && Length[wl[[-1]]]>1,  quincode="3"<>quincode; wl[[-1]]=Most[wl[[-1]]],
+Length[wl]>=3 && wl[[-3;;]]=={{},{},{1}}, quincode="0"<>quincode; wl=Drop[wl,-3],
+Length[wl]>=2 && wl[[-2;;]]=={{},{1}}, quincode="1"<>quincode; wl=Drop[wl,-2],
+wl[[-1]]=={1},  quincode="2"<>quincode; wl=Drop[wl,-1]
+]
+];
+Switch[wl,
+{{},{1}}, bit=0,
+{{1}} ,bit=1
+];
+(* {"w:",w,(ToCharacterWeights /@ rl) /. 0\[Rule]{},Row@{bit,"\[Times]", 5^(w-1)," + ",quincode," (",FromDigits[quincode,5],") + ",(5^w+5)/10}," => ",bit\[Times]5^(w-1)+FromDigits[quincode,5]+(5^w+5)/10} *)
+bit*5^(w-1)+FromDigits[quincode,5]+(5^w+5)/10
+];
+
+SSS[index_Integer,steps_Integer,opts___] := SSS[#,SSSInitialState[#],steps,opts]&[fromGeneralizedRank[index]]
+      
  End[]
  
  (* is this public? *)
