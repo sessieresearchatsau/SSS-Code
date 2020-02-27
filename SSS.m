@@ -784,6 +784,17 @@ SSS[index_Integer,steps_Integer,opts___] := SSS[#,SSSInitialState[#],steps,opts]
  SSSEvolve[x___] := SSS`Private`SSSEvolve[x];
  SSS[x___] := SSS`Private`SSS[x];
  SSSDisplay[x___] := SSS`Private`SSSDisplay[x];
+
+ SSSInteractiveDisplay[x___] := SSS`Private`SSSInteractiveDisplay[x];
+ SSSAnimate[x___] := SSS`Private`SSSAnimate[x];
+ SSSAnimateByDistance[x___] := SSS`Private`SSSAnimateByDistance[x];
+ SSSInteractiveHistory[x___] := SSS`Private`SSSInteractiveHistory[x];
+ SSSInitialState[x___] := SSS`Private`SSSInitialState[x];
+ fromReducedRank[x___] := SSS`Private`fromReducedRank[x];
+ fromReducedRankShowSteps[x___] := SSS`Private`fromReducedRankShowSteps[x];
+ toReducedRank[x___] := SSS`Private`toReducedRank[x];
+ fromReducedRankQuinaryCode[x___] := SSS`Private`fromReducedRankQuinaryCode[x];
+ toReducedRankQuinaryCode[x___] := SSS`Private`toReducedRankQuinaryCode[x];
  
  EndPackage[]
  
