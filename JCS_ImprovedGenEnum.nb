@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    579655,      11696]
-NotebookOptionsPosition[    284152,       6177]
-NotebookOutlinePosition[    570589,      11579]
-CellTagsIndexPosition[    570448,      11572]
+NotebookDataLength[    612955,      12364]
+NotebookOptionsPosition[    313512,       6795]
+NotebookOutlinePosition[    600609,      12206]
+CellTagsIndexPosition[    600468,      12199]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -91,45 +91,44 @@ Cell["\<\
 Stephen Wolfram\[CloseCurlyQuote]s ground-breaking enumeration of all \
 elementary cellular automata was introduced as a showcase example in his book \
 A New Kind of Science [1].  The NKS approach is to observe the behavior of a \
-large set of \[OpenCurlyDoubleQuote]simple programs\[CloseCurlyDoubleQuote], \
-noticing characteristics which resemble phenomena in the natural world, \
-perhaps ultimately providing insights about the real universe.  Critical to \
-this method is the existence of an enumeration, which for our purposes is a \
+large set of \[OpenCurlyDoubleQuote]simple programs\", noticing \
+characteristics which resemble phenomena in the natural world, perhaps \
+ultimately providing insights about the real universe.  Critical to this \
+method is the existence of an enumeration, which for our purposes is a \
 well-defined way of sequentially generating all possible simple programs of \
 the desired type.  Based on initial programs and visualizations developed by \
 one of us [Caviness] during the 2009 NKS Summer School program in Pisa \
 \:200e[2], a complete enumeration of all rulesets of sequential substitution \
-systems (SSSs, informally pronounced \[OpenCurlyDoubleQuote]sessies\
-\[CloseCurlyDoubleQuote]) was developed \:200e[2].  Initial use of that \
-enumeration revealed the unsurprising result that most SSSs die out (stop \
-changing), and most of those that do not die out are of simple, repetitive \
-types. The human researcher must be provided with interesting cases to \
-investigate without the need to hunt through billions of cases that die out \
-or are functionally equivalent to ones previously studied. Therefore, it \
-became imperative that the program do preliminary testing, and only display \
-those of possible interest.  Of particular importance was the existence in \
-the enumeration of long subsequences of rulesets that could all be eliminated \
-by the same criteria, suggesting the possibility of not merely simplifying \
-the researcher\[CloseCurlyQuote]s task, but also accelerating the iteration.  \
-However, the complicated nature of the ranking/unranking algorithms caused \
-difficulties in this effort. So while further progress on SSSs was blocked, \
-we turned to laying the initial groundwork for the treatment of multi-way and \
-other substitution systems, developing a more generalized enumeration.  \
-Ironically, we found that not only does the new generalized substitution \
-systems (GSS) enumeration allow the treatment of cases not included in the \
-SSS enumeration, but its simple ranking/unranking functions make possible \
-precisely calculated jumps over subsequences of unwanted cases. This feature \
-makes it preferable for use even with SSSs.  Equally satisfactory is the fact \
-that the new algorithm never produces the same ruleset from different \
-indices, eliminating the 25% duplication inherent in the original SSS \
-enumeration.  Adding in non-SSS rulesets turns out not to be a disadvantage \
-at all!   \
+systems (SSSs, informally pronounced \[OpenCurlyDoubleQuote]sessies\") was \
+developed \:200e[2].  Initial use of that enumeration revealed the \
+unsurprising result that most SSSs die out (stop changing), and most of those \
+that do not die out are of simple, repetitive types. The human researcher \
+must be provided with interesting cases to investigate without the need to \
+hunt through billions of cases that die out or are functionally equivalent to \
+ones previously studied. Therefore, it became imperative that the program do \
+preliminary testing, and only display those of possible interest.  Of \
+particular importance was the existence in the enumeration of long \
+subsequences of rulesets that could all be eliminated by the same criteria, \
+suggesting the possibility of not merely simplifying the researcher\
+\[CloseCurlyQuote]s task, but also accelerating the iteration.  However, the \
+complicated nature of the ranking/unranking algorithms caused difficulties in \
+this effort. So while further progress on SSSs was blocked, we turned to \
+laying the initial groundwork for the treatment of multi-way and other \
+substitution systems, developing a more generalized enumeration.  Ironically, \
+we found that not only does the new generalized substitution systems (GSS) \
+enumeration allow the treatment of cases not included in the SSS enumeration, \
+but its simple ranking/unranking functions make possible precisely calculated \
+jumps over subsequences of unwanted cases. This feature makes it preferable \
+for use even with SSSs.  Equally satisfactory is the fact that the new \
+algorithm never produces the same ruleset from different indices, eliminating \
+the 25% duplication inherent in the original SSS enumeration.  Adding in \
+non-SSS rulesets turns out not to be a disadvantage at all!   \
 \>", "Text", "NoIndent",
  CellChangeTimes->{{3.6181630283526382`*^9, 3.6181630309396563`*^9}, {
    3.6181630787408867`*^9, 3.618163084050775*^9}, 3.791212910665223*^9, {
    3.7930219292768273`*^9, 3.7930219323671827`*^9}, 3.7930224162899055`*^9, {
-   3.7930225449192953`*^9, 
-   3.793022561967128*^9}},ExpressionUUID->"324d8edc-e1fa-47c3-8dec-\
+   3.7930225449192953`*^9, 3.793022561967128*^9}, {3.7932931974825644`*^9, 
+   3.793293197871523*^9}},ExpressionUUID->"324d8edc-e1fa-47c3-8dec-\
 9551ca740720"]
 }, Open  ]],
 
@@ -143,35 +142,26 @@ Cell["Substitution Systems and the Old SSS Enumeration", "Section",
 
 Cell["\<\
 A sequential substitution system (SSS, pronounced \
-\[OpenCurlyDoubleQuote]sessie\[CloseCurlyDoubleQuote]), consists of a finite \
-length state string containing characters from an arbitrary enumerable \
-(finite or countably infinite) alphabet, and a ruleset containing one or more \
-rules.  Each rule consists of a pattern to search for, specified by the \
-left-hand side of the rule, and a replacement string, given by the right-hand \
-side.  For example, the ruleset {\[OpenCurlyDoubleQuote]AA\
-\[CloseCurlyDoubleQuote]\[RightArrow]\[CloseCurlyDoubleQuote]BA\
-\[CloseCurlyDoubleQuote], \"AB\[CloseCurlyDoubleQuote]\[RightArrow]\
-\[CloseCurlyDoubleQuote]AA\[CloseCurlyDoubleQuote], \"B\
-\[CloseCurlyDoubleQuote]\[RightArrow]\[CloseCurlyDoubleQuote]AA\
-\[CloseCurlyDoubleQuote]} contains three rules, the first of which replaces \
-occurrences of \"AA\[CloseCurlyDoubleQuote] in the state string by \"BA\
-\[CloseCurlyDoubleQuote]. The term sequential refers here to the prescribed \
-substitution order:  The first rule is applied only at the first possible \
-matching location in the state string, scanning from left-to-right. If no \
-match for the first rule exists, the second rule is tried in the same way \
-scanning the state string from left-to-right, and only if both first and \
-second rules fail is the third used, and so on [1].  In the example above, \
-starting with an initial state string \"B\[CloseCurlyDoubleQuote], \
-applications of the rules successively produce the following state strings: {\
-\"B\[CloseCurlyDoubleQuote], \"AA\[CloseCurlyDoubleQuote], \"BA\
-\[CloseCurlyDoubleQuote], \"AAA\[CloseCurlyDoubleQuote], \"BAA\
-\[CloseCurlyDoubleQuote], \"BBA\[CloseCurlyDoubleQuote], \"AABA\
-\[CloseCurlyDoubleQuote], \"BABA\[CloseCurlyDoubleQuote], \"BAAA\
-\[CloseCurlyDoubleQuote], \"BBAA\[CloseCurlyDoubleQuote], ...}.  (In this \
-case, the rules invoked were {3, 1, 3, 1, 1, 3, 1, 2, 1, 1, ...}.)  Figure 1 \
-is a visual representation of this SSS, showing the evolution of the state \
-string by successive rows of colored squares (arbitrarily using gray and red \
-to represent \"A\[CloseCurlyDoubleQuote] and \"B\[CloseCurlyDoubleQuote], \
+\[OpenCurlyDoubleQuote]sessie\"), consists of a finite length state string \
+containing characters from an arbitrary enumerable (finite or countably \
+infinite) alphabet, and a ruleset containing one or more rules.  Each rule \
+consists of a pattern to search for, specified by the left-hand side of the \
+rule, and a replacement string, given by the right-hand side.  For example, \
+the ruleset {\[OpenCurlyDoubleQuote]AA\"\[RightArrow]\"BA\", \"AB\"\
+\[RightArrow]\"AA\", \"B\"\[RightArrow]\"AA\"} contains three rules, the \
+first of which replaces occurrences of \"AA\" in the state string by \"BA\". \
+The term sequential refers here to the prescribed substitution order:  The \
+first rule is applied only at the first possible matching location in the \
+state string, scanning from left-to-right. If no match for the first rule \
+exists, the second rule is tried in the same way scanning the state string \
+from left-to-right, and only if both first and second rules fail is the third \
+used, and so on [1].  In the example above, starting with an initial state \
+string \"B\", applications of the rules successively produce the following \
+state strings: {\"B\", \"AA\", \"BA\", \"AAA\", \"BAA\", \"BBA\", \"AABA\", \
+\"BABA\", \"BAAA\", \"BBAA\", ...}.  (In this case, the rules invoked were \
+{3, 1, 3, 1, 1, 3, 1, 2, 1, 1, ...}.)  Figure 1 is a visual representation of \
+this SSS, showing the evolution of the state string by successive rows of \
+colored squares (arbitrarily using gray and red to represent \"A\" and \"B\", \
 respectively), with the rule applied and location of each match indicated by \
 the inset numbers.  The reader can easily confirm that each row is obtained \
 from the previous row by applying the rule at the place shown.  Each SSS is \
@@ -182,7 +172,8 @@ internal hexagonal arrangement of nodes.\
  CellChangeTimes->{{3.6181630283526382`*^9, 3.6181630309396563`*^9}, {
    3.6181630787408867`*^9, 3.618163084050775*^9}, {3.791213081857281*^9, 
    3.7912130870563087`*^9}, 3.792273859822618*^9, {3.7924224378600492`*^9, 
-   3.792422441161039*^9}},ExpressionUUID->"264fe2ba-83c8-4add-a837-\
+   3.792422441161039*^9}, {3.7932931980919333`*^9, 
+   3.7932932031494007`*^9}},ExpressionUUID->"264fe2ba-83c8-4add-a837-\
 8dd0fde18132"],
 
 Cell[BoxData[
@@ -1727,26 +1718,25 @@ rules or string length (except that both be finite), and even the alphabet \
 used may be countably infinite, the set of all SSS rulesets is enumerable and \
 an enumeration was developed as detailed previously\:200e (Caviness 3).  The \
 original SSS enumeration allowed empty strings in certain positions, to \
-accommodate deletion rules \
-(\"something\[CloseCurlyDoubleQuote]\[RightArrow]\"nothing\
-\[CloseCurlyDoubleQuote]) anywhere, and explicitly added the possibility of a \
-creation rule (\"nothing\[CloseCurlyDoubleQuote]\[RightArrow]\"something\") \
-at the end of the ruleset.  (This seemed natural since no rule following a \
-creation rule will ever be executed.)  Unfortunately the attempt to avoid \
-unwanted cases resulted in an increase in the complexity and in the \
-introduction of duplicate rulesets, with 25% of the index codes producing \
-duplicates. Worse, in allowing deletion rules anywhere in the ruleset, the \
-enumeration also allowed creation rules anywhere, rather than only at the end \
-as was originally planned.  It is true that adjacent empty strings were only \
-allowed at the end of the ruleset, but this turns out to be a relatively \
-small advantage, when weighed against the enumeration\[CloseCurlyQuote]s \
-complexity.\
+accommodate deletion rules (\"something\"\[RightArrow]\"nothing\") anywhere, \
+and explicitly added the possibility of a creation rule (\"nothing\"\
+\[RightArrow]\"something\") at the end of the ruleset.  (This seemed natural \
+since no rule following a creation rule will ever be executed.)  \
+Unfortunately the attempt to avoid unwanted cases resulted in an increase in \
+the complexity and in the introduction of duplicate rulesets, with 25% of the \
+index codes producing duplicates. Worse, in allowing deletion rules anywhere \
+in the ruleset, the enumeration also allowed creation rules anywhere, rather \
+than only at the end as was originally planned.  It is true that adjacent \
+empty strings were only allowed at the end of the ruleset, but this turns out \
+to be a relatively small advantage, when weighed against the enumeration\
+\[CloseCurlyQuote]s complexity.\
 \>", "Text",
  CellChangeTimes->{{3.6181631322471943`*^9, 3.618163147444615*^9}, 
    3.791213119081994*^9, {3.7912133821534863`*^9, 3.791213397158905*^9}, 
    3.792273897060261*^9, {3.79242244136508*^9, 3.7924224419798884`*^9}, 
-   3.7930226594598465`*^9, {3.793022758760851*^9, 
-   3.793022766989636*^9}},ExpressionUUID->"9a36f6ce-718c-4383-83c8-\
+   3.7930226594598465`*^9, {3.793022758760851*^9, 3.793022766989636*^9}, {
+   3.7932932033718033`*^9, 
+   3.7932932038425446`*^9}},ExpressionUUID->"9a36f6ce-718c-4383-83c8-\
 b818324df88d"],
 
 Cell["\<\
@@ -1839,24 +1829,24 @@ Cell[BoxData[
     {"1", 
      RowBox[{
       RowBox[{"start", "    ", "with", "   ", "\"\<\>", "A"}], "\"\<\>"}], 
-     RowBox[{"\"", "A", "\""}]},
+     RowBox[{"\"\<\>", "A", "\"\<\>"}]},
     {"0", 
      RowBox[{
       RowBox[{"append", "    ", "an", "   ", "\"\<\>", "A"}], "\"\<\>"}], 
-     RowBox[{"\"", "AA", "\""}]},
+     RowBox[{"\"\<\>", "AA", "\"\<\>"}]},
     {"1", 
      RowBox[{"increment", "   ", "final", "   ", "character"}], 
-     RowBox[{"\"", "AB", "\""}]},
+     RowBox[{"\"\<\>", "AB", "\"\<\>"}]},
     {"0", 
      RowBox[{
       RowBox[{"append", "     ", "an", "   ", "\"\<\>", "A"}], "\"\<\>"}], 
-     RowBox[{"\"", "ABA", "\""}]},
+     RowBox[{"\"\<\>", "ABA", "\"\<\>"}]},
     {"1", 
      RowBox[{"increment", "   ", "final", "   ", "character"}], 
-     RowBox[{"\"", "ABB", "\""}]},
+     RowBox[{"\"\<\>", "ABB", "\"\<\>"}]},
     {"1", 
      RowBox[{"increment", "   ", "final", "   ", "character"}], 
-     RowBox[{"\"", "ABC", "\""}]}
+     RowBox[{"\"\<\>", "ABC", "\"\<\>"}]}
    },
    GridBoxDividers->{
     "Columns" -> {True, True, True, True}, "ColumnsIndexed" -> {}, 
@@ -1871,6 +1861,17 @@ Cell[BoxData[
   3.7930226602275543`*^9, 
   3.7930226602587967`*^9}},ExpressionUUID->"9d1752b5-9bc3-4e7d-84ed-\
 c3b460cac898"],
+
+Cell[TextData[{
+ StyleBox["Table\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedTable"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Table caption."
+}], "NumberedTableCaption",
+ CellChangeTimes->{
+  3.618232619981346*^9},ExpressionUUID->"1aad954a-4fdb-4173-b20b-\
+cea9b216281f"],
 
 Cell["\<\
 Any string can be formed in this way:  the process describes a bijective \
@@ -1945,6 +1946,17 @@ Cell[BoxData[
    3.791669809176944*^9, 3.791673574033566*^9, {3.791673638032276*^9, 
    3.791673654422407*^9}},ExpressionUUID->"77ea75a0-3be3-469d-aa7e-\
 887fd32f9a97"],
+
+Cell[TextData[{
+ StyleBox["Table\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedTable"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Table caption."
+}], "NumberedTableCaption",
+ CellChangeTimes->{
+  3.618232619981346*^9},ExpressionUUID->"35d297d3-3fa6-4118-8c80-\
+0e8a99727058"],
 
 Cell[TextData[{
  "Interestingly, the initial 1 bit can be thought of as adding ",
@@ -2802,6 +2814,17 @@ Cell[BoxData[
    3.791820775666494*^9}},ExpressionUUID->"6d0ae9d3-6748-4b85-b2d1-\
 b32a4652c2d0"],
 
+Cell[TextData[{
+ StyleBox["Table\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedTable"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Table caption."
+}], "NumberedTableCaption",
+ CellChangeTimes->{
+  3.618232619981346*^9},ExpressionUUID->"e2c3815b-0a85-43d0-88e4-\
+1e006b225e40"],
+
 Cell[BoxData[
  RowBox[{
   RowBox[{
@@ -3239,7 +3262,20 @@ Cell[BoxData[
    3.5463766863271246`*^9, {3.791821401308465*^9, 3.791821420615874*^9}, 
    3.79182145752404*^9, {3.791821497242895*^9, 3.791821517655715*^9}, 
    3.79182175740534*^9},ExpressionUUID->"e43a8ad9-b542-4493-914f-\
-d722d4ccc004"]
+d722d4ccc004"],
+
+Cell[TextData[{
+ StyleBox["Figure\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedFigure"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "The GSS rank and unrank functions."
+}], "NumberedFigureCaption",
+ CellChangeTimes->{{3.561122515078184*^9, 3.561122517749433*^9}, 
+   3.61823468265237*^9, {3.7912132888967285`*^9, 3.7912133023280478`*^9}, 
+   3.791213345920206*^9, {3.7932926187098923`*^9, 3.793292637007928*^9}, 
+   3.793292708814785*^9},
+ CellTags->"ex-fig",ExpressionUUID->"d457b301-2bef-48c2-b0d2-f5777bf411f4"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3849,6 +3885,17 @@ Cell[BoxData[
   3.791821162307164*^9},ExpressionUUID->"935bfd71-a9d3-447d-bf26-\
 4f906b1d06b7"],
 
+Cell[TextData[{
+ StyleBox["Table\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedTable"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Table caption."
+}], "NumberedTableCaption",
+ CellChangeTimes->{
+  3.618232619981346*^9},ExpressionUUID->"4030d220-df63-41b3-ab56-\
+4516d345cdf7"],
+
 Cell[BoxData[
  RowBox[{
   RowBox[{
@@ -4233,7 +4280,20 @@ Cell[BoxData[
    3.544119106519432*^9, 3.5441191103028107`*^9}, 3.546376582553748*^9, 
    3.5463766558600783`*^9, {3.7918218345231876`*^9, 
    3.791821895675254*^9}},ExpressionUUID->"8cb95471-1891-4cc2-a5bf-\
-4441f83b2141"]
+4441f83b2141"],
+
+Cell[TextData[{
+ StyleBox["Figure\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedFigure"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "The RSS rank and unrank functions."
+}], "NumberedFigureCaption",
+ CellChangeTimes->{{3.561122515078184*^9, 3.561122517749433*^9}, 
+   3.61823468265237*^9, {3.7912132888967285`*^9, 3.7912133023280478`*^9}, 
+   3.791213345920206*^9, {3.7932926187098923`*^9, 3.793292637007928*^9}, {
+   3.793292697234769*^9, 3.793292700677557*^9}},
+ CellTags->"ex-fig",ExpressionUUID->"1c093ff0-8af1-4706-aba6-477f4bf1d575"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -4474,6 +4534,21 @@ Cell[BoxData[
  CellChangeTimes->{{3.7922743075521197`*^9, 
   3.7922743195724497`*^9}},ExpressionUUID->"701ccef6-8495-4edd-9b7e-\
 1267b1af4088"],
+
+Cell[TextData[{
+ StyleBox["Figure\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedFigure"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Visualization of the ruleset {\"ABA\"\[RightArrow]\"AAB\", \"ABA\"\
+\[RightArrow]\"\", \"A\"\[RightArrow]\"ABA\"}."
+}], "NumberedFigureCaption",
+ CellChangeTimes->{{3.561122515078184*^9, 3.561122517749433*^9}, 
+   3.61823468265237*^9, {3.7912132888967285`*^9, 3.7912133023280478`*^9}, 
+   3.791213345920206*^9, {3.7932926187098923`*^9, 3.793292637007928*^9}, {
+   3.793292697234769*^9, 3.793292700677557*^9}, {3.79329279004669*^9, 
+   3.7932927961074686`*^9}},
+ CellTags->"ex-fig",ExpressionUUID->"979b7499-3028-4a5b-9c53-47cecb2d34f7"],
 
 Cell[TextData[{
  "A conflicting rule situation ensures that some rule in the set will never \
@@ -4945,6 +5020,24 @@ Cell[BoxData[
 3f5ab712940d"],
 
 Cell[TextData[{
+ StyleBox["Figure\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedFigure"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Visualization of the ruleset {\[OpenCurlyDoubleQuote]A\"\[RightArrow]\
+\[OpenCurlyDoubleQuote]CC\", \[OpenCurlyDoubleQuote]B\"\[RightArrow]\
+\[OpenCurlyDoubleQuote]B\", \[OpenCurlyDoubleQuote]C\"\[RightArrow]\
+\[OpenCurlyDoubleQuote]A\"}."
+}], "NumberedFigureCaption",
+ CellChangeTimes->{{3.561122515078184*^9, 3.561122517749433*^9}, 
+   3.61823468265237*^9, {3.7912132888967285`*^9, 3.7912133023280478`*^9}, 
+   3.791213345920206*^9, {3.7932926187098923`*^9, 3.793292637007928*^9}, {
+   3.793292697234769*^9, 3.793292700677557*^9}, {3.79329279004669*^9, 
+   3.7932927961074686`*^9}, 3.79329284889573*^9, {3.7932932042983246`*^9, 
+   3.793293205444259*^9}},
+ CellTags->"ex-fig",ExpressionUUID->"47a2fd58-cf0b-45e4-9c34-1f5565d9fb19"],
+
+Cell[TextData[{
  "Again, this ruleset is part of a subsequence in the enumeration, all \
 starting the same way and including the same identity rule. To be able to \
 jump over them all, we must first identify where in the ruleset the problem \
@@ -5334,6 +5427,368 @@ Cell["Renamed Ruleset", "Subsection", "StackedHeadAbove",
   3.618163184098174*^9, 3.618163202085526*^9}, {3.7918066549180803`*^9, 
   3.7918066595506096`*^9}},ExpressionUUID->"e4131ea9-c947-4596-a4fc-\
 1587a22e04dc"],
+
+Cell["\<\
+If the characters used in the strings of the ruleset are permuted or replaced \
+by other characters, the SSS will look the same, up to a permutation of \
+colors, and the causal network will be identical.  For example, the sessies \
+and casual networks generated by {\"B\"\[RightArrow]\"A\", \"A\"\[RightArrow]\
+\"B\"}, {\"A\"\[RightArrow]\"C\", \"C\"\[RightArrow]\"A\"}, \[Ellipsis], {\"I\
+\"\[RightArrow]\"U\", \"U\"\[RightArrow]\"I\"}, \[Ellipsis], are all visually \
+indistinguishable from those of {\"A\"\[RightArrow]\"B\", \
+\"B\"\[RightArrow]\"A\"}, except for choice of colors to represent the \
+different characters.  For simplicity, we take as the canonical form for all \
+such \"duplicates\" the first of them to appear in the enumeration (the one \
+having the smallest RSS index), and any ruleset not in canonical form can be \
+discarded.  Verifying whether a ruleset is in canonical form can be done \
+directly, without generating the SSS, as follows: \
+\>", "Text", "NoIndent",
+ CellChangeTimes->{{3.6181630283526382`*^9, 3.6181630309396563`*^9}, {
+   3.6181630787408867`*^9, 3.618163084050775*^9}, 3.791738484056758*^9, {
+   3.791738647551549*^9, 3.7917386490430117`*^9}, {3.7918062789313803`*^9, 
+   3.7918062923777742`*^9}, {3.791818604720315*^9, 3.7918186097543583`*^9}, {
+   3.791818765495802*^9, 3.791818769972828*^9}, {3.7924222927646627`*^9, 
+   3.7924222929617043`*^9}, {3.793290478387617*^9, 3.7932904880357666`*^9}, {
+   3.79329056055121*^9, 
+   3.7932905889551945`*^9}},ExpressionUUID->"3cf07ae1-f2af-4682-a8b8-\
+ce0b19c412d6"],
+
+Cell["\<\
+Examine the characters of all the strings of the ruleset in order, one \
+character at a time.  The first character must be \"A\" (else renaming could \
+make it so, resulting in a lower-index ruleset), the first character that is \
+not an \"A\" must be a \"B\", and the first that is not \"A\" or \"B\" must \
+be \"C\", etc.  As soon as an offending (non-consecutive) character is found, \
+take the total weight of all further characters, and replace that number of \
+quinary code digits by \[OpenCurlyQuote]4\[CloseCurlyQuote]. This gives the \
+quinary code the last ruleset having a too-large character at the problem \
+position and same pre-problem (sub)strings, so this is the last ruleset that \
+can safely be discarded in a long-jump.  (The resolution ruleset is the next \
+in the enumeration, found by incrementing the RSS index by 1.)\
+\>", "Text",
+ CellChangeTimes->{{3.6181631322471943`*^9, 3.618163147444615*^9}, 
+   3.791806370591567*^9, {3.7918064033467865`*^9, 3.7918064185886364`*^9}, {
+   3.7918064486089478`*^9, 3.791806461961969*^9}, {3.791806567645485*^9, 
+   3.7918066109471664`*^9}, {3.7918186445064325`*^9, 
+   3.7918186526117244`*^9}, {3.7918187824572372`*^9, 
+   3.7918187890083313`*^9}, {3.793290371860139*^9, 3.7932904022553396`*^9}, {
+   3.7932904966916027`*^9, 
+   3.793290516888549*^9}},ExpressionUUID->"6c86b8cb-241a-45d9-b43c-\
+ecece8555e91"],
+
+Cell[BoxData[
+ FormBox[GridBox[{
+    {"Ruleset", 
+     RowBox[{"Quinary", "     ", "Code"}], 
+     RowBox[{"Pre", "-", 
+      RowBox[{"Resolution", "    ", "Code"}]}], 
+     RowBox[{"Pre", "-", 
+      RowBox[{"Resolution", "    ", "Ruleset"}]}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\<\"\\\"A\\\"\"\>", "\[RightArrow]", 
+        "\"\<\>", "\<\"B\\\"\"\>"}], ",", 
+       RowBox[{"\<\"\\\"B\\\"\"\>", "\[RightArrow]", "\<\"\\\"A\\\"\"\>"}]}], 
+      "}"}], 
+     SubscriptBox["24242", "5"], 
+     RowBox[{"N", "/", "A"}], 
+     RowBox[{
+      RowBox[{"N", "/", "A"}], "     ", 
+      RowBox[{"(", 
+       RowBox[{
+       "already", "     ", "in", "    ", "canonical", "     ", "form"}], 
+       ")"}]}]},
+    {
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\<\"\\\"B\"\>", "\"\<\>", 
+          "\[RightArrow]", "\<\"\\\"A\"\>"}]}], "\"\<\>", 
+        ",", "\<\"\\\"A\"\>"}], "\"\<\>", "\[RightArrow]", "\<\"\\\"B\"\>"}], 
+      "\"\<\>", "}"}], 
+     SubscriptBox["42224", "5"], 
+     SubscriptBox["44444", "5"], 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\<\"\\\"F\\\"\"\>", "\[RightArrow]", "\<\"\"\>", 
+        "\"\<\>"}]}], "\"\<\>", "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+       "\"\<\>", "\<\"A\\\"\"\>", "\[RightArrow]", "\<\"\\\"D\\\"\"\>"}], ",", 
+       RowBox[{"\<\"\\\"D\\\"\"\>", "\[RightArrow]", "\<\"\\\"A\\\"\"\>"}]}], 
+      "}"}], 
+     SubscriptBox["244424442", "5"], 
+     SubscriptBox["244444444", "5"], 
+     RowBox[{"{", 
+      RowBox[{"\<\"\\\"A\\\" \"\>", "\[RightArrow]", "\<\"\\\"I\\\"\"\>"}], 
+      "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\<\"\\\"AB\\\"\"\>", "\[RightArrow]", "\<\"\\\"D\\\"\"\>"}], 
+       ",", 
+       RowBox[{"\<\"\\\"A\\\"\"\>", "\[RightArrow]", "\<\"\\\"B\\\"\"\>"}], 
+       ",", 
+       RowBox[{"\<\"\\\"B\\\"\"\>", "\[RightArrow]", "\<\"\\\"\\\"\"\>"}]}], 
+      "}"}], 
+     SubscriptBox["34244422424", "5"], 
+     SubscriptBox["34244444444", "5"], 
+     RowBox[{"{", 
+      RowBox[{"\<\"\\\"AB\\\"\"\>", "\[RightArrow]", "\<\"\\\"I\"\>", 
+       "\"\<\>"}], "}"}]},
+    {
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\<\"\\\"A\\\" \"\>", "\[RightArrow]", "\<\"\\\"ABA\"\>", 
+          "\"\<\>"}], ",", 
+         RowBox[{"\<\"\\\"C\\\"\"\>", "\[RightArrow]", "\<\"\"\>", "\"\<\>", 
+          "ABEA"}]}]}], "\"\<\>", "}"}], " "}], 
+     SubscriptBox["2343244234344443", "5"], 
+     SubscriptBox["2343244234344444", "5"], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          
+          RowBox[{"\<\"\\\"A\\\" \"\>", 
+           "\[RightArrow]", "\<\"\\\"ABA\\\"\"\>"}], ",", 
+          
+          RowBox[{"\<\"\\\"C\\\"\"\>", "\[RightArrow]", "\"\<\>", 
+           "ABF"}]}]}], "\"\<\>"}], "}"}], " "}]}
+   },
+   GridBoxDividers->{
+    "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {True, True, {False}, True}, "RowsIndexed" -> {}}], 
+  TraditionalForm]], "Table",
+ CellChangeTimes->{{3.5805749323923283`*^9, 3.580574972943966*^9}, {
+  3.619176560894925*^9, 3.61917668511229*^9}, {3.738076620076049*^9, 
+  3.738076635661406*^9}, {3.7380769668470917`*^9, 3.738076980886318*^9}, {
+  3.7932906969493666`*^9, 3.7932907982520037`*^9}, {3.7932909510117283`*^9, 
+  3.793291046496711*^9}, {3.7932911925414333`*^9, 3.7932912116522913`*^9}, {
+  3.793291342922529*^9, 3.793291426594626*^9}, {3.7932915233699512`*^9, 
+  3.7932915432397833`*^9}, {3.7932915770817366`*^9, 3.793291704199587*^9}, {
+  3.7932918337894773`*^9, 3.7932918455529985`*^9}, {3.793293411641533*^9, 
+  3.793293429937546*^9}},ExpressionUUID->"620b7162-31b3-425b-a720-\
+8b3a8a2ec2c9"],
+
+Cell[TextData[{
+ StyleBox["Table\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedTable"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Renamed ruleset examples."
+}], "NumberedTableCaption",
+ CellChangeTimes->{
+  3.618232619981346*^9, {3.7932906703425674`*^9, 
+   3.7932906768371873`*^9}},ExpressionUUID->"88bfc28c-5c32-4288-8985-\
+7672b02d9d9b"],
+
+Cell["\<\
+In Table 8, the first example is already in canonical form, since the first \
+character is \"A\", the first non-\"A\" is a \"B\", and there are no \
+non-\"A\" or \"B\" characters to consider.  In the second example the initial \
+\"B\" is the problem character, the remaining weight after the problem \
+character is 4 (1+1+2), so the quinary code of the last problematic ruleset \
+having this weight and a problematic character in the first position ({\"F\"\
+\[RightArrow]\"\"}) is found by replacing the last 4 digits by \
+\[OpenCurlyQuote]4\[CloseCurlyQuote].  The third example starts out well with \
+an \"A\", but the second character is \"D\" rather than the canonical \"B\".  \
+Replacing the last 5 digits (4+1) by \[OpenCurlyQuote]4\[CloseCurlyQuote] \
+gives the quinary code of the pre-resolution ruleset, \
+{\"A\"\[RightArrow]\"I\"}.  In the fourth example, the post-problem weight is \
+also 5 (1+2+2+0), again caused by having a \"D\" without a preceding \"C\".  \
+In the last example, all characters were allowed until the \"E\", and there \
+is only one digit replace by a \[OpenCurlyQuote]4\[CloseCurlyQuote].\
+\>", "Text",
+ CellChangeTimes->{{3.6181631322471943`*^9, 3.618163147444615*^9}, 
+   3.791806370591567*^9, {3.7918064033467865`*^9, 3.7918064185886364`*^9}, {
+   3.7918064486089478`*^9, 3.791806461961969*^9}, {3.791806567645485*^9, 
+   3.7918066109471664`*^9}, {3.7918186445064325`*^9, 
+   3.7918186526117244`*^9}, {3.7918187824572372`*^9, 
+   3.7918187890083313`*^9}, {3.793290371860139*^9, 3.7932904022553396`*^9}, {
+   3.7932904966916027`*^9, 3.793290516888549*^9}, {3.7932918779363456`*^9, 
+   3.7932919012499633`*^9}, {3.7932932056965837`*^9, 3.793293209594181*^9}, {
+   3.7932932568616734`*^9, 
+   3.793293277677971*^9}},ExpressionUUID->"2c57fcc8-03ea-4524-96a7-\
+c736c4d123fa"],
+
+Cell["\<\
+In all these cases, the resolution ruleset is the next one in the \
+enumeration, but it is more convenient to add 1 to the RSS index rather than \
+operate on the quinary code.\
+\>", "Text",
+ CellChangeTimes->{{3.6181631322471943`*^9, 3.618163147444615*^9}, 
+   3.791806370591567*^9, {3.7918064033467865`*^9, 3.7918064185886364`*^9}, {
+   3.7918064486089478`*^9, 3.791806461961969*^9}, {3.791806567645485*^9, 
+   3.7918066109471664`*^9}, {3.7918186445064325`*^9, 
+   3.7918186526117244`*^9}, {3.7918187824572372`*^9, 
+   3.7918187890083313`*^9}, {3.793290371860139*^9, 3.7932904022553396`*^9}, {
+   3.7932904966916027`*^9, 3.793290516888549*^9}, {3.7932918779363456`*^9, 
+   3.7932919364821997`*^9}},ExpressionUUID->"e7cc0fe5-719a-474d-9da2-\
+45f0fb783c7f"],
+
+Cell["\<\
+Important note:  Although the renamed ruleset may actually have a greater \
+weight than the original version, this jump is safe and will allow us to skip \
+all but one version of each ruleset (up to a permutation of the characters \
+themselves).  For example, {\"A\"->\"BB\"} (# 526, quinary code = 2434, \
+weight: 1+2+2=5) is canonical but comes later in the enumeration than \
+{\"B\"->\"AA\"} (# 145, quinary code = 423, weight: 2+1+1=4).  It is true \
+that we may have to wait until later in the enumeration to find some \
+interesting case, since the renaming process preserves ruleset length, not \
+ruleset weight.  But the advantage of being able to jump over huge intervals \
+is too good to be missed, and we can always later find the lowest weight \
+representative of any interesting case if desired.\
+\>", "Text",
+ CellChangeTimes->{{3.6181631322471943`*^9, 3.618163147444615*^9}, 
+   3.791806370591567*^9, {3.7918064033467865`*^9, 3.7918064185886364`*^9}, {
+   3.7918064486089478`*^9, 3.791806461961969*^9}, {3.791806567645485*^9, 
+   3.7918066109471664`*^9}, {3.7918186445064325`*^9, 
+   3.7918186526117244`*^9}, {3.7918187824572372`*^9, 
+   3.7918187890083313`*^9}, {3.793290371860139*^9, 3.7932904022553396`*^9}, {
+   3.7932904966916027`*^9, 3.793290516888549*^9}, {3.7932918779363456`*^9, 
+   3.7932919337884088`*^9}, {3.793293209802597*^9, 3.7932932104528565`*^9}, {
+   3.7932932778924255`*^9, 
+   3.7932932785077515`*^9}},ExpressionUUID->"9b30efcb-6486-48cd-9114-\
+993ef8527fb6"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Performance Comparisons", "Section",
+ CellChangeTimes->{{3.6181630986215067`*^9, 3.618163099496846*^9}, {
+  3.791738275582367*^9, 3.7917382871344166`*^9}, {3.7918040033280888`*^9, 
+  3.7918040115116167`*^9}, {3.7918042207837124`*^9, 3.7918042373812695`*^9}, {
+  3.7932920055144777`*^9, 
+  3.7932920437687597`*^9}},ExpressionUUID->"4a230294-03ac-46db-9fb9-\
+cdab5bb7b714"],
+
+Cell["\<\
+Implementing any one of the long-jump criteria considered above results in \
+significant increase in the speed of the iteration, in some cases spectacular \
+acceleration.  The following table rates the computational savings for these \
+tests, listing what fraction of the enumeration still had to be performed: \
+the ratio of the number of cases still requiring treatment to the enumeration \
+index n.  Small numbers are better here, indicating a larger fraction of the \
+cases skipped over.  We see that long jumps triggered by conflicting rules \
+cases are particularly effective at accelerating the enumeration. \
+\>", "Text", "NoIndent",
+ CellChangeTimes->{{3.6181630283526382`*^9, 3.6181630309396563`*^9}, {
+   3.6181630787408867`*^9, 3.618163084050775*^9}, 3.791738765651843*^9, 
+   3.791741298571149*^9, {3.7917420758867493`*^9, 3.7917420935816665`*^9}, {
+   3.79174269610007*^9, 3.7917427340818615`*^9}, {3.791742950086728*^9, 
+   3.7917429619457393`*^9}, {3.7918034613360863`*^9, 
+   3.7918034653454175`*^9}, {3.791804042257956*^9, 3.79180412145724*^9}, 
+   3.791804267620435*^9, {3.792422272629055*^9, 3.7924222734104724`*^9}, {
+   3.793022666524797*^9, 3.7930226684861097`*^9}, 3.7932920016548057`*^9, 
+   3.7932920658696218`*^9},ExpressionUUID->"29e91211-52bf-4783-bf90-\
+39952f516540"],
+
+Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     RowBox[{"First", "\[ThinSpace] ", "Column"}], 
+     RowBox[{"Second", "\[ThinSpace]", "Column"}]},
+    {"\[Placeholder]", "\[Placeholder]"},
+    {"\[Placeholder]", "\[Placeholder]"}
+   },
+   GridBoxDividers->{
+    "Columns" -> {True, True, True}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {{True}}, "RowsIndexed" -> {}}], TraditionalForm]], "Table",
+ CellChangeTimes->{{3.5805749323923283`*^9, 3.580574972943966*^9}, {
+  3.619176560894925*^9, 3.61917668511229*^9}, {3.738076620076049*^9, 
+  3.738076635661406*^9}, {3.7380769668470917`*^9, 
+  3.738076980886318*^9}},ExpressionUUID->"7618c1c5-d3cd-4d4f-8a2e-\
+e0596352e3a6"],
+
+Cell[TextData[{
+ StyleBox["Table\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedTable"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Table caption."
+}], "NumberedTableCaption",
+ CellChangeTimes->{
+  3.618232619981346*^9},ExpressionUUID->"0c6b7eb3-9075-41c9-a9fd-\
+05d321e36411"],
+
+Cell["\<\
+As one of us (Case) repeatedly pointed out, almost all long jumps of all \
+types are followed by a long sequence of conflicting rules cases of the \
+second type, with conflicts due to empty strings at various places in the \
+ruleset.  Table 10 shows the great increase in performance obtained by \
+implementing a conflicting rules check and long jump (of the creation rule \
+type) after each long jump of other types,  making the iteration loop far \
+faster than the default O(n) for three of the cases investigated.  This is \
+not unexpected, since the average jump size increases as the iteration \
+advances to larger quinary code lengths.  The last column implements all four \
+together tests together, always making the longest jump possible.\
+\>", "Text",
+ CellChangeTimes->{{3.6181631322471943`*^9, 3.618163147444615*^9}, 
+   3.791806370591567*^9, {3.7918064033467865`*^9, 3.7918064185886364`*^9}, {
+   3.7918064486089478`*^9, 3.791806461961969*^9}, {3.791806567645485*^9, 
+   3.7918066109471664`*^9}, {3.7918186445064325`*^9, 
+   3.7918186526117244`*^9}, {3.7918187824572372`*^9, 
+   3.7918187890083313`*^9}, {3.793290371860139*^9, 3.7932904022553396`*^9}, {
+   3.7932904966916027`*^9, 3.793290516888549*^9}, {3.7932918779363456`*^9, 
+   3.7932919337884088`*^9}, {3.79329210169077*^9, 
+   3.793292115251004*^9}},ExpressionUUID->"014fc3c3-0797-42b0-933d-\
+fa0eb4928c0c"],
+
+Cell[BoxData[
+ FormBox[GridBox[{
+    {
+     RowBox[{"First", "\[ThinSpace] ", "Column"}], 
+     RowBox[{"Second", "\[ThinSpace]", "Column"}]},
+    {"\[Placeholder]", "\[Placeholder]"},
+    {"\[Placeholder]", "\[Placeholder]"}
+   },
+   GridBoxDividers->{
+    "Columns" -> {True, True, True}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {{True}}, "RowsIndexed" -> {}}], TraditionalForm]], "Table",
+ CellChangeTimes->{{3.5805749323923283`*^9, 3.580574972943966*^9}, {
+  3.619176560894925*^9, 3.61917668511229*^9}, {3.738076620076049*^9, 
+  3.738076635661406*^9}, {3.7380769668470917`*^9, 
+  3.738076980886318*^9}},ExpressionUUID->"5eded165-62d9-4007-89bf-\
+b7fe7d1172dc"],
+
+Cell[TextData[{
+ StyleBox["Table\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedTable"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Table caption."
+}], "NumberedTableCaption",
+ CellChangeTimes->{
+  3.618232619981346*^9},ExpressionUUID->"febb3c36-24df-438a-a24c-\
+3a3b0623d822"],
+
+Cell["\<\
+One surprise is that testing for initial substring cases only saves \
+approximately 10% of the work no matter how far we go in the enumeration, but \
+the other tests, particularly the conflicting rules test, become more and \
+more productive.  Figure 6 is a log-log plot of the performance ratio r vs. \
+enumeration index n, providing a visualization of the initial results shown \
+in Table 10.\
+\>", "Text",
+ CellChangeTimes->{{3.6181631322471943`*^9, 3.618163147444615*^9}, 
+   3.791806370591567*^9, {3.7918064033467865`*^9, 3.7918064185886364`*^9}, {
+   3.7918064486089478`*^9, 3.791806461961969*^9}, {3.791806567645485*^9, 
+   3.7918066109471664`*^9}, {3.7918186445064325`*^9, 
+   3.7918186526117244`*^9}, {3.7918187824572372`*^9, 
+   3.7918187890083313`*^9}, {3.793290371860139*^9, 3.7932904022553396`*^9}, {
+   3.7932904966916027`*^9, 3.793290516888549*^9}, {3.7932918779363456`*^9, 
+   3.7932919337884088`*^9}, {3.79329210169077*^9, 3.793292128608262*^9}, 
+   3.793292159038833*^9},ExpressionUUID->"87bb8ca5-e51b-4211-bfa7-\
+2022708eb5db"],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
@@ -6148,8 +6603,137 @@ Cell[BoxData[
   3.7874217235003586`*^9, 3.787421817150905*^9, {3.7874221408923955`*^9, 
    3.787422153567458*^9}, 3.787422295699524*^9, 3.7874223717314014`*^9, 
    3.787500715715466*^9},ExpressionUUID->"c1d04ca5-d593-4c7c-8ee7-\
-2589325c8837"]
-}, Open  ]]
+2589325c8837"],
+
+Cell[TextData[{
+ StyleBox["Figure\[ThickSpace]", "CaptionLeadIn"],
+ StyleBox[
+ CounterBox["NumberedFigure"], "CaptionLeadIn"],
+ StyleBox[".\[ThickSpace]", "CaptionLeadIn"],
+ "Performance comparison of long-jump tests, showing logarithmically \
+decreasing \"work to be done\" ratio for higher enumeration indices."
+}], "NumberedFigureCaption",
+ CellChangeTimes->{{3.561122515078184*^9, 3.561122517749433*^9}, 
+   3.61823468265237*^9, {3.7912132888967285`*^9, 3.7912133023280478`*^9}, 
+   3.791213345920206*^9, {3.7932926187098923`*^9, 3.793292637007928*^9}, {
+   3.793292697234769*^9, 3.793292700677557*^9}, {3.79329279004669*^9, 
+   3.7932927961074686`*^9}, 3.79329284889573*^9, {3.793292907452042*^9, 
+   3.793292940313712*^9}},
+ CellTags->"ex-fig",ExpressionUUID->"fe8deab0-51f0-42d6-83e4-2e961353623b"],
+
+Cell["\<\
+ Continued looping through the RSS enumeration, implementing all four tests, \
+extends the trend line shown for the \"all\" case, which appears as a \
+relatively straight line on the log-log plot.  The best fit trendline is 
+lnr=0.8537 \[Dash] 0.3963lnn
+, with a correlation coefficient of ????.  Assuming a relatively constant \
+time per case considered, r can be taken as proportional to 
+tn
+.  Substituting 
+r=ktn
+ into   
+lnr=a \[Dash]mlnn
+ yields [Math Processing Error]   =>  
+lnk+lnt\[Dash]lnn=a \[Dash] mlnn
+  =>   
+lnt=(a\[Minus]lnk)+(1\[Dash]m)lnn
+  =>  [Math Processing Error]   =>  t = K n^(1-m), indicating that the time t \
+needed to reach index n in the enumeration is approximately proportional to \
+n1-m ~ n1-0.396 ~ n0.6, a significant improvement over the default O(n) \
+behavior. \
+\>", "Text",
+ CellChangeTimes->{{3.6181631322471943`*^9, 3.618163147444615*^9}, 
+   3.791806370591567*^9, {3.7918064033467865`*^9, 3.7918064185886364`*^9}, {
+   3.7918064486089478`*^9, 3.791806461961969*^9}, {3.791806567645485*^9, 
+   3.7918066109471664`*^9}, {3.7918186445064325`*^9, 
+   3.7918186526117244`*^9}, {3.7918187824572372`*^9, 
+   3.7918187890083313`*^9}, {3.793290371860139*^9, 3.7932904022553396`*^9}, {
+   3.7932904966916027`*^9, 3.793290516888549*^9}, {3.7932918779363456`*^9, 
+   3.7932919337884088`*^9}, {3.79329210169077*^9, 3.793292127483271*^9}, 
+   3.79329216448127*^9, 3.7932921946984167`*^9, 3.793293210660305*^9, 
+   3.7932932787261677`*^9},ExpressionUUID->"904dea0d-e71f-420d-93ba-\
+6609a0d65599"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusions", "Section",
+ CellChangeTimes->{{3.6181630986215067`*^9, 3.618163099496846*^9}, {
+  3.791738275582367*^9, 3.7917382871344166`*^9}, {3.7918040033280888`*^9, 
+  3.7918040115116167`*^9}, {3.7918042207837124`*^9, 3.7918042373812695`*^9}, {
+  3.7932920055144777`*^9, 3.7932920437687597`*^9}, {3.793292233339017*^9, 
+  3.7932922356119585`*^9}},ExpressionUUID->"3d292cbe-4211-4d74-bf55-\
+af0377b37080"],
+
+Cell[TextData[{
+ "The new generalized enumeration for substitution systems (GSS), derived in \
+Section III, has been shown to allow spectacular acceleration due to \
+long-jump tests, a benefit that far more than offsets the inclusion of rules \
+of type \"\"\[RightArrow]\"\", which had been explicitly excluded in the \
+previous enumeration.  We used the automatic grouping of similar rulesets in \
+the same weight class together in runs to permit long jumps over the unwanted \
+\"nothing-to-nothing\" cases, and then extended that effort to four tests \
+particularly useful for the efficient treatment of sequential substitution \
+systems.  The actual implementation was done for the reduced enumeration \
+(RSS), derived in Section IV, but the techniques described admit of simple \
+generalization to the GSS enumeration as well.  Three of the tests considered \
+allow progressively larger jumps for higher indices, with performance \
+improvement of roughly 10 times every 3 orders of magnitude.  This translates \
+into an average \"acceleration\" in the enumeration loop such that \
+calculation time to treat all cases up to index n is of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"O", "(", 
+    SuperscriptBox["n", "0.6"], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "968cb7ea-21df-4b7d-9562-c34c643defce"],
+ ".  While not the hoped for O(log n), this still represents a huge \
+acceleration over the previous O(n), a most satisfactory result permitted by \
+the regularity and mathematical predictability of the new enumeration. "
+}], "Text", "NoIndent",
+ CellChangeTimes->{{3.6181630283526382`*^9, 3.6181630309396563`*^9}, {
+   3.6181630787408867`*^9, 3.618163084050775*^9}, 3.791738765651843*^9, 
+   3.791741298571149*^9, {3.7917420758867493`*^9, 3.7917420935816665`*^9}, {
+   3.79174269610007*^9, 3.7917427340818615`*^9}, {3.791742950086728*^9, 
+   3.7917429619457393`*^9}, {3.7918034613360863`*^9, 
+   3.7918034653454175`*^9}, {3.791804042257956*^9, 3.79180412145724*^9}, 
+   3.791804267620435*^9, {3.792422272629055*^9, 3.7924222734104724`*^9}, {
+   3.793022666524797*^9, 3.7930226684861097`*^9}, 3.7932920016548057`*^9, 
+   3.7932920658696218`*^9, 3.7932922501226163`*^9, {3.793293210894676*^9, 
+   3.793293241152708*^9}, {3.7932933068209925`*^9, 
+   3.7932933236040816`*^9}},ExpressionUUID->"0aef9d08-3ef8-4be6-bc48-\
+da9c4e3d9a2a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Acknowledgements", "Section",
+ CellChangeTimes->{{3.6181630986215067`*^9, 3.618163099496846*^9}, {
+  3.791738275582367*^9, 3.7917382871344166`*^9}, {3.7918040033280888`*^9, 
+  3.7918040115116167`*^9}, {3.7918042207837124`*^9, 3.7918042373812695`*^9}, {
+  3.7932920055144777`*^9, 3.7932920437687597`*^9}, {3.793292233339017*^9, 
+  3.7932922356119585`*^9}, {3.793292307093155*^9, 
+  3.7932923120857925`*^9}},ExpressionUUID->"8a4a46fa-31a5-47e9-b975-\
+afa00833bd6d"],
+
+Cell["\<\
+The authors acknowledge the generous support of the Academic Research \
+Committee of Southern Adventist University for funding this project, thank \
+Breanna Bowden-Green, Kelsey Dobbs, Sean Bryant and Amy Beard for previous \
+work on the SSS project, and thank Charles Sarr, Jonathan Ziesmer and Lewis \
+Caviness for helpful suggestions in the present work.\
+\>", "Text", "NoIndent",
+ CellChangeTimes->{{3.6181630283526382`*^9, 3.6181630309396563`*^9}, {
+   3.6181630787408867`*^9, 3.618163084050775*^9}, 3.791738765651843*^9, 
+   3.791741298571149*^9, {3.7917420758867493`*^9, 3.7917420935816665`*^9}, {
+   3.79174269610007*^9, 3.7917427340818615`*^9}, {3.791742950086728*^9, 
+   3.7917429619457393`*^9}, {3.7918034613360863`*^9, 
+   3.7918034653454175`*^9}, {3.791804042257956*^9, 3.79180412145724*^9}, 
+   3.791804267620435*^9, {3.792422272629055*^9, 3.7924222734104724`*^9}, {
+   3.793022666524797*^9, 3.7930226684861097`*^9}, 3.7932920016548057`*^9, 
+   3.7932920658696218`*^9, 3.7932922501226163`*^9, {3.7932923289277997`*^9, 
+   3.7932923310401497`*^9}},ExpressionUUID->"3aaed684-bbee-4706-9dc1-\
+6710a9375b59"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6172,7 +6756,41 @@ Cell["Reference.", "Reference",
 Cell["Reference.", "Reference",
  CellChangeTimes->{{3.618231325086198*^9, 
   3.618231327346315*^9}},ExpressionUUID->"f72f7bbf-1f1c-4314-b85e-\
-be7d5fe71700"]
+be7d5fe71700"],
+
+Cell["\<\
+References to be put into correct format:
+
+S. Wolfram, A New Kind of Science (Wolfram Media, Champaign, IL, 2002) pp.  \
+1-22, 82-94, 433-503. 
+
+K. E. Caviness, \"Causal Networks of Sequential Substitution Systems: Views \
+of highly non-local systems\", Poster Session and Lecture at Area della \
+Ricerca CNR-Pisa, 2009. 
+
+K. E. Caviness, \"Indexing Strings and Rulesets: An Exploration Leading to an \
+Enumeration\", The Mathematica Journal 13 (2011). 
+
+Ken Caviness, \"Universal String Enumeration\" from The Wolfram \
+Demonstrations Project, \
+http://demonstrations.wolfram.com/UniversalStringEnumeration/.  23 March 2010. 
+
+Ken Caviness, \"Tree of Strings\" from The Wolfram Demonstrations Project, 15 \
+May 2012.  http://demonstrations.wolfram.com/TreeOfStrings/ \
+\>", "Text", "NoIndent",
+ CellChangeTimes->{{3.6181630283526382`*^9, 3.6181630309396563`*^9}, {
+   3.6181630787408867`*^9, 3.618163084050775*^9}, 3.791738765651843*^9, 
+   3.791741298571149*^9, {3.7917420758867493`*^9, 3.7917420935816665`*^9}, {
+   3.79174269610007*^9, 3.7917427340818615`*^9}, {3.791742950086728*^9, 
+   3.7917429619457393`*^9}, {3.7918034613360863`*^9, 
+   3.7918034653454175`*^9}, {3.791804042257956*^9, 3.79180412145724*^9}, 
+   3.791804267620435*^9, {3.792422272629055*^9, 3.7924222734104724`*^9}, {
+   3.793022666524797*^9, 3.7930226684861097`*^9}, 3.7932920016548057`*^9, 
+   3.7932920658696218`*^9, 3.7932922501226163`*^9, {3.7932923289277997`*^9, 
+   3.7932923310401497`*^9}, {3.7932923779187045`*^9, 3.793292408150807*^9}, {
+   3.793293211512022*^9, 3.793293231090634*^9}, {3.793293454796028*^9, 
+   3.793293461834194*^9}},ExpressionUUID->"82f9b060-78c9-4c9a-ac2b-\
+4cddc83e9469"]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
@@ -6182,8 +6800,7 @@ PrintingCopies->1,
 PrintingPageRange->{1, Automatic},
 PrintingOptions->{"PaperOrientation"->"Portrait",
 "PaperSize"->{432, 648}},
-Magnification:>1.5 Inherited,
-FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
 StyleDefinitions->Notebook[{
    Cell[
     CellGroupData[{
@@ -11548,7 +12165,7 @@ Condensed", "Subsection",
              ShowAutoStyles -> False, ScriptMinSize -> 8, MenuSortingValue -> 
              1400, StyleMenuListing -> None]}, Closed]]}, Closed]]}, Open]]}, 
   Visible -> False, FrontEndVersion -> 
-  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "12.0 for Microsoft Windows (64-bit) (April 8, 2019)", StyleDefinitions -> 
   "PrivateStylesheetFormatting.nb"]
 ]
 (* End of Notebook Content *)
@@ -11557,146 +12174,197 @@ Condensed", "Subsection",
 (*CellTagsOutline
 CellTagsIndex->{
  "intro"->{
-  Cell[3077, 83, 328, 4, 63, "SectionFirst",ExpressionUUID->"fbed055b-9cdd-4ff8-b78b-36c23f9a91c5",
+  Cell[3077, 83, 328, 4, 43, "SectionFirst",ExpressionUUID->"fbed055b-9cdd-4ff8-b78b-36c23f9a91c5",
    CellTags->"intro"]},
  "ex-fig"->{
-  Cell[83244, 1709, 537, 11, 63, "NumberedFigureCaption",ExpressionUUID->"fc375817-8847-4990-9747-f36de778d0de",
+  Cell[82732, 1700, 537, 11, 43, "NumberedFigureCaption",ExpressionUUID->"fc375817-8847-4990-9747-f36de778d0de",
+   CellTags->"ex-fig"],
+  Cell[152815, 3266, 556, 11, 43, "NumberedFigureCaption",ExpressionUUID->"d457b301-2bef-48c2-b0d2-f5777bf411f4",
+   CellTags->"ex-fig"],
+  Cell[195512, 4284, 580, 11, 43, "NumberedFigureCaption",ExpressionUUID->"1c093ff0-8af1-4706-aba6-477f4bf1d575",
+   CellTags->"ex-fig"],
+  Cell[207511, 4537, 711, 13, 43, "NumberedFigureCaption",ExpressionUUID->"979b7499-3028-4a5b-9c53-47cecb2d34f7",
+   CellTags->"ex-fig"],
+  Cell[230016, 5021, 908, 16, 43, "NumberedFigureCaption",ExpressionUUID->"47a2fd58-cf0b-45e4-9c34-1f5565d9fb19",
+   CellTags->"ex-fig"],
+  Cell[304326, 6607, 805, 14, 43, "NumberedFigureCaption",ExpressionUUID->"fe8deab0-51f0-42d6-83e4-2e961353623b",
    CellTags->"ex-fig"]},
  "exponential-equation"->{
-  Cell[104916, 2198, 1168, 37, 84, "DisplayFormulaNumbered",ExpressionUUID->"ff6142da-7744-44b7-b6bd-4d3606e99d13",
+  Cell[105078, 2210, 1168, 37, 56, "DisplayFormulaNumbered",ExpressionUUID->"ff6142da-7744-44b7-b6bd-4d3606e99d13",
    CellTags->"exponential-equation"],
-  Cell[106819, 2253, 717, 20, 73, "DisplayFormulaNumbered",ExpressionUUID->"4458812d-5b50-44be-873e-bb7540666a91",
+  Cell[106981, 2265, 717, 20, 49, "DisplayFormulaNumbered",ExpressionUUID->"4458812d-5b50-44be-873e-bb7540666a91",
    CellTags->"exponential-equation"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"intro", 569815, 11558},
- {"ex-fig", 569952, 11561},
- {"exponential-equation", 570117, 11564}
+ {"intro", 599145, 12175},
+ {"ex-fig", 599282, 12178},
+ {"exponential-equation", 600137, 12191}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 361, 7, 150, "Title",ExpressionUUID->"ceeee519-acff-4377-9184-3d68e5292427"],
-Cell[921, 29, 446, 11, 114, "Authors",ExpressionUUID->"5c05cdf6-559c-4e43-9cb6-e33077b57373"],
-Cell[1370, 42, 365, 9, 116, "Institution",ExpressionUUID->"1be0c7e8-1dc2-4913-959d-35695be5a2cb"],
-Cell[1738, 53, 800, 13, 170, "Abstract",ExpressionUUID->"e0ed096c-6811-4bbd-8755-08ef10cd0b6c"],
-Cell[2541, 68, 511, 11, 86, "Keywords",ExpressionUUID->"dc359dff-5976-4a60-a5e3-1df5671aa779"],
+Cell[557, 20, 361, 7, 56, "Title",ExpressionUUID->"ceeee519-acff-4377-9184-3d68e5292427"],
+Cell[921, 29, 446, 11, 76, "Authors",ExpressionUUID->"5c05cdf6-559c-4e43-9cb6-e33077b57373"],
+Cell[1370, 42, 365, 9, 80, "Institution",ExpressionUUID->"1be0c7e8-1dc2-4913-959d-35695be5a2cb"],
+Cell[1738, 53, 800, 13, 97, "Abstract",ExpressionUUID->"e0ed096c-6811-4bbd-8755-08ef10cd0b6c"],
+Cell[2541, 68, 511, 11, 58, "Keywords",ExpressionUUID->"dc359dff-5976-4a60-a5e3-1df5671aa779"],
 Cell[CellGroupData[{
-Cell[3077, 83, 328, 4, 63, "SectionFirst",ExpressionUUID->"fbed055b-9cdd-4ff8-b78b-36c23f9a91c5",
+Cell[3077, 83, 328, 4, 43, "SectionFirst",ExpressionUUID->"fbed055b-9cdd-4ff8-b78b-36c23f9a91c5",
  CellTags->"intro"],
-Cell[3408, 89, 3062, 43, 530, "Text",ExpressionUUID->"324d8edc-e1fa-47c3-8dec-9551ca740720"]
+Cell[3408, 89, 3064, 42, 252, "Text",ExpressionUUID->"324d8edc-e1fa-47c3-8dec-9551ca740720"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6507, 137, 244, 4, 99, "Section",ExpressionUUID->"b9bb8a56-c81d-4ef5-8b18-7c48a0256c66"],
-Cell[6754, 143, 2930, 42, 393, "Text",ExpressionUUID->"264fe2ba-83c8-4add-a837-8dd0fde18132"],
-Cell[9687, 187, 73554, 1520, 660, "Output",ExpressionUUID->"73c0ef92-9b95-471e-aede-ad44226a7098"],
-Cell[83244, 1709, 537, 11, 63, "NumberedFigureCaption",ExpressionUUID->"fc375817-8847-4990-9747-f36de778d0de",
+Cell[6509, 136, 244, 4, 66, "Section",ExpressionUUID->"b9bb8a56-c81d-4ef5-8b18-7c48a0256c66"],
+Cell[6756, 142, 2416, 34, 195, "Text",ExpressionUUID->"264fe2ba-83c8-4add-a837-8dd0fde18132"],
+Cell[9175, 178, 73554, 1520, 445, "Output",ExpressionUUID->"73c0ef92-9b95-471e-aede-ad44226a7098"],
+Cell[82732, 1700, 537, 11, 43, "NumberedFigureCaption",ExpressionUUID->"fc375817-8847-4990-9747-f36de778d0de",
  CellTags->"ex-fig"],
-Cell[83784, 1722, 1787, 27, 283, "Text",ExpressionUUID->"9a36f6ce-718c-4383-83c8-b818324df88d"],
-Cell[85574, 1751, 1142, 18, 199, "Text",ExpressionUUID->"87c9106b-84f7-488f-9200-60b7b2931da4"]
+Cell[83272, 1713, 1771, 26, 138, "Text",ExpressionUUID->"9a36f6ce-718c-4383-83c8-b818324df88d"],
+Cell[85046, 1741, 1142, 18, 100, "Text",ExpressionUUID->"87c9106b-84f7-488f-9200-60b7b2931da4"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[86753, 1774, 258, 4, 99, "Section",ExpressionUUID->"d3664414-2b96-4e40-88c7-d34ecb704b40"],
-Cell[87014, 1780, 737, 12, 117, "Text",ExpressionUUID->"81c63897-b03d-4d69-abf5-2788ee91be23"],
-Cell[87754, 1794, 648, 11, 63, "Text",ExpressionUUID->"11363c91-a3be-4969-b215-fb02dbd715d0"],
+Cell[86225, 1764, 258, 4, 66, "Section",ExpressionUUID->"d3664414-2b96-4e40-88c7-d34ecb704b40"],
+Cell[86486, 1770, 737, 12, 62, "Text",ExpressionUUID->"81c63897-b03d-4d69-abf5-2788ee91be23"],
+Cell[87226, 1784, 648, 11, 43, "Text",ExpressionUUID->"11363c91-a3be-4969-b215-fb02dbd715d0"],
 Cell[CellGroupData[{
-Cell[88427, 1809, 240, 4, 35, "BulletedList",ExpressionUUID->"202bc355-712e-4c1b-b70e-360b21b42858"],
-Cell[88670, 1815, 216, 3, 38, "BulletedList",ExpressionUUID->"8d6665b1-73f7-475d-a4d6-0421e543f93f"]
+Cell[87899, 1799, 240, 4, 24, "BulletedList",ExpressionUUID->"202bc355-712e-4c1b-b70e-360b21b42858"],
+Cell[88142, 1805, 216, 3, 26, "BulletedList",ExpressionUUID->"8d6665b1-73f7-475d-a4d6-0421e543f93f"]
 }, Open  ]],
-Cell[88901, 1821, 669, 12, 90, "Text",ExpressionUUID->"381cbfc6-76dd-4004-b00e-dca38306b9f0"],
-Cell[89573, 1835, 1594, 37, 238, "Table",ExpressionUUID->"9d1752b5-9bc3-4e7d-84ed-c3b460cac898"],
-Cell[91170, 1874, 996, 15, 173, "Text",ExpressionUUID->"931d0dce-9ca1-4c71-a532-b41cfd282d3c"],
-Cell[92169, 1891, 2193, 55, 80, "Output",ExpressionUUID->"77ea75a0-3be3-469d-aa7e-887fd32f9a97"],
-Cell[94365, 1948, 3377, 82, 229, "Text",ExpressionUUID->"74f72b37-4345-4d73-b246-13b1445fcc56"],
-Cell[97745, 2032, 453, 8, 63, "Text",ExpressionUUID->"affbe960-5371-41de-813d-8d2081bf62a3"],
+Cell[88373, 1811, 669, 12, 43, "Text",ExpressionUUID->"381cbfc6-76dd-4004-b00e-dca38306b9f0"],
+Cell[89045, 1825, 1642, 37, 165, "Table",ExpressionUUID->"9d1752b5-9bc3-4e7d-84ed-c3b460cac898"],
+Cell[90690, 1864, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"1aad954a-4fdb-4173-b20b-cea9b216281f"],
+Cell[91011, 1875, 996, 15, 81, "Text",ExpressionUUID->"931d0dce-9ca1-4c71-a532-b41cfd282d3c"],
+Cell[92010, 1892, 2193, 55, 57, "Output",ExpressionUUID->"77ea75a0-3be3-469d-aa7e-887fd32f9a97"],
+Cell[94206, 1949, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"35d297d3-3fa6-4118-8c80-0e8a99727058"],
+Cell[94527, 1960, 3377, 82, 121, "Text",ExpressionUUID->"74f72b37-4345-4d73-b246-13b1445fcc56"],
+Cell[97907, 2044, 453, 8, 24, "Text",ExpressionUUID->"affbe960-5371-41de-813d-8d2081bf62a3"],
 Cell[CellGroupData[{
-Cell[98223, 2044, 310, 5, 35, "BulletedList",ExpressionUUID->"07ab5940-e414-4899-a385-1c76872c2f35"],
-Cell[98536, 2051, 308, 4, 38, "BulletedList",ExpressionUUID->"4ae82b9e-9c99-4e24-81b9-2f56a0ed26f3"],
-Cell[98847, 2057, 271, 4, 39, "BulletedList",ExpressionUUID->"78e8014b-efd7-47f4-99ce-a47ef8551e1f"]
+Cell[98385, 2056, 310, 5, 24, "BulletedList",ExpressionUUID->"07ab5940-e414-4899-a385-1c76872c2f35"],
+Cell[98698, 2063, 308, 4, 26, "BulletedList",ExpressionUUID->"4ae82b9e-9c99-4e24-81b9-2f56a0ed26f3"],
+Cell[99009, 2069, 271, 4, 26, "BulletedList",ExpressionUUID->"78e8014b-efd7-47f4-99ce-a47ef8551e1f"]
 }, Open  ]],
-Cell[99133, 2064, 945, 17, 93, "Text",ExpressionUUID->"ed577bdf-7a19-4c1a-b7eb-0f2187dd0184"],
-Cell[100081, 2083, 702, 12, 64, "Text",ExpressionUUID->"34a20ae0-bee3-4864-a7e2-6602344e231c"],
+Cell[99295, 2076, 945, 17, 62, "Text",ExpressionUUID->"ed577bdf-7a19-4c1a-b7eb-0f2187dd0184"],
+Cell[100243, 2095, 702, 12, 43, "Text",ExpressionUUID->"34a20ae0-bee3-4864-a7e2-6602344e231c"],
 Cell[CellGroupData[{
-Cell[100808, 2099, 373, 8, 36, "BulletedList",ExpressionUUID->"432b6c1b-0610-48f3-9cea-e902327647d3"],
-Cell[101184, 2109, 416, 8, 39, "BulletedList",ExpressionUUID->"ff23d5c6-cf71-45cc-a572-1249d5fe01c9"],
-Cell[101603, 2119, 354, 6, 39, "BulletedList",ExpressionUUID->"498d0755-3dd0-49ba-a3eb-2d4ef7a9a101"],
-Cell[101960, 2127, 390, 7, 39, "BulletedList",ExpressionUUID->"9dd2b8f9-9e47-4d13-8787-84f4b9941f0c"],
-Cell[102353, 2136, 297, 4, 39, "BulletedList",ExpressionUUID->"4726c6a5-cf09-41f5-abac-94285bdf585d"]
+Cell[100970, 2111, 373, 8, 24, "BulletedList",ExpressionUUID->"432b6c1b-0610-48f3-9cea-e902327647d3"],
+Cell[101346, 2121, 416, 8, 26, "BulletedList",ExpressionUUID->"ff23d5c6-cf71-45cc-a572-1249d5fe01c9"],
+Cell[101765, 2131, 354, 6, 26, "BulletedList",ExpressionUUID->"498d0755-3dd0-49ba-a3eb-2d4ef7a9a101"],
+Cell[102122, 2139, 390, 7, 26, "BulletedList",ExpressionUUID->"9dd2b8f9-9e47-4d13-8787-84f4b9941f0c"],
+Cell[102515, 2148, 297, 4, 26, "BulletedList",ExpressionUUID->"4726c6a5-cf09-41f5-abac-94285bdf585d"]
 }, Open  ]],
-Cell[102665, 2143, 1561, 37, 95, "Text",ExpressionUUID->"466344b7-ee5c-4f79-9f82-838fdc72e015"],
-Cell[104229, 2182, 684, 14, 35, "Text",ExpressionUUID->"36ff17e5-6275-4c53-8337-c452d3496010"],
-Cell[104916, 2198, 1168, 37, 84, "DisplayFormulaNumbered",ExpressionUUID->"ff6142da-7744-44b7-b6bd-4d3606e99d13",
+Cell[102827, 2155, 1561, 37, 48, "Text",ExpressionUUID->"466344b7-ee5c-4f79-9f82-838fdc72e015"],
+Cell[104391, 2194, 684, 14, 24, "Text",ExpressionUUID->"36ff17e5-6275-4c53-8337-c452d3496010"],
+Cell[105078, 2210, 1168, 37, 56, "DisplayFormulaNumbered",ExpressionUUID->"ff6142da-7744-44b7-b6bd-4d3606e99d13",
  CellTags->"exponential-equation"],
-Cell[106087, 2237, 729, 14, 64, "Text",ExpressionUUID->"35cc7164-838d-4905-bda1-7531cbb895ff"],
-Cell[106819, 2253, 717, 20, 73, "DisplayFormulaNumbered",ExpressionUUID->"4458812d-5b50-44be-873e-bb7540666a91",
+Cell[106249, 2249, 729, 14, 43, "Text",ExpressionUUID->"35cc7164-838d-4905-bda1-7531cbb895ff"],
+Cell[106981, 2265, 717, 20, 49, "DisplayFormulaNumbered",ExpressionUUID->"4458812d-5b50-44be-873e-bb7540666a91",
  CellTags->"exponential-equation"],
-Cell[107539, 2275, 2155, 31, 338, "Text",ExpressionUUID->"61e17563-856d-4ef3-a4b1-76b44a7447ac"],
-Cell[109697, 2308, 20635, 494, 1509, "Output",ExpressionUUID->"6d0ae9d3-6748-4b85-b2d1-b32a4652c2d0"],
-Cell[130335, 2804, 10672, 198, 515, "Input",ExpressionUUID->"92ae85f2-becb-42e6-964c-e69edffa342c",
+Cell[107701, 2287, 2155, 31, 157, "Text",ExpressionUUID->"61e17563-856d-4ef3-a4b1-76b44a7447ac"],
+Cell[109859, 2320, 20635, 494, 384, "Output",ExpressionUUID->"6d0ae9d3-6748-4b85-b2d1-b32a4652c2d0"],
+Cell[130497, 2816, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"e2c3815b-0a85-43d0-88e4-1e006b225e40"],
+Cell[130818, 2827, 10672, 198, 361, "Input",ExpressionUUID->"92ae85f2-becb-42e6-964c-e69edffa342c",
  InitializationCell->True],
-Cell[141010, 3004, 11319, 237, 505, "Input",ExpressionUUID->"e43a8ad9-b542-4493-914f-d722d4ccc004",
- InitializationCell->True]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[152366, 3246, 275, 4, 100, "Section",ExpressionUUID->"a5b7a39d-46fb-478e-b2c6-541029191480"],
-Cell[152644, 3252, 2517, 45, 285, "Text",ExpressionUUID->"9ffda02b-74e9-4750-8a21-1faa87912a47"],
-Cell[155164, 3299, 1184, 18, 173, "Text",ExpressionUUID->"00cbafe0-0c05-4869-96bd-2b3589c57952"],
-Cell[156351, 3319, 19013, 530, 1334, "Output",ExpressionUUID->"935bfd71-a9d3-447d-bf26-4f906b1d06b7"],
-Cell[175367, 3851, 9739, 182, 478, "Input",ExpressionUUID->"94993f80-f248-4701-9ee4-1183d7e2a133",
+Cell[141493, 3027, 11319, 237, 351, "Input",ExpressionUUID->"e43a8ad9-b542-4493-914f-d722d4ccc004",
  InitializationCell->True],
-Cell[185109, 4035, 9037, 200, 485, "Input",ExpressionUUID->"8cb95471-1891-4cc2-a5bf-4441f83b2141",
- InitializationCell->True]
+Cell[152815, 3266, 556, 11, 43, "NumberedFigureCaption",ExpressionUUID->"d457b301-2bef-48c2-b0d2-f5777bf411f4",
+ CellTags->"ex-fig"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[194183, 4240, 370, 7, 100, "Section",ExpressionUUID->"92dd34f9-ce49-4627-90b0-d42c5fa078c9"],
-Cell[194556, 4249, 1796, 26, 228, "Text",ExpressionUUID->"a27355fe-b568-4f70-b121-3a52f0fbaa58"],
-Cell[CellGroupData[{
-Cell[196377, 4279, 286, 4, 36, "Subsection",ExpressionUUID->"ead692bf-7c10-4ddf-84a2-951a866c3ac7"],
-Cell[196666, 4285, 985, 18, 93, "Text",ExpressionUUID->"d7a2f653-9697-4175-b8fd-02fd81d1a8cd"],
-Cell[197654, 4305, 7908, 170, 181, "Output",ExpressionUUID->"701ccef6-8495-4edd-9b7e-1267b1af4088"],
-Cell[205565, 4477, 953, 18, 121, "Text",ExpressionUUID->"b83c8881-060c-49b0-b6eb-8f205c18c5f2"],
-Cell[206521, 4497, 680, 12, 118, "Text",ExpressionUUID->"70d3c0e4-fb39-4aec-882d-b39eefc67d03"],
-Cell[207204, 4511, 3713, 77, 404, "Text",ExpressionUUID->"9f387b2b-4a47-48ee-b2b6-e9c29654ee7f"],
-Cell[210920, 4590, 1862, 35, 205, "Text",ExpressionUUID->"efc678c4-a9b5-4bcd-bfd8-41aca360b62e"],
-Cell[212785, 4627, 2142, 38, 228, "Text",ExpressionUUID->"ee0458f4-bffa-4e43-a43a-ce81a82bec0e"],
-Cell[214930, 4667, 664, 15, 118, "Table",ExpressionUUID->"5c0f0dbe-4db8-4988-8cc8-8acd83686e43"],
-Cell[215597, 4684, 318, 9, 63, "NumberedTableCaption",ExpressionUUID->"d0d5b49d-a2b1-4c38-b0dd-ef24195aaa45"],
-Cell[215918, 4695, 766, 15, 63, "Text",ExpressionUUID->"fa25bb03-6ca9-4e70-b2e6-5984e4416688"]
+Cell[153408, 3282, 275, 4, 66, "Section",ExpressionUUID->"a5b7a39d-46fb-478e-b2c6-541029191480"],
+Cell[153686, 3288, 2517, 45, 143, "Text",ExpressionUUID->"9ffda02b-74e9-4750-8a21-1faa87912a47"],
+Cell[156206, 3335, 1184, 18, 81, "Text",ExpressionUUID->"00cbafe0-0c05-4869-96bd-2b3589c57952"],
+Cell[157393, 3355, 19013, 530, 384, "Output",ExpressionUUID->"935bfd71-a9d3-447d-bf26-4f906b1d06b7"],
+Cell[176409, 3887, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"4030d220-df63-41b3-ab56-4516d345cdf7"],
+Cell[176730, 3898, 9739, 182, 311, "Input",ExpressionUUID->"94993f80-f248-4701-9ee4-1183d7e2a133",
+ InitializationCell->True],
+Cell[186472, 4082, 9037, 200, 337, "Input",ExpressionUUID->"8cb95471-1891-4cc2-a5bf-4441f83b2141",
+ InitializationCell->True],
+Cell[195512, 4284, 580, 11, 43, "NumberedFigureCaption",ExpressionUUID->"1c093ff0-8af1-4706-aba6-477f4bf1d575",
+ CellTags->"ex-fig"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[216721, 4715, 280, 4, 36, "Subsection",ExpressionUUID->"69d337ec-a574-43a9-9ebe-e1e350d6f8fd"],
-Cell[217004, 4721, 1638, 29, 179, "Text",ExpressionUUID->"33f370df-7b34-49d7-9399-64cb88ad6410"],
-Cell[218645, 4752, 8708, 192, 181, "Output",ExpressionUUID->"198e9b36-8f78-4b62-95cb-3f5ab712940d"],
-Cell[227356, 4946, 2215, 40, 234, "Text",ExpressionUUID->"c33999e1-27c8-4652-8164-f5a33450620b"],
-Cell[229574, 4988, 1980, 38, 212, "Text",ExpressionUUID->"4aa812c2-a63d-4e38-8137-2d1dfe34193f"],
-Cell[231557, 5028, 1086, 27, 65, "Text",ExpressionUUID->"a8a74b89-dd8e-4693-a684-bcf7eeced826"],
-Cell[232646, 5057, 1793, 35, 175, "Text",ExpressionUUID->"686d2306-c748-41ba-9dfa-1ea329e47df8"],
-Cell[234442, 5094, 664, 15, 118, "Table",ExpressionUUID->"03dd5a4f-70ca-4bc4-98fa-78c3216a1002"],
-Cell[235109, 5111, 318, 9, 63, "NumberedTableCaption",ExpressionUUID->"aa10038b-9b62-44df-9f7b-6c8f81965348"],
-Cell[235430, 5122, 1089, 19, 93, "Text",ExpressionUUID->"37833d92-dede-4f1b-a508-96ff71fba7c2"]
+Cell[196129, 4300, 370, 7, 66, "Section",ExpressionUUID->"92dd34f9-ce49-4627-90b0-d42c5fa078c9"],
+Cell[196502, 4309, 1796, 26, 119, "Text",ExpressionUUID->"a27355fe-b568-4f70-b121-3a52f0fbaa58"],
+Cell[CellGroupData[{
+Cell[198323, 4339, 286, 4, 24, "Subsection",ExpressionUUID->"ead692bf-7c10-4ddf-84a2-951a866c3ac7"],
+Cell[198612, 4345, 985, 18, 46, "Text",ExpressionUUID->"d7a2f653-9697-4175-b8fd-02fd81d1a8cd"],
+Cell[199600, 4365, 7908, 170, 124, "Output",ExpressionUUID->"701ccef6-8495-4edd-9b7e-1267b1af4088"],
+Cell[207511, 4537, 711, 13, 43, "NumberedFigureCaption",ExpressionUUID->"979b7499-3028-4a5b-9c53-47cecb2d34f7",
+ CellTags->"ex-fig"],
+Cell[208225, 4552, 953, 18, 65, "Text",ExpressionUUID->"b83c8881-060c-49b0-b6eb-8f205c18c5f2"],
+Cell[209181, 4572, 680, 12, 62, "Text",ExpressionUUID->"70d3c0e4-fb39-4aec-882d-b39eefc67d03"],
+Cell[209864, 4586, 3713, 77, 190, "Text",ExpressionUUID->"9f387b2b-4a47-48ee-b2b6-e9c29654ee7f"],
+Cell[213580, 4665, 1862, 35, 108, "Text",ExpressionUUID->"efc678c4-a9b5-4bcd-bfd8-41aca360b62e"],
+Cell[215445, 4702, 2142, 38, 119, "Text",ExpressionUUID->"ee0458f4-bffa-4e43-a43a-ce81a82bec0e"],
+Cell[217590, 4742, 664, 15, 81, "Table",ExpressionUUID->"5c0f0dbe-4db8-4988-8cc8-8acd83686e43"],
+Cell[218257, 4759, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"d0d5b49d-a2b1-4c38-b0dd-ef24195aaa45"],
+Cell[218578, 4770, 766, 15, 43, "Text",ExpressionUUID->"fa25bb03-6ca9-4e70-b2e6-5984e4416688"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[236556, 5146, 291, 4, 36, "Subsection",ExpressionUUID->"f05a2a64-94ed-4b78-bb59-fef922e67412"],
-Cell[236850, 5152, 1652, 27, 203, "Text",ExpressionUUID->"cfd71def-5d4d-4b4d-ba58-5cb02b084ea0"],
-Cell[238505, 5181, 1138, 20, 148, "Text",ExpressionUUID->"ecf5ad45-e814-40c2-9081-dafae1a2ffe6"],
-Cell[239646, 5203, 1617, 29, 148, "Text",ExpressionUUID->"b3d140ae-b015-4efe-bc48-4993bfcda276"],
-Cell[241266, 5234, 2041, 32, 231, "Text",ExpressionUUID->"bbb2fab6-b845-4bb9-9bb4-acd0d922e726"],
-Cell[243310, 5268, 664, 15, 118, "Table",ExpressionUUID->"4429862d-cbbc-46d6-a53c-583973b1aa48"],
-Cell[243977, 5285, 318, 9, 63, "NumberedTableCaption",ExpressionUUID->"ee055602-c3ce-40c8-8dea-494c2d666d35"],
-Cell[244298, 5296, 1725, 30, 203, "Text",ExpressionUUID->"7b85ba5b-0282-4729-b793-a926046ea49f"]
+Cell[219381, 4790, 280, 4, 24, "Subsection",ExpressionUUID->"69d337ec-a574-43a9-9ebe-e1e350d6f8fd"],
+Cell[219664, 4796, 1638, 29, 87, "Text",ExpressionUUID->"33f370df-7b34-49d7-9399-64cb88ad6410"],
+Cell[221305, 4827, 8708, 192, 124, "Output",ExpressionUUID->"198e9b36-8f78-4b62-95cb-3f5ab712940d"],
+Cell[230016, 5021, 908, 16, 43, "NumberedFigureCaption",ExpressionUUID->"47a2fd58-cf0b-45e4-9c34-1f5565d9fb19",
+ CellTags->"ex-fig"],
+Cell[230927, 5039, 2215, 40, 125, "Text",ExpressionUUID->"c33999e1-27c8-4652-8164-f5a33450620b"],
+Cell[233145, 5081, 1980, 38, 106, "Text",ExpressionUUID->"4aa812c2-a63d-4e38-8137-2d1dfe34193f"],
+Cell[235128, 5121, 1086, 27, 48, "Text",ExpressionUUID->"a8a74b89-dd8e-4693-a684-bcf7eeced826"],
+Cell[236217, 5150, 1793, 35, 86, "Text",ExpressionUUID->"686d2306-c748-41ba-9dfa-1ea329e47df8"],
+Cell[238013, 5187, 664, 15, 81, "Table",ExpressionUUID->"03dd5a4f-70ca-4bc4-98fa-78c3216a1002"],
+Cell[238680, 5204, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"aa10038b-9b62-44df-9f7b-6c8f81965348"],
+Cell[239001, 5215, 1089, 19, 46, "Text",ExpressionUUID->"37833d92-dede-4f1b-a508-96ff71fba7c2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[246060, 5331, 286, 4, 36, "Subsection",ExpressionUUID->"e4131ea9-c947-4596-a4fc-1587a22e04dc"],
-Cell[246349, 5337, 37100, 813, 315, "Output",ExpressionUUID->"c1d04ca5-d593-4c7c-8ee7-2589325c8837"]
+Cell[240127, 5239, 291, 4, 24, "Subsection",ExpressionUUID->"f05a2a64-94ed-4b78-bb59-fef922e67412"],
+Cell[240421, 5245, 1652, 27, 103, "Text",ExpressionUUID->"cfd71def-5d4d-4b4d-ba58-5cb02b084ea0"],
+Cell[242076, 5274, 1138, 20, 84, "Text",ExpressionUUID->"ecf5ad45-e814-40c2-9081-dafae1a2ffe6"],
+Cell[243217, 5296, 1617, 29, 84, "Text",ExpressionUUID->"b3d140ae-b015-4efe-bc48-4993bfcda276"],
+Cell[244837, 5327, 2041, 32, 122, "Text",ExpressionUUID->"bbb2fab6-b845-4bb9-9bb4-acd0d922e726"],
+Cell[246881, 5361, 664, 15, 81, "Table",ExpressionUUID->"4429862d-cbbc-46d6-a53c-583973b1aa48"],
+Cell[247548, 5378, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"ee055602-c3ce-40c8-8dea-494c2d666d35"],
+Cell[247869, 5389, 1725, 30, 103, "Text",ExpressionUUID->"7b85ba5b-0282-4729-b793-a926046ea49f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[249631, 5424, 286, 4, 24, "Subsection",ExpressionUUID->"e4131ea9-c947-4596-a4fc-1587a22e04dc"],
+Cell[249920, 5430, 1562, 23, 81, "Text",ExpressionUUID->"3cf07ae1-f2af-4682-a8b8-ce0b19c412d6"],
+Cell[251485, 5455, 1382, 21, 81, "Text",ExpressionUUID->"6c86b8cb-241a-45d9-b43c-ecece8555e91"],
+Cell[252870, 5478, 3709, 100, 150, "Table",ExpressionUUID->"620b7162-31b3-425b-a720-8b3a8a2ec2c9"],
+Cell[256582, 5580, 383, 10, 43, "NumberedTableCaption",ExpressionUUID->"88bfc28c-5c32-4288-8985-7672b02d9d9b"],
+Cell[256968, 5592, 1815, 27, 100, "Text",ExpressionUUID->"2c57fcc8-03ea-4524-96a7-c736c4d123fa"],
+Cell[258786, 5621, 766, 13, 24, "Text",ExpressionUUID->"e7cc0fe5-719a-474d-9da2-45f0fb783c7f"],
+Cell[259555, 5636, 1504, 23, 81, "Text",ExpressionUUID->"9b30efcb-6486-48cd-9114-993ef8527fb6"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[283498, 6156, 158, 3, 99, "SectionAlt",ExpressionUUID->"7b85338e-3fb4-449f-8a2c-b619fa3abf33"],
-Cell[283659, 6161, 157, 3, 35, "Reference",ExpressionUUID->"d319b0fa-c5be-4e46-ab65-155475948462"],
-Cell[283819, 6166, 157, 3, 35, "Reference",ExpressionUUID->"756957e6-cd91-4983-8a2d-9445a286fd4a"],
-Cell[283979, 6171, 157, 3, 35, "Reference",ExpressionUUID->"f72f7bbf-1f1c-4314-b85e-be7d5fe71700"]
+Cell[261108, 5665, 377, 6, 66, "Section",ExpressionUUID->"4a230294-03ac-46db-9fb9-cdab5bb7b714"],
+Cell[261488, 5673, 1308, 19, 62, "Text",ExpressionUUID->"29e91211-52bf-4783-bf90-39952f516540"],
+Cell[262799, 5694, 664, 15, 81, "Table",ExpressionUUID->"7618c1c5-d3cd-4d4f-8a2e-e0596352e3a6"],
+Cell[263466, 5711, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"0c6b7eb3-9075-41c9-a9fd-05d321e36411"],
+Cell[263787, 5722, 1386, 21, 81, "Text",ExpressionUUID->"014fc3c3-0797-42b0-933d-fa0eb4928c0c"],
+Cell[265176, 5745, 664, 15, 81, "Table",ExpressionUUID->"5eded165-62d9-4007-89bf-b7fe7d1172dc"],
+Cell[265843, 5762, 318, 9, 43, "NumberedTableCaption",ExpressionUUID->"febb3c36-24df-438a-a24c-3a3b0623d822"],
+Cell[266164, 5773, 1056, 17, 43, "Text",ExpressionUUID->"87bb8ca5-e51b-4211-bfa7-2022708eb5db"],
+Cell[267223, 5792, 37100, 813, 211, "Output",ExpressionUUID->"c1d04ca5-d593-4c7c-8ee7-2589325c8837"],
+Cell[304326, 6607, 805, 14, 43, "NumberedFigureCaption",ExpressionUUID->"fe8deab0-51f0-42d6-83e4-2e961353623b",
+ CellTags->"ex-fig"],
+Cell[305134, 6623, 1535, 31, 290, "Text",ExpressionUUID->"904dea0d-e71f-420d-93ba-6609a0d65599"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[306706, 6659, 413, 6, 66, "Section",ExpressionUUID->"3d292cbe-4211-4d74-bf55-af0377b37080"],
+Cell[307122, 6667, 2372, 37, 143, "Text",ExpressionUUID->"0aef9d08-3ef8-4be6-bc48-da9c4e3d9a2a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[309531, 6709, 469, 7, 66, "Section",ExpressionUUID->"8a4a46fa-31a5-47e9-b975-afa00833bd6d"],
+Cell[310003, 6718, 1128, 17, 43, "Text",ExpressionUUID->"3aaed684-bbee-4706-9dc1-6710a9375b59"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[311168, 6740, 158, 3, 65, "SectionAlt",ExpressionUUID->"7b85338e-3fb4-449f-8a2c-b619fa3abf33"],
+Cell[311329, 6745, 157, 3, 24, "Reference",ExpressionUUID->"d319b0fa-c5be-4e46-ab65-155475948462"],
+Cell[311489, 6750, 157, 3, 24, "Reference",ExpressionUUID->"756957e6-cd91-4983-8a2d-9445a286fd4a"],
+Cell[311649, 6755, 157, 3, 24, "Reference",ExpressionUUID->"f72f7bbf-1f1c-4314-b85e-be7d5fe71700"],
+Cell[311809, 6760, 1687, 32, 214, "Text",ExpressionUUID->"82f9b060-78c9-4c9a-ac2b-4cddc83e9469"]
 }, Open  ]]
 }
 ]
