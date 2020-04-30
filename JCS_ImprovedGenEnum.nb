@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    670954,      14268]
-NotebookOptionsPosition[    371113,       8694]
-NotebookOutlinePosition[    658372,      14108]
-CellTagsIndexPosition[    658231,      14101]
+NotebookDataLength[    671376,      14272]
+NotebookOptionsPosition[    371533,       8698]
+NotebookOutlinePosition[    658792,      14112]
+CellTagsIndexPosition[    658651,      14105]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -8652,43 +8652,47 @@ Cell[TextData[{
 6600c87f0b61"],
 
 Cell["\<\
-K. E. Caviness, \"Causal Networks of Sequential Substitution Systems: Views \
-of highly non-local systems\", Poster Session and Lecture at Area della \
-Ricerca CNR-Pisa, 2009.\
+K. E. Caviness, \[OpenCurlyDoubleQuote]Causal Networks of Sequential \
+Substitution Systems: Views of highly non-local systems\
+\[CloseCurlyDoubleQuote], Poster Session and Lecture at Area della Ricerca \
+CNR-Pisa, 2009.\
 \>", "Reference",
  CellChangeTimes->{{3.618231325086198*^9, 3.618231327346315*^9}, {
-  3.797262229349356*^9, 
-  3.7972622313639355`*^9}},ExpressionUUID->"9d6ec822-d053-492d-a516-\
+  3.797262229349356*^9, 3.7972622313639355`*^9}, {3.797263801053976*^9, 
+  3.797263805868712*^9}, {3.7972638382154016`*^9, 
+  3.7972638395285587`*^9}},ExpressionUUID->"9d6ec822-d053-492d-a516-\
 788e36990632"],
 
 Cell["\<\
-K. E. Caviness, \"Indexing Strings and Rulesets: An Exploration Leading to an \
-Enumeration\", The Mathematica Journal 13 (2011). \
+K. E. Caviness, \[OpenCurlyDoubleQuote]Indexing Strings and Rulesets: An \
+Exploration Leading to an Enumeration\[CloseCurlyDoubleQuote], The \
+Mathematica Journal 13 (2011). \
 \>", "Reference",
  CellChangeTimes->{{3.618231325086198*^9, 3.618231327346315*^9}, {
-  3.797262284928028*^9, 
-  3.7972622860854955`*^9}},ExpressionUUID->"152b85aa-a4b3-4e91-a54a-\
+  3.797262284928028*^9, 3.7972622860854955`*^9}, {3.7972638190392466`*^9, 
+  3.7972638419264603`*^9}},ExpressionUUID->"152b85aa-a4b3-4e91-a54a-\
 1aeb45c06882"],
 
 Cell["\<\
-Ken Caviness, \"Universal String Enumeration\" from Wolfram Demonstrations \
-Project\[Dash]A Wolfram Web Resource, 23 March 2010. \
+Ken Caviness, \[OpenCurlyDoubleQuote]Universal String Enumeration\
+\[CloseCurlyDoubleQuote] from Wolfram Demonstrations Project\[Dash]A Wolfram \
+Web Resource, 23 March 2010. \
 http://demonstrations.wolfram.com/UniversalStringEnumeration/.\
 \>", "Reference",
  CellChangeTimes->{{3.618231325086198*^9, 3.618231327346315*^9}, 
    3.7972623166566887`*^9, {3.797262411274391*^9, 3.797262476961491*^9}, {
-   3.7972625112486057`*^9, 
-   3.7972625193247023`*^9}},ExpressionUUID->"a43a2c4a-4483-44ee-84d8-\
+   3.7972625112486057`*^9, 3.7972625193247023`*^9}, {3.797263820929347*^9, 
+   3.7972638444507523`*^9}},ExpressionUUID->"a43a2c4a-4483-44ee-84d8-\
 4ab2084eb105"],
 
 Cell["\<\
-Ken Caviness, \"Tree of Strings\" from Wolfram Demonstrations Project\[Dash]A \
-Wolfram Web Resource, 15 May 2012.  \
-http://demonstrations.wolfram.com/TreeOfStrings/.\
+Ken Caviness, \[OpenCurlyDoubleQuote]Tree of Strings\[CloseCurlyDoubleQuote] \
+from Wolfram Demonstrations Project\[Dash]A Wolfram Web Resource, 15 May \
+2012.  http://demonstrations.wolfram.com/TreeOfStrings/.\
 \>", "Reference",
  CellChangeTimes->{{3.618231325086198*^9, 3.618231327346315*^9}, {
-  3.797262485949561*^9, 
-  3.7972625237474413`*^9}},ExpressionUUID->"872bed19-fc06-45a8-835d-\
+  3.797262485949561*^9, 3.7972625237474413`*^9}, {3.79726382289699*^9, 
+  3.797263847099984*^9}},ExpressionUUID->"872bed19-fc06-45a8-835d-\
 d9b8d6039f65"]
 }, Open  ]]
 },
@@ -14075,9 +14079,11 @@ ExpressionUUID->"3202f4e4-7385-4779-95cb-348c808fe374"
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "intro"->{
-  Cell[3077, 83, 328, 4, 44, "SectionFirst",ExpressionUUID->"fbed055b-9cdd-4ff8-b78b-36c23f9a91c5",
-   CellTags->"intro"]},
+ "exponential-equation"->{
+  Cell[109880, 2377, 1168, 37, 53, "DisplayFormulaNumbered",ExpressionUUID->"ff6142da-7744-44b7-b6bd-4d3606e99d13",
+   CellTags->"exponential-equation"],
+  Cell[111783, 2432, 717, 20, 46, "DisplayFormulaNumbered",ExpressionUUID->"4458812d-5b50-44be-873e-bb7540666a91",
+   CellTags->"exponential-equation"]},
  "ex-fig"->{
   Cell[82748, 1702, 537, 11, 43, "NumberedFigureCaption",ExpressionUUID->"fc375817-8847-4990-9747-f36de778d0de",
    CellTags->"ex-fig"],
@@ -14091,18 +14097,16 @@ CellTagsIndex->{
    CellTags->"ex-fig"],
   Cell[357996, 8388, 805, 14, 43, "NumberedFigureCaption",ExpressionUUID->"fe8deab0-51f0-42d6-83e4-2e961353623b",
    CellTags->"ex-fig"]},
- "exponential-equation"->{
-  Cell[109880, 2377, 1168, 37, 53, "DisplayFormulaNumbered",ExpressionUUID->"ff6142da-7744-44b7-b6bd-4d3606e99d13",
-   CellTags->"exponential-equation"],
-  Cell[111783, 2432, 717, 20, 46, "DisplayFormulaNumbered",ExpressionUUID->"4458812d-5b50-44be-873e-bb7540666a91",
-   CellTags->"exponential-equation"]}
+ "intro"->{
+  Cell[3077, 83, 328, 4, 44, "SectionFirst",ExpressionUUID->"fbed055b-9cdd-4ff8-b78b-36c23f9a91c5",
+   CellTags->"intro"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"intro", 656908, 14077},
- {"ex-fig", 657045, 14080},
- {"exponential-equation", 657900, 14093}
+ {"exponential-equation", 657343, 14081},
+ {"ex-fig", 657664, 14086},
+ {"intro", 658504, 14099}
  }
 *)
 (*NotebookFileOutline
@@ -14265,10 +14269,10 @@ Cell[367806, 8615, 1128, 17, 43, "Text",ExpressionUUID->"3aaed684-bbee-4706-9dc1
 Cell[CellGroupData[{
 Cell[368971, 8637, 158, 3, 66, "SectionAlt",ExpressionUUID->"b75b7793-3d99-46c4-b384-85067ce0ce6a"],
 Cell[369132, 8642, 385, 9, 24, "Reference",ExpressionUUID->"094d531f-e6e0-4ead-a042-6600c87f0b61"],
-Cell[369520, 8653, 381, 8, 24, "Reference",ExpressionUUID->"9d6ec822-d053-492d-a516-788e36990632"],
-Cell[369904, 8663, 336, 7, 24, "Reference",ExpressionUUID->"152b85aa-a4b3-4e91-a54a-1aeb45c06882"],
-Cell[370243, 8672, 478, 9, 42, "Reference",ExpressionUUID->"a43a2c4a-4483-44ee-84d8-4ab2084eb105"],
-Cell[370724, 8683, 373, 8, 24, "Reference",ExpressionUUID->"872bed19-fc06-45a8-835d-d9b8d6039f65"]
+Cell[369520, 8653, 525, 10, 24, "Reference",ExpressionUUID->"9d6ec822-d053-492d-a516-788e36990632"],
+Cell[370048, 8665, 431, 8, 24, "Reference",ExpressionUUID->"152b85aa-a4b3-4e91-a54a-1aeb45c06882"],
+Cell[370482, 8675, 571, 10, 42, "Reference",ExpressionUUID->"a43a2c4a-4483-44ee-84d8-4ab2084eb105"],
+Cell[371056, 8687, 461, 8, 24, "Reference",ExpressionUUID->"872bed19-fc06-45a8-835d-d9b8d6039f65"]
 }, Open  ]]
 }
 ]
