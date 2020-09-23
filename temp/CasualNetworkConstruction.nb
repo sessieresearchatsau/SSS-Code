@@ -1,0 +1,459 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18285,        451]
+NotebookOptionsPosition[     14264,        376]
+NotebookOutlinePosition[     14660,        392]
+CellTagsIndexPosition[     14617,        389]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Import", "[", "\"\<SSS.m\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.8098751066372213`*^9, 3.8098751854228272`*^9}, {
+  3.809875576053508*^9, 3.809875583100951*^9}, {3.8098756301912374`*^9, 
+  3.809875650205698*^9}, {3.809875687679804*^9, 3.809875718720586*^9}, {
+  3.8098804817225833`*^9, 3.8098804831939263`*^9}},
+ CellLabel->"In[69]:=",ExpressionUUID->"0b32359b-b166-460c-89b9-1a958b7c8c65"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\miroi\\\\SSS-Code\\\\temp\"\>"], "Output",
+ CellChangeTimes->{{3.8098757100376477`*^9, 3.8098757216942487`*^9}, 
+   3.8098818785992293`*^9, {3.8098819435175943`*^9, 3.8098819534847035`*^9}, 
+   3.8098820661296663`*^9},
+ CellLabel->"Out[69]=",ExpressionUUID->"919859fa-a90a-4a28-94be-89b6425022b0"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"SystemOpen", "[", 
+  "\"\<C:\\\\Users\\\\miroi\\\\SSS-Code\\\\temp\>\"", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[46]:=",ExpressionUUID->"346bf88a-a8d8-4977-b13e-63e1989aeef9"],
+
+Cell[CellGroupData[{
+
+Cell["SSS & Causal Network Construction", "Title",
+ CellChangeTimes->{{3.8098749095337105`*^9, 
+  3.8098749448151927`*^9}},ExpressionUUID->"29aba276-0961-4c21-b7e3-\
+f7b3f93af581"],
+
+Cell[CellGroupData[{
+
+Cell["Alphabet: fromAlpha, toAlpha, SSSConvert", "Subsection",
+ CellChangeTimes->{{3.8098749968253345`*^9, 
+  3.8098750097212057`*^9}},ExpressionUUID->"1288d822-875d-4c58-be43-\
+f8e90e791f28"],
+
+Cell[TextData[{
+ "Build a causal network from a SSS, modeling the Sequential Substituion \
+System using tags.  This allows us to build the SSS evolution and the causal \
+network simultaneously.  \n(Based on code from ",
+ StyleBox["NKS",
+  FontSlant->"Italic"],
+ ", pp. 1033, and suggestions of Matthew Szudzik.)"
+}], "Text",
+ CellChangeTimes->{{3.8098805740356636`*^9, 
+  3.8098805998447704`*^9}},ExpressionUUID->"a6852a61-22bd-4f42-8556-\
+cd21b6a7ab50"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fromAlpha", "[", "\"\<test\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8098806067335587`*^9, 3.8098806386551113`*^9}, {
+  3.8098806805687857`*^9, 3.8098806905766983`*^9}, {3.8098807277307043`*^9, 
+  3.809880728185807*^9}},
+ CellLabel->"In[52]:=",ExpressionUUID->"58fd8070-48c1-4791-bee4-3b9e7521a24b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"51", ",", "36", ",", "50", ",", "51"}], "}"}]], "Output",
+ CellChangeTimes->{3.8098806416325865`*^9, 3.8098806960719395`*^9, 
+  3.809880756777234*^9},
+ CellLabel->"Out[52]=",ExpressionUUID->"c7bdeba5-db17-4d5e-83ff-b947c6618cde"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"toAlpha", "[", 
+  RowBox[{"{", 
+   RowBox[{"51", ",", " ", "36", ",", " ", "50", ",", " ", "51"}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.8098807400904675`*^9},
+ CellLabel->"In[51]:=",ExpressionUUID->"3e2138f9-d1c7-4fc1-b736-6cf1425cc162"],
+
+Cell[BoxData["\<\"test\"\>"], "Output",
+ CellChangeTimes->{3.8098806416325865`*^9, 3.8098806960759315`*^9, 
+  3.809880750679113*^9},
+ CellLabel->"Out[51]=",ExpressionUUID->"20584831-a3c8-4e80-a974-444c9d8e36c3"]
+}, Open  ]],
+
+Cell[TextData[{
+ "If it is considered desirable to use a different alphabet, only the \
+functions ",
+ StyleBox["fromAlpha",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["toAlpha",
+  FontSlant->"Italic"],
+ " need be changed.  The only requirement is that the alphabet be enumerable, \
+i.e., set in 1-1 correspondence with {0,1,2,\[Ellipsis]}."
+}], "Text",
+ CellChangeTimes->{
+  3.809880929889165*^9},ExpressionUUID->"16bb6b74-9039-4bbe-9dce-\
+6bb870837f85"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Character, string, ruleset weight & ruleset length", "Subsection",
+ CellChangeTimes->{{3.809880769738632*^9, 
+  3.8098807848831367`*^9}},ExpressionUUID->"028fb174-331a-475e-b495-\
+3eb4a64b9203"],
+
+Cell[TextData[{
+ "For later iteration through the complete enumeration of rulesets, we \
+require the ",
+ StyleBox["weight",
+  FontSlant->"Italic"],
+ " of a character, a string or a ruleset.  The weight of a character is \
+closely akin to what is already done by the ",
+ StyleBox["fromAlpha",
+  FontSlant->"Italic"],
+ " function, but with A\[Rule]1, B\[Rule]2, etc., reserving 0 for the weight \
+of the empty string.  The weight of a string is the sum of the weights of its \
+characters, and the weight of a ruleset is sum of the weights of its strings:"
+}], "Text",
+ CellChangeTimes->{{3.809880792820097*^9, 3.809880824575884*^9}, {
+   3.8098809784576244`*^9, 3.809881038539516*^9}, {3.809881086580579*^9, 
+   3.8098811723997183`*^9}, 3.8098812126815042`*^9, {3.809881275250926*^9, 
+   3.8098812759150753`*^9}},ExpressionUUID->"00000000-0000-0000-0000-\
+000000000000"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["ToCharacterWeights[string]", "Item"]], "Item",
+ CellChangeTimes->{{3.809881241682603*^9, 
+  3.809881247382876*^9}},ExpressionUUID->"cb09f312-2d6d-471d-8fb9-\
+b8e5491d1ec7"],
+
+Cell[TextData[StyleBox["FromCharacterWeights[List of Integers]", "Item"]], \
+"Item",
+ CellChangeTimes->{{3.809881241682603*^9, 
+  3.8098812533424997`*^9}},ExpressionUUID->"b6901fb0-b780-4c17-8a5f-\
+7462998ebbc8"],
+
+Cell[TextData[StyleBox["StringWeight[string]", "Item"]], "Item",
+ CellChangeTimes->{{3.809881241682603*^9, 
+  3.8098812580380926`*^9}},ExpressionUUID->"76f734f4-7f46-42b5-a09c-\
+62eda8acb7a0"],
+
+Cell[TextData[StyleBox["RuleSetWeight[List of Rulesets]", "Item"]], "Item",
+ CellChangeTimes->{{3.809881241682603*^9, 
+  3.8098812656947956`*^9}},ExpressionUUID->"548d6250-72c0-4d7f-aa83-\
+d1086ac517e3"],
+
+Cell[TextData[StyleBox["RuleSetLength[List of Rulesets]", "Item"]], "Item",
+ CellChangeTimes->{{3.809881241682603*^9, 
+  3.8098812719071846`*^9}},ExpressionUUID->"009c875e-e499-48ce-a51b-\
+5e6bf094aeae"]
+}, Open  ]],
+
+Cell["\<\
+Now StringWeight can be applied to either strings or characters \
+(single-character strings)
+RuleSetWeight and the comparably defined RuleSetLength give the sum of the \
+weights or sum of the lengths, respectively, of the strings in the ruleset:\
+\>", "Text",
+ CellChangeTimes->{{3.8098812919318027`*^9, 
+  3.809881307196216*^9}},ExpressionUUID->"71555934-fb0f-49e9-8577-\
+c85abc89b80b"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+SSSRuleIcon (Defines & uses $MaxColor, myColors, patternPrint)\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.809881320244132*^9, 
+  3.8098813351729555`*^9}},ExpressionUUID->"e4c1a072-bcfd-43ab-9e26-\
+7fcaeaca86a5"],
+
+Cell["\<\
+TO DO: Define what SSRuleIcon is without using raw code
+\
+\>", "Text",
+ CellChangeTimes->{{3.8098813638295183`*^9, 
+  3.809881434136344*^9}},ExpressionUUID->"883ed83a-47a4-4a25-b85e-\
+8c4d260625c5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generating a ruleset for the tagged SSS: SSSNewRule", "Subsubsection",
+ CellChangeTimes->{{3.809881453752657*^9, 
+  3.8098814733930483`*^9}},ExpressionUUID->"f35a9b5b-12db-4802-ab90-\
+4d720bac8460"],
+
+Cell[TextData[{
+ "We need a convenient way to convert old style rulesets (using letters only) \
+to a new style ruleset, with the ability to handle tags.  For example, \
+\[OpenCurlyDoubleQuote]BA\[CloseCurlyDoubleQuote]\[Rule]\
+\[CloseCurlyDoubleQuote]ABA\[CloseCurlyDoubleQuote] or s[1,0]\[Rule]s[0,1,0] \
+should be rewritten like so: \n\n",
+ StyleBox["s[{1, a_}, {0, b_}] \[RuleDelayed] (AppendTo[$SSSConnectionList, \
+{a, b} \[Rule] $SSSTagIndex + {0, 1, 2}];  s[{0, $SSSTagIndex++}, {1, \
+$SSSTagIndex++}, {0, $SSSTagIndex++}])", "Code"]
+}], "Text",
+ CellChangeTimes->{{3.809881489139285*^9, 
+  3.8098815025702915`*^9}},ExpressionUUID->"93d37e4c-39cc-42cf-8f62-\
+8d7132df88e3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Stripping out tags: SSSStrip", "Subsubsection",
+ CellChangeTimes->{{3.809881526243105*^9, 
+  3.8098815358672523`*^9}},ExpressionUUID->"3a2ae9f0-661d-4631-ae3f-\
+73c4447a2210"],
+
+Cell[TextData[{
+ "Internally an SSS ",
+ StyleBox["state",
+  FontSlant->"Italic"],
+ " will include not only information about the cells/letters, but in \
+addition, unique identifiers or tags.  For visualization purposes a one-way \
+conversion from tagged to untagged form will be needed.  Here\
+\[CloseCurlyQuote]s a convert/strip function to strip out tags and recover \
+the String notation:"
+}], "Text",
+ CellChangeTimes->{{3.80988154253274*^9, 
+  3.8098815468757095`*^9}},ExpressionUUID->"9a74ab3c-d707-4506-92d1-\
+b34743ee5121"],
+
+Cell[BoxData[
+ RowBox[{"SSStrip", "[", "state", "]"}]], "Input",
+ CellChangeTimes->{{3.8098815820525804`*^9, 
+  3.8098815891651735`*^9}},ExpressionUUID->"789af27f-a250-4851-8921-\
+8843c52e4458"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Miscellaneous methods for dealing with strings & cells", "Subsubsection",
+ CellChangeTimes->{{3.8098816052137656`*^9, 
+  3.809881628838045*^9}},ExpressionUUID->"7c12ca05-d922-4553-9723-\
+1662bc921bb6"],
+
+Cell[CellGroupData[{
+
+Cell["cellsDeleted[{L1_, L2_}]", "Item",
+ CellChangeTimes->{{3.809881646454852*^9, 
+  3.809881662554449*^9}},ExpressionUUID->"b9a65e6c-eda3-495f-b63c-\
+7e813eb2c7b2"],
+
+Cell["safeStringTake[s_String,{n1_Integer,n2_Integer}]", "Item",
+ CellChangeTimes->{{3.809881646454852*^9, 
+  3.809881675844644*^9}},ExpressionUUID->"8142f594-3d81-401e-9393-\
+f7854920225a"],
+
+Cell["abbrev[string, integer]", "Item",
+ CellChangeTimes->{{3.809881646454852*^9, 3.8098816806740923`*^9}, {
+  3.809881732673779*^9, 3.8098817390182*^9}, {3.809881779195174*^9, 
+  3.809881794691947*^9}},ExpressionUUID->"b43b9ff0-d8f4-4db2-b53d-\
+be366b79fead"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"abbrev", "[", 
+  RowBox[{"\"\<ABCDEFGHI\>\"", ",", " ", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8098818119087896`*^9, 3.809881847013511*^9}, 
+   3.8098820099877586`*^9},
+ CellLabel->"In[71]:=",ExpressionUUID->"8477caa5-506e-4761-a1ea-0ca9677e726d"],
+
+Cell[TextData[StyleBox["{ ABCD, FGHI }", "Code"]], "Text",
+ CellChangeTimes->{{3.8098821598805003`*^9, 
+  3.80988217276831*^9}},ExpressionUUID->"386f4ddb-e55a-4c71-a6e6-\
+1510bf8d756e"],
+
+Cell["envelopeSubtractStrings[big_String, little_String]", "Item",
+ CellChangeTimes->{{3.809882110069985*^9, 
+  3.8098821204705105`*^9}},ExpressionUUID->"0254d4c6-4db3-4e70-ba4f-\
+de4c49f7c6ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["SSSInitialize: Initializing Globals", "Subsubsection",
+ CellChangeTimes->{{3.8098821870165033`*^9, 
+  3.809882200408535*^9}},ExpressionUUID->"a75ff3a8-fae9-437f-8aa2-\
+c4806c0e69d7"],
+
+Cell["\<\
+Creating a causal network from a tagged SSS system requires at least two \
+global variables, $SSSConnectionList and $SSSTagIndex, so we might as well \
+keep track of other useful things in global variables, to avoid unnecessary \
+recomputations.  (Now adjusts $MaxColor up/down as needed.)
+
+SSSInitialize now does first single-step, checks for death (removes need for \
+SSSSingleStep verifying that SSSEvolution and SSSTEvolution have at least 2 \
+elements, and that SSSConnectionList has at least 1 element.  Returns \
+True|False and optionally prints a clarifying message.
+\
+\>", "Text",
+ CellChangeTimes->{{3.8098822059698544`*^9, 
+  3.809882210976959*^9}},ExpressionUUID->"c77cbe09-738b-4728-a750-\
+88cfc79acb7a"],
+
+Cell["\<\
+SSSInitialize[ruleset,string,(mode)] attempts to perform the necessary \
+initializion steps to generate sequential substitution system (SSS) \
+evolutions and networks,
+starting with a ruleset (e.g., {\[OpenCurlyDoubleQuote]BA\
+\[CloseCurlyDoubleQuote]\[Rule]\[CloseCurlyDoubleQuote]ABA\
+\[CloseCurlyDoubleQuote]}) and an initial state string (e.g., \
+\[OpenCurlyDoubleQuote]BABA\[CloseCurlyDoubleQuote]).  The True|False return \
+value indicates whether initialization was successful.
+
+If omitted, mode defaults to \[OpenCurlyDoubleQuote]Silent\
+\[CloseCurlyDoubleQuote], suppressing the short error or success message.
+
+The following global variables are reset by this operation:
+
+$SSSNet:\t\t\t\tthe causal network of the current SSS,
+$SSSInDegree:\t\t\tthe list of in-degrees for each node,
+$SSSOutDegreeActual:\t\tthe list of currently found out-degrees for each node,
+$SSSOutDegreePotential:\t\tthe list of maximum possible out-degrees for each \
+node,
+$SSSOutDegreeRemaining:\tthe list of numbers of possible remaining \
+out-connections for each node,
+$SSSConnectionList:\t\tthe current list of all causal network connections,
+$SSSDistance:\t\t\tthe list of minimum distances from the current node back \
+to the starting node.
+$SSSTagIndex:\t\t\tthe current tag index being used,
+$SSSTEvolution:\t\t\tthe complete evolution of the tagged SSS so far,
+$SSSEvolution:\t\t\tthe stripped (tagless) version of $SSSTEvolution,
+$SSSRuleSet:\t\t\tthe ruleset used for creating the SSS,
+$SSSTRuleSet:\t\t\tthe version of $SSSRuleSet (created by the function \
+SSSNewRule) used to build $SSSTEvolution,
+$SSSRuleSetWeight:\t\tthe total weight of $SSSRuleSet,
+$SSSRuleSetLength:\t\tthe total length of $SSSRuleSet,
+$SSSHistory:\t\t\tan annotated/translated version of $SSSEvolution used to \
+detect repeating patterns,
+$SSSMatchLengthHistory:\ta list of the match positions that occurred in \
+forming the SSS,
+$SSSRuleUsage:\t\t\tthe list of rule usage counters, later adjusted to \
+identified portion of SSS,
+$SSSRepetitionInterval:\t\tthe length of the repeating section (if any) of \
+the SSS,
+$SSSRepetitionStart:\t\tthe start of the repeating section (if any) of the SSS,
+$SSSStart:\t\t\tthe starting position for displaying the SSS and its causal \
+network,
+$SSSVerdict:\t\t\tset to \[OpenCurlyDoubleQuote]Dead\[CloseCurlyDoubleQuote] \
+| \[OpenCurlyDoubleQuote]Repeating\[CloseCurlyDoubleQuote] | \
+\[OpenCurlyDoubleQuote]Pseudorepeating\[CloseCurlyDoubleQuote] as soon as the \
+future of the SSS becomes clear.\
+\>", "Abstract",
+ CellChangeTimes->{
+  3.809882300758894*^9},ExpressionUUID->"3e868e1c-f29e-42d2-b650-\
+acfec338ffda"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{958, 981},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"84d621c4-7343-4c66-b2ea-63d6c6d4ae92"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 526, 8, 48, "Input",ExpressionUUID->"0b32359b-b166-460c-89b9-1a958b7c8c65"],
+Cell[1109, 32, 330, 4, 32, "Output",ExpressionUUID->"919859fa-a90a-4a28-94be-89b6425022b0"]
+}, Open  ]],
+Cell[1454, 39, 213, 4, 28, "Input",ExpressionUUID->"346bf88a-a8d8-4977-b13e-63e1989aeef9"],
+Cell[CellGroupData[{
+Cell[1692, 47, 180, 3, 96, "Title",ExpressionUUID->"29aba276-0961-4c21-b7e3-f7b3f93af581"],
+Cell[CellGroupData[{
+Cell[1897, 54, 192, 3, 53, "Subsection",ExpressionUUID->"1288d822-875d-4c58-be43-f8e90e791f28"],
+Cell[2092, 59, 454, 10, 78, "Text",ExpressionUUID->"a6852a61-22bd-4f42-8556-cd21b6a7ab50"],
+Cell[CellGroupData[{
+Cell[2571, 73, 326, 5, 28, "Input",ExpressionUUID->"58fd8070-48c1-4791-bee4-3b9e7521a24b"],
+Cell[2900, 80, 269, 5, 32, "Output",ExpressionUUID->"c7bdeba5-db17-4d5e-83ff-b947c6618cde"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3206, 90, 272, 6, 28, "Input",ExpressionUUID->"3e2138f9-d1c7-4fc1-b736-6cf1425cc162"],
+Cell[3481, 98, 211, 3, 32, "Output",ExpressionUUID->"20584831-a3c8-4e80-a974-444c9d8e36c3"]
+}, Open  ]],
+Cell[3707, 104, 455, 13, 56, "Text",ExpressionUUID->"16bb6b74-9039-4bbe-9dce-6bb870837f85"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4199, 122, 200, 3, 53, "Subsection",ExpressionUUID->"028fb174-331a-475e-b495-3eb4a64b9203"],
+Cell[4402, 127, 868, 17, 100, "Text"],
+Cell[CellGroupData[{
+Cell[5295, 148, 196, 3, 31, "Item",ExpressionUUID->"cb09f312-2d6d-471d-8fb9-b8e5491d1ec7"],
+Cell[5494, 153, 212, 4, 31, "Item",ExpressionUUID->"b6901fb0-b780-4c17-8a5f-7462998ebbc8"],
+Cell[5709, 159, 192, 3, 31, "Item",ExpressionUUID->"76f734f4-7f46-42b5-a09c-62eda8acb7a0"],
+Cell[5904, 164, 203, 3, 31, "Item",ExpressionUUID->"548d6250-72c0-4d7f-aa83-d1086ac517e3"],
+Cell[6110, 169, 203, 3, 31, "Item",ExpressionUUID->"009c875e-e499-48ce-a51b-5e6bf094aeae"]
+}, Open  ]],
+Cell[6328, 175, 397, 8, 78, "Text",ExpressionUUID->"71555934-fb0f-49e9-8577-c85abc89b80b"],
+Cell[CellGroupData[{
+Cell[6750, 187, 223, 5, 44, "Subsubsection",ExpressionUUID->"e4c1a072-bcfd-43ab-9e26-7fcaeaca86a5"],
+Cell[6976, 194, 208, 6, 56, "Text",ExpressionUUID->"883ed83a-47a4-4a25-b85e-8c4d260625c5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7221, 205, 204, 3, 44, "Subsubsection",ExpressionUUID->"f35a9b5b-12db-4802-ab90-4d720bac8460"],
+Cell[7428, 210, 680, 12, 122, "Text",ExpressionUUID->"93d37e4c-39cc-42cf-8f62-8d7132df88e3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8145, 227, 181, 3, 44, "Subsubsection",ExpressionUUID->"3a2ae9f0-661d-4631-ae3f-73c4447a2210"],
+Cell[8329, 232, 531, 12, 78, "Text",ExpressionUUID->"9a74ab3c-d707-4506-92d1-b34743ee5121"],
+Cell[8863, 246, 194, 4, 28, "Input",ExpressionUUID->"789af27f-a250-4851-8921-8843c52e4458"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9094, 255, 207, 3, 44, "Subsubsection",ExpressionUUID->"7c12ca05-d922-4553-9723-1662bc921bb6"],
+Cell[CellGroupData[{
+Cell[9326, 262, 166, 3, 31, "Item",ExpressionUUID->"b9a65e6c-eda3-495f-b63c-7e813eb2c7b2"],
+Cell[9495, 267, 190, 3, 31, "Item",ExpressionUUID->"8142f594-3d81-401e-9393-f7854920225a"],
+Cell[9688, 272, 260, 4, 31, "Item",ExpressionUUID->"b43b9ff0-d8f4-4db2-b53d-be366b79fead"]
+}, Open  ]],
+Cell[9963, 279, 278, 5, 28, "Input",ExpressionUUID->"8477caa5-506e-4761-a1ea-0ca9677e726d"],
+Cell[10244, 286, 185, 3, 34, "Text",ExpressionUUID->"386f4ddb-e55a-4c71-a6e6-1510bf8d756e"],
+Cell[10432, 291, 194, 3, 31, "Item",ExpressionUUID->"0254d4c6-4db3-4e70-ba4f-de4c49f7c6ba"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10663, 299, 188, 3, 44, "Subsubsection",ExpressionUUID->"a75ff3a8-fae9-437f-8aa2-c4806c0e69d7"],
+Cell[10854, 304, 727, 14, 188, "Text",ExpressionUUID->"c77cbe09-738b-4728-a750-88cfc79acb7a"],
+Cell[11584, 320, 2640, 51, 743, "Abstract",ExpressionUUID->"3e868e1c-f29e-42d2-b650-acfec338ffda"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
