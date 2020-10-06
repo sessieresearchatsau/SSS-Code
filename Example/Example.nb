@@ -1,0 +1,337 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12952,        329]
+NotebookOptionsPosition[     10100,        275]
+NotebookOutlinePosition[     10501,        291]
+CellTagsIndexPosition[     10458,        288]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Mathematica Package Example", "Title",
+ CellChangeTimes->{{3.811008030709515*^9, 
+  3.811008052982169*^9}},ExpressionUUID->"f0f93403-7482-4cad-8b65-\
+6bbed2d1beb4"],
+
+Cell["\<\
+This example is still a work-in-progress, and thus is largely incomplete.\
+\>", "Text",
+ CellChangeTimes->{{3.811008882312647*^9, 
+  3.811008896489894*^9}},ExpressionUUID->"c52d6be7-ce48-46ca-8289-\
+e826c705df28"],
+
+Cell[CellGroupData[{
+
+Cell["Summary", "Subtitle",
+ CellChangeTimes->{{3.8110080609419436`*^9, 
+  3.8110080685106115`*^9}},ExpressionUUID->"6fa580fe-726d-4d40-8204-\
+5bbcff2a6b73"],
+
+Cell["\<\
+Mathematica packages are packages of code intended to make running projects \
+easier. They are contained in files ending in either .m or .wl, although .wl \
+is preferred to prevent confusion between Mathematica and Matlab files, as \
+the latter also uses the .m extension.
+
+Packages can also implement other packages, which will be hid from the user. \
+They also are generally intended to be placed within certain folders on a \
+system predetermined by Mathematica, the details of which can be found in the \
+documentation for the FindFile[] function.\
+\>", "Text",
+ CellChangeTimes->{{3.8110080848873324`*^9, 
+  3.811008256812372*^9}},ExpressionUUID->"e8035cea-7617-481d-b758-\
+49a7e3f6b2e6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Structure", "Subtitle",
+ CellChangeTimes->{{3.811008266461323*^9, 
+  3.8110082674935527`*^9}},ExpressionUUID->"e5ccd4d7-9d0e-4e5b-82a2-\
+704cd20a0d48"],
+
+Cell["Each Mathematica package file follows this basic structure:", "Text",
+ CellChangeTimes->{{3.811008273653907*^9, 
+  3.8110082858376083`*^9}},ExpressionUUID->"5f863ed5-324a-4510-ae45-\
+cc2671296cae"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BeginPackage", "[", "\"\<Example`\>\"", "]"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"In", " ", "here"}], ",", " ", 
+    RowBox[{
+    "you", " ", "implement", " ", "functions", " ", "and", " ", "variables", 
+     " ", "you", " ", "intend", " ", "to", " ", "be", " ", "publically", " ", 
+     "accessible"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"In", " ", "here"}], ",", " ", 
+    RowBox[{
+    "you", " ", "implement", " ", "functions", " ", "and", " ", "variables", 
+     " ", "only", " ", "intended", " ", "to", " ", "be", " ", "used", " ", 
+     "by", " ", "the", " ", "program", " ", "itself"}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"End", "[", "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"EndPackage", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.8110083902499027`*^9, 
+  3.811008460067902*^9}},ExpressionUUID->"0458eadf-2bed-4adf-b680-\
+1dd119af1e05"],
+
+Cell["\<\
+The basic idea behind this is the concept of encapsulation, or that certain \
+functions and variables should only be accessible by its parent class, and \
+others provide an interface for users to interact with those functions and  \
+variables.
+
+This improves maintainability, as it allows the implementation of a function \
+to change without affecting external code which uses the public portions.\
+\>", "Text",
+ CellChangeTimes->{{3.8110084749722085`*^9, 3.811008477387704*^9}, {
+  3.8110085213656936`*^9, 
+  3.811008695786559*^9}},ExpressionUUID->"4d7bac7b-39dc-47a3-9490-\
+b5837c2026e1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Importing a package", "Subtitle",
+ CellChangeTimes->{{3.81100871081129*^9, 
+  3.8110087133318477`*^9}},ExpressionUUID->"0240755b-6c50-4a75-866e-\
+2e9e1fae2062"],
+
+Cell["\<\
+WORK IN PROGRESS
+There are several commands you can use to import a package, some of which are \
+listed below:\
+\>", "Text",
+ CellChangeTimes->{{3.8110087213716345`*^9, 3.811008734100424*^9}, {
+  3.8110088654329033`*^9, 
+  3.811008869744856*^9}},ExpressionUUID->"6abb86ef-9bed-46e8-8349-\
+4187c3d2ae95"],
+
+Cell[CellGroupData[{
+
+Cell["Import[\[OpenCurlyDoubleQuote]Example.wl\[CloseCurlyQuote]] - Always \
+imports the package", "Item",
+ CellChangeTimes->{{3.811008752597104*^9, 3.8110087627253532`*^9}, {
+  3.811008834479755*^9, 
+  3.811008837663463*^9}},ExpressionUUID->"12b95d40-fd80-4bf1-9137-\
+e0efe8029bf3"],
+
+Cell["\<\
+Needs[\[OpenCurlyDoubleQuote]Example`] - Imports the package only if it hasn\
+\[CloseCurlyQuote]t already been imported\
+\>", "Item",
+ CellChangeTimes->{{3.811008752597104*^9, 3.811008771208232*^9}, {
+  3.81100881828693*^9, 
+  3.8110088270070934`*^9}},ExpressionUUID->"2de315ba-6f42-42ca-adaa-\
+d2e99a305c7d"],
+
+Cell["Get[\[OpenCurlyDoubleQuote]Example`] or << Example`- Always imports the \
+package", "Item",
+ CellChangeTimes->{{3.811008752597104*^9, 
+  3.8110088327273674`*^9}},ExpressionUUID->"7d230c95-2d4a-438d-9075-\
+7fcfb0263a49"],
+
+Cell["\<\
+DeclarePackage[\[OpenCurlyDoubleQuote]Example`] - Imports package \
+automatically as needed\
+\>", "Item",
+ CellChangeTimes->{{3.811008752597104*^9, 
+  3.8110088171826925`*^9}},ExpressionUUID->"efdfd74a-2953-4dbe-a991-\
+782fdd323a90"]
+}, Open  ]],
+
+Cell["\<\
+For other details, please refer to the wolfram documentation.
+Before issuing any of these commands, we run the \
+SetDirectory[NotebookDirectory[]] command for ease of use, as it will allow \
+these commands to search in the current notebook directory by default. \
+Otherwise, we would have to place the .wl package file in a specific location \
+predetermined by Mathematica.\
+\>", "Text",
+ CellChangeTimes->{{3.811008843343729*^9, 3.8110088620326223`*^9}, {
+  3.8110090175168505`*^9, 
+  3.811009079319522*^9}},ExpressionUUID->"8d1e87ec-9408-427c-9bc6-\
+33299ec2d242"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Subtitle",
+ CellChangeTimes->{{3.8110089146497154`*^9, 
+  3.8110089191057053`*^9}},ExpressionUUID->"c014b30e-3a27-45e8-8a0a-\
+2dfa5a302ee6"],
+
+Cell["\<\
+Here\[CloseCurlyQuote]s an example of a package at work, demonstrating both \
+public and private functions and variables.
+First, we need to set our local directory so Mathematica knows where to look \
+and import it using the \[OpenCurlyDoubleQuote]Needs\[CloseCurlyDoubleQuote] \
+command: (Please press shift + enter to run it first)\
+\>", "Text",
+ CellChangeTimes->{{3.811008989364293*^9, 3.8110090127808*^9}, {
+  3.8110090857039347`*^9, 3.8110091103362093`*^9}, {3.8110097734145355`*^9, 
+  3.8110097821984787`*^9}},ExpressionUUID->"a516aed3-66fa-4983-b525-\
+c9ac438f24cf"],
+
+Cell[BoxData[{
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "Example`", "]"}]}], "Input",
+ CellChangeTimes->{3.81100893382697*^9},
+ EmphasizeSyntaxErrors->True,
+ CellLabel->
+  "In[273]:=",ExpressionUUID->"79015c7a-b825-429e-9de1-4f1d70dfcffb"],
+
+Cell["\<\
+The package \[OpenCurlyDoubleQuote]Example\[CloseCurlyDoubleQuote] contains \
+two public items and two private items. Look below:\
+\>", "Text",
+ CellChangeTimes->{{3.8110091719858656`*^9, 
+  3.81100922185165*^9}},ExpressionUUID->"c20b42ce-303a-4c97-8833-\
+dccafb28df4b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fromAlphaPublic", "[", "\"\<test\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8110092265007334`*^9, 3.8110092337497053`*^9}},
+ CellLabel->
+  "In[270]:=",ExpressionUUID->"0685ab19-e734-4135-b870-3f894387dc75"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"51", ",", "36", ",", "50", ",", "51"}], "}"}]], "Output",
+ CellChangeTimes->{3.811009238358663*^9},
+ CellLabel->
+  "Out[270]=",ExpressionUUID->"f5ad185b-bb62-4925-9ada-cdbbeeb15b35"]
+}, Open  ]],
+
+Cell["\<\
+As you can see, we could directly run fromAlphaPublic with little difficulty. \
+However, this public function actually calls the private function fromAlpha. \
+To call the private function from here, we would have to do something like so:\
+\>", "Text",
+ CellChangeTimes->{{3.8110092431322575`*^9, 
+  3.8110092742857075`*^9}},ExpressionUUID->"cb29729c-bbe1-413a-b4e4-\
+ea31ca204f5a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"General`Private`fromAlpha", "[", "\"\<test\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8110092783751245`*^9, 3.811009287118414*^9}},
+ CellLabel->
+  "In[271]:=",ExpressionUUID->"0c1a71f0-da4d-4a49-8b5a-359a154a8fcb"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"51", ",", "36", ",", "50", ",", "51"}], "}"}]], "Output",
+ CellChangeTimes->{3.811009289407925*^9},
+ CellLabel->
+  "Out[271]=",ExpressionUUID->"04c8bb28-4243-45d9-9a4b-b6f361b8eacb"]
+}, Open  ]],
+
+Cell["\<\
+In this case, there is no benefit here. However, imagine a larger program \
+with hundreds of functions all carefully integrated. Now, imagine that this \
+program only requires a few arguments from the user to work. Rather than \
+exposing all those functions to the user, a developer could instead only have \
+public functions for operations the user is intended to do, and those public \
+functions could call the appropriate private functions. 
+
+Also, if the implementation of those private functions changes, the public \
+functions should require little or no adjustment, as they should be dealing \
+primarily with the outputs from the \[OpenCurlyDoubleQuote]meat\
+\[CloseCurlyDoubleQuote] of the program. Thus, users \
+shouldn\[CloseCurlyQuote]t have to constantly update their code to reflect \
+changes in private function names, parameters, variables, etc. As far as they\
+\[CloseCurlyQuote]re concerned, no change has occurred at all.\
+\>", "Text",
+ CellChangeTimes->{{3.811009516917029*^9, 
+  3.811009761453889*^9}},ExpressionUUID->"fb052c1d-c565-4409-8b9c-\
+a45fa3765a29"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{776, 872},
+WindowMargins->{{Automatic, -840}, {-46, Automatic}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"59d60157-4946-435d-940a-0f4c355a25ec"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 170, 3, 96, "Title",ExpressionUUID->"f0f93403-7482-4cad-8b65-6bbed2d1beb4"],
+Cell[753, 27, 223, 5, 34, "Text",ExpressionUUID->"c52d6be7-ce48-46ca-8289-e826c705df28"],
+Cell[CellGroupData[{
+Cell[1001, 36, 157, 3, 53, "Subtitle",ExpressionUUID->"6fa580fe-726d-4d40-8204-5bbcff2a6b73"],
+Cell[1161, 41, 703, 13, 166, "Text",ExpressionUUID->"e8035cea-7617-481d-b758-49a7e3f6b2e6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1901, 59, 157, 3, 53, "Subtitle",ExpressionUUID->"e5ccd4d7-9d0e-4e5b-82a2-704cd20a0d48"],
+Cell[2061, 64, 203, 3, 34, "Text",ExpressionUUID->"5f863ed5-324a-4510-ae45-cc2671296cae"],
+Cell[2267, 69, 1113, 26, 162, "Input",ExpressionUUID->"0458eadf-2bed-4adf-b680-1dd119af1e05"],
+Cell[3383, 97, 600, 12, 144, "Text",ExpressionUUID->"4d7bac7b-39dc-47a3-9490-b5837c2026e1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4020, 114, 166, 3, 53, "Subtitle",ExpressionUUID->"0240755b-6c50-4a75-866e-2e9e1fae2062"],
+Cell[4189, 119, 313, 8, 56, "Text",ExpressionUUID->"6abb86ef-9bed-46e8-8349-4187c3d2ae95"],
+Cell[CellGroupData[{
+Cell[4527, 131, 283, 5, 31, "Item",ExpressionUUID->"12b95d40-fd80-4bf1-9137-e0efe8029bf3"],
+Cell[4813, 138, 319, 7, 31, "Item",ExpressionUUID->"2de315ba-6f42-42ca-adaa-d2e99a305c7d"],
+Cell[5135, 147, 225, 4, 31, "Item",ExpressionUUID->"7d230c95-2d4a-438d-9075-7fcfb0263a49"],
+Cell[5363, 153, 243, 6, 31, "Item",ExpressionUUID->"efdfd74a-2953-4dbe-a991-782fdd323a90"]
+}, Open  ]],
+Cell[5621, 162, 576, 11, 100, "Text",ExpressionUUID->"8d1e87ec-9408-427c-9bc6-33299ec2d242"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6234, 178, 157, 3, 53, "Subtitle",ExpressionUUID->"c014b30e-3a27-45e8-8a0a-2dfa5a302ee6"],
+Cell[6394, 183, 584, 10, 78, "Text",ExpressionUUID->"a516aed3-66fa-4983-b525-c9ac438f24cf"],
+Cell[6981, 195, 326, 7, 48, "Input",ExpressionUUID->"79015c7a-b825-429e-9de1-4f1d70dfcffb"],
+Cell[7310, 204, 280, 6, 34, "Text",ExpressionUUID->"c20b42ce-303a-4c97-8833-dccafb28df4b"],
+Cell[CellGroupData[{
+Cell[7615, 214, 232, 4, 28, "Input",ExpressionUUID->"0685ab19-e734-4135-b870-3f894387dc75"],
+Cell[7850, 220, 222, 5, 32, "Output",ExpressionUUID->"f5ad185b-bb62-4925-9ada-cdbbeeb15b35"]
+}, Open  ]],
+Cell[8087, 228, 391, 7, 78, "Text",ExpressionUUID->"cb29729c-bbe1-413a-b4e4-ea31ca204f5a"],
+Cell[CellGroupData[{
+Cell[8503, 239, 240, 4, 28, "Input",ExpressionUUID->"0c1a71f0-da4d-4a49-8b5a-359a154a8fcb"],
+Cell[8746, 245, 222, 5, 32, "Output",ExpressionUUID->"04c8bb28-4243-45d9-9a4b-b6f361b8eacb"]
+}, Open  ]],
+Cell[8983, 253, 1089, 18, 232, "Text",ExpressionUUID->"fb052c1d-c565-4409-8b9c-a45fa3765a29"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
