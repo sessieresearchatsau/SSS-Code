@@ -5,8 +5,8 @@ BeginPackage["SSS`"]
 (* is this public? *)
 
 SSS::usage = "Functions related to Sequential Substitution Systems (SSS) & Causal Network Construction."
- 
- Begin["`Private`"]
+somethingRandom[string_String] := (ToCharacterCode[string] - 65);
+Begin["`Private`"]
  
 fromAlpha[string_String] :=(ToCharacterCode[string]-65);  
 toAlpha[l:{___Integer}] := FromCharacterCode[l+65];
@@ -39,3 +39,6 @@ SSSConvert::usage="Converts SSS (sequential substitution system) states between 
  
  EndPackage[]
  
+
+
+

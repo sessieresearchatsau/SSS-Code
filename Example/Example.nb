@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18816,        463]
-NotebookOptionsPosition[     15381,        398]
-NotebookOutlinePosition[     15790,        414]
-CellTagsIndexPosition[     15747,        411]
+NotebookDataLength[     19522,        476]
+NotebookOptionsPosition[     16094,        411]
+NotebookOutlinePosition[     16494,        427]
+CellTagsIndexPosition[     16451,        424]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -129,19 +129,27 @@ listed below:\
 
 Cell[CellGroupData[{
 
-Cell["Import[\"Example.wl\"] - Always imports the package", "Item",
+Cell["\<\
+Import[\"Example.wl\"] - Is meant for importing data, not packages\
+\>", "Item",
  CellChangeTimes->{{3.811008752597104*^9, 3.8110087627253532`*^9}, {
   3.811008834479755*^9, 3.811008837663463*^9}, {3.811080093290355*^9, 
-  3.811080098282569*^9}},ExpressionUUID->"12b95d40-fd80-4bf1-9137-\
+  3.811080098282569*^9}, {3.8123998756800203`*^9, 3.812399885711969*^9}, {
+  3.8123999260095205`*^9, 
+  3.8123999271137705`*^9}},ExpressionUUID->"12b95d40-fd80-4bf1-9137-\
 e0efe8029bf3"],
 
 Cell["\<\
 Needs[\"Example`\"] - Imports the package only if it hasn\[CloseCurlyQuote]t \
-already been imported\
+already been imported; not great for development since it will not reload \
+your changes since the package is already imported; supports a second string \
+argument which is the path of the file\
 \>", "Item",
  CellChangeTimes->{{3.811008752597104*^9, 3.811008771208232*^9}, {
   3.81100881828693*^9, 3.8110088270070934`*^9}, {3.8110801029487257`*^9, 
-  3.811080108666716*^9}},ExpressionUUID->"2de315ba-6f42-42ca-adaa-\
+  3.811080108666716*^9}, {3.812399890216449*^9, 3.8123999391056647`*^9}, {
+  3.8124006502099895`*^9, 
+  3.8124006678971577`*^9}},ExpressionUUID->"2de315ba-6f42-42ca-adaa-\
 d2e99a305c7d"],
 
 Cell["Get[\"Example`\"] or <<\" Example`\"- Always imports the package", \
@@ -152,11 +160,16 @@ Cell["Get[\"Example`\"] or <<\" Example`\"- Always imports the package", \
 7fcfb0263a49"],
 
 Cell["\<\
-DeclarePackage[\"Example`\"] - Imports package automatically as needed\
+DeclarePackage[\"Example`\", {\[OpenCurlyDoubleQuote]SymbolName1\
+\[CloseCurlyDoubleQuote], \[OpenCurlyDoubleQuote]SymbolName2\
+\[CloseCurlyDoubleQuote], \
+\[OpenCurlyDoubleQuote]etc\[CloseCurlyDoubleQuote]}] - Like Needs, except it \
+only imports the package when a specified item from the package is used in \
+the second argument.\
 \>", "Item",
  CellChangeTimes->{{3.811008752597104*^9, 3.8110088171826925`*^9}, {
-  3.811080128584874*^9, 
-  3.811080130886718*^9}},ExpressionUUID->"efdfd74a-2953-4dbe-a991-\
+  3.811080128584874*^9, 3.811080130886718*^9}, {3.8123999440737066`*^9, 
+  3.812400003491926*^9}},ExpressionUUID->"efdfd74a-2953-4dbe-a991-\
 782fdd323a90"]
 }, Open  ]],
 
@@ -396,8 +409,8 @@ a45fa3765a29"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1440., 747.75},
-WindowMargins->{{2394, Automatic}, {150.25, Automatic}},
+WindowSize->{1440, 747},
+WindowMargins->{{Automatic, 125}, {69, Automatic}},
 FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"59d60157-4946-435d-940a-0f4c355a25ec"
@@ -414,7 +427,7 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 170, 3, 97, "Title",ExpressionUUID->"f0f93403-7482-4cad-8b65-6bbed2d1beb4"],
+Cell[580, 22, 170, 3, 96, "Title",ExpressionUUID->"f0f93403-7482-4cad-8b65-6bbed2d1beb4"],
 Cell[753, 27, 223, 5, 34, "Text",ExpressionUUID->"c52d6be7-ce48-46ca-8289-e826c705df28"],
 Cell[CellGroupData[{
 Cell[1001, 36, 157, 3, 53, "Subtitle",ExpressionUUID->"6fa580fe-726d-4d40-8204-5bbcff2a6b73"],
@@ -423,46 +436,46 @@ Cell[1161, 41, 703, 13, 122, "Text",ExpressionUUID->"e8035cea-7617-481d-b758-49a
 Cell[CellGroupData[{
 Cell[1901, 59, 157, 3, 53, "Subtitle",ExpressionUUID->"e5ccd4d7-9d0e-4e5b-82a2-704cd20a0d48"],
 Cell[2061, 64, 203, 3, 34, "Text",ExpressionUUID->"5f863ed5-324a-4510-ae45-cc2671296cae"],
-Cell[2267, 69, 1113, 26, 141, "Input",ExpressionUUID->"0458eadf-2bed-4adf-b680-1dd119af1e05"],
+Cell[2267, 69, 1113, 26, 143, "Input",ExpressionUUID->"0458eadf-2bed-4adf-b680-1dd119af1e05"],
 Cell[3383, 97, 600, 12, 100, "Text",ExpressionUUID->"4d7bac7b-39dc-47a3-9490-b5837c2026e1"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[4020, 114, 166, 3, 53, "Subtitle",ExpressionUUID->"0240755b-6c50-4a75-866e-2e9e1fae2062"],
 Cell[4189, 119, 313, 8, 56, "Text",ExpressionUUID->"6abb86ef-9bed-46e8-8349-4187c3d2ae95"],
 Cell[CellGroupData[{
-Cell[4527, 131, 290, 4, 31, "Item",ExpressionUUID->"12b95d40-fd80-4bf1-9137-e0efe8029bf3"],
-Cell[4820, 137, 348, 7, 31, "Item",ExpressionUUID->"2de315ba-6f42-42ca-adaa-d2e99a305c7d"],
-Cell[5171, 146, 311, 5, 31, "Item",ExpressionUUID->"7d230c95-2d4a-438d-9075-7fcfb0263a49"],
-Cell[5485, 153, 271, 6, 31, "Item",ExpressionUUID->"efdfd74a-2953-4dbe-a991-782fdd323a90"]
+Cell[4527, 131, 417, 8, 31, "Item",ExpressionUUID->"12b95d40-fd80-4bf1-9137-e0efe8029bf3"],
+Cell[4947, 141, 624, 11, 51, "Item",ExpressionUUID->"2de315ba-6f42-42ca-adaa-d2e99a305c7d"],
+Cell[5574, 154, 311, 5, 31, "Item",ExpressionUUID->"7d230c95-2d4a-438d-9075-7fcfb0263a49"],
+Cell[5888, 161, 581, 11, 31, "Item",ExpressionUUID->"efdfd74a-2953-4dbe-a991-782fdd323a90"]
 }, Open  ]],
-Cell[5771, 162, 576, 11, 78, "Text",ExpressionUUID->"8d1e87ec-9408-427c-9bc6-33299ec2d242"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[6384, 178, 157, 3, 53, "Subtitle",ExpressionUUID->"c014b30e-3a27-45e8-8a0a-2dfa5a302ee6"],
-Cell[6544, 183, 584, 10, 56, "Text",ExpressionUUID->"a516aed3-66fa-4983-b525-c9ac438f24cf"],
-Cell[CellGroupData[{
-Cell[7153, 197, 350, 6, 47, "Input",ExpressionUUID->"79015c7a-b825-429e-9de1-4f1d70dfcffb"],
-Cell[7506, 205, 374, 5, 32, "Output",ExpressionUUID->"669d1ec9-568b-4461-8647-626cb94c2252"]
+Cell[6484, 175, 576, 11, 78, "Text",ExpressionUUID->"8d1e87ec-9408-427c-9bc6-33299ec2d242"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7917, 215, 313, 5, 47, "Input",ExpressionUUID->"662168f2-afc1-48e2-8640-1df8790fed00"],
-Cell[8233, 222, 249, 3, 32, "Output",ExpressionUUID->"6cc0be02-c61c-46b6-aa08-090b431d0272"]
+Cell[7097, 191, 157, 3, 53, "Subtitle",ExpressionUUID->"c014b30e-3a27-45e8-8a0a-2dfa5a302ee6"],
+Cell[7257, 196, 584, 10, 56, "Text",ExpressionUUID->"a516aed3-66fa-4983-b525-c9ac438f24cf"],
+Cell[CellGroupData[{
+Cell[7866, 210, 350, 6, 48, "Input",ExpressionUUID->"79015c7a-b825-429e-9de1-4f1d70dfcffb"],
+Cell[8219, 218, 374, 5, 32, "Output",ExpressionUUID->"669d1ec9-568b-4461-8647-626cb94c2252"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8519, 230, 198, 3, 28, "Input",ExpressionUUID->"b25e7d46-b857-46a3-8068-c4d5bf2f17d7"],
-Cell[8720, 235, 3604, 89, 91, "Output",ExpressionUUID->"6f9e6110-318e-48bf-8618-66b988bf5793"]
+Cell[8630, 228, 313, 5, 48, "Input",ExpressionUUID->"662168f2-afc1-48e2-8640-1df8790fed00"],
+Cell[8946, 235, 249, 3, 32, "Output",ExpressionUUID->"6cc0be02-c61c-46b6-aa08-090b431d0272"]
 }, Open  ]],
-Cell[12339, 327, 280, 6, 34, "Text",ExpressionUUID->"c20b42ce-303a-4c97-8833-dccafb28df4b"],
 Cell[CellGroupData[{
-Cell[12644, 337, 227, 3, 28, "Input",ExpressionUUID->"0685ab19-e734-4135-b870-3f894387dc75"],
-Cell[12874, 342, 341, 6, 32, "Output",ExpressionUUID->"4d456ed9-789e-4a9e-be43-94b88dbfb186"]
+Cell[9232, 243, 198, 3, 28, "Input",ExpressionUUID->"b25e7d46-b857-46a3-8068-c4d5bf2f17d7"],
+Cell[9433, 248, 3604, 89, 91, "Output",ExpressionUUID->"6f9e6110-318e-48bf-8618-66b988bf5793"]
 }, Open  ]],
-Cell[13230, 351, 391, 7, 56, "Text",ExpressionUUID->"cb29729c-bbe1-413a-b4e4-ea31ca204f5a"],
+Cell[13052, 340, 280, 6, 34, "Text",ExpressionUUID->"c20b42ce-303a-4c97-8833-dccafb28df4b"],
 Cell[CellGroupData[{
-Cell[13646, 362, 288, 4, 28, "Input",ExpressionUUID->"0c1a71f0-da4d-4a49-8b5a-359a154a8fcb"],
-Cell[13937, 368, 312, 5, 32, "Output",ExpressionUUID->"c6b5714a-9ceb-4f9a-8355-38658ec8ef7a"]
+Cell[13357, 350, 227, 3, 28, "Input",ExpressionUUID->"0685ab19-e734-4135-b870-3f894387dc75"],
+Cell[13587, 355, 341, 6, 32, "Output",ExpressionUUID->"4d456ed9-789e-4a9e-be43-94b88dbfb186"]
 }, Open  ]],
-Cell[14264, 376, 1089, 18, 144, "Text",ExpressionUUID->"fb052c1d-c565-4409-8b9c-a45fa3765a29"]
+Cell[13943, 364, 391, 7, 56, "Text",ExpressionUUID->"cb29729c-bbe1-413a-b4e4-ea31ca204f5a"],
+Cell[CellGroupData[{
+Cell[14359, 375, 288, 4, 28, "Input",ExpressionUUID->"0c1a71f0-da4d-4a49-8b5a-359a154a8fcb"],
+Cell[14650, 381, 312, 5, 32, "Output",ExpressionUUID->"c6b5714a-9ceb-4f9a-8355-38658ec8ef7a"]
+}, Open  ]],
+Cell[14977, 389, 1089, 18, 144, "Text",ExpressionUUID->"fb052c1d-c565-4409-8b9c-a45fa3765a29"]
 }, Open  ]]
 }, Open  ]]
 }

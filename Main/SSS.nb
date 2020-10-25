@@ -1,0 +1,72 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1983,         64]
+NotebookOptionsPosition[      1394,         45]
+NotebookOutlinePosition[      1791,         61]
+CellTagsIndexPosition[      1748,         58]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", " ", "Main`"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.812402879160028*^9, 3.8124028891528172`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"dd2009ee-0a7f-4db1-b0ba-6e9958338c38"],
+
+Cell[CellGroupData[{
+
+Cell["SSS Generation", "Title",
+ CellChangeTimes->{{3.812402795173587*^9, 
+  3.8124027968209596`*^9}},ExpressionUUID->"8082accd-718c-4a86-ad70-\
+2d43e046f1bb"],
+
+Cell["\<\
+This file is the primary file from which you can generate and experiment with \
+SSS objects.\
+\>", "Text",
+ CellChangeTimes->{{3.8124028038937736`*^9, 3.8124028076617765`*^9}, {
+  3.8124029351300316`*^9, 
+  3.8124029449466953`*^9}},ExpressionUUID->"642929eb-ea4c-4f63-be0a-\
+15e55333cb17"]
+}, Open  ]]
+},
+WindowSize->{1904, 981},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"cc65e3d7-263c-4d07-b086-918ba339906a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 334, 6, 64, "Input",ExpressionUUID->"dd2009ee-0a7f-4db1-b0ba-6e9958338c38",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[917, 30, 159, 3, 96, "Title",ExpressionUUID->"8082accd-718c-4a86-ad70-2d43e046f1bb"],
+Cell[1079, 35, 299, 7, 34, "Text",ExpressionUUID->"642929eb-ea4c-4f63-be0a-15e55333cb17"]
+}, Open  ]]
+}
+]
+*)
+
