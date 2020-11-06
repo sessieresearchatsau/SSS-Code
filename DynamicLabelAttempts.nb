@@ -1,0 +1,1087 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     44296,       1079]
+NotebookOptionsPosition[     41447,       1016]
+NotebookOutlinePosition[     41849,       1032]
+CellTagsIndexPosition[     41806,       1029]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Testing dynamic labels in graphs", "Chapter",
+ CellChangeTimes->{{3.8135990977601705`*^9, 
+  3.813599110659701*^9}},ExpressionUUID->"5aafa5d9-4819-4428-970e-\
+a70d7b542a52"],
+
+Cell[CellGroupData[{
+
+Cell["Simple dynamic label", "Subsection",
+ CellChangeTimes->{{3.81359915941164*^9, 
+  3.813599164969763*^9}},ExpressionUUID->"94911fe5-6627-441c-ac5e-\
+a68a9525b75a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "dynamicLabel", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dynamicLabel", "[", "lbl_", "]"}], ":=", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Clock", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "3", ",", "1"}], "}"}], ",", "3"}], "]"}], "===", 
+       "lbl"}], ",", 
+      RowBox[{"Style", "[", 
+       RowBox[{"lbl", ",", "96"}], "]"}], ",", "lbl"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dynamicLabel", "[", "1", "]"}]}], "Input",
+ CellChangeTimes->{{3.8135991673703365`*^9, 3.813599174835022*^9}, {
+  3.813599317718857*^9, 3.8135993984400043`*^9}, {3.813599431895192*^9, 
+  3.8135994518936195`*^9}, {3.8135994888149757`*^9, 3.8135995173038006`*^9}},
+ CellLabel->
+  "In[210]:=",ExpressionUUID->"61a7beed-8b40-4fa6-95fe-95e078b6c0da"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   If[Clock[{1, 3, 1}, 3] === 1, 
+    Style[1, 96], 1], StandardForm],
+  ImageSizeCache->{52.5, {0., 62.}}]], "Output",
+ CellChangeTimes->{
+  3.8135991718314*^9, {3.8135994928421974`*^9, 3.8135995186770897`*^9}},
+ CellLabel->
+  "Out[212]=",ExpressionUUID->"6b5a1270-c676-4986-bb0a-8846e991b1ca"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Support solution using ListAnimate", "Subsection",
+ CellChangeTimes->{{3.813599198088543*^9, 
+  3.8135992145794554`*^9}},ExpressionUUID->"b4b1753e-41ed-4c95-a53d-\
+d8ee4fa60dcf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListAnimate", "@", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"With", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"j", "=", "j"}], "}"}], ",", 
+      RowBox[{"Graph", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+          RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+          RowBox[{"3", "\[UndirectedEdge]", "1"}]}], "}"}], ",", 
+        RowBox[{"VertexLabels", "\[Rule]", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"i", "\[Rule]", 
+            RowBox[{"Placed", "[", 
+             RowBox[{"i", ",", "Center", ",", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"#", "\[Equal]", "j"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"#", ",", "Large"}], "]"}], ",", "#"}], "]"}], 
+               "&"}]}], "]"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "3"}], "}"}]}], "]"}]}], ",", 
+        RowBox[{"BaselinePosition", "\[Rule]", "Axis"}]}], "]"}]}], "]"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "3"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8135992174218144`*^9, 3.813599220754899*^9}},
+ CellLabel->
+  "In[192]:=",ExpressionUUID->"a1a2a1ab-26d8-4123-9a13-dd286ebbeaaa"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i11$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {
+    "\"min\"" :> {$CellContext`i11$$ = 1}, 
+     "\"max\"" :> {$CellContext`i11$$ = 3}}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i11$$], 1, ""}, 1, 3, 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    PaneBox[
+     PanelBox[GridBox[{
+        {
+         ItemBox[
+          ItemBox[
+           TagBox[
+            StyleBox[GridBox[{
+               {"\<\"\"\>", 
+                AnimatorBox[Dynamic[$CellContext`i11$$], {1, 3, 1},
+                 AnimationRate->Automatic,
+                 AnimationRunTime->21.1691951751709,
+                 AnimationRunning->False,
+                 AnimationTimeIndex->1.1691951751708984`,
+                 
+                 AppearanceElements->{
+                  "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+                   "DirectionButton"},
+                 AutoAction->False,
+                 DisplayAllSteps->True]}
+              },
+              AutoDelete->False,
+              
+              GridBoxAlignment->{
+               "Columns" -> {Right, {Left}}, "Rows" -> {{Baseline}}},
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "ListAnimateLabel",
+             StripOnInput->False],
+            {"ControlArea", Top}],
+           Alignment->{Automatic, Inherited},
+           StripOnInput->False],
+          Background->None,
+          StripOnInput->False]},
+        {
+         ItemBox[
+          TagBox[
+           StyleBox[
+            PaneBox[
+             TagBox[
+              PaneSelectorBox[{1->
+               GraphicsBox[
+                NamespaceBox["NetworkGraphics",
+                 DynamicModuleBox[{Typeset`graph = HoldComplete[
+                   Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+                    BaselinePosition -> Axis, 
+                    VertexLabels -> {3 -> Placed[3, Center, If[# == 1, 
+                    Style[#, Large], #]& ], 2 -> Placed[2, Center, If[# == 1, 
+                    Style[#, Large], #]& ], 1 -> Placed[1, Center, If[# == 1, 
+                    Style[#, Large], #]& ]}}]]}, 
+                  TagBox[GraphicsGroupBox[{
+                    {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+                    LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+                    1.8369701987210297`*^-16, 
+                    1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+                    0.8660254037844389, -0.5000000000000012}}, {{
+                    1.8369701987210297`*^-16, 1.}, {
+                    0.8660254037844389, -0.5000000000000012}}}]}, 
+                    {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+                    0.7]}], {
+                    DiskBox[{-0.8660254037844384, -0.49999999999999933}, 
+                    0.020399597244776385], InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    FontSize->Large], {-0.8660254037844384, -0.49999999999999933},
+                    BaseStyle->"Graphics"]}, {
+                    DiskBox[{1.8369701987210297*^-16, 1.}, 
+                    0.020399597244776385], InsetBox["2", {1.8369701987210297*^-16, 1.},
+                    BaseStyle->"Graphics"]}, {
+                    DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+                    0.020399597244776385], InsetBox["3", {0.8660254037844389, -0.5000000000000012},
+                    BaseStyle->"Graphics"]}}}],
+                   MouseAppearanceTag["NetworkGraphics"]],
+                  AllowKernelInitialization->False]],
+                BaselinePosition->Axis,
+                
+                DefaultBaseStyle->{
+                 "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> 
+                  Hue[0.8, 1., 0.6]},
+                FormatType->TraditionalForm,
+                FrameTicks->None], 2->
+               GraphicsBox[
+                NamespaceBox["NetworkGraphics",
+                 DynamicModuleBox[{Typeset`graph = HoldComplete[
+                   
+                   Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+                    BaselinePosition -> Axis, 
+                    VertexLabels -> {3 -> Placed[3, Center, If[# == 2, 
+                    Style[#, Large], #]& ], 2 -> Placed[2, Center, If[# == 2, 
+                    Style[#, Large], #]& ], 1 -> Placed[1, Center, If[# == 2, 
+                    Style[#, Large], #]& ]}}]]}, 
+                  TagBox[GraphicsGroupBox[{
+                    {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+                    LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+                    1.8369701987210297`*^-16, 
+                    1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+                    0.8660254037844389, -0.5000000000000012}}, {{
+                    1.8369701987210297`*^-16, 1.}, {
+                    0.8660254037844389, -0.5000000000000012}}}]}, 
+                    {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+                    0.7]}], {
+                    DiskBox[{-0.8660254037844384, -0.49999999999999933}, 
+                    0.020399597244776385], InsetBox["1", {-0.8660254037844384, -0.49999999999999933},
+                    BaseStyle->"Graphics"]}, {
+                    DiskBox[{1.8369701987210297*^-16, 1.}, 
+                    0.020399597244776385], InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    FontSize->Large], {1.8369701987210297*^-16, 1.},
+                    BaseStyle->"Graphics"]}, {
+                    DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+                    0.020399597244776385], InsetBox["3", {0.8660254037844389, -0.5000000000000012},
+                    BaseStyle->"Graphics"]}}}],
+                   MouseAppearanceTag["NetworkGraphics"]],
+                  AllowKernelInitialization->False]],
+                BaselinePosition->Axis,
+                
+                DefaultBaseStyle->{
+                 "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> 
+                  Hue[0.8, 1., 0.6]},
+                FormatType->TraditionalForm,
+                FrameTicks->None], 3->
+               GraphicsBox[
+                NamespaceBox["NetworkGraphics",
+                 DynamicModuleBox[{Typeset`graph = HoldComplete[
+                   
+                   Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+                    BaselinePosition -> Axis, 
+                    VertexLabels -> {3 -> Placed[3, Center, If[# == 3, 
+                    Style[#, Large], #]& ], 2 -> Placed[2, Center, If[# == 3, 
+                    Style[#, Large], #]& ], 1 -> Placed[1, Center, If[# == 3, 
+                    Style[#, Large], #]& ]}}]]}, 
+                  TagBox[GraphicsGroupBox[{
+                    {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+                    LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+                    1.8369701987210297`*^-16, 
+                    1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+                    0.8660254037844389, -0.5000000000000012}}, {{
+                    1.8369701987210297`*^-16, 1.}, {
+                    0.8660254037844389, -0.5000000000000012}}}]}, 
+                    {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+                    0.7]}], {
+                    DiskBox[{-0.8660254037844384, -0.49999999999999933}, 
+                    0.020399597244776385], InsetBox["1", {-0.8660254037844384, -0.49999999999999933},
+                    BaseStyle->"Graphics"]}, {
+                    DiskBox[{1.8369701987210297*^-16, 1.}, 
+                    0.020399597244776385], InsetBox["2", {1.8369701987210297*^-16, 1.},
+                    BaseStyle->"Graphics"]}, {
+                    DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+                    0.020399597244776385], InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    FontSize->Large], {0.8660254037844389, -0.5000000000000012},
+                    BaseStyle->"Graphics"]}}}],
+                   MouseAppearanceTag["NetworkGraphics"]],
+                  AllowKernelInitialization->False]],
+                BaselinePosition->Axis,
+                
+                DefaultBaseStyle->{
+                 "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> 
+                  Hue[0.8, 1., 0.6]},
+                FormatType->TraditionalForm,
+                FrameTicks->None]}, Dynamic[$CellContext`i11$$],
+               Alignment->Automatic,
+               BaseStyle->"ListAnimateCore",
+               ImageSize->All,
+               TransitionDirection->Horizontal,
+               TransitionDuration->0.5,
+               TransitionEffect->Automatic],
+              Identity,
+              Editable->True,
+              Selectable->True],
+             ImageMargins->10],
+            Deployed->False,
+            StripOnInput->False,
+            ScriptLevel->0,
+            GraphicsBoxOptions->{PreserveImageOptions->True},
+            Graphics3DBoxOptions->{PreserveImageOptions->True}],
+           Identity,
+           Editable->False,
+           Selectable->False],
+          Alignment->{Left, Center},
+          Background->GrayLevel[1],
+          Frame->1,
+          FrameStyle->GrayLevel[0, 0.2],
+          ItemSize->Automatic,
+          StripOnInput->False]}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+       GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.7], {
+            Offset[0.5599999999999999]}, 
+           Offset[0.7]}, "Rows" -> {
+           Offset[0.4], {
+            Offset[0.8]}, 
+           Offset[0.4]}}],
+      DefaultBaseStyle->{},
+      FrameMargins->{{5, 5}, {5, 5}}],
+     BaselinePosition->Automatic,
+     ImageMargins->0],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "ListAnimate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.81359922189884*^9},
+ CellLabel->
+  "Out[192]=",ExpressionUUID->"c069e269-bed8-4d38-bc83-de4dc3ee334f"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Graph with Clock-based labels, one Clock:  fails, since the Clock is never \
+displayed\
+\>", "Subsection",
+ CellChangeTimes->{{3.813599198088543*^9, 3.8135992145794554`*^9}, {
+  3.81359926514223*^9, 3.8135992753120165`*^9}, {3.81359980066709*^9, 
+  3.8135998038126707`*^9}, {3.813599934878302*^9, 
+  3.81359995663716*^9}},ExpressionUUID->"1c50c676-0f40-4825-97f9-\
+b90d8ffacd1c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"myTime", "=", 
+     RowBox[{"Dynamic", "[", 
+      RowBox[{"Clock", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", "3", ",", "1"}], "}"}], ",", "5"}], "]"}], "]"}]}],
+     "}"}], ",", 
+   RowBox[{"Graph", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "1"}]}], "}"}], ",", 
+     RowBox[{"VertexLabels", "\[Rule]", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"i", "\[Rule]", 
+         RowBox[{"Placed", "[", 
+          RowBox[{"i", ",", "Center", ",", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"#", "\[Equal]", "myTime"}], ",", 
+              RowBox[{"Style", "[", 
+               RowBox[{"#", ",", "Large"}], "]"}], ",", "#"}], "]"}], "&"}]}],
+           "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "3"}], "}"}]}], "]"}]}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8135995471405306`*^9, 3.813599549790447*^9}, {
+  3.813599865095867*^9, 3.813599897307734*^9}},
+ CellLabel->
+  "In[214]:=",ExpressionUUID->"c8b3b2a4-a317-4bb8-9e5d-5c16c9ab3e5a"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`myTime$$ = Dynamic[
+   Clock[{1, 3, 1}, 5]]}, 
+  GraphicsBox[
+   NamespaceBox["NetworkGraphics",
+    DynamicModuleBox[{Typeset`graph = HoldComplete[
+      Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+       VertexLabels -> {
+         3 -> Placed[3, Center, If[# == $CellContext`myTime$91519, 
+             Style[#, Large], #]& ], 2 -> 
+          Placed[2, Center, If[# == $CellContext`myTime$91519, 
+             Style[#, Large], #]& ], 1 -> 
+          Placed[1, Center, If[# == $CellContext`myTime$91519, 
+             Style[#, Large], #]& ]}}]]}, 
+     TagBox[GraphicsGroupBox[{
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+         LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+          1.8369701987210297`*^-16, 
+          1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+          0.8660254037844389, -0.5000000000000012}}, {{
+          1.8369701987210297`*^-16, 1.}, {
+          0.8660254037844389, -0.5000000000000012}}}]}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+         0.7]}], {
+          DiskBox[{-0.8660254037844384, -0.49999999999999933}, 
+           0.020399597244776385], InsetBox[
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"1", "\[LongEqual]", 
+              DynamicBox[ToBoxes[
+                Clock[{1, 3, 1}, 5], TraditionalForm],
+               ImageSizeCache->{5.25, {0., 8.}}]}], ",", 
+             StyleBox["1",
+              StripOnInput->False,
+              FontSize->Large], ",", "1"}], "]"}], {-0.8660254037844384, -0.49999999999999933},
+           BaseStyle->"Graphics"]}, {
+          DiskBox[{1.8369701987210297*^-16, 1.}, 0.020399597244776385], 
+          InsetBox[
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"2", "\[LongEqual]", 
+              DynamicBox[ToBoxes[
+                Clock[{1, 3, 1}, 5], TraditionalForm],
+               ImageSizeCache->{5.25, {0., 8.}}]}], ",", 
+             StyleBox["2",
+              StripOnInput->False,
+              FontSize->Large], ",", "2"}], "]"}], {1.8369701987210297*^-16, 1.},
+           BaseStyle->"Graphics"]}, {
+          DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+           0.020399597244776385], InsetBox[
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"3", "\[LongEqual]", 
+              DynamicBox[ToBoxes[
+                Clock[{1, 3, 1}, 5], TraditionalForm],
+               ImageSizeCache->{5.25, {0., 8.}}]}], ",", 
+             StyleBox["3",
+              StripOnInput->False,
+              FontSize->Large], ",", "3"}], "]"}], {0.8660254037844389, -0.5000000000000012},
+           BaseStyle->"Graphics"]}}}],
+      MouseAppearanceTag["NetworkGraphics"]],
+     AllowKernelInitialization->False]],
+   DefaultBaseStyle->{
+    "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+   FormatType->TraditionalForm,
+   FrameTicks->None],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.8135995573891473`*^9, 3.81359986776772*^9},
+ CellLabel->
+  "Out[214]=",ExpressionUUID->"28e21005-4849-4753-8a2d-59805d60a16c"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"myTime", "=", 
+     RowBox[{"Clock", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "3", ",", "1"}], "}"}], ",", "5"}], "]"}]}], "}"}], 
+   ",", 
+   RowBox[{"Graph", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "1"}]}], "}"}], ",", 
+     RowBox[{"VertexLabels", "\[Rule]", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"i", "\[Rule]", 
+         RowBox[{"Placed", "[", 
+          RowBox[{"i", ",", "Center", ",", 
+           RowBox[{
+            RowBox[{"Dynamic", "[", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"#", "===", "myTime"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"#", ",", "Large"}], "]"}], ",", "#"}], "]"}], "]"}], 
+            "&"}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "3"}], "}"}]}], "]"}]}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8135995471405306`*^9, 3.813599549790447*^9}, {
+  3.813599865095867*^9, 3.813599897307734*^9}, {3.8136000064983935`*^9, 
+  3.8136001166407237`*^9}, {3.813600698527972*^9, 3.813600702292905*^9}},
+ CellLabel->
+  "In[225]:=",ExpressionUUID->"7835efe2-a930-41c9-8d92-1ce91f15a65b"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`myTime$$ = 1}, 
+  GraphicsBox[
+   NamespaceBox["NetworkGraphics",
+    DynamicModuleBox[{Typeset`graph = HoldComplete[
+      Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+       VertexLabels -> {3 -> Placed[3, Center, Dynamic[
+             If[# === $CellContext`myTime$108840, 
+              Style[#, Large], #]]& ], 2 -> Placed[2, Center, Dynamic[
+             If[# === $CellContext`myTime$108840, 
+              Style[#, Large], #]]& ], 1 -> Placed[1, Center, Dynamic[
+             If[# === $CellContext`myTime$108840, 
+              Style[#, Large], #]]& ]}}]]}, 
+     TagBox[GraphicsGroupBox[{
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+         LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+          1.8369701987210297`*^-16, 
+          1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+          0.8660254037844389, -0.5000000000000012}}, {{
+          1.8369701987210297`*^-16, 1.}, {
+          0.8660254037844389, -0.5000000000000012}}}]}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+         0.7]}], {
+          DiskBox[{-0.8660254037844384, -0.49999999999999933}, 
+           0.020399597244776385], InsetBox[
+           DynamicBox[ToBoxes[
+             If[1 === $CellContext`myTime$108840, 
+              Style[1, Large], 1], TraditionalForm],
+            ImageSizeCache->{13.5, {0., 18.}}], {-0.8660254037844384, -0.49999999999999933},
+           BaseStyle->"Graphics"]}, {
+          DiskBox[{1.8369701987210297*^-16, 1.}, 0.020399597244776385], 
+          InsetBox[
+           DynamicBox[ToBoxes[
+             If[2 === $CellContext`myTime$108840, 
+              Style[2, Large], 2], TraditionalForm],
+            ImageSizeCache->{5.25, {0., 8.}}], {1.8369701987210297*^-16, 1.},
+           BaseStyle->"Graphics"]}, {
+          DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+           0.020399597244776385], InsetBox[
+           DynamicBox[ToBoxes[
+             If[3 === $CellContext`myTime$108840, 
+              Style[3, Large], 3], TraditionalForm],
+            ImageSizeCache->{5.25, {0., 8.}}], {0.8660254037844389, -0.5000000000000012},
+           BaseStyle->"Graphics"]}}}],
+      MouseAppearanceTag["NetworkGraphics"]],
+     AllowKernelInitialization->False]],
+   DefaultBaseStyle->{
+    "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+   FormatType->TraditionalForm,
+   FrameTicks->None],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.8135995573891473`*^9, 3.81359986776772*^9, {3.81360004371089*^9, 
+   3.8136000540581865`*^9}, {3.8136000859738398`*^9, 3.8136001180041037`*^9}, 
+   3.813600703302204*^9},
+ CellLabel->
+  "Out[225]=",ExpressionUUID->"32845e03-20da-4829-8a29-dbf96d157dbc"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"myTime", "=", 
+     RowBox[{"Clock", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "3", ",", "1"}], "}"}], ",", "5"}], "]"}]}], "}"}], 
+   ",", 
+   RowBox[{"Graph", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "1"}]}], "}"}], ",", 
+     RowBox[{"VertexLabels", "\[Rule]", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"i", "\[Rule]", 
+         RowBox[{"Dynamic", "[", 
+          RowBox[{"Placed", "[", 
+           RowBox[{"i", ",", "Center", ",", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"#", "===", "myTime"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"#", ",", "Large"}], "]"}], ",", "#"}], "]"}], 
+             "&"}]}], "]"}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "3"}], "}"}]}], "]"}]}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8135995471405306`*^9, 3.813599549790447*^9}, {
+  3.813599865095867*^9, 3.813599897307734*^9}, {3.8136000064983935`*^9, 
+  3.8136001166407237`*^9}, {3.813600698527972*^9, 3.8136007523740063`*^9}},
+ CellLabel->
+  "In[226]:=",ExpressionUUID->"a993e875-de0e-496c-8569-cc74a5bcf743"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`myTime$$ = 1}, 
+  GraphicsBox[
+   NamespaceBox["NetworkGraphics",
+    DynamicModuleBox[{Typeset`graph = HoldComplete[
+      Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+       VertexLabels -> {3 -> Dynamic[
+            
+            Placed[$CellContext`i, Center, 
+             If[# === $CellContext`myTime$109016, 
+              Style[#, Large], #]& ]], 2 -> Dynamic[
+            
+            Placed[$CellContext`i, Center, 
+             If[# === $CellContext`myTime$109016, 
+              Style[#, Large], #]& ]], 1 -> Dynamic[
+            
+            Placed[$CellContext`i, Center, 
+             If[# === $CellContext`myTime$109016, 
+              Style[#, Large], #]& ]]}}]]}, 
+     TagBox[GraphicsGroupBox[{
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+         LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+          1.8369701987210297`*^-16, 
+          1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+          0.8660254037844389, -0.5000000000000012}}, {{
+          1.8369701987210297`*^-16, 1.}, {
+          0.8660254037844389, -0.5000000000000012}}}]}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         DynamicBox[Typeset`ToBoxes[
+           GraphComputation`VertexLabelingFunction[
+            
+            Placed[$CellContext`i, Center, 
+             If[# === $CellContext`myTime$109016, 
+              Style[#, Large], #]& ], "VertexID$1", {}][
+            
+            Disk[{-0.8660254037844384, -0.49999999999999933`}, 
+             0.020399597244776385`], 
+            1, {-0.8660254037844384, -0.49999999999999933`}, {
+            0.020399597244776385`, 0.020399597244776385`}, 1], StandardForm, 
+           Graphics],
+          
+          ImageSizeCache->{{6.19999999999999, 16.153409255841098`}, {
+           137.1112953720791, 151.1112953720791}}], 
+         DynamicBox[Typeset`ToBoxes[
+           GraphComputation`VertexLabelingFunction[
+            
+            Placed[$CellContext`i, Center, 
+             If[# === $CellContext`myTime$109016, 
+              Style[#, Large], #]& ], "VertexID$2", {}][
+            Disk[{1.8369701987210297`*^-16, 1.}, 0.020399597244776385`], 2, {
+            1.8369701987210297`*^-16, 1.}, {0.020399597244776385`, 
+            0.020399597244776385`}, 2], StandardForm, Graphics],
+          
+          ImageSizeCache->{{175.02329537207942`, 
+           184.97670462792053`}, {-155.29922971357007`, \
+-141.29922971357007`}}], 
+         DynamicBox[Typeset`ToBoxes[
+           GraphComputation`VertexLabelingFunction[
+            
+            Placed[$CellContext`i, Center, 
+             If[# === $CellContext`myTime$109016, 
+              Style[#, Large], #]& ], "VertexID$3", {}][
+            
+            Disk[{0.8660254037844389, -0.5000000000000012}, 
+             0.020399597244776385`], 3, {
+            0.8660254037844389, -0.5000000000000012}, {0.020399597244776385`, 
+            0.020399597244776385`}, 3], StandardForm, Graphics],
+          
+          ImageSizeCache->{{343.8465907441589, 353.8}, {137.1112953720795, 
+           151.1112953720795}}]}}],
+      MouseAppearanceTag["NetworkGraphics"]],
+     AllowKernelInitialization->False]],
+   DefaultBaseStyle->{
+    "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+   FormatType->TraditionalForm,
+   FrameTicks->None],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.8136007534591274`*^9},
+ CellLabel->
+  "Out[226]=",ExpressionUUID->"8442fc38-9e9a-4115-bf7e-f30bcde152db"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Graph with Clock-based labels, separate Clocks", "Subsection",
+ CellChangeTimes->{{3.813599198088543*^9, 3.8135992145794554`*^9}, {
+  3.81359926514223*^9, 3.8135992753120165`*^9}, {3.813599792859962*^9, 
+  3.8135997975265303`*^9}},ExpressionUUID->"b8d4e243-5caf-4b65-ba06-\
+5100018db3e2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"dynamicLabel", "[", "lbl_", "]"}], ":=", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Clock", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "3", ",", "1"}], "}"}], ",", "3"}], "]"}], "===", 
+       "lbl"}], ",", 
+      RowBox[{"Style", "[", 
+       RowBox[{"lbl", ",", "36"}], "]"}], ",", "lbl"}], "]"}], "]"}]}], ";", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "1"}]}], "}"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"i", "\[Rule]", 
+        RowBox[{"Placed", "[", 
+         RowBox[{"i", ",", "Center", ",", "dynamicLabel"}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "3"}], "}"}]}], "]"}]}], ",", 
+    RowBox[{"BaselinePosition", "\[Rule]", "Axis"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8135995471405306`*^9, 3.813599549790447*^9}, {
+  3.813600150697756*^9, 3.8136001763164015`*^9}},
+ CellLabel->
+  "In[224]:=",ExpressionUUID->"ee76df2a-32ec-4006-a386-64a5b03295a8"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+      BaselinePosition -> Axis, 
+       VertexLabels -> {
+        3 -> Placed[3, Center, $CellContext`dynamicLabel], 2 -> 
+         Placed[2, Center, $CellContext`dynamicLabel], 1 -> 
+         Placed[1, Center, $CellContext`dynamicLabel]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+         1.8369701987210297`*^-16, 
+         1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+         0.8660254037844389, -0.5000000000000012}}, {{
+         1.8369701987210297`*^-16, 1.}, {
+         0.8660254037844389, -0.5000000000000012}}}]}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {
+         DiskBox[{-0.8660254037844384, -0.49999999999999933}, 
+          0.020399597244776385], InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 1, 
+             Style[1, 36], 1], TraditionalForm],
+           ImageSizeCache->{20.25, {0., 27.}}], {-0.8660254037844384, -0.49999999999999933},
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.8369701987210297*^-16, 1.}, 0.020399597244776385], 
+         InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 2, 
+             Style[2, 36], 2], TraditionalForm],
+           ImageSizeCache->{5.25, {0., 8.}}], {1.8369701987210297*^-16, 1.},
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+          0.020399597244776385], InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 3, 
+             Style[3, 36], 3], TraditionalForm],
+           ImageSizeCache->{5.25, {0., 8.}}], {0.8660254037844389, -0.5000000000000012},
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  BaselinePosition->Axis,
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{
+  3.8135995573891473`*^9, {3.8136001531901197`*^9, 3.813600177261842*^9}},
+ CellLabel->
+  "Out[224]=",ExpressionUUID->"085d885a-58c5-47db-837c-7ab9e2e6e436"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Graph with Clock-based labels, separate Clocks, changed vertex frame\
+\>", "Subsection",
+ CellChangeTimes->{{3.813599198088543*^9, 3.8135992145794554`*^9}, {
+  3.81359926514223*^9, 3.8135992753120165`*^9}, {3.813599792859962*^9, 
+  3.8135997975265303`*^9}, {3.8136010891153383`*^9, 
+  3.8136011317142444`*^9}},ExpressionUUID->"5e200c11-8260-48d5-b00d-\
+806057ee9807"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"dynamicLabel", "[", "lbl_", "]"}], ":=", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Clock", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "3", ",", "1"}], "}"}], ",", "3"}], "]"}], "===", 
+       "lbl"}], ",", 
+      RowBox[{"Framed", "[", 
+       RowBox[{"lbl", ",", 
+        RowBox[{"Background", "\[Rule]", "Green"}], ",", 
+        RowBox[{"RoundingRadius", "\[Rule]", 
+         RowBox[{"Scaled", "[", ".5", "]"}]}]}], "]"}], ",", "lbl"}], "]"}], 
+    "]"}]}], ";", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "1"}]}], "}"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"i", "\[Rule]", 
+        RowBox[{"Placed", "[", 
+         RowBox[{"i", ",", "Center", ",", "dynamicLabel"}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "3"}], "}"}]}], "]"}]}], ",", 
+    RowBox[{"BaselinePosition", "\[Rule]", "Axis"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8135995471405306`*^9, 3.813599549790447*^9}, {
+  3.813600150697756*^9, 3.8136001763164015`*^9}, {3.8136096954525857`*^9, 
+  3.8136097222496767`*^9}},
+ CellLabel->
+  "In[230]:=",ExpressionUUID->"9c5df09c-3488-4b43-a81c-6e8a9623fdf2"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+      BaselinePosition -> Axis, 
+       VertexLabels -> {
+        3 -> Placed[3, Center, $CellContext`dynamicLabel], 2 -> 
+         Placed[2, Center, $CellContext`dynamicLabel], 1 -> 
+         Placed[1, Center, $CellContext`dynamicLabel]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+         1.8369701987210297`*^-16, 
+         1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+         0.8660254037844389, -0.5000000000000012}}, {{
+         1.8369701987210297`*^-16, 1.}, {
+         0.8660254037844389, -0.5000000000000012}}}]}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {
+         DiskBox[{-0.8660254037844384, -0.49999999999999933}, 
+          0.020399597244776385], InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 1, 
+             Framed[1, Background -> Green, RoundingRadius -> Scaled[0.5]], 
+             1], TraditionalForm],
+           ImageSizeCache->{5.25, {0., 8.}}], {-0.8660254037844384, -0.49999999999999933},
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.8369701987210297*^-16, 1.}, 0.020399597244776385], 
+         InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 2, 
+             Framed[2, Background -> Green, RoundingRadius -> Scaled[0.5]], 
+             2], TraditionalForm],
+           ImageSizeCache->{16., {9.25, 13.75}}], {1.8369701987210297*^-16, 1.},
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+          0.020399597244776385], InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 3, 
+             Framed[3, Background -> Green, RoundingRadius -> Scaled[0.5]], 
+             3], TraditionalForm],
+           ImageSizeCache->{5.25, {0., 8.}}], {0.8660254037844389, -0.5000000000000012},
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  BaselinePosition->Axis,
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{
+  3.8135995573891473`*^9, {3.8136001531901197`*^9, 3.813600177261842*^9}, {
+   3.81360970982806*^9, 3.813609723143903*^9}},
+ CellLabel->
+  "Out[230]=",ExpressionUUID->"0a696dec-42de-4638-a6a5-84f881411057"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"dynamicLabel", "[", 
+    RowBox[{"lbl_", ",", "max_"}], "]"}], ":=", 
+   RowBox[{"Dynamic", "[", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Clock", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "3", ",", "1"}], "}"}], ",", "3"}], "]"}], "===", 
+       "lbl"}], ",", 
+      RowBox[{"Framed", "[", 
+       RowBox[{"lbl", ",", 
+        RowBox[{"Background", "\[Rule]", "Green"}], ",", 
+        RowBox[{"RoundingRadius", "\[Rule]", 
+         RowBox[{"Scaled", "[", ".5", "]"}]}]}], "]"}], ",", "lbl"}], "]"}], 
+    "]"}]}], ";", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "1"}]}], "}"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"i", "\[Rule]", 
+        RowBox[{"Placed", "[", 
+         RowBox[{"i", ",", "Center", ",", 
+          RowBox[{
+           RowBox[{"dynamicLabel", "[", 
+            RowBox[{"#", ",", "3"}], "]"}], "&"}]}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "3"}], "}"}]}], "]"}]}], ",", 
+    RowBox[{"BaselinePosition", "\[Rule]", "Axis"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8135995471405306`*^9, 3.813599549790447*^9}, {
+  3.813600150697756*^9, 3.8136001763164015`*^9}, {3.8136096954525857`*^9, 
+  3.8136097222496767`*^9}, {3.8136097721285667`*^9, 3.8136097885320106`*^9}},
+ CellLabel->
+  "In[231]:=",ExpressionUUID->"3ac9b028-8b2e-4e55-9393-e90ed954b5d7"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3}, {Null, {{1, 2}, {2, 3}, {3, 1}}}, {
+      BaselinePosition -> Axis, 
+       VertexLabels -> {
+        3 -> Placed[3, Center, $CellContext`dynamicLabel[#, 3]& ], 2 -> 
+         Placed[2, Center, $CellContext`dynamicLabel[#, 3]& ], 1 -> 
+         Placed[1, Center, $CellContext`dynamicLabel[#, 3]& ]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        LineBox[{{{-0.8660254037844384, -0.49999999999999933`}, {
+         1.8369701987210297`*^-16, 
+         1.}}, {{-0.8660254037844384, -0.49999999999999933`}, {
+         0.8660254037844389, -0.5000000000000012}}, {{
+         1.8369701987210297`*^-16, 1.}, {
+         0.8660254037844389, -0.5000000000000012}}}]}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {
+         DiskBox[{-0.8660254037844384, -0.49999999999999933}, 
+          0.020399597244776385], InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 1, 
+             Framed[1, Background -> Green, RoundingRadius -> Scaled[0.5]], 
+             1], TraditionalForm],
+           ImageSizeCache->{16., {9.25, 13.75}}], {-0.8660254037844384, -0.49999999999999933},
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.8369701987210297*^-16, 1.}, 0.020399597244776385], 
+         InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 2, 
+             Framed[2, Background -> Green, RoundingRadius -> Scaled[0.5]], 
+             2], TraditionalForm],
+           ImageSizeCache->{5.25, {0., 8.}}], {1.8369701987210297*^-16, 1.},
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+          0.020399597244776385], InsetBox[
+          DynamicBox[ToBoxes[
+            If[Clock[{1, 3, 1}, 3] === 3, 
+             Framed[3, Background -> Green, RoundingRadius -> Scaled[0.5]], 
+             3], TraditionalForm],
+           ImageSizeCache->{5.25, {0., 8.}}], {0.8660254037844389, -0.5000000000000012},
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  BaselinePosition->Axis,
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{3.8136097893837304`*^9},
+ CellLabel->
+  "Out[231]=",ExpressionUUID->"a4afd6ed-41c1-44db-aa84-f7da68107acc"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1428., 745.5},
+WindowMargins->{{960, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5dc30ff0-2cbd-45c3-b206-c202f3ce9a71"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 179, 3, 67, "Chapter",ExpressionUUID->"5aafa5d9-4819-4428-970e-a70d7b542a52"],
+Cell[CellGroupData[{
+Cell[784, 29, 167, 3, 55, "Subsection",ExpressionUUID->"94911fe5-6627-441c-ac5e-a68a9525b75a"],
+Cell[CellGroupData[{
+Cell[976, 36, 920, 23, 66, "Input",ExpressionUUID->"61a7beed-8b40-4fa6-95fe-95e078b6c0da"],
+Cell[1899, 61, 330, 8, 152, "Output",ExpressionUUID->"6b5a1270-c676-4986-bb0a-8846e991b1ca"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2278, 75, 189, 3, 55, "Subsection",ExpressionUUID->"b4b1753e-41ed-4c95-a53d-d8ee4fa60dcf"],
+Cell[CellGroupData[{
+Cell[2492, 82, 1354, 36, 28, "Input",ExpressionUUID->"a1a2a1ab-26d8-4123-9a13-dd286ebbeaaa"],
+Cell[3849, 120, 10724, 226, 407, "Output",ExpressionUUID->"c069e269-bed8-4d38-bc83-de4dc3ee334f"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14622, 352, 389, 8, 55, "Subsection",ExpressionUUID->"1c50c676-0f40-4825-97f9-b90d8ffacd1c"],
+Cell[CellGroupData[{
+Cell[15036, 364, 1310, 36, 28, "Input",ExpressionUUID->"c8b3b2a4-a317-4bb8-9e5d-5c16c9ab3e5a"],
+Cell[16349, 402, 3119, 69, 300, "Output",ExpressionUUID->"28e21005-4849-4753-8a2d-59805d60a16c"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[19505, 476, 1413, 37, 24, "Input",ExpressionUUID->"7835efe2-a930-41c9-8d92-1ce91f15a65b"],
+Cell[20921, 515, 2746, 56, 333, "Output",ExpressionUUID->"32845e03-20da-4829-8a29-dbf96d157dbc"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[23704, 576, 1416, 37, 24, "Input",ExpressionUUID->"a993e875-de0e-496c-8569-cc74a5bcf743"],
+Cell[25123, 615, 3526, 79, 331, "Output",ExpressionUUID->"8442fc38-9e9a-4115-bf7e-f30bcde152db"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28698, 700, 294, 4, 55, "Subsection",ExpressionUUID->"b8d4e243-5caf-4b65-ba06-5100018db3e2"],
+Cell[CellGroupData[{
+Cell[29017, 708, 1260, 34, 47, "Input",ExpressionUUID->"ee76df2a-32ec-4006-a386-64a5b03295a8"],
+Cell[30280, 744, 2375, 51, 340, "Output",ExpressionUUID->"085d885a-58c5-47db-837c-7ab9e2e6e436"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32704, 801, 377, 7, 55, "Subsection",ExpressionUUID->"5e200c11-8260-48d5-b00d-806057ee9807"],
+Cell[CellGroupData[{
+Cell[33106, 812, 1465, 39, 47, "Input",ExpressionUUID->"9c5df09c-3488-4b43-a81c-6e8a9623fdf2"],
+Cell[34574, 853, 2615, 55, 331, "Output",ExpressionUUID->"0a696dec-42de-4638-a6a5-84f881411057"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37226, 913, 1639, 43, 47, "Input",ExpressionUUID->"3ac9b028-8b2e-4e55-9393-e90ed954b5d7"],
+Cell[38868, 958, 2539, 53, 332, "Output",ExpressionUUID->"a4afd6ed-41c1-44db-aa84-f7da68107acc"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
