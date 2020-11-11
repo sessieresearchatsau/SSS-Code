@@ -29,6 +29,94 @@ StyleBox[\" \",\nFontSlant->\"Plain\"]\)(sequential substitution system),
 					up by SSSInitialize are updated, with $SSSEvolution containing the tagless SSS, $SSSConnectionList 
 					the updated causal network connection list, etc.  mode can be Silent, Quiet, or Loud.";
 
+(* SSSDisplay *)			
+Options[SSSDisplay]=
+{HighlightMethod->True,RulePlacement->Bottom,Mesh->True,NetSize->{Automatic,400},SSSSize->{Automatic,300},IconSize->{Automatic,20},ImageSize->Automatic,NetMethod->GraphPlot,
+Max->\[Infinity],SSSMax->Automatic,NetMax->Automatic,
+Min->1,SSSMin->Automatic,NetMin->Automatic, 
+Sequence@@Union[Options[TreePlot],Options[GraphPlot],Options[GraphPlot3D],Options[LayeredGraphPlot]]};
+SyntaxInformation[SSSDisplay]={"ArgumentsPattern"->{OptionsPattern[]}};
+
+SSSDisplay[opts:OptionsPattern[]] := Module[{HlM,mesh,IcS,ImS,SS,NS,RP,NM,doGP,doLGP,doTP,doGP3D,doSSS,myNet,ans,cellsToHighlight,rulesApplied,mx,netmx,sssmx,mn,netmn,sssmn,hs,start,ev,vrtxs,net,grph,DE},
+
+HlM =If[#===True,Number,#]& @ OptionValue[HighlightMethod]; 
+RP=OptionValue[RulePlacement];
+mesh=OptionValue[Mesh];
+SS = OptionValue[SSSSize];
+IcS = OptionValue[IconSize];
+ImS = OptionValue[ImageSize];
+NS = OptionValue[NetSize];
+NM=OptionValue[NetMethod];
+DE= OptionValue[DirectedEdges];
+
+mx=OptionValue[Max];
+If[mx===Automatic,mx=\[Infinity]];
+sssmx=OptionValue[SSSMax]; 
+If[sssmx===Automatic,sssmx=mx];
+netmx=OptionValue[NetMax]; 
+If[netmx===Automatic,netmx=mx];
+
+mn=OptionValue[Min];
+If[mn===Automatic,mn=1];
+sssmn=OptionValue[SSSMin]; 
+If[sssmn===Automatic,sssmn=mn];
+netmn=OptionValue[NetMin]; 
+If[netmn===Automatic,netmn=mn];
+
+start=1;
+
+vrtxs =Annotation[#,VertexWeight->$SSSDistance[[#]]]&/@Range[Max[start,netmn],Min[netmx,Length[$SSSDistance]]];
+
+net=(Select[$SSSNet,And@@Thread[Max[start,netmn]<=List@@#<=netmx]&] /. n_Integer:>(n+1-start));
+
+(*
+If[UD||(DM<\[Infinity]),net=(net /.nn_Integer\[RuleDelayed]Subscript[$SSSDistance\[LeftDoubleBracket]nn\[RightDoubleBracket],Style[nn,Tiny]])];
+If[DM<\[Infinity],
+net=Cases[net,r:Rule[Subscript[_?(#\[LessEqual]DM&),_],Subscript[_?(#\[LessEqual]DM&),_]]\[RuleDelayed] r];
+If[!UD,net=(net /. Subscript[_,Style[n_Integer,_]]\[RuleDelayed]n)]
+];
+*)
+
+grph=Graph[vrtxs,net,DirectedEdges->DE];
+
+doGP=doLGP=doTP =doGP3D=False;doSSS=True;
+If[MemberQ[NM,All,{0,\[Infinity]}],doGP=doLGP=doTP=doGP3D=True];
+If[MemberQ[NM,GraphPlot,{0,\[Infinity]}],doGP=True];
+If[MemberQ[NM,LayeredGraphPlot,{0,\[Infinity]}],doLGP=True];
+If[MemberQ[NM,TreePlot,{0,\[Infinity]}],doTP=True];
+If[MemberQ[NM,GraphPlot3D,{0,\[Infinity]}],doGP3D=True];
+If[MemberQ[NM,NoSSS,{0,\[Infinity]}],doSSS=False];
+
+If[$SSSVerdict=="Dead",doGP=doLGP=doTP=doGP3D=False];
+
+cellsToHighlight=Flatten[MapIndexed[{#1,#2[[1]]}&,Reverse@$SSSCellsDeleted[[Max[start,sssmn];;Min[sssmx,Length[$SSSEvolution]]-1]],{2}],1];
+rulesApplied=Reverse@$SSSRulesUsed[[Max[start,sssmn];;Min[sssmx,Length[$SSSEvolution]]-1]];
+
+ans = 
+ArrayPlot[(FromAlpha/@ $SSSEvolution[[Max[start,sssmn];;Min[sssmx,Length[$SSSEvolution]]]])/. 0->LightGray,myColors,Mesh->mesh,ImageSize->SS,
+Epilog->Switch[HlM,
+Dot,Disk[#+0.5{-1,1},.18]& /@ cellsToHighlight,
+Frame,{EdgeForm[Thick],FaceForm[],Rectangle[#-{1,0}]& /@ cellsToHighlight},
+Number,Text @@@ (cellsToHighlight /. {x_Integer,y_Integer}:>{rulesApplied[[y]],{x,y}+.5{-1,1}}),
+_,{}]
+];
+Row[Flatten@{
+If[!doSSS,{},Pane[
+Switch[RP,
+Right, Grid[{{ans,SSSRuleIcon[$SSSRuleSet,ImageSize->IcS]}}],
+Left, Grid[{{SSSRuleIcon[$SSSRuleSet,ImageSize->IcS],ans}}], 
+Bottom|True, Grid[{{ans},{SSSRuleIcon[$SSSRuleSet,ImageSize->IcS]}}], 
+Top,  Grid[{{SSSRuleIcon[$SSSRuleSet,ImageSize->IcS]},{ans}}], 
+_,ans],ImageSize->ImS,ImageSizeAction->"ShrinkToFit"]],
+If[doGP,GraphPlot[grph,GraphLayout->"SpringElectricalEmbedding",
+Sequence@@Flatten[{ImageSize->NS,FilterRules[{opts}, Options[GraphPlot]],
+VertexSize->Large,VertexLabels->Placed[Automatic,Center]}]],{}],
+If[doLGP,LayeredGraphPlot[grph,Sequence@@Flatten[{ImageSize->NS,FilterRules[{opts}, Options[LayeredGraphPlot]],VertexSize->Large,VertexLabels->Placed[Automatic,Center]}]],{}],
+If[doTP,TreePlot[grph,Top,1,Sequence@@Flatten[{ImageSize->NS,FilterRules[{opts}, Options[TreePlot]],VertexSize->Large,VertexLabels->Placed[Automatic,Center],DirectedEdges->True}]],{}],
+If[doGP3D,GraphPlot3D[grph,GraphLayout->"SpringElectricalEmbedding",Sequence@@Flatten[{ImageSize->NS,FilterRules[{opts}, Options[GraphPlot3D]],VertexSize->Large,VertexLabels->Placed[Automatic,Center]}]],{}]
+},"  "]]
+
+
 (* Actual SSS (Object?) *)
 SSS[rs:{___Rule},init_String,n_Integer?Positive,opts___] := 
 If[SSSInitialize[rs,init,Mode->Silent], 
