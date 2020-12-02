@@ -2,7 +2,13 @@
 
 BeginPackage["SSS`"]
 
-SSSEvolve::usage="SSSEvolve[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\)] generates an additional \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) levels of indicated \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)(sequential substitution system), which must have been previously created using SSSInitialize.  Use the option EarlyReturn \[Rule] True to allow early termination for repeating cases.  (SSSSinglestep immediately returns anyway if the SSS is dead.)  In Loud mode, prints the current verdict, \"OK\" means none known.  Values of \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) updated, with \"Evolution\" containing the tagless SSS, \"ConnectionList\" the updated causal network connection list, etc.  mode can be Silent, Quiet, or Loud.";
+SSSEvolve::usage="SSSEvolve[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\)] "<>
+"generates an additional \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) levels of indicated "<>
+"\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)(sequential substitution system), "<>
+"which must have been previously created using SSSInitialize.  Use the option EarlyReturn \[Rule] True to allow early termination for "<>
+"repeating cases.  (SSSSinglestep immediately returns anyway if the SSS is dead.)  In Loud mode, prints the current verdict, \"OK\" "<>
+"means none known.  Values of \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) updated, with \"Evolution\" containing the tagless SSS, "<>
+"\"ConnectionList\" the updated causal network connection list, etc.  mode can be Silent, Quiet, or Loud.";
 	
 SSSDisplay::usage="SSSDisplay[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \!\(\*StyleBox[\"opts\",FontSlant->\"Italic\"]\)] displays the sequential substitution system \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) and/or its causal network.  Use SSS (or SSSInitialize and SSSEvolve) to construct it first.
 
@@ -23,14 +29,14 @@ SSS::usage="SSS[\!\(\*StyleBox[\(\*StyleBox[\"rule\",FontSlant->\"Italic\"]set\)
 
 (Returns a copy of the SSS that can then be displayed or manipulated without rebuilding, using SSSDisplay, SSSAnimate, or directly, looking at its keys, \"Evolution\" and \"Net\", etc.)";
 
-SSSInteractiveDisplay::usage="SSSInteractiveDisplay[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\)] provides an interactive display of \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) and its causal network, with controls for easy adjustment of common options.  Click the button to create a SSSDisplay object with the selected options."
+SSSInteractiveDisplay::usage="SSSInteractiveDisplay[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\)] provides an interactive display of \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) and its causal network, with controls for easy adjustment of common options.  Click the button to create a SSSDisplay object with the selected options.";
 
 SSSAnimate::usage="SSSAnimate[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \!\(\*StyleBox[\"opts\",FontSlant->\"Italic\"]\)] animates the display of the causal network of the sequential substitution system \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\).  Use SSS (or SSSInitialize and SSSEvolve) to construct it first.  Takes all the options of SSSDisplay, with one modification:
 
 VertexLabels \[Rule] \"Name\" (default) | \"VertexWeight\"  display the vertex name/index or its distance from the origin.";
 
 (* Begin tests portion *)
-FromReducedRank::usage="NO_MESSAGE_YET";
+FromReducedRankIndex::usage="NO_MESSAGE_YET";
 FromReducedRankRuleSet::usage="NO_MESSAGE_YET";
 FromReducedRankQuinaryCode::usage="NO_MESSAGE_YET";
 ToCanonical::usage="NO_MESSAGE_YET";
@@ -66,10 +72,9 @@ StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether (1) none of the rules
 TestForUnbalancedRuleSet::usage="TestForUnbalancedRuleSet[\!\(\*
 StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether all characters that appear in the rules appear at least once on both sides.  Otherwise, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
 
-
-
 Begin["`Private`"]
 $SSSConnectionList = $SSSRulesUsed = {}; $SSSTagIndex = 0; (* create "globals" for later use *)
+
 Clear[SSSEvolve];
 Options[SSSEvolve]={EarlyReturn->False, Mode->Silent};
 SyntaxInformation[SSSEvolve]={"ArgumentsPattern"->{OptionsPattern[]}};
@@ -81,14 +86,16 @@ Do[ans=SSSSingleStep[ans],{n}]   (* just do it *)
 ];
 If[OptionValue[Mode]==Loud,Print[ans["Verdict"]]];
 ans
-]
+];
 
 Clear[SSSDisplay];
+
 Options[SSSDisplay]=
 {HighlightMethod->True,RulePlacement->Bottom,Mesh->True,NetSize->{Automatic,400},SSSSize->{Automatic,300},IconSize->{Automatic,20},ImageSize->Automatic,NetMethod->GraphPlot,
 Max->\[Infinity],SSSMax->Automatic,NetMax->Automatic,
 Min->1,SSSMin->Automatic,NetMin->Automatic, 
 Sequence@@Union[Options[TreePlot],Options[GraphPlot],Options[GraphPlot3D],Options[LayeredGraphPlot]]};
+
 SyntaxInformation[SSSDisplay]={"ArgumentsPattern"->{OptionsPattern[]}};
 
 SSSDisplay[sss_Association, opts:OptionsPattern[]] := Module[{HlM,mesh,IcS,ImS,SS,NS,RP,NM,doGP,doLGP,doTP,doGP3D,doSSS,myNet,ans,cellsToHighlight,rulesApplied,mx,netmx,sssmx,mn,netmn,sssmn,hs,start,ev,vrtxs,net,grph,DE},
@@ -177,7 +184,9 @@ Print@SSSDisplay[sss,Sequence@@FilterRules[{opts},Options[SSSDisplay]]];
 ];
 sss
 ];
+
 Options[SSS]=Join[Options[SSSEvolve],Options[SSSDisplay]];
+
 SyntaxInformation[SSS]={"ArgumentsPattern"->{_,_,_,OptionsPattern[]}};
 
 Clear[SSSInteractiveDisplay,dynamicLabel];
@@ -222,9 +231,10 @@ Control[{{is,350,"ImageSize"},10,500,Appearance->"Labeled"}],Control[{{vl,Automa
 Control[{{vp,Automatic,"Placed"},
 {Automatic,Center,Before,After,Below,Above,Tooltip,StatusArea}}]}
 },Alignment->Right,Spacings->2]
-]]
+]];
 
 Clear[SSSAnimate];
+
 SSSAnimate[sss_Association, opts:OptionsPattern[{VertexLabels->"Name",SSSDisplay}]] := Module[{g,mn,mx,VL},
 {VL,mn,mx}=If[FreeQ[OptionValue[VertexLabels],"VertexWeight"],
 {Placed["Name",Center],1,Length[sss["Evolution"]]},
@@ -239,6 +249,7 @@ Animate[g /. {
 {n,mn,mx,1,Appearance->"Labeled",AnimationRate->2,AnimationRunning->True}]];
 
 Clear[FromAlpha,ToAlpha,SSSConvert, SSSStrip]; 
+
 FromAlpha[string_String] :=(ToCharacterCode[string]-65);  
 ToAlpha[l:{___Integer}] := FromCharacterCode[l+65];
 
@@ -247,21 +258,27 @@ SSSConvert[string_String] := s @@ FromAlpha[string];
 SSSConvert[s[x___]] := ToAlpha[{x}];
 SSSConvert::usage="Converts SSS (sequential substitution system) states between s- and string-formats, using the functions \!\(\*StyleBox[\"FromAlpha\",FontSlant->\"Italic\"]\) and \!\(\*StyleBox[\"ToAlpha\",FontSlant->\"Italic\"]\).";
 
-SSSStrip[x_s] := SSSConvert[x[[All,1]]] /; MatrixQ[List@@x]    (* if dim=2, take only 1st component, and convert *)
-SSSStrip[x_s] := ""  /; Length[List@@x]==0     (* treat empty string case *) 
+SSSStrip[x_s] := SSSConvert[x[[All,1]]] /; MatrixQ[List@@x];    (* if dim=2, take only 1st component, and convert *)
+SSSStrip[x_s] := ""  /; Length[List@@x]==0;     (* treat empty string case *) 
 
 SSSStrip::usage="SSSStrip[\!\(\*StyleBox[\"state\",FontSlant->\"Italic\"]\)] strips out tags from a \!\(\*StyleBox[\"state\",FontSlant->\"Italic\"]\) given in tagged SSS (sequential substitution system) format and returns it in string format.";
+
 Clear[ToCharacterWeights, FromCharacterWeights, StringWeight, RuleSetWeight, RuleSetLength];
+
 ToCharacterWeights[s_String] := (1+FromAlpha[s]);
 FromCharacterWeights[l:{___Integer}] := ToAlpha[l-1];
 (* Note: To avoid breaking the ruleset (un-)rank functions, avoid the temptation to define:  
 ToCharacterWeights[""] = 0;  FromCharacterWeights[{0}]="";  *)
+
 StringWeight[s_String] := Plus @@ ToCharacterWeights[s];
 RuleSetWeight[rs_List] := Plus @@ (StringWeight /@ Flatten[rs /. Rule->List]);
 RuleSetLength[rs_List] := Plus @@ (StringLength /@ Flatten[rs /. Rule->List]);
+
 Clear[myColorOptions,patternPrint,SSSRuleIcon];
+
 myColorOptions[maxColor_Integer (* minimum 1 *) ]:=Sequence[ColorRules->{0->LightGray},
 ColorFunction->(Hue[(#-1)/(Max[1,maxColor])]&),ColorFunctionScaling->False];
+
 patternPrint[pattern_,mxClr_Integer,opts___] := ArrayPlot[{{##}}& @@pattern,myColorOptions[mxClr],Mesh->True,opts,ImageSize->{Automatic,20}];
 SSSRuleIcon[(rule_String|rule_Rule|rule_RuleDelayed),x___]:=SSSRuleIcon[{rule},x];
 
@@ -271,7 +288,9 @@ SSSRuleIcon[rules_List,mxClr_Integer:6,opts___] := Panel[Grid[Map[patternPrint[#
 {Rule[x_,y_]:>{x,"\[AlignmentMarker]\[Rule]",y},RuleDelayed[x_,y_]:>{x,"\[AlignmentMarker]\[RuleDelayed]",y}}, (* invisible AlignmentMarkers! *)
 Alignment->Left],"Substitution Rule"<>If[Length[rules]>1,"s:",":"]] /; FreeQ[rules,_String,Infinity];
 SSSRuleIcon::usage="SSSRuleIcon[\!\(\*StyleBox[\"rule\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"(\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"s\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\")\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\",\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"maxColor\",FontSlant->\"Italic\"]\)] generates an icon for a sequential substitution system (SSS) rule or set of rules.";
+
 Clear[SSSNewRule];
+
 SSSNewRule[rulenum_Integer,(rule_Rule | rule_RuleDelayed)] := 
 (* the tagged rule created will need valid versions of SSS`Private`$SSSConnectionList, SSS`Private`$SSSTagIndex, SSS`Private`$SSSRulesUsed, and will change them!  It's up to the calling routine to load/unload these globals.  *)
 Module[{lhs,rhs,lhsNames,newlhs,newrhs1,newrhs2},
@@ -281,11 +300,16 @@ newlhs=ToString[s@@Transpose[{FromAlpha[lhs],ToString@#<>"_"& /@ lhsNames}]];
 newrhs1=("AppendTo[SSS`Private`$SSSConnectionList, "<>ToString[lhsNames]<>" \[Rule] SSS`Private`$SSSTagIndex + "<>ToString[Range@StringLength@rhs-1]<>"]; ");
 newrhs2=ToString[SSSConvert[rhs] /. n_Integer :> {n,"SSS`Private`$SSSTagIndex++"}];
 ToExpression[newlhs<>" \[RuleDelayed] ("<>"AppendTo[SSS`Private`$SSSRulesUsed,"<>ToString@rulenum<>"];"<>newrhs1<>newrhs2<>")"]];
+
 SSSNewRule[rules_List] := Append[MapIndexed[SSSNewRule[First[#2],#1]&,rules],___:>AppendTo[SSS`Private`$SSSRulesUsed,0]];
+
 SSSNewRule::usage= 
 "SSSNewRule[\!\(\*StyleBox[\"rule\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"(\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"s\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\")\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"]\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"generates\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"the\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"needed\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"rules\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"for\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"the\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"tagged\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"SSS\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)(sequential substitution system) from the \!\(\*StyleBox[\"ruleset\",FontSlant->\"Italic\"]\) of rules given in string-format: e.g., \"BA\"\[Rule]\"ABA\"";
+
 Clear[SSSInitialize];
+
 Options[SSSInitialize]={Mode->Silent};
+
 SyntaxInformation[SSSEvolve]={"ArgumentsPattern"->{OptionsPattern[]}};
 
 SSSInitialize::usage = "\!\(\*StyleBox[\"variable\",FontSlant->\"Italic\"]\) = SSSInitialize[ruleset, string, (mode)] attempts to perform the necessary initializion steps to generate sequential substitution system (SSS) evolutions and networks,\nstarting with a ruleset (e.g., {\"BA\"\[Rule]\"ABA\"}) and an initial state string (e.g., \"BABA\").  The True|False return value indicates whether initialization was successful.\n\nIf omitted, mode defaults to \"Silent\", suppressing the short error or success message.\n\nThe following global variables are reset by this operation:\n\n$SSSNet:\t\t\t\tthe causal network of the current SSS,\n$SSSInDegree:\t\t\tthe list of in-degrees for each node,\n$SSSOutDegreeActual:\t\tthe list of currently found out-degrees for each node,\n$SSSOutDegreePotential:\t\tthe list of maximum possible out-degrees for each node,\n$SSSOutDegreeRemaining:\tthe list of numbers of possible remaining out-connections for each node,\nSSS`Private`$SSSConnectionList:\t\tthe current list of all causal network connections,\n$SSSDistance:\t\t\tthe list of minimum distances from the current node back to the starting node.\nSSS`Private`$SSSTagIndex:\t\t\tthe current tag index being used,\n$SSSTEvolution:\t\t\tthe complete evolution of the tagged SSS so far,\n$SSSEvolution:\t\t\tthe stripped (tagless) version of $SSSTEvolution,\n$SSSRuleSet:\t\t\tthe ruleset used for creating the SSS,\n$SSSTRuleSet:\t\t\tthe version of $SSSRuleSet (created by the function SSSNewRule) used to build $SSSTEvolution,\n$SSSRuleSetWeight:\t\tthe total weight of $SSSRuleSet,\n$SSSRuleSetLength:\t\tthe total length of $SSSRuleSet,\nSSS`Private`$SSSRulesUsed:\t\tthe list of rules used\n$SSSCellsDeleted:\t\tthe list of cells in the state string deleted at each step,\n$SSSVerdict:\t\t\tset to \"Dead\" | \"Repeating\" as soon as the future of the SSS becomes clear.";
@@ -325,7 +349,9 @@ AppendTo[ans["CellsDeleted"],Flatten[Position[ans["TEvolution"][[-2]],{_,#}]& /@
 
 ans  (* Return the association created *)
 ];
+
 Clear[SSSSingleStep];
+
 SSSSingleStep::usage=
 "SSSSingleStep[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\)] performs a single step of the sequential substitution system \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) evolution (if not already dead), returning the \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) object (which must be created by SSSInitialize first).";
 
@@ -369,12 +395,15 @@ AssociateTo[ans,"OutDegreeRemaining"->odr];
 AssociateTo[ans,"Net"->Join[ans["Net"],#->len& /@ startingEvents]];           (* add new links to the causal network *)
 AssociateTo[ans,"Distance"->Append[ans["Distance"],Min[ans["Distance"][[startingEvents]]]+1]];  (* Find minimum path length of cause nodes, add 1 for path lengths of result nodes *)
 
+ans  (* Return the updated association *)
+];
 
 (* TESTS PORTION *)
 
 (* ----------------------------------------------- *)
 
 Clear[nextLyndon,deBruijn];
+
 nextLyndon[k_,n_,w_List] := Module[{x=Table[0,{n}],l=Length[w],lastchar=n},
 x=w[[Mod[Range[1,n],l,1]]];   (* permute the digits appropriately *)
 While[lastchar>=0 && x[[lastchar]]==k-1,lastchar--];  (* back up past end trash *)
@@ -382,6 +411,7 @@ If[lastchar==0,
 {}, (* nothing left, we're done *)
 x[[lastchar]]++;x[[;;lastchar]]  (* increment last digit, return appropriate part *)
 ]];
+
 deBruijn[k_,n_] := deBruijn[k,n]=Module[{s,d=Divisors[n]},
 s=NestWhileList[nextLyndon[k,n,#]&,{0},#!={}&];
 Join @@ Select[s,MemberQ[d,Length[#]]&]
@@ -396,14 +426,17 @@ n=StringLength[lhs];
 s=deBruijn[k,n][[Mod[Range[k^n+n-1],k^n,1]]];
 StringJoin[s /. Thread[Range[k]-1->chars]]
 ];
+
 SSSInitialState[rs:{Rule[_,_]...}] := Module[{lhs=First /@ rs,runs,bigruns,full=StringJoin[Union[SSSInitialState /@ rs]],dels},
 runs = Union[Flatten[StringJoin /@ Split[Characters[#]]& /@ lhs]]; (* runs of same character existing in lhs *)
 bigruns=Last /@ SplitBy[runs,StringTake[#,1]&]; (* biggest run of each character *)
 dels=StringJoin[#,StringTake[#,1]]& /@ bigruns; (* next bigger for each character *)
 FixedPoint[StringReplace[#,Thread[dels->bigruns]]&,full]  (* keep replacing the too big runs by the max allowed size, stop when no futher change *)
 ];
-SSS[rs:{___Rule},n_Integer?Positive,opts___] := SSS[rs,SSSInitialState[rs],n,opts]
-FromReducedRankIndex[i_Integer/;i>0] := Module[{n,j,quinaryDigits,quinaryCode,numberOfEOS,chopPos,extra,ans={{1}},strings,ruleset},
+
+SSS[rs:{___Rule},n_Integer?Positive,opts___] := SSS[rs,SSSInitialState[rs],n,opts];
+
+FromReducedRankIndex[i_Integer/;i>0] := Module[{n,j,quinaryDigits,quinaryCode,numberOfEOS,chopPos,extra, ans={{1}},strings,ruleset},
 n=Floor[Log[5,4i-3]];
 j=i-(5^n+3)/4;
 quinaryDigits=IntegerDigits[j,5,n];  (* the base-5 code for this ruleset will contain n digits, the ruleset weight is n+1 *)
@@ -422,6 +455,7 @@ strings=StringJoin @@@ (FromCharacterWeights /@ ans);
 If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
 <|"Index"->i,"QCode"->quinaryCode,"RuleSet"->Rule @@@ Partition[strings,2,2]|>
 ];
+
 FromReducedRankRuleSet[rs_List] := Module[{rl,wl,w,code=""},
 rl=Flatten[List @@@ rs];
 If[Last[rl]=="",rl=Most[rl]]; (* drop ultimate empty string, if needed *)
@@ -441,6 +475,7 @@ wl[[-1]]=={1},  code="2"<>code; wl=Drop[wl,-1]
 <|"Index"->(FromDigits[code,5]+(5^(w-1)+3)/4),"QCode"->code,"RuleSet"->rs|>
 (* To find the index, add number of rulesets of smaller weights to reconstructed quinary code *)
 ];
+
 FromReducedRankQuinaryCode[s_String]:=Module[{n,j,quinaryDigits,w,numberOfEOS,chopPos,extra,ans={{1}},strings,ruleset},quinaryDigits=ToCharacterCode[s]-48;
 w=Length[quinaryDigits]+1;  (* weight of 0-length q-code is 1, each q-digit adds 1 to the weight *)
 Scan[
@@ -452,12 +487,13 @@ Switch[#,
 4,ans[[-1]][[-1]]++]&,quinaryDigits];
 strings=StringJoin@@@(FromCharacterWeights/@ans);
 If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
-
 <|"Index"->(FromDigits[s,5]+(5^(w-1)+3)/4),"QCode"->s,"RuleSet"->Rule@@@Partition[strings,2,2]|>
 (* To find the index, add number of rulesets of smaller weights to reconstructed quinary code *)
 ];
+
 SSS[rs_Integer,n_Integer,opts___] := SSS[FromReducedRankIndex[rs],n,opts];
-SSS[<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>, x___] := SSS[rs,x]
+SSS[<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>, x___] := SSS[rs,x];
+
 Clear[TestForConflictingRules];
 
 TestForConflictingRules::usage="TestForConflictingRules[rs] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) contains any cases of conflicting rules, and if so, returns the resolution ruleset object.  Returns {} if there is no conflict.";
@@ -488,13 +524,14 @@ Return[FromReducedRankQuinaryCode[newqcode]]
 j++
 ];
 {}]; (*return empty set if we got this far -- there are no conflicting rules*)
+
 Clear[TestForNonSoloIdentityRule,TestForIdentityRule];
 
 TestForNonSoloIdentityRule::usage="TestForNonSoloIdentityRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is not a singleton rule and contains any identity rules, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.";
 
 TestForIdentityRule::usage="TestForIdentityRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) contains any identity rules, and if so, returns the resolution ruleset object.  Returns {} if there is no identity rule.";
 
-TestForNonSoloIdentityRule[arg:<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>] := If[Length[rs]==1,{},TestForIdentityRule[arg]]
+TestForNonSoloIdentityRule[arg:<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>] := If[Length[rs]==1,{},TestForIdentityRule[arg]];
 
 TestForIdentityRule[<|"Index"->index_,"QCode"->qcode_,"RuleSet"->rs_|>] := Module[{poslist,rulenum,tailweight,newqcode},
 poslist=Flatten@Position[Equal @@@rs,True];
@@ -510,6 +547,7 @@ newqcode=StringDrop[qcode,-tailweight]<>"3"<>(StringJoin@@Table["0",{tailweight-
 ];
 Return[FromReducedRankQuinaryCode[newqcode]] 
 ];
+
 Clear[TestForRenamedRuleSet];
 
 TestForRenamedRuleSet::usage="TestForRenamedRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is already in canonical form, and if so, returns {}.  If not canonical, \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is a renamed ruleset, one in a run of such rulesets that can be long-jumped over, in which case, the function returns the resolution ruleset object.";
@@ -526,6 +564,7 @@ If[i>Length[rsn],Return[{}],tailweight=Plus@@rsn[[i+1;;]]];
 newqcode= StringDrop[qcode,-tailweight]<>(StringJoin@@Table["4",{tailweight}]); (* last problem *)
 FromReducedRankIndex[1+(FromReducedRankQuinaryCode[newqcode])["Index"]]  (* last prob + 1 *)
 ];
+
 Clear[TestForInitialSubstringRule,TestForNonSoloInitialSubstringRule];
 
 TestForInitialSubstringRule::usage="TestForInitialSubstringRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the first rule of ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is a substring rule, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.";
@@ -547,14 +586,16 @@ If[tailweight==0,Return[FromReducedRankIndex[index+1]]];  (* skip this ruleset, 
 
 newqcode=StringDrop[qcode,-tailweight]<>"4"<>(StringJoin@@Table["0",{tailweight-1}]); 
 FromReducedRankQuinaryCode[newqcode]
-]
+];
+
 Clear[TestForShorteningRuleSet];
 
 TestForShorteningRuleSet::usage="TestForShorteningRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether (1) none of the rules of the ruleset lengthen the state string, and (2) at least one of the rules shortens it.  In either case, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
 
 TestForShorteningRuleSet[<|"Index"->index_,"QCode"->_,"RuleSet"->rs_|>] := Module[{ruletypes=Union[Sign[Map[StringLength,rs,{2}] /. Rule->Subtract]]},
-Return[If[MemberQ[ruletypes,1] && FreeQ[ruletypes,-1],FromReducedRankIndex[index+1],{}]]]
+Return[If[MemberQ[ruletypes,1] && FreeQ[ruletypes,-1],FromReducedRankIndex[index+1],{}]]];
 (* At least one shortening rule and no lengthening rules *)
+
 Clear[TestForUnbalancedRuleSet];
 
 TestForUnbalancedRuleSet::usage="TestForUnbalancedRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether all characters that appear in the rules appear at least once on both sides.  Otherwise, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
@@ -562,7 +603,8 @@ TestForUnbalancedRuleSet::usage="TestForUnbalancedRuleSet[\!\(\*StyleBox[\"rs\",
 TestForUnbalancedRuleSet[<|"Index"->index_,"QCode"->_,"RuleSet"->rs_|>] :=
 If[(Union[Flatten[Characters /@ First /@ rs] ] != Union[Flatten[Characters /@ Last /@ rs]]),
 FromReducedRankIndex[index+1],
-{}]
+{}];
+
 Clear[ToCanonical,ToLeastWeight];
 
 ToCanonical[rs_List]:=Module[{unsortedchars,alphabetizedchars,reprules},
@@ -581,10 +623,6 @@ Map[StringReplace[#,reprules]&,rs,{2}]
 ];
 
 ToLeastWeight[<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>]:=FromReducedRankRuleSet@ToLeastWeight@rs;
-
-ans  (* Return the updated association *)
-];
-
 
 End[]
 
