@@ -29,6 +29,44 @@ SSSAnimate::usage="SSSAnimate[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \
 
 VertexLabels \[Rule] \"Name\" (default) | \"VertexWeight\"  display the vertex name/index or its distance from the origin.";
 
+(* Begin tests portion *)
+FromReducedRank::usage="NO_MESSAGE_YET";
+FromReducedRankRuleSet::usage="NO_MESSAGE_YET";
+FromReducedRankQuinaryCode::usage="NO_MESSAGE_YET";
+ToCanonical::usage="NO_MESSAGE_YET";
+ToLeastWeight::usage="NO_MESSAGE_YET";
+
+TestForConflictingRules::usage="TestForConflictingRules[rs] checks whether the ruleset object \!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\) contains any cases of conflicting rules, and if so, returns the resolution ruleset object.  Returns {} if there is no conflict.";
+
+TestForNonSoloIdentityRule::usage="TestForNonSoloIdentityRule[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\) is not a singleton rule and contains any identity rules, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.";
+
+TestForIdentityRule::usage="TestForIdentityRule[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\) contains any identity rules, and if so, returns the resolution ruleset object.  Returns {} if there is no identity rule.";
+
+TestForRenamedRuleSet::usage="TestForRenamedRuleSet[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\) is already in canonical form, and if so, returns {}.  If not canonical, \!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\) is a renamed ruleset, one in a run of such rulesets that can be long-jumped over, in which case, the function returns the resolution ruleset object.";
+
+TestForInitialSubstringRule::usage="TestForInitialSubstringRule[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether the first rule of ruleset object \!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\) is a substring rule, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.";
+
+TestForNonSoloInitialSubstringRule::usage="TestForNonSoloInitialSubstringRule[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\) is not a singleton rule and contains as its first rule a substring rule, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.  (The only reason to use this function instead of TestForInitialSubstringRule is if you want to explicitly include singleton substring rule cases, including singleton identity rules.  A singleton substring rule case does not reduce to a simpler case, although it has the same causal network as a simpler singleton identity rule case.)";
+
+TestForShorteningRuleSet::usage="TestForShorteningRuleSet[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether (1) none of the rules of the ruleset lengthen the state string, and (2) at least one of the rules shortens it.  In either case, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
+
+TestForUnbalancedRuleSet::usage="TestForUnbalancedRuleSet[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether all characters that appear in the rules appear at least once on both sides.  Otherwise, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
+
+
 
 Begin["`Private`"]
 $SSSConnectionList = $SSSRulesUsed = {}; $SSSTagIndex = 0; (* create "globals" for later use *)
@@ -330,6 +368,219 @@ odr[[#]]--& /@ startingEvents; (* update out-degee list for events involved *)
 AssociateTo[ans,"OutDegreeRemaining"->odr];
 AssociateTo[ans,"Net"->Join[ans["Net"],#->len& /@ startingEvents]];           (* add new links to the causal network *)
 AssociateTo[ans,"Distance"->Append[ans["Distance"],Min[ans["Distance"][[startingEvents]]]+1]];  (* Find minimum path length of cause nodes, add 1 for path lengths of result nodes *)
+
+
+(* TESTS PORTION *)
+
+(* ----------------------------------------------- *)
+
+Clear[nextLyndon,deBruijn];
+nextLyndon[k_,n_,w_List] := Module[{x=Table[0,{n}],l=Length[w],lastchar=n},
+x=w[[Mod[Range[1,n],l,1]]];   (* permute the digits appropriately *)
+While[lastchar>=0 && x[[lastchar]]==k-1,lastchar--];  (* back up past end trash *)
+If[lastchar==0,
+{}, (* nothing left, we're done *)
+x[[lastchar]]++;x[[;;lastchar]]  (* increment last digit, return appropriate part *)
+]];
+deBruijn[k_,n_] := deBruijn[k,n]=Module[{s,d=Divisors[n]},
+s=NestWhileList[nextLyndon[k,n,#]&,{0},#!={}&];
+Join @@ Select[s,MemberQ[d,Length[#]]&]
+];
+Clear[SSSInitialState];
+SSSInitialState[r_Rule] := Module[{lhs,k,n,chars,s,len},
+lhs=First[r];
+If[lhs=="",lhs="A"];
+chars=Union[Characters [lhs]];
+k=Length[chars];
+n=StringLength[lhs];
+s=deBruijn[k,n][[Mod[Range[k^n+n-1],k^n,1]]];
+StringJoin[s /. Thread[Range[k]-1->chars]]
+];
+SSSInitialState[rs:{Rule[_,_]...}] := Module[{lhs=First /@ rs,runs,bigruns,full=StringJoin[Union[SSSInitialState /@ rs]],dels},
+runs = Union[Flatten[StringJoin /@ Split[Characters[#]]& /@ lhs]]; (* runs of same character existing in lhs *)
+bigruns=Last /@ SplitBy[runs,StringTake[#,1]&]; (* biggest run of each character *)
+dels=StringJoin[#,StringTake[#,1]]& /@ bigruns; (* next bigger for each character *)
+FixedPoint[StringReplace[#,Thread[dels->bigruns]]&,full]  (* keep replacing the too big runs by the max allowed size, stop when no futher change *)
+];
+SSS[rs:{___Rule},n_Integer?Positive,opts___] := SSS[rs,SSSInitialState[rs],n,opts]
+FromReducedRankIndex[i_Integer/;i>0] := Module[{n,j,quinaryDigits,quinaryCode,numberOfEOS,chopPos,extra,ans={{1}},strings,ruleset},
+n=Floor[Log[5,4i-3]];
+j=i-(5^n+3)/4;
+quinaryDigits=IntegerDigits[j,5,n];  (* the base-5 code for this ruleset will contain n digits, the ruleset weight is n+1 *)
+quinaryCode=StringJoin @@ (ToString/@quinaryDigits);
+Scan[
+Switch[#,
+0 ,ans=Join[ans,{{},{},{1}}] ,
+1,ans=Join[ans,{{},{1}}] ,
+2,AppendTo[ans,{1}],
+3,AppendTo[ans[[-1]],1],
+4,ans[[-1]][[-1]]++
+]&,
+(* Print@quinaryDigits; *)
+quinaryDigits];
+strings=StringJoin @@@ (FromCharacterWeights /@ ans);
+If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
+<|"Index"->i,"QCode"->quinaryCode,"RuleSet"->Rule @@@ Partition[strings,2,2]|>
+];
+FromReducedRankRuleSet[rs_List] := Module[{rl,wl,w,code=""},
+rl=Flatten[List @@@ rs];
+If[Last[rl]=="",rl=Most[rl]]; (* drop ultimate empty string, if needed *)
+(* wl=1+FromAlpha /@ rl; *)
+wl=ToCharacterWeights /@ rl; (* to lists of lists of numbers "A"\[Rule]1, etc., but ""\[Rule]{}, not 0 *)
+wl=wl /. 0->{};
+w=Total[Flatten[wl]]; (* weight of this rule set *)
+While[wl!={{1}},
+Which[
+wl[[-1]][[-1]]>1, code="4"<>code; wl[[-1]][[-1]]--,
+wl[[-1]][[-1]]==1 && Length[wl[[-1]]]>1,  code="3"<>code; wl[[-1]]=Most[wl[[-1]]],
+Length[wl]>=3 && wl[[-3;;]]=={{},{},{1}}, code="0"<>code; wl=Drop[wl,-3],
+Length[wl]>=2 && wl[[-2;;]]=={{},{1}}, code="1"<>code; wl=Drop[wl,-2],
+wl[[-1]]=={1},  code="2"<>code; wl=Drop[wl,-1]
+]
+];
+<|"Index"->(FromDigits[code,5]+(5^(w-1)+3)/4),"QCode"->code,"RuleSet"->rs|>
+(* To find the index, add number of rulesets of smaller weights to reconstructed quinary code *)
+];
+FromReducedRankQuinaryCode[s_String]:=Module[{n,j,quinaryDigits,w,numberOfEOS,chopPos,extra,ans={{1}},strings,ruleset},quinaryDigits=ToCharacterCode[s]-48;
+w=Length[quinaryDigits]+1;  (* weight of 0-length q-code is 1, each q-digit adds 1 to the weight *)
+Scan[
+Switch[#,
+0,ans=Join[ans,{{},{},{1}}],
+1,ans=Join[ans,{{},{1}}],
+2,AppendTo[ans,{1}],
+3,AppendTo[ans[[-1]],1],
+4,ans[[-1]][[-1]]++]&,quinaryDigits];
+strings=StringJoin@@@(FromCharacterWeights/@ans);
+If[OddQ[Length[strings]],strings=AppendTo[strings,""]];
+
+<|"Index"->(FromDigits[s,5]+(5^(w-1)+3)/4),"QCode"->s,"RuleSet"->Rule@@@Partition[strings,2,2]|>
+(* To find the index, add number of rulesets of smaller weights to reconstructed quinary code *)
+];
+SSS[rs_Integer,n_Integer,opts___] := SSS[FromReducedRankIndex[rs],n,opts];
+SSS[<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>, x___] := SSS[rs,x]
+Clear[TestForConflictingRules];
+
+TestForConflictingRules::usage="TestForConflictingRules[rs] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) contains any cases of conflicting rules, and if so, returns the resolution ruleset object.  Returns {} if there is no conflict.";
+
+TestForConflictingRules[<|"Index"->index_,"QCode"->qcode_,"RuleSet"->rs_|>]:=Module[{lhs,max,j,tailweight,newrs,poslist,matchstart,matchend,newqcode},
+lhs=First/@rs;
+max=Length[lhs];
+(* first check for non-final creation rules *)
+For[j=2,j<max,j++,
+If[StringLength[lhs[[j]]]==0, (* found first case, if any! *)
+tailweight=RuleSetWeight[rs[[j+1;;]]]; (* weight after creation rule *)
+If[tailweight==0,Return[FromReducedRankIndex[index+1]]]; (* shouldn't happen, creation rule isn't last, since j<max *)
+newrs=Append[rs[[;;j-1]], ""->rs[[j,2]]<>(StringJoin @@ Table["A",{tailweight}])];
+Return[FromReducedRankRuleSet[newrs]] (* We're outta here *)
+]
+];
+(* now check for other conflicting rules cases *)
+j=2;
+While[j<=max,  (* j starts at 2 and counts up, look for conflicts in earlier rules *)
+If[Length[poslist=StringPosition[lhs[[j]],lhs[[;;j-1]]]]>0,  (* we have a conflicting rules case *)
+{matchstart,matchend}=First[Sort[poslist,Last[#1]<Last[#2]&]];  (* take the earliest ending match in the string, note where it ends *)
+tailweight=RuleSetWeight[Prepend[rs[[j+1;;]],StringDrop[rs[[j,1]],matchend]->rs[[j,2]]]];
+If[tailweight==0,Return[FromReducedRankIndex[index+1]]];  (* skip this ruleset, go on *)
+(* else *)
+newqcode= StringDrop[qcode,-tailweight]<>"4"<>(StringJoin@@Table["0",{tailweight-1}]);
+Return[FromReducedRankQuinaryCode[newqcode]] 
+];
+j++
+];
+{}]; (*return empty set if we got this far -- there are no conflicting rules*)
+Clear[TestForNonSoloIdentityRule,TestForIdentityRule];
+
+TestForNonSoloIdentityRule::usage="TestForNonSoloIdentityRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is not a singleton rule and contains any identity rules, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.";
+
+TestForIdentityRule::usage="TestForIdentityRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) contains any identity rules, and if so, returns the resolution ruleset object.  Returns {} if there is no identity rule.";
+
+TestForNonSoloIdentityRule[arg:<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>] := If[Length[rs]==1,{},TestForIdentityRule[arg]]
+
+TestForIdentityRule[<|"Index"->index_,"QCode"->qcode_,"RuleSet"->rs_|>] := Module[{poslist,rulenum,tailweight,newqcode},
+poslist=Flatten@Position[Equal @@@rs,True];
+If[Length[poslist]==0,Return[{}]];                                  (* no identity rules *)
+
+rulenum=First[poslist];
+tailweight=RuleSetWeight[rs[[rulenum+1;;]]];
+If[tailweight==0,Return[FromReducedRankIndex[index+1]]];  (* skip this ruleset, go on *)
+
+If[StringLength[rs[[rulenum,1]]]==0 (* nothing to nothing rule *),
+newqcode=StringDrop[qcode,-tailweight]<>"1"<>(StringJoin@@Table["0",{tailweight-1}]),
+newqcode=StringDrop[qcode,-tailweight]<>"3"<>(StringJoin@@Table["0",{tailweight-1}])
+];
+Return[FromReducedRankQuinaryCode[newqcode]] 
+];
+Clear[TestForRenamedRuleSet];
+
+TestForRenamedRuleSet::usage="TestForRenamedRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is already in canonical form, and if so, returns {}.  If not canonical, \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is a renamed ruleset, one in a run of such rulesets that can be long-jumped over, in which case, the function returns the resolution ruleset object.";
+
+TestForRenamedRuleSet[<|"Index"->_,"QCode"->qcode_,"RuleSet"->rs_|>] := Module[{rsn,maxChar=0,tailweight,newqcode},
+rsn=Flatten[ToCharacterWeights /@ Flatten[rs/. Rule->List]];  (* transliterate rs characters as a list of positive integers *)
+For[i=1,i<=Length[rsn],i++,
+Switch[Sign[#-(maxChar+1)],
+0,maxChar++, (* this is the next higher character, inc maxChar *)
+1, i;Break[]   (* this is a bad character, note position and break out *)
+]& [rsn[[i]]]
+];
+If[i>Length[rsn],Return[{}],tailweight=Plus@@rsn[[i+1;;]]];
+newqcode= StringDrop[qcode,-tailweight]<>(StringJoin@@Table["4",{tailweight}]); (* last problem *)
+FromReducedRankIndex[1+(FromReducedRankQuinaryCode[newqcode])["Index"]]  (* last prob + 1 *)
+];
+Clear[TestForInitialSubstringRule,TestForNonSoloInitialSubstringRule];
+
+TestForInitialSubstringRule::usage="TestForInitialSubstringRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the first rule of ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is a substring rule, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.";
+
+TestForNonSoloInitialSubstringRule::usage="TestForNonSoloInitialSubstringRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is not a singleton rule and contains as its first rule a substring rule, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.  (The only reason to use this function instead of TestForInitialSubstringRule is if you want to explicitly include singleton substring rule cases, including singleton identity rules.  A singleton substring rule case does not reduce to a simpler case, although it has the same causal network as a simpler singleton identity rule case.)";
+
+TestForNonSoloInitialSubstringRule[arg:<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>] := If[Length[rs]==1,{},TestForInitialSubstringRule[arg]];
+
+TestForInitialSubstringRule[<|"Index"->index_,"QCode"->qcode_,"RuleSet"->rs_|>] := 
+Module[{poslist,duppos,tailweight,newqcode},
+poslist=StringPosition[rs[[1,2]],rs[[1,1]]];
+(* test for initial substring rule including initial identity rule! *)
+If[Length[Flatten[poslist]]==0, Return[{}]];    (* no initial substring rule, quit *)
+
+duppos=Last@First@poslist;  (* end of first match *)
+tailweight=RuleSetWeight[Flatten[{StringDrop[rs[[1,2]],duppos],rs[[2;;]]}]];
+(* include the rest of rhs of rule 1 in tailweight *)
+If[tailweight==0,Return[FromReducedRankIndex[index+1]]];  (* skip this ruleset, go on *)
+
+newqcode=StringDrop[qcode,-tailweight]<>"4"<>(StringJoin@@Table["0",{tailweight-1}]); 
+FromReducedRankQuinaryCode[newqcode]
+]
+Clear[TestForShorteningRuleSet];
+
+TestForShorteningRuleSet::usage="TestForShorteningRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether (1) none of the rules of the ruleset lengthen the state string, and (2) at least one of the rules shortens it.  In either case, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
+
+TestForShorteningRuleSet[<|"Index"->index_,"QCode"->_,"RuleSet"->rs_|>] := Module[{ruletypes=Union[Sign[Map[StringLength,rs,{2}] /. Rule->Subtract]]},
+Return[If[MemberQ[ruletypes,1] && FreeQ[ruletypes,-1],FromReducedRankIndex[index+1],{}]]]
+(* At least one shortening rule and no lengthening rules *)
+Clear[TestForUnbalancedRuleSet];
+
+TestForUnbalancedRuleSet::usage="TestForUnbalancedRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether all characters that appear in the rules appear at least once on both sides.  Otherwise, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
+
+TestForUnbalancedRuleSet[<|"Index"->index_,"QCode"->_,"RuleSet"->rs_|>] :=
+If[(Union[Flatten[Characters /@ First /@ rs] ] != Union[Flatten[Characters /@ Last /@ rs]]),
+FromReducedRankIndex[index+1],
+{}]
+Clear[ToCanonical,ToLeastWeight];
+
+ToCanonical[rs_List]:=Module[{unsortedchars,alphabetizedchars,reprules},
+unsortedchars=DeleteDuplicates[Flatten[Characters/@Flatten[rs,\[Infinity],Rule]]];
+alphabetizedchars=Characters[FromCharacterWeights[Range[Length[unsortedchars]]]];
+reprules=Thread[unsortedchars->alphabetizedchars];
+Map[StringReplace[#,reprules]&,rs,{2}]];
+
+ToCanonical[<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>]:=FromReducedRankRuleSet@ToCanonical@rs;
+
+ToLeastWeight[rs_List] := Module[{weightsortedchars,alphabetizedchars,reprules},
+weightsortedchars = First /@ Sort[Tally[Flatten[Characters /@ Flatten[rs,\[Infinity],Rule]]],Last[#1]>=Last[#2]&];
+alphabetizedchars = Characters[FromCharacterWeights[Range[Length[weightsortedchars]]]];
+reprules=Thread[weightsortedchars->alphabetizedchars];
+Map[StringReplace[#,reprules]&,rs,{2}]
+];
+
+ToLeastWeight[<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>]:=FromReducedRankRuleSet@ToLeastWeight@rs;
 
 ans  (* Return the updated association *)
 ];
