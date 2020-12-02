@@ -1,6 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["SSS`"]
+$SSSConnectionList = $SSSRulesUsed = {}; $SSSTagIndex = 0; (* create "globals" for later use *)
 SSSEvolve::usage="SSSEvolve[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\)] generates an additional \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) levels of indicated \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)(sequential substitution system), which must have been previously created using SSSInitialize.  Use the option EarlyReturn \[Rule] True to allow early termination for repeating cases.  (SSSSinglestep immediately returns anyway if the SSS is dead.)  In Loud mode, prints the current verdict, \"OK\" means none known.  Values of \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) updated, with \"Evolution\" containing the tagless SSS, \"ConnectionList\" the updated causal network connection list, etc.  mode can be Silent, Quiet, or Loud.";
 	
 SSSDisplay::usage="SSSDisplay[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \!\(\*StyleBox[\"opts\",FontSlant->\"Italic\"]\)] displays the sequential substitution system \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) and/or its causal network.  Use SSS (or SSSInitialize and SSSEvolve) to construct it first.
