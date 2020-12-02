@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["SSS`"]
-$SSSConnectionList = $SSSRulesUsed = {}; $SSSTagIndex = 0; (* create "globals" for later use *)
+
 SSSEvolve::usage="SSSEvolve[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\)] generates an additional \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) levels of indicated \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)(sequential substitution system), which must have been previously created using SSSInitialize.  Use the option EarlyReturn \[Rule] True to allow early termination for repeating cases.  (SSSSinglestep immediately returns anyway if the SSS is dead.)  In Loud mode, prints the current verdict, \"OK\" means none known.  Values of \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) updated, with \"Evolution\" containing the tagless SSS, \"ConnectionList\" the updated causal network connection list, etc.  mode can be Silent, Quiet, or Loud.";
 	
 SSSDisplay::usage="SSSDisplay[\!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\), \!\(\*StyleBox[\"opts\",FontSlant->\"Italic\"]\)] displays the sequential substitution system \!\(\*StyleBox[\"sss\",FontSlant->\"Italic\"]\) and/or its causal network.  Use SSS (or SSSInitialize and SSSEvolve) to construct it first.
@@ -31,7 +31,7 @@ VertexLabels \[Rule] \"Name\" (default) | \"VertexWeight\"  display the vertex n
 
 
 Begin["`Private`"]
-
+$SSSConnectionList = $SSSRulesUsed = {}; $SSSTagIndex = 0; (* create "globals" for later use *)
 Clear[SSSEvolve];
 Options[SSSEvolve]={EarlyReturn->False, Mode->Silent};
 SyntaxInformation[SSSEvolve]={"ArgumentsPattern"->{OptionsPattern[]}};
@@ -235,22 +235,22 @@ Alignment->Left],"Substitution Rule"<>If[Length[rules]>1,"s:",":"]] /; FreeQ[rul
 SSSRuleIcon::usage="SSSRuleIcon[\!\(\*StyleBox[\"rule\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"(\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"s\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\")\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\",\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"maxColor\",FontSlant->\"Italic\"]\)] generates an icon for a sequential substitution system (SSS) rule or set of rules.";
 Clear[SSSNewRule];
 SSSNewRule[rulenum_Integer,(rule_Rule | rule_RuleDelayed)] := 
-(* the tagged rule created will need valid versions of $SSSConnectionList, $SSSTagIndex, $SSSRulesUsed, and will change them!  It's up to the calling routine to load/unload these globals.  *)
+(* the tagged rule created will need valid versions of SSS`Private`$SSSConnectionList, SSS`Private`$SSSTagIndex, SSS`Private`$SSSRulesUsed, and will change them!  It's up to the calling routine to load/unload these globals.  *)
 Module[{lhs,rhs,lhsNames,newlhs,newrhs1,newrhs2},
 {lhs,rhs}=List@@rule;
 lhsNames = Table[Unique[lhsTag],{StringLength[lhs]}];
 newlhs=ToString[s@@Transpose[{FromAlpha[lhs],ToString@#<>"_"& /@ lhsNames}]];
-newrhs1=("AppendTo[$SSSConnectionList, "<>ToString[lhsNames]<>" \[Rule] $SSSTagIndex + "<>ToString[Range@StringLength@rhs-1]<>"]; ");
-newrhs2=ToString[SSSConvert[rhs] /. n_Integer :> {n,"$SSSTagIndex++"}];
-ToExpression[newlhs<>" \[RuleDelayed] ("<>"AppendTo[$SSSRulesUsed,"<>ToString@rulenum<>"];"<>newrhs1<>newrhs2<>")"]];
-SSSNewRule[rules_List] := Append[MapIndexed[SSSNewRule[First[#2],#1]&,rules],___:>AppendTo[$SSSRulesUsed,0]];
+newrhs1=("AppendTo[SSS`Private`$SSSConnectionList, "<>ToString[lhsNames]<>" \[Rule] SSS`Private`$SSSTagIndex + "<>ToString[Range@StringLength@rhs-1]<>"]; ");
+newrhs2=ToString[SSSConvert[rhs] /. n_Integer :> {n,"SSS`Private`$SSSTagIndex++"}];
+ToExpression[newlhs<>" \[RuleDelayed] ("<>"AppendTo[SSS`Private`$SSSRulesUsed,"<>ToString@rulenum<>"];"<>newrhs1<>newrhs2<>")"]];
+SSSNewRule[rules_List] := Append[MapIndexed[SSSNewRule[First[#2],#1]&,rules],___:>AppendTo[SSS`Private`$SSSRulesUsed,0]];
 SSSNewRule::usage= 
 "SSSNewRule[\!\(\*StyleBox[\"rule\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"(\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"s\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\")\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"]\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"generates\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"the\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"needed\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"rules\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"for\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"the\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"tagged\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\"SSS\",FontSlant->\"Plain\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Plain\"]\)(sequential substitution system) from the \!\(\*StyleBox[\"ruleset\",FontSlant->\"Italic\"]\) of rules given in string-format: e.g., \"BA\"\[Rule]\"ABA\"";
 Clear[SSSInitialize];
 Options[SSSInitialize]={Mode->Silent};
 SyntaxInformation[SSSEvolve]={"ArgumentsPattern"->{OptionsPattern[]}};
 
-SSSInitialize::usage = "\!\(\*StyleBox[\"variable\",FontSlant->\"Italic\"]\) = SSSInitialize[ruleset, string, (mode)] attempts to perform the necessary initializion steps to generate sequential substitution system (SSS) evolutions and networks,\nstarting with a ruleset (e.g., {\"BA\"\[Rule]\"ABA\"}) and an initial state string (e.g., \"BABA\").  The True|False return value indicates whether initialization was successful.\n\nIf omitted, mode defaults to \"Silent\", suppressing the short error or success message.\n\nThe following global variables are reset by this operation:\n\n$SSSNet:\t\t\t\tthe causal network of the current SSS,\n$SSSInDegree:\t\t\tthe list of in-degrees for each node,\n$SSSOutDegreeActual:\t\tthe list of currently found out-degrees for each node,\n$SSSOutDegreePotential:\t\tthe list of maximum possible out-degrees for each node,\n$SSSOutDegreeRemaining:\tthe list of numbers of possible remaining out-connections for each node,\n$SSSConnectionList:\t\tthe current list of all causal network connections,\n$SSSDistance:\t\t\tthe list of minimum distances from the current node back to the starting node.\n$SSSTagIndex:\t\t\tthe current tag index being used,\n$SSSTEvolution:\t\t\tthe complete evolution of the tagged SSS so far,\n$SSSEvolution:\t\t\tthe stripped (tagless) version of $SSSTEvolution,\n$SSSRuleSet:\t\t\tthe ruleset used for creating the SSS,\n$SSSTRuleSet:\t\t\tthe version of $SSSRuleSet (created by the function SSSNewRule) used to build $SSSTEvolution,\n$SSSRuleSetWeight:\t\tthe total weight of $SSSRuleSet,\n$SSSRuleSetLength:\t\tthe total length of $SSSRuleSet,\n$SSSRulesUsed:\t\tthe list of rules used\n$SSSCellsDeleted:\t\tthe list of cells in the state string deleted at each step,\n$SSSVerdict:\t\t\tset to \"Dead\" | \"Repeating\" as soon as the future of the SSS becomes clear.";
+SSSInitialize::usage = "\!\(\*StyleBox[\"variable\",FontSlant->\"Italic\"]\) = SSSInitialize[ruleset, string, (mode)] attempts to perform the necessary initializion steps to generate sequential substitution system (SSS) evolutions and networks,\nstarting with a ruleset (e.g., {\"BA\"\[Rule]\"ABA\"}) and an initial state string (e.g., \"BABA\").  The True|False return value indicates whether initialization was successful.\n\nIf omitted, mode defaults to \"Silent\", suppressing the short error or success message.\n\nThe following global variables are reset by this operation:\n\n$SSSNet:\t\t\t\tthe causal network of the current SSS,\n$SSSInDegree:\t\t\tthe list of in-degrees for each node,\n$SSSOutDegreeActual:\t\tthe list of currently found out-degrees for each node,\n$SSSOutDegreePotential:\t\tthe list of maximum possible out-degrees for each node,\n$SSSOutDegreeRemaining:\tthe list of numbers of possible remaining out-connections for each node,\nSSS`Private`$SSSConnectionList:\t\tthe current list of all causal network connections,\n$SSSDistance:\t\t\tthe list of minimum distances from the current node back to the starting node.\nSSS`Private`$SSSTagIndex:\t\t\tthe current tag index being used,\n$SSSTEvolution:\t\t\tthe complete evolution of the tagged SSS so far,\n$SSSEvolution:\t\t\tthe stripped (tagless) version of $SSSTEvolution,\n$SSSRuleSet:\t\t\tthe ruleset used for creating the SSS,\n$SSSTRuleSet:\t\t\tthe version of $SSSRuleSet (created by the function SSSNewRule) used to build $SSSTEvolution,\n$SSSRuleSetWeight:\t\tthe total weight of $SSSRuleSet,\n$SSSRuleSetLength:\t\tthe total length of $SSSRuleSet,\nSSS`Private`$SSSRulesUsed:\t\tthe list of rules used\n$SSSCellsDeleted:\t\tthe list of cells in the state string deleted at each step,\n$SSSVerdict:\t\t\tset to \"Dead\" | \"Repeating\" as soon as the future of the SSS becomes clear.";
 
 SSSInitialize[rs:{___Rule},state_String,opts:OptionsPattern[] (* Mode \[Rule] Silent | Quiet | Loud *)] :=
 Module[{ans=<|"Net"->{},"OutDegreePotential"->{},"OutDegreeRemaining"->{},"OutDegreeActual"-> {},
@@ -264,9 +264,9 @@ AssociateTo[ans,{
 "RuleSetWeight"->RuleSetWeight[rs], "RuleSetLength"->RuleSetLength[rs]
 }];
 
-{$SSSConnectionList, $SSSTagIndex, $SSSRulesUsed}={ans["ConnectionList"],ans["TagIndex"],ans["RulesUsed"]};
+{SSS`Private`$SSSConnectionList, SSS`Private`$SSSTagIndex, SSS`Private`$SSSRulesUsed}={ans["ConnectionList"],ans["TagIndex"],ans["RulesUsed"]};
 AppendTo[ans["TEvolution"],Last[ans["TEvolution"]]/.ans["TRuleSet"]];
-{ans["ConnectionList"],ans["TagIndex"],ans["RulesUsed"]}={$SSSConnectionList, $SSSTagIndex, $SSSRulesUsed};
+{ans["ConnectionList"],ans["TagIndex"],ans["RulesUsed"]}={SSS`Private`$SSSConnectionList, SSS`Private`$SSSTagIndex, SSS`Private`$SSSRulesUsed};
 
 Switch[ Last[ans["RulesUsed"]], (* can also test if Length[ans["ConnectionList"]]\[Equal]0 *)
 0,ans["TEvolution"]=Most[ans["TEvolution"]]; (* toss last duplicate entry *)
@@ -295,9 +295,9 @@ SSSSingleStep[sss_Association] := Module[{ans=sss,cd, ri, pri, rs, prs,len,start
 If[ans["Verdict"]==="Dead",Return[ans]];  (* if already dead, do nothing, return *)
 
 (* do the actual evolution step *)
-{$SSSConnectionList, $SSSTagIndex, $SSSRulesUsed}={ans["ConnectionList"],ans["TagIndex"],ans["RulesUsed"]};
+{SSS`Private`$SSSConnectionList, SSS`Private`$SSSTagIndex, SSS`Private`$SSSRulesUsed}={ans["ConnectionList"],ans["TagIndex"],ans["RulesUsed"]};
 AppendTo[ans["TEvolution"],Last[ans["TEvolution"]]/.ans["TRuleSet"]];
-{ans["ConnectionList"],ans["TagIndex"],ans["RulesUsed"]}={$SSSConnectionList, $SSSTagIndex, $SSSRulesUsed};
+{ans["ConnectionList"],ans["TagIndex"],ans["RulesUsed"]}={SSS`Private`$SSSConnectionList, SSS`Private`$SSSTagIndex, SSS`Private`$SSSRulesUsed};
 
 If[Last[ans["RulesUsed"]]==0,ans["Verdict"]="Dead"; 
 ans["TEvolution"]=Most[ans["TEvolution"]]; 
