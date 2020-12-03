@@ -79,7 +79,7 @@ Begin["`Private`"]
 $SSSConnectionList = $SSSRulesUsed = {}; $SSSTagIndex = 0; (* create "globals" for later use *)
 
 Options[SSSEvolve]={EarlyReturn->False, Mode->Silent};
-SyntaxInformation[SSSEvolve]={"ArgumentsPattern"->{_Association, _Integer, OptionsPattern[]}};
+SyntaxInformation[SSSEvolve]={"ArgumentsPattern"->{_, _, OptionsPattern[]}};
 
 SSSEvolve[sss_Association,n_Integer/;n>0,opts:OptionsPattern[]] := Module[{ans=sss},
 If[OptionValue[EarlyReturn] ,
@@ -96,7 +96,7 @@ Max->\[Infinity],SSSMax->Automatic,NetMax->Automatic,
 Min->1,SSSMin->Automatic,NetMin->Automatic, 
 Sequence@@Union[Options[TreePlot],Options[GraphPlot],Options[GraphPlot3D],Options[LayeredGraphPlot]]};
 
-SyntaxInformation[SSSDisplay]={"ArgumentsPattern"->{_Association, OptionsPattern[]}};
+SyntaxInformation[SSSDisplay]={"ArgumentsPattern"->{_, OptionsPattern[]}};
 
 SSSDisplay[sss_Association, opts:OptionsPattern[]] := Module[{HlM,mesh,IcS,ImS,SS,NS,RP,NM,doGP,doLGP,doTP,doGP3D,doSSS,myNet,ans,cellsToHighlight,rulesApplied,mx,netmx,sssmx,mn,netmn,sssmn,hs,start,ev,vrtxs,net,grph,DE},
 
@@ -192,7 +192,10 @@ SSS[<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>, x___] := SSS[rs,x];
 
 Options[SSS]=Join[Options[SSSEvolve],Options[SSSDisplay]];
 
+SyntaxInformation[SSS]={"ArgumentsPattern"->{_,_,_,OptionsPattern[]}};
+(*
 SyntaxInformation[SSS]={"ArgumentsPattern"->{((_Association)|(___Rule)),___String,___Integer?Positive,OptionsPattern[]}};
+*)
 
 dynamicLabel[lbl_,max_]:=Dynamic[If[Clock[{1,max,1},max]==lbl,Framed[lbl,Background->Green,RoundingRadius->Scaled[.5]],lbl]];
 
@@ -301,7 +304,7 @@ SSSNewRule::usage=
 
 Options[SSSInitialize]={Mode->Silent};
 
-SyntaxInformation[SSSEvolve]={"ArgumentsPattern"->{_Association, OptionsPattern[]}};
+SyntaxInformation[SSSEvolve]={"ArgumentsPattern"->{_, OptionsPattern[]}};
 
 SSSInitialize::usage = "\!\(\*StyleBox[\"variable\",FontSlant->\"Italic\"]\) = SSSInitialize[ruleset, string, (mode)] attempts to perform the necessary initializion steps to generate sequential substitution system (SSS) evolutions and networks,\nstarting with a ruleset (e.g., {\"BA\"\[Rule]\"ABA\"}) and an initial state string (e.g., \"BABA\").  The True|False return value indicates whether initialization was successful.\n\nIf omitted, mode defaults to \"Silent\", suppressing the short error or success message.\n\nThe following global variables are reset by this operation:\n\n$SSSNet:\t\t\t\tthe causal network of the current SSS,\n$SSSInDegree:\t\t\tthe list of in-degrees for each node,\n$SSSOutDegreeActual:\t\tthe list of currently found out-degrees for each node,\n$SSSOutDegreePotential:\t\tthe list of maximum possible out-degrees for each node,\n$SSSOutDegreeRemaining:\tthe list of numbers of possible remaining out-connections for each node,\nSSS`Private`$SSSConnectionList:\t\tthe current list of all causal network connections,\n$SSSDistance:\t\t\tthe list of minimum distances from the current node back to the starting node.\nSSS`Private`$SSSTagIndex:\t\t\tthe current tag index being used,\n$SSSTEvolution:\t\t\tthe complete evolution of the tagged SSS so far,\n$SSSEvolution:\t\t\tthe stripped (tagless) version of $SSSTEvolution,\n$SSSRuleSet:\t\t\tthe ruleset used for creating the SSS,\n$SSSTRuleSet:\t\t\tthe version of $SSSRuleSet (created by the function SSSNewRule) used to build $SSSTEvolution,\n$SSSRuleSetWeight:\t\tthe total weight of $SSSRuleSet,\n$SSSRuleSetLength:\t\tthe total length of $SSSRuleSet,\nSSS`Private`$SSSRulesUsed:\t\tthe list of rules used\n$SSSCellsDeleted:\t\tthe list of cells in the state string deleted at each step,\n$SSSVerdict:\t\t\tset to \"Dead\" | \"Repeating\" as soon as the future of the SSS becomes clear.";
 
