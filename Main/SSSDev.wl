@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-BeginPackage["SSS`"]
+BeginPackage["SSSDev`"]
 
 (* local "globals" *)
 
