@@ -31,7 +31,22 @@ Options:
 
 \tNetMethod \[Rule] GraphPlot | LayeredGraphPlot | TreePlot | GraphPlot3D | All | NoSSS | list of methods, \n\t\twhere NoSSS generates no SSS display (causal network only) and the other choices specify how the causal network is to be shown.";
 
-SSS::usage="SSS[\!\(\*StyleBox[\(\*StyleBox[\"rule\",FontSlant->\"Italic\"]set\)]\)\!\(\*StyleBox[\",\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"init\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\",\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\",\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"opts\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"]\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \",FontSlant->\"Italic\"]\)creates and displays a sequential substitution system (SSS) and its causal network, using \!\(\*StyleBox[\"ruleset\",FontSlant->\"Italic\"]\) starting with the state \!\(\*StyleBox[\"init\",FontSlant->\"Italic\"]\) (using string notation), allowing the SSS to evolve for \!\(\*StyleBox[\"n\",FontSlant->\"Italic\"]\) steps.  Use the option EarlyReturn to give/deny permission to quit early if the SSS can be identified as dead or (pseudo-)repeating.)  Any other options given are passed on to SSSDisplay.
+SSS::usage="SSS[\!\(\*
+StyleBox[\"rule\",\nFontSlant->\"Italic\"]\)set\!\(\*
+StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"init\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"n\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\",\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"opts\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\"]\",\nFontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",\nFontSlant->\"Italic\"]\)creates and displays a sequential substitution system (SSS) and its causal network, using \!\(\*
+StyleBox[\"ruleset\",\nFontSlant->\"Italic\"]\) (as a list of rules, or a RSS index), starting with the state \!\(\*
+StyleBox[\"init\",\nFontSlant->\"Italic\"]\) (using string notation), allowing the SSS to evolve for \!\(\*
+StyleBox[\"n\",\nFontSlant->\"Italic\"]\) steps.  If the initial state string is omitted, SSSInitialState is called to provide a sufficiently complex string.  Use the option EarlyReturn to give/deny permission to quit early if the SSS can be identified as dead or repeating.)  Use option Mode \[Rule] Silent to suppress display of the sessie. Any other options given are passed on to SSSDisplay.
 
 (Returns a copy of the SSS that can then be displayed or manipulated without rebuilding, using SSSDisplay, SSSAnimate, or directly, looking at its keys, \"Evolution\" and \"Net\", etc.)";
 
@@ -296,11 +311,11 @@ If[doTP,TreePlot[grph,Top,1,Sequence@@Flatten[{ImageSize->NS,FilterRules[{opts},
 If[doGP3D,GraphPlot3D[grph,GraphLayout->"SpringElectricalEmbedding",Sequence@@Flatten[{ImageSize->NS,FilterRules[{opts}, Options[GraphPlot3D]],VertexSize->Large,VertexLabels->Placed[Automatic,Center]}]],{}]
 },"  "]];
 
-SSS[rs:{___Rule},init_String,n_Integer?Positive,opts___] := Module[{sss},
+SSS[rs:{___Rule},init_String,n_Integer?Positive,opts:OptionsPattern[]] := Module[{sss},
 sss=SSSInitialize[rs,init,Mode->Silent];
 If[sss["Verdict"]=!="Dead", 
 sss=SSSEvolve[sss,n-1,Sequence@@FilterRules[{opts},Options[SSSEvolve]]]; 
-Print@SSSDisplay[sss,Sequence@@FilterRules[{opts},Options[SSSDisplay]]];
+If[OptionValue[Mode]=!=Silent, Print@SSSDisplay[sss,Sequence@@FilterRules[{opts},Options[SSSDisplay]]]];
 ];
 sss
 ];
@@ -309,7 +324,7 @@ SSS[rs:{___Rule},n_Integer?Positive,opts___] := SSS[rs,SSSInitialState[rs],n,opt
 SSS[rs_Integer,n_Integer,opts___] := SSS[FromReducedRankIndex[rs],n,opts];
 SSS[<|"Index"->_,"QCode"->_,"RuleSet"->rs_|>, x___] := SSS[rs,x];
 
-Options[SSS]=Join[Options[SSSEvolve],Options[SSSDisplay]];
+Options[SSS]=Join[{Mode->Loud},Options[SSSEvolve],Options[SSSDisplay]];
 
 SyntaxInformation[SSS]={"ArgumentsPattern"->{_,_,_,OptionsPattern[]}};
 (*
