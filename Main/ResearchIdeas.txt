@@ -1,0 +1,15 @@
+Loop, searching for:
+
+1.  Repeating and other 1-D cases, creating net summary (canonical version), put in database, allow look up of first SSS that created that network.
+
+2.  Repeating and other 1-D cases, try to understand the behavior of DistanceLastPositions and DistanceTally.
+
+3.  Non-1-D cases where the SSS/Net tests give different answers.
+
+4.  2-D cases, creating net summary (canonical version), put in database, allow look up of first SSS that created that network.
+
+5.  Exponential cases, logging them, decide how to create a net summary (canonical version), put in database, allow look up of first SSS that created that network.
+
+6.  3-D cases, logging them, decide how to create a net summary (canonical version), put in database, allow look up of first SSS that created that network.
+
+7.  Cases that do not identify as n-dimensional for any integer, nor exponential.  (Skip all known types, look for new stuff!)
