@@ -64,7 +64,8 @@ ToCanonical::usage="Replaces and permutes characters in a ruleset to form a func
 
 ToLeastWeight::usage="Replaces and permutes characters in a ruleset to form a functionally equivalent ruleset with the least weight, the first to appear in the enumeration.  In theory this could be the representative chosen for treatment, and others discarded, but currently the canonical form (in which the characters are introduced in strict alphabetical order) is used.  Argument can be either a ruleset object or a list of substitution rules.";
 
-TestForConflictingRules::usage="TestForConflictingRules[rs] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) contains any cases of conflicting rules, and if so, returns the resolution ruleset object.  Returns {} if there is no conflict.";
+TestForConflictingRules::usage="TestForConflictingRules[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) contains any cases of conflicting rules, and if so, returns the resolution ruleset object.  Returns {} if there is no conflict.";
 TestForNonSoloIdentityRule::usage="TestForNonSoloIdentityRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is not a singleton rule and contains any identity rules, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.";
 TestForIdentityRule::usage="TestForIdentityRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) contains any identity rules, and if so, returns the resolution ruleset object.  Returns {} if there is no identity rule.";
 TestForRenamedRuleSet::usage="TestForRenamedRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is already in canonical form, and if so, returns {}.  If not canonical, \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is a renamed ruleset, one in a run of such rulesets that can be long-jumped over, in which case, the function returns the resolution ruleset object.";
@@ -72,6 +73,10 @@ TestForInitialSubstringRule::usage="TestForInitialSubstringRule[\!\(\*StyleBox[\
 TestForNonSoloInitialSubstringRule::usage="TestForNonSoloInitialSubstringRule[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether the ruleset object \!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\) is not a singleton rule and contains as its first rule a substring rule, and if so, returns the resolution ruleset object.  Returns {} if there is no problem.  (The only reason to use this function instead of TestForInitialSubstringRule is if you want to explicitly include singleton substring rule cases, including singleton identity rules.  A singleton substring rule case does not reduce to a simpler case, although it has the same causal network as a simpler singleton identity rule case.)";
 TestForShorteningRuleSet::usage="TestForShorteningRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether (1) none of the rules of the ruleset lengthen the state string, and (2) at least one of the rules shortens it.  In either case, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
 TestForUnbalancedRuleSet::usage="TestForUnbalancedRuleSet[\!\(\*StyleBox[\"rs\",FontSlant->\"Italic\"]\)] checks whether all characters that appear in the rules appear at least once on both sides.  Otherwise, the sessie will die out or the ruleset will reduce to a simpler case.  If applicable, the function returns the resolution ruleset object: next in enumeration order, no long-jump possible.  Returns {} if there is no problem.";
+
+TestForAll::usage="TestForAll[\!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\)] tries to apply all reliable ruleset tests (TestForConflictingRules, TestForNonSoloIdentityRule, TestForRenamedRuleSet, TestForNonSoloInitialSubstringRule, TestForUnbalancedRuleSet, TestForShorteningRuleSet) to the ruleset object \!\(\*
+StyleBox[\"rs\",\nFontSlant->\"Italic\"]\), returning the resolution ruleset object provided by the first applicable test.  Returns {} if none apply.";
 
 (* sessie construction & display *)
 
@@ -577,6 +582,15 @@ TestForUnbalancedRuleSet[<|"Index"->index_,"QCode"->_,"RuleSet"->rs_|>] :=
 If[(Union[Flatten[Characters /@ First /@ rs] ] != Union[Flatten[Characters /@ Last /@ rs]]),
 FromReducedRankIndex[index+1],
 {}];
+
+TestForAll[rs:<|"Index"->_,"QCode"->_,"RuleSet"->_|>] := Module[{ans}, 
+If[Length[ans=TestForConflictingRules[rs]]>0,Return[ans]];
+If[Length[ans=TestForNonSoloIdentityRule[rs]]>0,Return[ans]];
+If[Length[ans=TestForRenamedRuleSet[rs]]>0,Return[ans]];
+If[Length[ans=TestForNonSoloInitialSubstringRule[rs]]>0,Return[ans]];
+If[Length[ans=TestForUnbalancedRuleSet[rs]]>0,Return[ans]];
+Return[TestForShorteningRuleSet[rs]]
+]; 
 
 (* no private part, for now 
 Begin["`Private`"]
