@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   3571755,      69011]
-NotebookOptionsPosition[   3562817,      68852]
-NotebookOutlinePosition[   3563218,      68868]
-CellTagsIndexPosition[   3563175,      68865]
+NotebookDataLength[   3702908,      72271]
+NotebookOptionsPosition[   3691424,      72069]
+NotebookOutlinePosition[   3691854,      72086]
+CellTagsIndexPosition[   3691811,      72083]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -27,9 +27,8 @@ Cell[BoxData[{
   RowBox[{"Needs", "[", "\"\<SSS`\>\"", "]"}], ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.8159227950159807`*^9, 3.815922857230071*^9}, {
-  3.832955169094056*^9, 
-  3.8329551712790422`*^9}},ExpressionUUID->"85d83d57-135d-4480-b803-\
-eb74c45fea95"],
+  3.832955169094056*^9, 3.8329551712790422`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"85d83d57-135d-4480-b803-eb74c45fea95"],
 
 Cell[CellGroupData[{
 
@@ -529,7 +528,7 @@ Cell[BoxData[
    3.8171593586471753`*^9, {3.8192967019448957`*^9, 3.8192967612861533`*^9}, 
    3.8193131357291503`*^9, {3.8320838975670033`*^9, 3.832083907477315*^9}, {
    3.832084033839086*^9, 3.8320840604057307`*^9}},
- CellLabel->"In[11]:=",ExpressionUUID->"ed399daf-10c2-42db-b196-453e685966b5"],
+ CellLabel->"In[3]:=",ExpressionUUID->"ed399daf-10c2-42db-b196-453e685966b5"],
 
 Cell[BoxData[
  RowBox[{
@@ -557,7 +556,7 @@ MergeIntervalsByRulesUsed before being returned.\>\""}], ";"}]], "Input",
    3.8171593586471753`*^9, 3.817159451487363*^9}, {3.81715956545065*^9, 
    3.8171595721896467`*^9}, {3.8192797696769896`*^9, 3.819279780206827*^9}, {
    3.819296781404333*^9, 3.8192967962127533`*^9}},
- CellLabel->"In[12]:=",ExpressionUUID->"0b6b9f46-ee3b-4413-96b1-dbf805e1fe6e"],
+ CellLabel->"In[4]:=",ExpressionUUID->"0b6b9f46-ee3b-4413-96b1-dbf805e1fe6e"],
 
 Cell[BoxData[
  RowBox[{
@@ -651,7 +650,7 @@ Cell[BoxData[
    3.819297636549296*^9, 3.8192976369153185`*^9}, {3.8192978126277914`*^9, 
    3.8192978701792192`*^9}, {3.8192979237252874`*^9, 
    3.8192979853033895`*^9}, {3.8193131190318336`*^9, 3.819313124638782*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"1ef8e942-188b-46c0-ab38-5949cea27050"],
+ CellLabel->"In[5]:=",ExpressionUUID->"1ef8e942-188b-46c0-ab38-5949cea27050"],
 
 Cell[BoxData[
  RowBox[{
@@ -678,7 +677,7 @@ MergeIntervalsByRulesUsed before being returned.\>\""}], ";"}]], "Input",
    3.8169446639428854`*^9}, {3.8171594599836035`*^9, 
    3.8171595752101855`*^9}, {3.819279739243373*^9, 3.8192797607967153`*^9}, {
    3.819313010619229*^9, 3.8193130664756603`*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"addeef6f-7313-4d3f-b218-39b2a543f9fd"],
+ CellLabel->"In[6]:=",ExpressionUUID->"addeef6f-7313-4d3f-b218-39b2a543f9fd"],
 
 Cell[BoxData[
  RowBox[{
@@ -802,7 +801,7 @@ Cell[BoxData[
    3.8169443771791935`*^9}, {3.816944416315724*^9, 3.81694443594584*^9}, {
    3.8178322257748203`*^9, 3.817832255295932*^9}, {3.819190533697134*^9, 
    3.819190536992586*^9}},
- CellLabel->"In[15]:=",ExpressionUUID->"08aae338-8d9f-429d-944f-e26b5dcd69e3"],
+ CellLabel->"In[7]:=",ExpressionUUID->"08aae338-8d9f-429d-944f-e26b5dcd69e3"],
 
 Cell[BoxData[
  RowBox[{
@@ -1047,7 +1046,7 @@ Cell[BoxData[
    3.819838078067459*^9, {3.819838138659191*^9, 3.819838164633638*^9}, {
    3.819838214018406*^9, 3.8198382931951838`*^9}, {3.8198383255819955`*^9, 
    3.819838382793808*^9}, {3.8198384782627525`*^9, 3.819838492876627*^9}},
- CellLabel->"In[16]:=",ExpressionUUID->"7b95da39-9410-4707-9676-1239af4c26b8"],
+ CellLabel->"In[8]:=",ExpressionUUID->"7b95da39-9410-4707-9676-1239af4c26b8"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1141,7 +1140,7 @@ returned.\>\""}], ";"}]}], "Input",
    3.8192800521443353`*^9}, {3.8192800880472927`*^9, 
    3.8192801260805492`*^9}, {3.819312890059765*^9, 3.819312933915417*^9}, {
    3.8193132566373186`*^9, 3.8193132744575896`*^9}},
- CellLabel->"In[17]:=",ExpressionUUID->"33d2def0-dc2f-4254-96f2-9e24cf1b8140"],
+ CellLabel->"In[9]:=",ExpressionUUID->"33d2def0-dc2f-4254-96f2-9e24cf1b8140"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1225,7 +1224,7 @@ considered.\>\""}], ";"}]}], "Input",
    3.817835438499156*^9, {3.817837885010988*^9, 3.8178379194000473`*^9}, {
    3.8178379846367006`*^9, 3.817837995302885*^9}, {3.817838242457844*^9, 
    3.817838265474035*^9}, {3.8192801425983553`*^9, 3.819280144256917*^9}},
- CellLabel->"In[19]:=",ExpressionUUID->"049be46b-b6cc-4a86-b2b6-14b89756bc25"],
+ CellLabel->"In[11]:=",ExpressionUUID->"049be46b-b6cc-4a86-b2b6-14b89756bc25"],
 
 Cell[BoxData[
  RowBox[{
@@ -1259,7 +1258,7 @@ Cell[BoxData[
   3.6654409638848157`*^9}, {3.665441100767234*^9, 3.6654411092520456`*^9}, {
   3.665469406744076*^9, 3.665469415822606*^9}, {3.6655253997436895`*^9, 
   3.665525418204111*^9}, {3.6656982011049623`*^9, 3.6656982108014956`*^9}},
- CellLabel->"In[21]:=",ExpressionUUID->"b4c11996-d2b4-444a-9d59-1ebbb412fcd8"],
+ CellLabel->"In[13]:=",ExpressionUUID->"b4c11996-d2b4-444a-9d59-1ebbb412fcd8"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1530,7 +1529,7 @@ Cell[BoxData[{
    3.819436600564807*^9, 3.819436637004322*^9}, {3.8194369134029245`*^9, 
    3.819436923629572*^9}, {3.8194560455829406`*^9, 3.8194560822194967`*^9}, {
    3.819456165212448*^9, 3.8194561675711465`*^9}},
- CellLabel->"In[22]:=",ExpressionUUID->"bb72163e-fcc1-4604-9011-a8dd054f60a2"],
+ CellLabel->"In[14]:=",ExpressionUUID->"bb72163e-fcc1-4604-9011-a8dd054f60a2"],
 
 Cell[BoxData[
  RowBox[{
@@ -1658,7 +1657,7 @@ Cell[BoxData[
    3.819436781001137*^9, 3.8194368255858526`*^9}, {3.8194381298597565`*^9, 
    3.819438130508019*^9}, 3.819438547251187*^9, {3.8194388316150064`*^9, 
    3.819438849517109*^9}, {3.8194389553303576`*^9, 3.8194389638425813`*^9}},
- CellLabel->"In[24]:=",ExpressionUUID->"a1175a9e-906c-4b73-b4e8-ef9d98bbbd02"],
+ CellLabel->"In[16]:=",ExpressionUUID->"a1175a9e-906c-4b73-b4e8-ef9d98bbbd02"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1949,7 +1948,7 @@ Cell[BoxData[{
    3.819457091390299*^9, 3.819457200567772*^9}, {3.8194572611327286`*^9, 
    3.8194572616992493`*^9}, {3.819458212790285*^9, 3.8194582136639395`*^9}, {
    3.819469962530023*^9, 3.819469970061877*^9}},
- CellLabel->"In[25]:=",ExpressionUUID->"701785f9-50d9-41c7-b016-b52700368a12"]
+ CellLabel->"In[17]:=",ExpressionUUID->"701785f9-50d9-41c7-b016-b52700368a12"]
 }, Closed]]
 }, Closed]],
 
@@ -8573,6 +8572,2921 @@ turns the constant width band into a 2-d case.\
 Cell[CellGroupData[{
 
 Cell[BoxData[
+ RowBox[{"FromReducedRankRuleSet", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<AB\>\""}], ",", 
+    RowBox[{"\"\<A\>\"", "\[Rule]", "\"\<BAA\>\""}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.844518302180133*^9, 3.844518308205253*^9}, {
+  3.8445184322711453`*^9, 3.844518448270543*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"44cc90a5-ed40-472a-90b8-d17b7ef326a7"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Index\"\>", "\[Rule]", "11643025"}], ",", 
+   RowBox[{"\<\"QCode\"\>", "\[Rule]", "\<\"4323422433\"\>"}], ",", 
+   RowBox[{"\<\"RuleSet\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"BA\"\>", "\[Rule]", "\<\"AB\"\>"}], ",", 
+      RowBox[{"\<\"A\"\>", "\[Rule]", "\<\"BAA\"\>"}]}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.8445183182746725`*^9, 3.844518449518466*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"461ed074-8aec-4fba-a4b2-cf1957dd1786"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToCanonical", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<AB\>\""}], ",", 
+    RowBox[{"\"\<A\>\"", "\[Rule]", "\"\<BAA\>\""}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8445184811498575`*^9, 3.8445184899304557`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"9c4c29a4-455d-4e0f-b72e-8a0835b1e4a8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"AB\"\>", "\[Rule]", "\<\"BA\"\>"}], ",", 
+   RowBox[{"\<\"B\"\>", "\[Rule]", "\<\"ABB\"\>"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.84451849331281*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"1ddf9a2d-9dfe-4e9b-9b48-5380d8234f08"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RuleSetWeight", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<AB\>\""}], ",", 
+    RowBox[{"\"\<A\>\"", "\[Rule]", "\"\<BAA\>\""}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.844518610872861*^9, 3.8445186222431526`*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"dd3a4b66-6640-4ef2-b9d1-c38401b32d1f"],
+
+Cell[BoxData["11"], "Output",
+ CellChangeTimes->{3.844518623688285*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"7740432d-3d25-45a3-9ba0-76f185b2de9a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RuleSetWeight", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\"\<AB\>\"", "\[Rule]", "\"\<BA\>\""}], ",", 
+    RowBox[{"\"\<B\>\"", "\[Rule]", "\"\<ABB\>\""}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.844518610872861*^9, 3.8445186222431526`*^9}, {
+  3.844518653080555*^9, 3.844518657516949*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"17f6abe2-aa6e-4cf8-a2d6-96f03ef367bc"],
+
+Cell[BoxData["13"], "Output",
+ CellChangeTimes->{3.84451865882339*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"980bce30-cf99-43d2-a6a8-4f9ae4d83eb6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FromReducedRankRuleSet", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.844518501549607*^9, 3.8445185091886024`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"29a403f6-7d9a-4850-8b93-7ea501345ccb"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Index\"\>", "\[Rule]", "252330651"}], ",", 
+   RowBox[{"\<\"QCode\"\>", "\[Rule]", "\<\"342432423434\"\>"}], ",", 
+   RowBox[{"\<\"RuleSet\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"AB\"\>", "\[Rule]", "\<\"BA\"\>"}], ",", 
+      RowBox[{"\<\"B\"\>", "\[Rule]", "\<\"ABB\"\>"}]}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.844518514294808*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"b532cb8d-1b1f-451b-a1eb-12f6f142ee9b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "SSS`*"}]], "Input",
+ CellChangeTimes->{{3.844518338315158*^9, 3.8445183417834363`*^9}, {
+  3.8445183843914757`*^9, 3.8445183864245434`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"960e4463-bb2c-492d-aadd-36c2319ae7a1"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["SSS`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{15., {4., 11.}}], " ", 
+              StyleBox["SSS`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["alphabetizedchars", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "alphabetizedchars", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ImS$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ImS$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NM", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"NM", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSConvert", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSConvert", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["alphabetizedchars$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "alphabetizedchars$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["index", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "index", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NM$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "NM$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSDisplay", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSDisplay", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ans", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ans", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["init", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "init", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["no", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"no", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSEvolve", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSEvolve", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ans$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ans$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["is", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"is", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NoSSS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "NoSSS", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSInitialize", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSInitialize", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["arg", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "arg", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["j", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"j", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ns", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"ns", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSInitialState", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSInitialState", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["args", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "args", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["j$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"j$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"NS", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSInteractiveDisplay", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSInteractiveDisplay", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["bigruns", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "bigruns", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["k", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"k", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NS$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "NS$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSMax", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSMax", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["bigruns$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "bigruns$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["k$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"k$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ntmn", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ntmn", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSMin", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSMin", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["cd", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"cd", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["l", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"l", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ntmx", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ntmx", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["sssmn", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "sssmn", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["cd$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "cd$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lastchar", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "lastchar", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["numberOfEOS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "numberOfEOS", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["sssmn$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "sssmn$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["cellsToHighlight", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "cellsToHighlight", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lastchar$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "lastchar$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["numberOfEOS$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "numberOfEOS$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["sssmx", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "sssmx", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["cellsToHighlight$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "cellsToHighlight$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lbl", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "lbl", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["n$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"n$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["sssmx$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "sssmx$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["chars", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "chars", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["len", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "len", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["oda", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "oda", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSNewRule", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSNewRule", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["chars$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "chars$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["len$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "len$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["oda$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "oda$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSRuleIcon", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSRuleIcon", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["chopPos", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "chopPos", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lhs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "lhs", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["odr", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "odr", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ssss", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ssss", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["chopPos$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "chopPos$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lhsNames", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "lhsNames", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["odr$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "odr$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSSingleStep", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSSingleStep", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["cns", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "cns", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lhsNames$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "lhsNames$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["opts", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "opts", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSSize", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSSize", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["code", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "code", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lhsTag", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "lhsTag", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["pattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "pattern", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSStrip", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSStrip", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["code$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "code$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lhs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "lhs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["patternPrint", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "patternPrint", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["sss$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "sss$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["d", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"d", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Loud", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "Loud", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["poslist", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "poslist", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SS$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SS$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["DE", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"DE", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["l$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"l$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["poslist$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "poslist$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["start", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "start", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["deBruijn", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "deBruijn", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["m", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"m", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["pri", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "pri", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["startingEvents", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "startingEvents", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["dels", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "dels", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["matchend", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "matchend", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["pri$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "pri$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["startingEvents$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "startingEvents$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["dels$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "dels$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["matchend$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "matchend$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["prs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "prs", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["start$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "start$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["DE$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "DE$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["matchstart", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "matchstart", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["prs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "prs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["state", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "state", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["dir", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "dir", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["matchstart$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "matchstart$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["qcode", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "qcode", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["string", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "string", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doGP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doGP", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["max", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "max", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["quinaryCode", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "quinaryCode", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["strings", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "strings", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doGP3D", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doGP3D", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["maxChar", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "maxChar", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["quinaryCode$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "quinaryCode$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["strings$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "strings$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doGP3D$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doGP3D$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["maxChar$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "maxChar$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["quinaryDigits", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "quinaryDigits", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["StringWeight", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "StringWeight", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doGP$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doGP$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["maxColor", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "maxColor", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["quinaryDigits$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "quinaryDigits$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["s$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"s$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doLGP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doLGP", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["max$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "max$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["r", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"r", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["tailweight", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "tailweight", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doLGP$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doLGP$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mesh", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "mesh", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["reprules", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "reprules", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["tailweight$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "tailweight$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doSSS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doSSS", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mesh$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "mesh$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["reprules$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "reprules$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TestForAll", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForAll", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doSSS$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doSSS$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mn", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"mn", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rhs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rhs", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TestForConflictingRules", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForConflictingRules", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doTP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doTP", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mn$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "mn$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rhs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rhs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TestForIdentityRule", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForIdentityRule", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["doTP$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "doTP$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mx", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"mx", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ri", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"ri", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["TestForInitialSubstringRule", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForInitialSubstringRule", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["duppos", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "duppos", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mxClr", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "mxClr", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ri$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ri$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["TestForNonSoloIdentityRule", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForNonSoloIdentityRule", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["duppos$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "duppos$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mxmx", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "mxmx", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rl", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"rl", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["TestForNonSoloInitialSubstringRule", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForNonSoloInitialSubstringRule", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["dynamicLabel", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "dynamicLabel", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mxmx$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "mxmx$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rl$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rl$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TestForRenamedRuleSet", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForRenamedRuleSet", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["d$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"d$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["mx$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "mx$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"RP", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TestForShorteningRuleSet", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForShorteningRuleSet", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["EarlyReturn", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "EarlyReturn", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["myColorOptions", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "myColorOptions", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RP$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "RP$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TestForUnbalancedRuleSet", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "TestForUnbalancedRuleSet", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ev", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"ev", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["myNet", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "myNet", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"rs", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ToAlpha", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ToAlpha", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ev$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ev$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["myNet$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "myNet$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rsn", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rsn", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ToCanonical", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ToCanonical", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["extra", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "extra", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["m$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"m$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rsn$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rsn$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ToCharacterWeights", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ToCharacterWeights", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["extra$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "extra$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["n", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"n", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ToLeastWeight", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ToLeastWeight", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["FromAlpha", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "FromAlpha", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["net", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "net", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rule", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rule", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["unsortedchars", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "unsortedchars", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["FromCharacterWeights", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "FromCharacterWeights", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NetMax", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "NetMax", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rulenum", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rulenum", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["unsortedchars$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "unsortedchars$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["FromReducedRankIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "FromReducedRankIndex", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NetMethod", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "NetMethod", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rulenum$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rulenum$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vl", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"vl", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 
+                 StyleBox["FromReducedRankQuinaryCode", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "FromReducedRankQuinaryCode", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NetMin", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "NetMin", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RulePlacement", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "RulePlacement", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["VL", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"VL", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["FromReducedRankRuleSet", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "FromReducedRankRuleSet", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["netmn", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "netmn", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rules", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rules", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["VL$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "VL$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["full", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "full", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["netmn$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "netmn$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rulesApplied", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rulesApplied", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vp", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"vp", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["full$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "full$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["netmx", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "netmx", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["rulesApplied$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "rulesApplied$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vrtxs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "vrtxs", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["g", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"g", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["netmx$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "netmx$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ruleset", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ruleset", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vrtxs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "vrtxs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["grph", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "grph", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NetSize", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "NetSize", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RuleSetLength", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "RuleSetLength", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"vs", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["grph$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "grph$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["net$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "net$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RuleSetWeight", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "RuleSetWeight", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["w", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"w", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["g$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"g$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newlhs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newlhs", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ruleset$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ruleset$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["weightsortedchars", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "weightsortedchars", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["HighlightMethod", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "HighlightMethod", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newlhs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newlhs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ruletypes", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ruletypes", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["weightsortedchars$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "weightsortedchars$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["hlm", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "hlm", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newqcode", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newqcode", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ruletypes$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ruletypes$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["wl", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"wl", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["HlM", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "HlM", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newqcode$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newqcode$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["runs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "runs", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["wl$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "wl$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["HlM$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "HlM$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newrhs1", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newrhs1", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["runs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "runs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["w$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"w$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["hs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"hs", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newrhs1$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newrhs1$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["s", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"s", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["x", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"x", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["hs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "hs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newrhs2", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newrhs2", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Silent", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "Silent", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["x$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"x$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["i", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"i", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newrhs2$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newrhs2$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["sr", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"sr", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["y", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"y", "SSS`"}, 
+                   False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["IconSize", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "IconSize", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newrs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newrs", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"SS", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["y$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"y$", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["IcS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "IcS", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["newrs$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "newrs$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["sss", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "sss", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$SSSConnectionList", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "$SSSConnectionList", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["IcS$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "IcS$", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["nextLyndon", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "nextLyndon", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSS", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$SSSRulesUsed", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "$SSSRulesUsed", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ImS", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "ImS", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["nm", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {"nm", "SSS`"},
+                    False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SSSAnimate", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "SSSAnimate", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$SSSTagIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-3cb57712-9c0e-444a-8855-8aefe3738145", {
+                   "$SSSTagIndex", "SSS`"}, False},
+                 ButtonNote->"SSS`",
+                 Evaluator->Automatic]}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.2375]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ CellChangeTimes->{3.8445183438571706`*^9, 3.84451838743085*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"663bc76e-5a79-45f3-98f3-236728c7c3e5"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
  RowBox[{
   RowBox[{"SSS", "[", 
    RowBox[{
@@ -11001,44 +13915,45 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"SSS", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<AAB\>\""}], ",", 
-      RowBox[{"\"\<A\>\"", "\[Rule]", "\"\<BA\>\""}]}], "}"}], ",", 
-    "\"\<A\>\"", ",", "850", ",", 
-    RowBox[{"SSSMax", "\[Rule]", "30"}], ",", 
-    RowBox[{"SSSSize", "\[Rule]", 
-     RowBox[{"{", 
-      RowBox[{"200", ",", "200"}], "}"}]}], ",", 
-    RowBox[{"NetSize", "\[Rule]", 
-     RowBox[{"{", 
-      RowBox[{"300", ",", "200"}], "}"}]}], ",", 
-    RowBox[{"RulePlacement", "\[Rule]", "Left"}], ",", "\[IndentingNewLine]", 
-    RowBox[{"VertexLabels", "\[Rule]", 
+  RowBox[{"sssEXP1", "=", 
+   RowBox[{"SSS", "[", 
+    RowBox[{
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"x_", "\[RuleDelayed]", 
-        RowBox[{"Placed", "[", 
-         RowBox[{"x", ",", "Tooltip"}], "]"}]}], ",", "\[IndentingNewLine]", 
-       RowBox[{"1", "\[Rule]", 
-        RowBox[{"Placed", "[", 
-         RowBox[{
-          RowBox[{"Text", "[", 
-           RowBox[{"Framed", "[", 
-            RowBox[{"1", ",", 
-             RowBox[{"List", "[", 
-              RowBox[{
-               RowBox[{"Rule", "[", 
-                RowBox[{"Background", ",", "Green"}], "]"}], ",", 
-               RowBox[{"Rule", "[", 
-                RowBox[{"FrameStyle", ",", "Black"}], "]"}], ",", 
-               RowBox[{"Rule", "[", 
-                RowBox[{"FrameMargins", ",", "Automatic"}], "]"}]}], "]"}], 
-             ",", 
-             RowBox[{"RoundingRadius", "\[Rule]", "15"}]}], "]"}], "]"}], ",",
-           "Center"}], "]"}]}]}], "}"}]}]}], "]"}], ";"}]], "Input",
+       RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<AAB\>\""}], ",", 
+       RowBox[{"\"\<A\>\"", "\[Rule]", "\"\<BA\>\""}]}], "}"}], ",", 
+     "\"\<A\>\"", ",", "850", ",", 
+     RowBox[{"SSSMax", "\[Rule]", "30"}], ",", 
+     RowBox[{"SSSSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"200", ",", "200"}], "}"}]}], ",", 
+     RowBox[{"NetSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"300", ",", "200"}], "}"}]}], ",", 
+     RowBox[{"RulePlacement", "\[Rule]", "Left"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"VertexLabels", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"x_", "\[RuleDelayed]", 
+         RowBox[{"Placed", "[", 
+          RowBox[{"x", ",", "Tooltip"}], "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"1", "\[Rule]", 
+         RowBox[{"Placed", "[", 
+          RowBox[{
+           RowBox[{"Text", "[", 
+            RowBox[{"Framed", "[", 
+             RowBox[{"1", ",", 
+              RowBox[{"List", "[", 
+               RowBox[{
+                RowBox[{"Rule", "[", 
+                 RowBox[{"Background", ",", "Green"}], "]"}], ",", 
+                RowBox[{"Rule", "[", 
+                 RowBox[{"FrameStyle", ",", "Black"}], "]"}], ",", 
+                RowBox[{"Rule", "[", 
+                 RowBox[{"FrameMargins", ",", "Automatic"}], "]"}]}], "]"}], 
+              ",", 
+              RowBox[{"RoundingRadius", "\[Rule]", "15"}]}], "]"}], "]"}], 
+           ",", "Center"}], "]"}]}]}], "}"}]}]}], "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.6380096858439193`*^9, 3.638009806942246*^9}, {
    3.638009997827639*^9, 3.6380100186564565`*^9}, {3.6380100580255737`*^9, 
    3.6380100674168034`*^9}, {3.6380101111838303`*^9, 
@@ -11064,8 +13979,9 @@ Cell[BoxData[
    3.666646132621231*^9, 3.6666461485052004`*^9}, {3.8091894964116917`*^9, 
    3.8091894972757254`*^9}, {3.8091896238571415`*^9, 3.8091896765575285`*^9}, 
    3.8165338840258713`*^9, {3.8165341235743923`*^9, 3.816534124083021*^9}, {
-   3.8165342560977697`*^9, 3.816534272640442*^9}, 3.816534306212742*^9},
- CellLabel->"In[77]:=",ExpressionUUID->"a96bd1f1-bee4-4c15-87e0-60f8a7f67b93"],
+   3.8165342560977697`*^9, 3.816534272640442*^9}, 3.816534306212742*^9, {
+   3.8445194631274524`*^9, 3.844519468127616*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"a96bd1f1-bee4-4c15-87e0-60f8a7f67b93"],
 
 Cell[BoxData[
  TemplateBox[{"  ", "\"  \"", 
@@ -11213,11 +14129,15 @@ Cell[BoxData[
               RowBox[{"{", 
                 RowBox[{"{", 
                   RowBox[{"Top", ",", "Left"}], "}"}], "}"}], ",", 
-              RowBox[{"DefaultLabelStyle", "\[Rule]", "\"PanelLabel\""}], ",", 
-              RowBox[{"LabelStyle", "\[Rule]", 
-                RowBox[{"{", "}"}]}], ",", 
-              RowBox[{"RotateLabel", "\[Rule]", "False"}], ",", 
-              RowBox[{"Spacings", "\[Rule]", "Automatic"}]}], "]"}]& )], 
+              RowBox[{"{", 
+                RowBox[{
+                  RowBox[{"DefaultLabelStyle", "\[Rule]", "\"PanelLabel\""}], 
+                  ",", 
+                  RowBox[{"LabelStyle", "\[Rule]", 
+                    RowBox[{"{", "}"}]}], ",", 
+                  RowBox[{"RotateLabel", "\[Rule]", "False"}], ",", 
+                  RowBox[{"Spacings", "\[Rule]", "Automatic"}]}], "}"}]}], 
+            "]"}]& )], 
         GraphicsBox[{
           RasterBox[CompressedData["
 1:eJzt1ltKA0EQheEBXYfgGlyAe3AJgs8u3BeXoARhtNOTcujuOqdn/oYhkC+X
@@ -11248,6 +14168,7 @@ LwbIisQ=
              0}}}]}, {Antialiasing -> False, 
             GrayLevel[
              NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+            
             LineBox[{{{0, 0}, {0, 30}}, {{1, 0}, {1, 30}}, {{2, 0}, {2, 
              30}}, {{3, 0}, {3, 30}}, {{4, 0}, {4, 30}}, {{5, 0}, {5, 30}}, {{
              6, 0}, {6, 30}}, {{7, 0}, {7, 30}}, {{8, 0}, {8, 30}}, {{9, 0}, {
@@ -18230,10 +21151,122 @@ LwbIisQ=
      ImageSize -> {300, 200}}]},
   "RowWithSeparators"]], "Print",
  CellChangeTimes->{3.816533919095987*^9, 3.8165342942836637`*^9, 
-  3.816534335093534*^9},
+  3.816534335093534*^9, 3.8445194965344124`*^9},
  CellLabel->
   "During evaluation of \
-In[77]:=",ExpressionUUID->"9d7bb8a8-f8f7-46a7-8f13-1dc299f4ab2b"]
+In[36]:=",ExpressionUUID->"671bd474-a504-48f6-b201-e31c9a113c0d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GuessDimension", "[", "sssEXP1", "]"}]], "Input",
+ CellChangeTimes->{{3.8445194720700564`*^9, 3.844519478492094*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"20b624ca-0046-4b54-b088-2fb56974d599"],
+
+Cell[BoxData["\<\"exp\"\>"], "Print",
+ CellChangeTimes->{3.844519504211429*^9},
+ CellLabel->
+  "During evaluation of \
+In[37]:=",ExpressionUUID->"da420bb4-c808-448e-b6e3-9f3094a11212"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"exp\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "6", ",", "2"}], "}"}], ",", 
+     FrameBox[
+      TagBox[GridBox[{
+         {"3"},
+         {"3"},
+         {"2"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      StripOnInput->False], ",", 
+     TagBox[GridBox[{
+        {"3", "6", "11", "20", "37", "70", "135", "264", "521"},
+        {"3", "5", "9", "17", "33", "65", "129", "257", ""},
+        {"2", "4", "8", "16", "32", "64", "128", "", ""}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"exp\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "7", ",", "2"}], "}"}], ",", 
+     FrameBox[
+      TagBox[GridBox[{
+         {"1"},
+         {"2"},
+         {"1"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      StripOnInput->False], ",", 
+     TagBox[GridBox[{
+        {"1", "3", "6", "11", "20", "37", "70", "135", "264", "521"},
+        {"2", "3", "5", "9", "17", "33", "65", "129", "257", ""},
+        {"1", "2", "4", "8", "16", "32", "64", "128", "", ""}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"exp\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "6", ",", "2"}], "}"}], ",", 
+     FrameBox[
+      TagBox[GridBox[{
+         {"2"},
+         {"3"},
+         {"2"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      StripOnInput->False], ",", 
+     TagBox[GridBox[{
+        {"2", "5", "10", "19", "36", "69", "134", "263", "520"},
+        {"3", "5", "9", "17", "33", "65", "129", "257", ""},
+        {"2", "4", "8", "16", "32", "64", "128", "", ""}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"exp\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "6", ",", "2"}], "}"}], ",", 
+     FrameBox[
+      TagBox[GridBox[{
+         {"1", "2"},
+         {"1", "2"},
+         {"1", "1"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      StripOnInput->False], ",", 
+     TagBox[GridBox[{
+        {"1", "2", "4", "7", "13", "24", "46", "89", "175", "346"},
+        {"1", "2", "3", "6", "11", "22", "43", "86", "171", ""},
+        {"1", "1", "3", "5", "11", "21", "43", "85", "", ""}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.844519504644271*^9},
+ CellLabel->"Out[37]=",ExpressionUUID->"f6703c4f-77ee-43d3-b276-74e5e996cccd"]
 }, Open  ]]
 }, Open  ]],
 
@@ -18339,7 +21372,7 @@ Cell[BoxData[
    3.6665549170272694`*^9, 3.6665549214649677`*^9}, {3.809189835458542*^9, 
    3.8091898490491495`*^9}, 3.8165344388668303`*^9, {3.816534633112115*^9, 
    3.816534660119849*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"eeade0cd-d173-481c-ba1d-e6427cc3d240"],
+ CellLabel->"In[30]:=",ExpressionUUID->"eeade0cd-d173-481c-ba1d-e6427cc3d240"],
 
 Cell[BoxData[
  TemplateBox[{"  ", "\"  \"", 
@@ -18569,39 +21602,41 @@ a/Iy/Lryz0gf4kfh0fvvzZd/xFfm7P6y80bnruW36vO8nzg3R/vLPs/T7+N8
 7yfOzXP3N9+fY/3xvI/4kXgZfl35R3xnzv77sI/z3a/43hz9+3Asn+f+xMXb
 eRmz67bqs96PuHgfx3x/8cwvLp7HyxjVZZ1PXDyXj31/8fQvLs7MfwD6NMyu
 
-           "], {{0, 0}, {27, 44}}, {0, 1}], {{Antialiasing -> False, 
+           "], {{0, 0}, {27, 44}}, {0, 1}], {{
             GrayLevel[
              NCache[-1 + GoldenRatio, 0.6180339887498949]], 
-            
-            LineBox[{{{0, 44}, {27, 44}}, {{0, 43}, {27, 43}}, {{0, 42}, {27, 
-             42}}, {{0, 41}, {27, 41}}, {{0, 40}, {27, 40}}, {{0, 39}, {27, 
-             39}}, {{0, 38}, {27, 38}}, {{0, 37}, {27, 37}}, {{0, 36}, {27, 
-             36}}, {{0, 35}, {27, 35}}, {{0, 34}, {27, 34}}, {{0, 33}, {27, 
-             33}}, {{0, 32}, {27, 32}}, {{0, 31}, {27, 31}}, {{0, 30}, {27, 
-             30}}, {{0, 29}, {27, 29}}, {{0, 28}, {27, 28}}, {{0, 27}, {27, 
-             27}}, {{0, 26}, {27, 26}}, {{0, 25}, {27, 25}}, {{0, 24}, {27, 
-             24}}, {{0, 23}, {27, 23}}, {{0, 22}, {27, 22}}, {{0, 21}, {27, 
-             21}}, {{0, 20}, {27, 20}}, {{0, 19}, {27, 19}}, {{0, 18}, {27, 
-             18}}, {{0, 17}, {27, 17}}, {{0, 16}, {27, 16}}, {{0, 15}, {27, 
-             15}}, {{0, 14}, {27, 14}}, {{0, 13}, {27, 13}}, {{0, 12}, {27, 
-             12}}, {{0, 11}, {27, 11}}, {{0, 10}, {27, 10}}, {{0, 9}, {27, 
-             9}}, {{0, 8}, {27, 8}}, {{0, 7}, {27, 7}}, {{0, 6}, {27, 6}}, {{
-             0, 5}, {27, 5}}, {{0, 4}, {27, 4}}, {{0, 3}, {27, 3}}, {{0, 2}, {
-             27, 2}}, {{0, 1}, {27, 1}}, {{0, 0}, {27, 0}}}]}, {
-           Antialiasing -> False, 
+            StyleBox[
+             
+             LineBox[{{{0, 44}, {27, 44}}, {{0, 43}, {27, 43}}, {{0, 42}, {27,
+               42}}, {{0, 41}, {27, 41}}, {{0, 40}, {27, 40}}, {{0, 39}, {27, 
+              39}}, {{0, 38}, {27, 38}}, {{0, 37}, {27, 37}}, {{0, 36}, {27, 
+              36}}, {{0, 35}, {27, 35}}, {{0, 34}, {27, 34}}, {{0, 33}, {27, 
+              33}}, {{0, 32}, {27, 32}}, {{0, 31}, {27, 31}}, {{0, 30}, {27, 
+              30}}, {{0, 29}, {27, 29}}, {{0, 28}, {27, 28}}, {{0, 27}, {27, 
+              27}}, {{0, 26}, {27, 26}}, {{0, 25}, {27, 25}}, {{0, 24}, {27, 
+              24}}, {{0, 23}, {27, 23}}, {{0, 22}, {27, 22}}, {{0, 21}, {27, 
+              21}}, {{0, 20}, {27, 20}}, {{0, 19}, {27, 19}}, {{0, 18}, {27, 
+              18}}, {{0, 17}, {27, 17}}, {{0, 16}, {27, 16}}, {{0, 15}, {27, 
+              15}}, {{0, 14}, {27, 14}}, {{0, 13}, {27, 13}}, {{0, 12}, {27, 
+              12}}, {{0, 11}, {27, 11}}, {{0, 10}, {27, 10}}, {{0, 9}, {27, 
+              9}}, {{0, 8}, {27, 8}}, {{0, 7}, {27, 7}}, {{0, 6}, {27, 6}}, {{
+              0, 5}, {27, 5}}, {{0, 4}, {27, 4}}, {{0, 3}, {27, 3}}, {{0, 
+              2}, {27, 2}}, {{0, 1}, {27, 1}}, {{0, 0}, {27, 0}}}], 
+             Antialiasing -> False]}, {
             GrayLevel[
              NCache[-1 + GoldenRatio, 0.6180339887498949]], 
-            
-            LineBox[{{{0, 0}, {0, 44}}, {{1, 0}, {1, 44}}, {{2, 0}, {2, 
-             44}}, {{3, 0}, {3, 44}}, {{4, 0}, {4, 44}}, {{5, 0}, {5, 44}}, {{
-             6, 0}, {6, 44}}, {{7, 0}, {7, 44}}, {{8, 0}, {8, 44}}, {{9, 0}, {
-             9, 44}}, {{10, 0}, {10, 44}}, {{11, 0}, {11, 44}}, {{12, 0}, {12,
-              44}}, {{13, 0}, {13, 44}}, {{14, 0}, {14, 44}}, {{15, 0}, {15, 
-             44}}, {{16, 0}, {16, 44}}, {{17, 0}, {17, 44}}, {{18, 0}, {18, 
-             44}}, {{19, 0}, {19, 44}}, {{20, 0}, {20, 44}}, {{21, 0}, {21, 
-             44}}, {{22, 0}, {22, 44}}, {{23, 0}, {23, 44}}, {{24, 0}, {24, 
-             44}}, {{25, 0}, {25, 44}}, {{26, 0}, {26, 44}}, {{27, 0}, {27, 
-             44}}}]}}}, Epilog -> {
+            StyleBox[
+             
+             LineBox[{{{0, 0}, {0, 44}}, {{1, 0}, {1, 44}}, {{2, 0}, {2, 
+              44}}, {{3, 0}, {3, 44}}, {{4, 0}, {4, 44}}, {{5, 0}, {5, 
+              44}}, {{6, 0}, {6, 44}}, {{7, 0}, {7, 44}}, {{8, 0}, {8, 
+              44}}, {{9, 0}, {9, 44}}, {{10, 0}, {10, 44}}, {{11, 0}, {11, 
+              44}}, {{12, 0}, {12, 44}}, {{13, 0}, {13, 44}}, {{14, 0}, {14, 
+              44}}, {{15, 0}, {15, 44}}, {{16, 0}, {16, 44}}, {{17, 0}, {17, 
+              44}}, {{18, 0}, {18, 44}}, {{19, 0}, {19, 44}}, {{20, 0}, {20, 
+              44}}, {{21, 0}, {21, 44}}, {{22, 0}, {22, 44}}, {{23, 0}, {23, 
+              44}}, {{24, 0}, {24, 44}}, {{25, 0}, {25, 44}}, {{26, 0}, {26, 
+              44}}, {{27, 0}, {27, 44}}}], Antialiasing -> False]}}}, Epilog -> {
            InsetBox[
             FormBox["1", TraditionalForm], {16.5, 1.5}], 
            InsetBox[
@@ -18765,7 +21800,8 @@ eRmz67bqs96PuHgfx3x/8cwvLp7HyxjVZZ1PXDyXj31/8fQvLs7MfwD6NMyu
          FrameLabel -> {None, None}, 
          FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
          Directive[
-           GrayLevel[0.5, 0.4]], ImageSize -> {150, 250}, 
+           GrayLevel[0.5, 0.4]], 
+         ImageSize -> {162.66666666666399`, 272.6666666666667}, 
          Method -> {
           "DefaultBoundaryStyle" -> Automatic, 
            "DefaultGraphicsInteraction" -> {
@@ -22836,10 +25872,192 @@ eRmz67bqs96PuHgfx3x/8cwvLp7HyxjVZZ1PXDyXj31/8fQvLs7MfwD6NMyu
      ImageSize -> {500, 250}}]},
   "RowWithSeparators"]], "Print",
  CellChangeTimes->{3.8165344583157754`*^9, 3.816534676436163*^9, 
-  3.8310572894369683`*^9},
+  3.8310572894369683`*^9, 3.844518756084944*^9},
  CellLabel->
   "During evaluation of \
-In[4]:=",ExpressionUUID->"abed3773-0e5a-404c-b18a-4827903d180f"]
+In[30]:=",ExpressionUUID->"e87c31eb-4ca5-4b78-a1dd-201f8b7d34b9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Position", "[", 
+  RowBox[{
+   RowBox[{"sss3d", "[", "\"\<RulesUsed\>\"", "]"}], ",", "3"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.844518840714507*^9, 3.8445188507705193`*^9}, {
+  3.844518891100177*^9, 3.8445188967827773`*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"242c59ef-c892-4c4b-b4ed-fd5a73249200"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "3", "}"}], ",", 
+   RowBox[{"{", "6", "}"}], ",", 
+   RowBox[{"{", "11", "}"}], ",", 
+   RowBox[{"{", "19", "}"}], ",", 
+   RowBox[{"{", "31", "}"}], ",", 
+   RowBox[{"{", "48", "}"}], ",", 
+   RowBox[{"{", "71", "}"}], ",", 
+   RowBox[{"{", "101", "}"}], ",", 
+   RowBox[{"{", "139", "}"}], ",", 
+   RowBox[{"{", "186", "}"}], ",", 
+   RowBox[{"{", "243", "}"}], ",", 
+   RowBox[{"{", "311", "}"}], ",", 
+   RowBox[{"{", "391", "}"}], ",", 
+   RowBox[{"{", "484", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.844518851683091*^9, 3.844518897892805*^9},
+ CellLabel->"Out[34]=",ExpressionUUID->"bfab8b59-8303-4160-9459-817a94559bcd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Tally", "[", 
+  RowBox[{"sss3d", "[", "\"\<RulesUsed\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.84451886080573*^9, 3.8445188693581743`*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"05eec464-5e00-4f12-876e-77b319e596f1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "111"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "374"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.844518870417326*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"6f1b0453-34f4-4f8f-8b4d-d469ea576acc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GuessDimension", "[", "sss3d", "]"}]], "Input",
+ CellChangeTimes->{{3.844518760935157*^9, 3.844518765421689*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"ec53b9e4-ecbb-4a2b-879e-a047776ee583"],
+
+Cell[BoxData["\<\"3D\"\>"], "Print",
+ CellChangeTimes->{3.8445187669036674`*^9},
+ CellLabel->
+  "During evaluation of \
+In[31]:=",ExpressionUUID->"d003caa7-dca4-4bd7-9c3a-8da0a875ee2b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"3D\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "10", ",", "1"}], "}"}], ",", 
+     FrameBox[
+      TagBox[GridBox[{
+         {"6"},
+         {"5"},
+         {"3"},
+         {"1"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      StripOnInput->False], ",", 
+     TagBox[GridBox[{
+        {"6", "11", "19", "31", "48", "71", "101", "139", "186", "243", "311",
+          "391", "484"},
+        {"5", "8", "12", "17", "23", "30", "38", "47", "57", "68", "80", "93",
+          ""},
+        {"3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "", ""},
+        {"1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "", "", ""}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"3D\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "10", ",", "1"}], "}"}], ",", 
+     FrameBox[
+      TagBox[GridBox[{
+         {"6"},
+         {"5"},
+         {"3"},
+         {"1"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      StripOnInput->False], ",", 
+     TagBox[GridBox[{
+        {"6", "11", "19", "31", "48", "71", "101", "139", "186", "243", "311",
+          "391", "484"},
+        {"5", "8", "12", "17", "23", "30", "38", "47", "57", "68", "80", "93",
+          ""},
+        {"3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "", ""},
+        {"1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "", "", ""}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"3D\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "9", ",", "1"}], "}"}], ",", 
+     FrameBox[
+      TagBox[GridBox[{
+         {"5"},
+         {"5"},
+         {"3"},
+         {"1"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      StripOnInput->False], ",", 
+     TagBox[GridBox[{
+        {"5", "10", "18", "30", "47", "70", "100", "138", "185", "242", "310",
+          "390"},
+        {"5", "8", "12", "17", "23", "30", "38", "47", "57", "68", "80", ""},
+        {"3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "", ""},
+        {"1", "1", "1", "1", "1", "1", "1", "1", "1", "", "", ""}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"3D\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "10", ",", 
+       FractionBox["1", "2"]}], "}"}], ",", 
+     FrameBox[
+      TagBox[GridBox[{
+         {"1", "2"},
+         {"1", "2"},
+         {"1", "1"},
+         {"0", "1"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"],
+      StripOnInput->False], ",", 
+     TagBox[GridBox[{
+        {"1", "2", "4", "7", "12", "19", "29", "42", "59", "80", "106", "137",
+          "174", "217"},
+        {"1", "2", "3", "5", "7", "10", "13", "17", "21", "26", "31", "37", 
+         "43", ""},
+        {"1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "", ""},
+        {"0", "1", "0", "1", "0", "1", "0", "1", "0", "1", "0", "", "", ""}
+       },
+       AutoDelete->False,
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.84451876721184*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"f1c50db6-840f-40a7-980e-c3e7615b20d5"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -22848,18 +26066,17 @@ Cell[BoxData[
  RowBox[{"SSSAnimate", "[", "sss3d", "]"}]], "Input",
  CellChangeTimes->{{3.8165345458056817`*^9, 3.8165345509369316`*^9}, 
    3.816534644179491*^9},
- CellLabel->"In[5]:=",ExpressionUUID->"d6726f65-f0e4-4d0c-b164-ad2d78d99f22"],
+ CellLabel->"In[35]:=",ExpressionUUID->"d6726f65-f0e4-4d0c-b164-ad2d78d99f22"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{SSS`n$$ = 40, Typeset`show$$ = True, 
+   DynamicModuleBox[{SSS`n$$ = 122, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[SSS`n$$], 1, 501, 1}}, Typeset`size$$ = {
-    600., {148., 152.14873970426453`}}, Typeset`update$$ = 0, 
-    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+      Hold[SSS`n$$], 1, 501, 1}}, Typeset`size$$ = {900., {222., 229.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {SSS`n$$ = 1}, 
       "ControllerVariables" :> {}, 
@@ -22867,7 +26084,7 @@ Cell[BoxData[
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, "Body" :> ReplaceAll[SSS`g$9543, {{
+         Typeset`skipInitDone$$}, "Body" :> ReplaceAll[SSS`g$17701, {{
            Disk[
             BlankSequence[]], 
            Text[SSS`n$$, {
@@ -22900,7 +26117,7 @@ Cell[BoxData[
        ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
         "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
         True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
-     ImageSizeCache->{650., {184.13403309800196`, 189.86596690199804`}},
+     ImageSizeCache->{974., {281., 290.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -22911,9 +26128,9 @@ Cell[BoxData[
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.831057314248458*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"044e5a5f-2aae-449c-b389-437d0903a918"]
-}, Closed]]
+ CellChangeTimes->{3.831057314248458*^9, 3.8445190784299927`*^9},
+ CellLabel->"Out[35]=",ExpressionUUID->"d70a6274-f5fb-4562-9f6d-a06600c714e4"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -68850,8 +72067,9 @@ In[93]:=",ExpressionUUID->"97478325-e81e-45fc-8b28-bf38ddfecf7a"]
 }, Closed]]
 }, Open  ]]
 },
-WindowSize->{1428, 748},
-WindowMargins->{{Automatic, -1740}, {18, Automatic}},
+WindowSize->{1920, 997},
+WindowMargins->{{1592, Automatic}, {97, Automatic}},
+Magnification:>1.5 Inherited,
 FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"80e74a84-7cfd-48fa-9962-04d4ab9dc210"
@@ -68867,149 +72085,191 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 422, 11, 66, "Input",ExpressionUUID->"85d83d57-135d-4480-b803-eb74c45fea95",
+Cell[558, 20, 440, 10, 97, "Input",ExpressionUUID->"85d83d57-135d-4480-b803-eb74c45fea95",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[1005, 35, 567, 10, 67, "Section",ExpressionUUID->"ffe289ae-6a5e-4bbd-8b76-63638205eb26"],
+Cell[1023, 34, 567, 10, 101, "Section",ExpressionUUID->"ffe289ae-6a5e-4bbd-8b76-63638205eb26"],
 Cell[CellGroupData[{
-Cell[1597, 49, 464, 7, 54, "Subsection",ExpressionUUID->"5f14dd25-c07a-49bb-a8c9-d72638912fc3"],
-Cell[2064, 58, 320, 9, 44, "Text",ExpressionUUID->"8b00fc99-7d21-4e1c-98ee-123ad8f621f7"],
-Cell[2387, 69, 530, 11, 56, "Subsubsection",ExpressionUUID->"c53c0e45-91a4-4fe8-9505-a9a96f887e47"],
-Cell[2920, 82, 533, 11, 45, "Subsubsection",ExpressionUUID->"44e0d611-0480-43c2-bf2d-9c6b779e2866"],
-Cell[3456, 95, 632, 11, 78, "Subsubsection",ExpressionUUID->"3f5fb21b-5167-4a71-9690-0866053f4e5f"],
+Cell[1615, 48, 464, 7, 81, "Subsection",ExpressionUUID->"5f14dd25-c07a-49bb-a8c9-d72638912fc3"],
+Cell[2082, 57, 320, 9, 66, "Text",ExpressionUUID->"8b00fc99-7d21-4e1c-98ee-123ad8f621f7"],
+Cell[2405, 68, 530, 11, 84, "Subsubsection",ExpressionUUID->"c53c0e45-91a4-4fe8-9505-a9a96f887e47"],
+Cell[2938, 81, 533, 11, 67, "Subsubsection",ExpressionUUID->"44e0d611-0480-43c2-bf2d-9c6b779e2866"],
+Cell[3474, 94, 632, 11, 117, "Subsubsection",ExpressionUUID->"3f5fb21b-5167-4a71-9690-0866053f4e5f"],
 Cell[CellGroupData[{
-Cell[4113, 110, 860, 18, 78, "Subsubsection",ExpressionUUID->"d922f301-b620-4fa6-b5d4-bc289928da94"],
-Cell[4976, 130, 859, 15, 73, "Text",ExpressionUUID->"fb352f03-04cf-4d5a-8f81-6de29f470a43"]
+Cell[4131, 109, 860, 18, 117, "Subsubsection",ExpressionUUID->"d922f301-b620-4fa6-b5d4-bc289928da94"],
+Cell[4994, 129, 859, 15, 109, "Text",ExpressionUUID->"fb352f03-04cf-4d5a-8f81-6de29f470a43"]
 }, Open  ]],
-Cell[5850, 148, 868, 15, 89, "Subsubsection",ExpressionUUID->"e3c5f872-7778-4864-90eb-d6822345a901"],
-Cell[6721, 165, 3711, 105, 239, "Subsubsection",ExpressionUUID->"5ba3d0d3-8226-44e3-82df-9e5987c6d9da"],
-Cell[10435, 272, 1169, 20, 78, "Subsubsection",ExpressionUUID->"39f01bf9-e302-4790-baa1-d2695938b223"],
-Cell[11607, 294, 1084, 18, 78, "Subsubsection",ExpressionUUID->"68697b71-c67d-4da2-bae5-824689d263a6"],
+Cell[5868, 147, 868, 15, 133, "Subsubsection",ExpressionUUID->"e3c5f872-7778-4864-90eb-d6822345a901"],
+Cell[6739, 164, 3711, 105, 358, "Subsubsection",ExpressionUUID->"5ba3d0d3-8226-44e3-82df-9e5987c6d9da"],
+Cell[10453, 271, 1169, 20, 117, "Subsubsection",ExpressionUUID->"39f01bf9-e302-4790-baa1-d2695938b223"],
+Cell[11625, 293, 1084, 18, 117, "Subsubsection",ExpressionUUID->"68697b71-c67d-4da2-bae5-824689d263a6"],
 Cell[CellGroupData[{
-Cell[12716, 316, 1005, 14, 45, "Subsubsection",ExpressionUUID->"894c6616-f9e0-44ae-8be5-10fe21dd8de0"],
-Cell[13724, 332, 1070, 16, 44, "Text",ExpressionUUID->"3581ece2-29c6-4589-b498-805b9d23132e"],
-Cell[14797, 350, 1478, 22, 102, "Text",ExpressionUUID->"50bf9d80-a186-4634-9624-9f9a394a2f74"],
-Cell[16278, 374, 1733, 25, 102, "Text",ExpressionUUID->"0fa4c4bd-e784-4120-9116-3c227de5b0e5"],
-Cell[18014, 401, 1150, 18, 44, "Text",ExpressionUUID->"e03f3799-d17f-4870-a48a-e0cf6b840f79"],
-Cell[19167, 421, 1184, 18, 73, "Text",ExpressionUUID->"598b5999-a00e-4592-93b3-09c4d1ee9749"]
+Cell[12734, 315, 1005, 14, 67, "Subsubsection",ExpressionUUID->"894c6616-f9e0-44ae-8be5-10fe21dd8de0"],
+Cell[13742, 331, 1070, 16, 66, "Text",ExpressionUUID->"3581ece2-29c6-4589-b498-805b9d23132e"],
+Cell[14815, 349, 1478, 22, 153, "Text",ExpressionUUID->"50bf9d80-a186-4634-9624-9f9a394a2f74"],
+Cell[16296, 373, 1733, 25, 153, "Text",ExpressionUUID->"0fa4c4bd-e784-4120-9116-3c227de5b0e5"],
+Cell[18032, 400, 1150, 18, 66, "Text",ExpressionUUID->"e03f3799-d17f-4870-a48a-e0cf6b840f79"],
+Cell[19185, 420, 1184, 18, 109, "Text",ExpressionUUID->"598b5999-a00e-4592-93b3-09c4d1ee9749"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[20400, 445, 480, 7, 38, "Subsection",ExpressionUUID->"1ced103e-e184-4f32-b9f9-62395de743cf"],
-Cell[20883, 454, 3616, 77, 363, "Input",ExpressionUUID->"ed399daf-10c2-42db-b196-453e685966b5",
+Cell[20418, 444, 480, 7, 57, "Subsection",ExpressionUUID->"1ced103e-e184-4f32-b9f9-62395de743cf"],
+Cell[20901, 453, 3615, 77, 544, "Input",ExpressionUUID->"ed399daf-10c2-42db-b196-453e685966b5",
  InitializationCell->True],
-Cell[24502, 533, 1766, 26, 207, "Input",ExpressionUUID->"0b6b9f46-ee3b-4413-96b1-dbf805e1fe6e",
+Cell[24519, 532, 1765, 26, 310, "Input",ExpressionUUID->"0b6b9f46-ee3b-4413-96b1-dbf805e1fe6e",
  InitializationCell->True],
-Cell[26271, 561, 4777, 92, 792, "Input",ExpressionUUID->"1ef8e942-188b-46c0-ab38-5949cea27050",
+Cell[26287, 560, 4776, 92, 1188, "Input",ExpressionUUID->"1ef8e942-188b-46c0-ab38-5949cea27050",
  InitializationCell->True],
-Cell[31051, 655, 1670, 25, 246, "Input",ExpressionUUID->"addeef6f-7313-4d3f-b218-39b2a543f9fd",
+Cell[31066, 654, 1669, 25, 369, "Input",ExpressionUUID->"addeef6f-7313-4d3f-b218-39b2a543f9fd",
  InitializationCell->True],
-Cell[32724, 682, 5669, 122, 675, "Input",ExpressionUUID->"08aae338-8d9f-429d-944f-e26b5dcd69e3",
+Cell[32738, 681, 5668, 122, 1012, "Input",ExpressionUUID->"08aae338-8d9f-429d-944f-e26b5dcd69e3",
  InitializationCell->True],
-Cell[38396, 806, 11081, 243, 1065, "Input",ExpressionUUID->"7b95da39-9410-4707-9676-1239af4c26b8",
+Cell[38409, 805, 11080, 243, 1597, "Input",ExpressionUUID->"7b95da39-9410-4707-9676-1239af4c26b8",
  InitializationCell->True],
-Cell[49480, 1051, 5117, 92, 675, "Input",ExpressionUUID->"33d2def0-dc2f-4254-96f2-9e24cf1b8140",
+Cell[49492, 1050, 5116, 92, 1012, "Input",ExpressionUUID->"33d2def0-dc2f-4254-96f2-9e24cf1b8140",
  InitializationCell->True],
-Cell[54600, 1145, 4344, 82, 480, "Input",ExpressionUUID->"049be46b-b6cc-4a86-b2b6-14b89756bc25",
+Cell[54611, 1144, 4344, 82, 720, "Input",ExpressionUUID->"049be46b-b6cc-4a86-b2b6-14b89756bc25",
  InitializationCell->True],
-Cell[58947, 1229, 1417, 32, 246, "Input",ExpressionUUID->"b4c11996-d2b4-444a-9d59-1ebbb412fcd8",
+Cell[58958, 1228, 1417, 32, 369, "Input",ExpressionUUID->"b4c11996-d2b4-444a-9d59-1ebbb412fcd8",
  InitializationCell->True],
-Cell[60367, 1263, 11793, 269, 1183, "Input",ExpressionUUID->"bb72163e-fcc1-4604-9011-a8dd054f60a2",
+Cell[60378, 1262, 11793, 269, 1774, "Input",ExpressionUUID->"bb72163e-fcc1-4604-9011-a8dd054f60a2",
  InitializationCell->True],
-Cell[72163, 1534, 6104, 126, 753, "Input",ExpressionUUID->"a1175a9e-906c-4b73-b4e8-ef9d98bbbd02",
+Cell[72174, 1533, 6104, 126, 1129, "Input",ExpressionUUID->"a1175a9e-906c-4b73-b4e8-ef9d98bbbd02",
  InitializationCell->True],
-Cell[78270, 1662, 13420, 289, 1690, "Input",ExpressionUUID->"701785f9-50d9-41c7-b016-b52700368a12",
+Cell[78281, 1661, 13420, 289, 2535, "Input",ExpressionUUID->"701785f9-50d9-41c7-b016-b52700368a12",
  InitializationCell->True]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[91739, 1957, 602, 10, 53, "Section",ExpressionUUID->"3d36d656-7b5c-4cef-bae8-122eab949e00"],
+Cell[91750, 1956, 602, 10, 78, "Section",ExpressionUUID->"3d36d656-7b5c-4cef-bae8-122eab949e00"],
 Cell[CellGroupData[{
-Cell[92366, 1971, 760, 12, 71, "Subsubsection",ExpressionUUID->"5c35a1aa-b6d9-458e-885b-dc8d2bc2a9f1"],
+Cell[92377, 1970, 760, 12, 106, "Subsubsection",ExpressionUUID->"5c35a1aa-b6d9-458e-885b-dc8d2bc2a9f1"],
 Cell[CellGroupData[{
-Cell[93151, 1987, 2887, 50, 50, "Input",ExpressionUUID->"1460fde3-a24e-45a3-b80f-deddebb45de7"],
-Cell[96041, 2039, 99837, 1968, 211, "Print",ExpressionUUID->"bc3cb618-8375-4f3d-9804-4e6a8605a22c"]
+Cell[93162, 1986, 2887, 50, 73, "Input",ExpressionUUID->"1460fde3-a24e-45a3-b80f-deddebb45de7"],
+Cell[96052, 2038, 99837, 1968, 315, "Print",ExpressionUUID->"bc3cb618-8375-4f3d-9804-4e6a8605a22c"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[195927, 4013, 356, 7, 45, "Subsubsection",ExpressionUUID->"29c8170d-6a97-46cc-822d-bc9c3d1ac19c"],
+Cell[195938, 4012, 356, 7, 67, "Subsubsection",ExpressionUUID->"29c8170d-6a97-46cc-822d-bc9c3d1ac19c"],
 Cell[CellGroupData[{
-Cell[196308, 4024, 2693, 48, 50, "Input",ExpressionUUID->"c86891e3-0145-4ef6-8097-c4043838cfa9"],
-Cell[199004, 4074, 98585, 1932, 211, "Print",ExpressionUUID->"20f81ffe-5226-4465-abc3-0a916bc56263"]
+Cell[196319, 4023, 2693, 48, 73, "Input",ExpressionUUID->"c86891e3-0145-4ef6-8097-c4043838cfa9"],
+Cell[199015, 4073, 98585, 1932, 315, "Print",ExpressionUUID->"20f81ffe-5226-4465-abc3-0a916bc56263"]
 }, Open  ]],
-Cell[297604, 6009, 1940, 44, 90, "Input",ExpressionUUID->"4acbb68e-b78e-4b4e-b749-7b5bc2a095ff"]
+Cell[297615, 6008, 1940, 44, 160, "Input",ExpressionUUID->"4acbb68e-b78e-4b4e-b749-7b5bc2a095ff"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[299581, 6058, 300, 6, 45, "Subsubsection",ExpressionUUID->"466b1833-c075-4055-90d9-478afd72c70f"],
+Cell[299592, 6057, 300, 6, 67, "Subsubsection",ExpressionUUID->"466b1833-c075-4055-90d9-478afd72c70f"],
 Cell[CellGroupData[{
-Cell[299906, 6068, 2306, 42, 29, "Input",ExpressionUUID->"108aaac1-35d6-4040-ba12-a7b9367c77a0"],
-Cell[302215, 6112, 125100, 2445, 211, "Print",ExpressionUUID->"d34789de-f635-46ae-9e7c-e7ddd5cbce3f"]
+Cell[299917, 6067, 2306, 42, 43, "Input",ExpressionUUID->"108aaac1-35d6-4040-ba12-a7b9367c77a0"],
+Cell[302226, 6111, 125100, 2445, 315, "Print",ExpressionUUID->"d34789de-f635-46ae-9e7c-e7ddd5cbce3f"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[427364, 8563, 389, 7, 45, "Subsubsection",ExpressionUUID->"98409325-a945-427b-b81d-365849a3c622"],
+Cell[427375, 8562, 389, 7, 67, "Subsubsection",ExpressionUUID->"98409325-a945-427b-b81d-365849a3c622"],
 Cell[CellGroupData[{
-Cell[427778, 8574, 2452, 44, 28, "Input",ExpressionUUID->"b7b7ea13-038a-4d72-ae9f-5479c502bbb0"],
-Cell[430233, 8620, 122193, 2361, 211, "Print",ExpressionUUID->"f89b08e6-282f-41fa-ac7c-1fab9f60aac6"]
+Cell[427789, 8573, 416, 8, 43, "Input",ExpressionUUID->"44cc90a5-ed40-472a-90b8-d17b7ef326a7"],
+Cell[428208, 8583, 571, 12, 49, "Output",ExpressionUUID->"461ed074-8aec-4fba-a4b2-cf1957dd1786"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[428816, 8600, 358, 7, 43, "Input",ExpressionUUID->"9c4c29a4-455d-4e0f-b72e-8a0835b1e4a8"],
+Cell[429177, 8609, 289, 6, 49, "Output",ExpressionUUID->"1ddf9a2d-9dfe-4e9b-9b48-5380d8234f08"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[429503, 8620, 358, 7, 43, "Input",ExpressionUUID->"dd3a4b66-6640-4ef2-b9d1-c38401b32d1f"],
+Cell[429864, 8629, 150, 2, 49, "Output",ExpressionUUID->"7740432d-3d25-45a3-9ba0-76f185b2de9a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[430051, 8636, 407, 8, 43, "Input",ExpressionUUID->"17f6abe2-aa6e-4cf8-a2d6-96f03ef367bc"],
+Cell[430461, 8646, 149, 2, 49, "Output",ExpressionUUID->"980bce30-cf99-43d2-a6a8-4f9ae4d83eb6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[430647, 8653, 222, 3, 43, "Input",ExpressionUUID->"29a403f6-7d9a-4850-8b93-7ea501345ccb"],
+Cell[430872, 8658, 550, 12, 49, "Output",ExpressionUUID->"b532cb8d-1b1f-451b-a1eb-12f6f142ee9b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[431459, 8675, 248, 4, 43, "Input",ExpressionUUID->"960e4463-bb2c-492d-aadd-36c2319ae7a1"],
+Cell[431710, 8681, 114505, 2802, 2244, "Output",ExpressionUUID->"663bc76e-5a79-45f3-98f3-236728c7c3e5"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[546252, 11488, 2452, 44, 35, "Input",ExpressionUUID->"b7b7ea13-038a-4d72-ae9f-5479c502bbb0"],
+Cell[548707, 11534, 122193, 2361, 315, "Print",ExpressionUUID->"f89b08e6-282f-41fa-ac7c-1fab9f60aac6"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[552475, 10987, 520, 10, 45, "Subsubsection",ExpressionUUID->"364bca16-0eaf-4556-bb54-95c8f4021739"],
+Cell[670949, 13901, 520, 10, 106, "Subsubsection",ExpressionUUID->"364bca16-0eaf-4556-bb54-95c8f4021739"],
 Cell[CellGroupData[{
-Cell[553020, 11001, 3545, 66, 70, "Input",ExpressionUUID->"a96bd1f1-bee4-4c15-87e0-60f8a7f67b93"],
-Cell[556568, 11069, 386587, 7166, 211, "Print",ExpressionUUID->"9d7bb8a8-f8f7-46a7-8f13-1dc299f4ab2b"]
+Cell[671494, 13915, 3664, 68, 102, "Input",ExpressionUUID->"a96bd1f1-bee4-4c15-87e0-60f8a7f67b93"],
+Cell[675161, 13985, 386738, 7171, 315, "Print",ExpressionUUID->"671bd474-a504-48f6-b201-e31c9a113c0d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1061936, 21161, 220, 3, 43, "Input",ExpressionUUID->"20b624ca-0046-4b54-b088-2fb56974d599"],
+Cell[1062159, 21166, 184, 4, 34, "Print",ExpressionUUID->"da420bb4-c808-448e-b6e3-9f3094a11212"],
+Cell[1062346, 21172, 3207, 96, 220, "Output",ExpressionUUID->"f6703c4f-77ee-43d3-b276-74e5e996cccd"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[943204, 18241, 615, 10, 71, "Subsubsection",ExpressionUUID->"1b2620ce-a63a-43f3-b4f5-e1851a50cb73"],
+Cell[1065602, 21274, 615, 10, 106, "Subsubsection",ExpressionUUID->"1b2620ce-a63a-43f3-b4f5-e1851a50cb73"],
 Cell[CellGroupData[{
-Cell[943844, 18255, 4913, 86, 50, "Input",ExpressionUUID->"eeade0cd-d173-481c-ba1d-e6427cc3d240"],
-Cell[948760, 18343, 236514, 4498, 261, "Print",ExpressionUUID->"abed3773-0e5a-404c-b18a-4827903d180f"]
+Cell[1066242, 21288, 4914, 86, 102, "Input",ExpressionUUID->"eeade0cd-d173-481c-ba1d-e6427cc3d240"],
+Cell[1071159, 21376, 236652, 4501, 424, "Print",ExpressionUUID->"e87c31eb-4ca5-4b78-a1dd-201f8b7d34b9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1185311, 22846, 241, 4, 29, "Input",ExpressionUUID->"d6726f65-f0e4-4d0c-b164-ad2d78d99f22"],
-Cell[1185555, 22852, 2740, 62, 393, "Output",ExpressionUUID->"044e5a5f-2aae-449c-b389-437d0903a918"]
-}, Closed]]
+Cell[1307848, 25882, 334, 7, 43, "Input",ExpressionUUID->"242c59ef-c892-4c4b-b4ed-fd5a73249200"],
+Cell[1308185, 25891, 725, 19, 49, "Output",ExpressionUUID->"bfab8b59-8303-4160-9459-817a94559bcd"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1188344, 22920, 612, 10, 71, "Subsubsection",ExpressionUUID->"603642e8-7cfd-4253-bf21-612289ebd818"],
+Cell[1308947, 25915, 252, 4, 43, "Input",ExpressionUUID->"05eec464-5e00-4f12-876e-77b319e596f1"],
+Cell[1309202, 25921, 356, 10, 49, "Output",ExpressionUUID->"6f1b0453-34f4-4f8f-8b4d-d469ea576acc"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[1188981, 22934, 5279, 90, 67, "Input",ExpressionUUID->"aa3ae50a-6d1f-4e7b-938d-b79a0b0071ca"],
-Cell[1194263, 23026, 242189, 4546, 261, "Print",ExpressionUUID->"b9421bd5-ed41-48ab-8f96-c11f8bf86219"]
+Cell[1309595, 25936, 216, 3, 43, "Input",ExpressionUUID->"ec53b9e4-ecbb-4a2b-879e-a047776ee583"],
+Cell[1309814, 25941, 185, 4, 34, "Print",ExpressionUUID->"d003caa7-dca4-4bd7-9c3a-8da0a875ee2b"],
+Cell[1310002, 25947, 3901, 112, 278, "Output",ExpressionUUID->"f1c50db6-840f-40a7-980e-c3e7615b20d5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1313940, 26064, 242, 4, 43, "Input",ExpressionUUID->"d6726f65-f0e4-4d0c-b164-ad2d78d99f22"],
+Cell[1314185, 26070, 2717, 61, 599, "Output",ExpressionUUID->"d70a6274-f5fb-4562-9f6d-a06600c714e4"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1316951, 26137, 612, 10, 106, "Subsubsection",ExpressionUUID->"603642e8-7cfd-4253-bf21-612289ebd818"],
+Cell[CellGroupData[{
+Cell[1317588, 26151, 5279, 90, 100, "Input",ExpressionUUID->"aa3ae50a-6d1f-4e7b-938d-b79a0b0071ca"],
+Cell[1322870, 26243, 242189, 4546, 391, "Print",ExpressionUUID->"b9421bd5-ed41-48ab-8f96-c11f8bf86219"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1436501, 27578, 777, 12, 63, "Subsubsection",ExpressionUUID->"8cf6ca6a-3dad-40b6-864d-a5a05c0ea43b"],
+Cell[1565108, 30795, 777, 12, 92, "Subsubsection",ExpressionUUID->"8cf6ca6a-3dad-40b6-864d-a5a05c0ea43b"],
 Cell[CellGroupData[{
-Cell[1437303, 27594, 5546, 94, 67, "Input",ExpressionUUID->"b14e623d-d85a-41cb-854a-8631cba46d30"],
-Cell[1442852, 27690, 169755, 3235, 310, "Print",ExpressionUUID->"42871792-df3f-483b-9ee0-6298ab745e05"]
+Cell[1565910, 30811, 5546, 94, 100, "Input",ExpressionUUID->"b14e623d-d85a-41cb-854a-8631cba46d30"],
+Cell[1571459, 30907, 169755, 3235, 465, "Print",ExpressionUUID->"42871792-df3f-483b-9ee0-6298ab745e05"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1612656, 30931, 591, 9, 37, "Subsubsection",ExpressionUUID->"000c766a-742d-479d-aa7f-5b799741b4a9"],
+Cell[1741263, 34148, 591, 9, 53, "Subsubsection",ExpressionUUID->"000c766a-742d-479d-aa7f-5b799741b4a9"],
 Cell[CellGroupData[{
-Cell[1613272, 30944, 4161, 67, 48, "Input",ExpressionUUID->"e5981919-b9b8-470f-b751-ad4bc3133acf"],
-Cell[1617436, 31013, 651358, 12699, 310, "Print",ExpressionUUID->"04dca8dd-cb3a-4ab3-b81c-d70e3018e7d5"]
+Cell[1741879, 34161, 4161, 67, 72, "Input",ExpressionUUID->"e5981919-b9b8-470f-b751-ad4bc3133acf"],
+Cell[1746043, 34230, 651358, 12699, 465, "Print",ExpressionUUID->"04dca8dd-cb3a-4ab3-b81c-d70e3018e7d5"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[2268843, 43718, 322, 5, 37, "Subsubsection",ExpressionUUID->"69ea2c04-55e5-4856-834b-e5b1d6ed7a65"],
-Cell[2269168, 43725, 292, 7, 35, "Text",ExpressionUUID->"e5e1d70a-4e2c-493d-99f3-699e4b575825"],
+Cell[2397450, 46935, 322, 5, 53, "Subsubsection",ExpressionUUID->"69ea2c04-55e5-4856-834b-e5b1d6ed7a65"],
+Cell[2397775, 46942, 292, 7, 52, "Text",ExpressionUUID->"e5e1d70a-4e2c-493d-99f3-699e4b575825"],
 Cell[CellGroupData[{
-Cell[2269485, 43736, 3612, 60, 28, "Input",ExpressionUUID->"a1c19cc3-83a0-4d7b-8d8e-8b478bbd1c7a"],
-Cell[2273100, 43798, 41745, 849, 311, "Print",ExpressionUUID->"3e24e824-7ace-4b31-b788-a52e8ab2e2d2"]
+Cell[2398092, 46953, 3612, 60, 42, "Input",ExpressionUUID->"a1c19cc3-83a0-4d7b-8d8e-8b478bbd1c7a"],
+Cell[2401707, 47015, 41745, 849, 466, "Print",ExpressionUUID->"3e24e824-7ace-4b31-b788-a52e8ab2e2d2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2314882, 44652, 3868, 63, 48, "Input",ExpressionUUID->"508bbd30-7845-46b2-a41b-52f9aa021960"],
-Cell[2318753, 44717, 241200, 4585, 311, "Print",ExpressionUUID->"0dc96b56-5ce2-40c5-9386-baa9fbd28099"]
+Cell[2443489, 47869, 3868, 63, 72, "Input",ExpressionUUID->"508bbd30-7845-46b2-a41b-52f9aa021960"],
+Cell[2447360, 47934, 241200, 4585, 466, "Print",ExpressionUUID->"0dc96b56-5ce2-40c5-9386-baa9fbd28099"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2559990, 49307, 4057, 66, 48, "Input",ExpressionUUID->"9d018b7c-b2d2-4eb7-8f92-357f3d087823"],
-Cell[2564050, 49375, 647961, 12882, 310, "Print",ExpressionUUID->"5dddeae2-e102-469f-a354-a2dcbfe2c3f1"]
+Cell[2688597, 52524, 4057, 66, 72, "Input",ExpressionUUID->"9d018b7c-b2d2-4eb7-8f92-357f3d087823"],
+Cell[2692657, 52592, 647961, 12882, 465, "Print",ExpressionUUID->"5dddeae2-e102-469f-a354-a2dcbfe2c3f1"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3212048, 62262, 4549, 74, 48, "Input",ExpressionUUID->"e0707e30-bdb1-45a3-b3fa-fcde13441fbe"],
-Cell[3216600, 62338, 346177, 6509, 310, "Print",ExpressionUUID->"97478325-e81e-45fc-8b28-bf38ddfecf7a"]
+Cell[3340655, 65479, 4549, 74, 72, "Input",ExpressionUUID->"e0707e30-bdb1-45a3-b3fa-fcde13441fbe"],
+Cell[3345207, 65555, 346177, 6509, 465, "Print",ExpressionUUID->"97478325-e81e-45fc-8b28-bf38ddfecf7a"]
 }, Open  ]]
 }, Closed]]
 }, Open  ]]
