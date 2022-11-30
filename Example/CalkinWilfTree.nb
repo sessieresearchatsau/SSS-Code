@@ -1,0 +1,1837 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     84013,       1829]
+NotebookOptionsPosition[     75861,       1670]
+NotebookOutlinePosition[     77983,       1722]
+CellTagsIndexPosition[     77655,       1710]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Exploring the Calkin-Wilf Tree of Fractions", "DemoTitle",
+ CellChangeTimes->{
+  3.546133897301864*^9},ExpressionUUID->"ce26c03c-7b2d-4c36-acd4-\
+6c10674f4a81"],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection",ExpressionUUID->"dac54bd3-db05-445f-8509-b910fbaa5dca"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Module", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"i", "=", "101"}], ",", "w"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"w", "=", 
+     RowBox[{"BitLength", "[", "i", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"w", ",", "\"\<:\>\"", ",", 
+      RowBox[{"IntegerDigits", "[", 
+       RowBox[{"i", ",", "2"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"i", "-", 
+      RowBox[{"2", "^", 
+       RowBox[{"(", 
+        RowBox[{"w", "-", "1"}], ")"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"IntegerDigits", "[", 
+     RowBox[{
+      RowBox[{"i", "-", 
+       RowBox[{"2", "^", 
+        RowBox[{"(", 
+         RowBox[{"w", "-", "1"}], ")"}]}]}], ",", "2", ",", 
+      RowBox[{"w", "-", "1"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8764757819894066`*^9, 3.8764758256227565`*^9}, {
+  3.876475885274844*^9, 3.8764759375471315`*^9}, {3.8764760524859266`*^9, 
+  3.876476052780557*^9}},
+ CellLabel->"In[1]:=",
+ CellID->509733037,ExpressionUUID->"e92017ca-3757-43e1-be72-0cc6597cd4dc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"7", "\[InvisibleSpace]", "\<\":\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "0", ",", "0", ",", "1", ",", "0", ",", "1"}],
+     "}"}]}],
+  SequenceForm[7, ":", {1, 1, 0, 0, 1, 0, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.876475900034457*^9, 3.8764759393855114`*^9, 
+  3.876476054180601*^9, 3.8788219013986163`*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->69933303,ExpressionUUID->"5143b560-5bf9-45ff-81b2-cb1463190709"],
+
+Cell[BoxData["37"], "Print",
+ CellChangeTimes->{3.876475900034457*^9, 3.8764759393855114`*^9, 
+  3.876476054180601*^9, 3.878821901405592*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->151169757,ExpressionUUID->"5772c905-1faf-45c5-bf4b-478e351a5aca"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "0", ",", "0", ",", "1", ",", "0", ",", "1"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.876475829463691*^9, 3.8764759007360497`*^9, 
+  3.8764759400501413`*^9, 3.876476054858349*^9, 3.8788219014107065`*^9},
+ CellLabel->"Out[1]=",
+ CellID->162230386,ExpressionUUID->"d5345068-c6b3-4ef5-9fd2-e681a0634cb5"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"toCWFraction", "[", "i_Integer", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"w", "=", 
+        RowBox[{"BitLength", "[", "i", "]"}]}], ",", 
+       RowBox[{"t", "=", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1"}], "}"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Scan", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"#", "==", "0"}], ",", 
+           RowBox[{"t", "=", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "[", "t", "]"}], ",", 
+              RowBox[{"Plus", "@@", "t"}]}], "}"}]}], ",", 
+           RowBox[{"t", "=", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Plus", "@@", "t"}], ",", 
+              RowBox[{"Last", "[", "t", "]"}]}], "}"}]}]}], "]"}], "&"}], ",", 
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{
+          RowBox[{"i", "-", 
+           RowBox[{"2", "^", 
+            RowBox[{"(", 
+             RowBox[{"w", "-", "1"}], ")"}]}]}], ",", "2", ",", 
+          RowBox[{"w", "-", "1"}]}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"DisplayForm", "[", 
+       RowBox[{"FractionBox", " ", "@@", " ", "t"}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"children", "[", 
+    RowBox[{"Rule", "[", 
+     RowBox[{"x_", ",", "n_"}], "]"}], "]"}], " ", ":=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"n", "\[Rule]", 
+      RowBox[{"2", "n"}]}], ",", 
+     RowBox[{"n", "\[Rule]", 
+      RowBox[{
+       RowBox[{"2", "n"}], "+", "1"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"children", "[", "l_List", "]"}], " ", ":=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"children", " ", "/@", " ", "l"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tree", "[", 
+    RowBox[{"n_", ",", "mode_", ",", "level_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Rest", "[", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"NestList", "[", 
+       RowBox[{"children", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", "\[Rule]", "n"}], "}"}], ",", "level"}], "]"}], "]"}], 
+     "]"}], " ", "/.", " ", 
+    RowBox[{
+     RowBox[{"Rule", "[", 
+      RowBox[{"a_", ",", "b_"}], "]"}], " ", "\[RuleDelayed]", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"mode", " ", "/@", "  ", 
+        RowBox[{"Rule", "[", 
+         RowBox[{"a", ",", "b"}], "]"}]}], ",", 
+       RowBox[{"Mod", "[", 
+        RowBox[{"b", ",", "2"}], "]"}]}], "}"}]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"label", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Rasterize", "@", 
+      RowBox[{"Panel", "[", 
+       RowBox[{
+        RowBox[{"TreePlot", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"VertexLabeling", "\[Rule]", "True"}], ",", 
+          RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
+          RowBox[{"AspectRatio", "\[Rule]", "1.5"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"80", ",", "100"}], "}"}]}], ",", 
+          RowBox[{"BaseStyle", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"Bold", ",", "Larger"}], "}"}]}]}], "]"}], ",", 
+        "\"\<Legend\>\"", ",", "Bottom"}], "]"}]}], "&"}], " ", "/@", " ", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<  n  \>\"", "\[Rule]", "\"\<   2n   \>\""}], ",", 
+          "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<  n  \>\"", "\[Rule]", "\"\<2n+1\>\""}], ",", "1"}], 
+         "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"a", "/", "b"}], "\[Rule]", 
+           RowBox[{"a", "/", 
+            RowBox[{"(", 
+             RowBox[{"a", "+", "b"}], ")"}]}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"a", "/", "b"}], "\[Rule]", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"a", "+", "b"}], ")"}], "/", "b"}]}], ",", "1"}], 
+         "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}]}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.5461378213422527`*^9, 3.546137868312949*^9}},
+ CellLabel->"In[7]:=",
+ CellID->114692797,ExpressionUUID->"0f9f7be6-7a12-4130-98b0-5088b893d987"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection",ExpressionUUID->"84de33b4-a1d5-448c-95db-b29a792987a9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Text", "@", 
+    RowBox[{"Pane", "[", 
+     RowBox[{
+      RowBox[{"Column", "[", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<index: \>\"", ",", "start", ",", "\"\< = \>\"", ",", 
+              RowBox[{"Subscript", "[", 
+               RowBox[{
+                RowBox[{"StringJoin", "[", 
+                 RowBox[{"ToString", "/@", 
+                  RowBox[{"IntegerDigits", "[", 
+                   RowBox[{"start", ",", "2"}], "]"}]}], "]"}], ",", "2"}], 
+               "]"}]}], "}"}], "]"}], ",", "\"\<Menu\>\""}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Row", "[", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<traverse tree: \>\"", ",", "\"\<Menu\>\""}], "]"}], 
+            ",", "\[IndentingNewLine]", 
+            RowBox[{"Button", "[", 
+             RowBox[{"\"\<(0)\[LowerLeftArrow]\>\"", ",", 
+              RowBox[{"start", "*=", "2"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Button", "[", 
+             RowBox[{"\"\<\[LowerRightArrow](1)\>\"", ",", 
+              RowBox[{"start", "=", 
+               RowBox[{
+                RowBox[{"2", " ", "start"}], "+", "1"}]}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Button", "[", 
+             RowBox[{"\"\<\[UpArrow]\>\"", ",", 
+              RowBox[{"start", "=", 
+               RowBox[{"Max", "[", 
+                RowBox[{"1", ",", 
+                 RowBox[{"Quotient", "[", 
+                  RowBox[{"start", ",", "2"}], "]"}]}], "]"}]}]}], "]"}], " ",
+             ",", "\[IndentingNewLine]", 
+            RowBox[{"Button", "[", 
+             RowBox[{"\"\<random\>\"", ",", 
+              RowBox[{"start", "=", 
+               RowBox[{"RandomInteger", "[", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", 
+                  RowBox[{"10", "^", "10"}]}], "}"}], "]"}]}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Button", "[", 
+             RowBox[{"\"\<reset\>\"", ",", 
+              RowBox[{"start", "=", "1"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"\"\<  (level: \>\"", ",", 
+                 RowBox[{"BitLength", "[", "start", "]"}], ",", "\"\<)\>\""}],
+                 "}"}], "]"}], ",", "\"\<Menu\>\""}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"TreePlot", "[", 
+          RowBox[{
+           RowBox[{"tree", "[", 
+            RowBox[{"start", ",", "mode", ",", "levels"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"VertexLabeling", "\[Rule]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"levels", "<", "5"}], ",", "True", ",", "Tooltip"}], 
+             "]"}]}], ",", 
+           RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
+           RowBox[{"AspectRatio", "\[Rule]", ".7"}], ",", 
+           RowBox[{"BaseStyle", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"Bold", ",", "Larger"}], "}"}]}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"540", ",", "380"}], "}"}]}], ",", 
+           RowBox[{"Epilog", "\[Rule]", 
+            RowBox[{"Inset", "[", 
+             RowBox[{
+              RowBox[{"label", "\[LeftDoubleBracket]", 
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"mode", "===", "Identity"}], ",", "1", ",", "2"}], 
+                "]"}], "\[RightDoubleBracket]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"Right", ",", "Top"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"Right", ",", "Top"}], "}"}]}], "]"}]}]}], 
+          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "}"}], "]"}],
+       ",", "\[IndentingNewLine]", 
+      RowBox[{"ImageSize", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"540", ",", "420"}], "}"}]}]}], "]"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"levels", ",", "3"}], "}"}], ",", 
+     RowBox[{"Range", "[", "6", "]"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "SetterBar"}], ",", 
+     RowBox[{"ControlPlacement", "->", "Top"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mode", ",", "toCWFraction"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Identity", "\[Rule]", "\"\<index\>\""}], ",", 
+       RowBox[{"toCWFraction", "\[Rule]", "\"\<fraction\>\""}], ",", 
+       RowBox[{"ControlPlacement", "->", "Top"}]}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"start", ",", "1", ",", "\[Infinity]", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.5461338712122555`*^9, {3.5461380826963854`*^9, 3.546138088474963*^9}, {
+   3.546139826695768*^9, 3.546139844981596*^9}, {3.5461398876698647`*^9, 
+   3.5461398885569534`*^9}, {3.8788219493334894`*^9, 
+   3.8788220201979733`*^9}, {3.878822051214159*^9, 3.8788220801907268`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"902c29c2-609b-4242-ac00-94f439476fe1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`levels$$ = 
+    3, $CellContext`mode$$ = $CellContext`toCWFraction, $CellContext`start$$ =
+     1, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`levels$$], 3}, {1, 2, 3, 4, 5, 6}}, {{
+       Hold[$CellContext`mode$$], $CellContext`toCWFraction}, {
+      Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+       ControlPlacement -> Top}}, {
+      Hold[$CellContext`start$$], 1, 
+      DirectedInfinity[1], 1}}, Typeset`size$$ = {
+    405., {156.17529296875, 160.82470703125}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`levels$$ = 
+        3, $CellContext`mode$$ = $CellContext`toCWFraction, \
+$CellContext`start$$ = 1}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Text[
+        Pane[
+         Column[{
+           Style[
+            Row[{"index: ", $CellContext`start$$, " = ", 
+              Subscript[
+               StringJoin[
+                Map[ToString, 
+                 IntegerDigits[$CellContext`start$$, 2]]], 2]}], "Menu"], 
+           Row[{
+             Style["traverse tree: ", "Menu"], 
+             Button["(0)\[LowerLeftArrow]", 
+              TimesBy[$CellContext`start$$, 2]], 
+             Button[
+             "\[LowerRightArrow](1)", $CellContext`start$$ = 
+              2 $CellContext`start$$ + 1], 
+             Button["\[UpArrow]", $CellContext`start$$ = Max[1, 
+                Quotient[$CellContext`start$$, 2]]], 
+             Button[
+             "random", $CellContext`start$$ = RandomInteger[{1, 10^10}]], 
+             Button["reset", $CellContext`start$$ = 1], 
+             Style[
+              Row[{"  (level: ", 
+                BitLength[$CellContext`start$$], ")"}], "Menu"]}], 
+           TreePlot[
+            $CellContext`tree[$CellContext`start$$, $CellContext`mode$$, \
+$CellContext`levels$$], VertexLabeling -> 
+            If[$CellContext`levels$$ < 5, True, Tooltip], DirectedEdges -> 
+            True, AspectRatio -> 0.7, BaseStyle -> {Bold, Larger}, 
+            ImageSize -> {540, 380}, Epilog -> Inset[
+              Part[$CellContext`label, 
+               If[$CellContext`mode$$ === Identity, 1, 2]], {Right, Top}, {
+              Right, Top}]]}], ImageSize -> {540, 420}]], 
+      "Specifications" :> {{{$CellContext`levels$$, 3}, {1, 2, 3, 4, 5, 6}, 
+         ControlType -> SetterBar, ControlPlacement -> 
+         Top}, {{$CellContext`mode$$, $CellContext`toCWFraction}, {
+         Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+          ControlPlacement -> Top}}, {$CellContext`start$$, 1, 
+         DirectedInfinity[1], 1, ControlType -> None}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{441., {200.015869140625, 203.984130859375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`tree[
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`mode, 
+          Blank[]], 
+         Pattern[$CellContext`level, 
+          Blank[]]] := ReplaceAll[
+         Rest[
+          Flatten[
+           
+           NestList[$CellContext`children, {
+            0 -> $CellContext`n}, $CellContext`level]]], (
+          Pattern[$CellContext`a, 
+            Blank[]] -> Pattern[$CellContext`b, 
+            Blank[]]) :> {
+           Map[$CellContext`mode, $CellContext`a -> $CellContext`b], 
+           Mod[$CellContext`b, 2]}], $CellContext`children[
+        Pattern[$CellContext`x, 
+           Blank[]] -> Pattern[$CellContext`n, 
+           Blank[]]] := {$CellContext`n -> 2 $CellContext`n, $CellContext`n -> 
+         2 $CellContext`n + 1}, $CellContext`children[
+         Pattern[$CellContext`l, 
+          Blank[List]]] := Flatten[
+         Map[$CellContext`children, $CellContext`l]], $CellContext`label = {
+         Graphics[
+          Raster[CompressedData["
+1:eJztnE9oE0scxxdKoRcl/iUHFXvryXPZg+jt9aCWnDwo1ApLwIOFgvQhUrBP
+VBBNvPTw4NVbEIRcZHssgp4sFPFQJIceU/AQQSEHH4yz2SbddHeb32x35jdt
+vh+mZZvs/MmH+c5m6STjs/dLsyOO47yUP7PyJzgWwHYaFdfp4vnco7Ef33Mc
+t9LgHobtBNNqCKdTMDt67EyTeMK6Z7mVitebTHtP83efih4n1j1k+LGRx1MV
+PBLa6ogJn0w8LW4pse6hI2Ypnin5yO4p3fMTopdkKbHu4SPRUgRpItVS/2lD
+Zal/SekcpSUu4bTIOrb36EglTkTnSTdT3UdSVu+ekM7z0QtBWt1DhskUHKXE
+HY2+8gWWAAAAMPOr/T/KwPIeDCK0JH9zz2h7gSUKsEQBlijAEgVYogBLFGCJ
+AixRgCUKsEQBlijAEgVYogBLFGCJAixRGGjpx7dbXMV87wexJMS6+dKzZLhH
+WIIlWIIlWIIlWIIlfZb6PifglHyx3qhc2tk/6pW6u0brB7Gk2kXwrFfdbaEx
+7/ZXZ5lLkVdxqdKQj9Q7+4vnG+FBbGAZ5pJSF3stiej5PHOpU6rezqiqvq/F
+klIXtlpaF37J8+NDytESoQu/5MToVrHDUjCMMAvdIQXRSB1bFkvkLuydS+HS
+0RnbztLqljxXbekeZInahYWWfC8MVNVLuoKolpRrnFoXFlrqWw1UwqUwl3Lo
+gtvS7ruX3qKRt6WDdlH10g3jvTe9R1iCJViCJVgaKktcxXzvmS3lyD9jY9tf
+vuhoud1qPR4d/d1u62hcmLX0vlz+vLyso+Wvtdq7mzd1tBxi0tLW2tqbK1d0
+tCwVSVE6Wg4xvJviRbH4s9nMt00ZtGeFgr64CeOWdIROd9yEcUs6Qqc7boJj
+/1K+oTMQN8FhKd/QGYib4LCUb+gMxE0w7RjMK3Rm4iaYLOUVOjNxE0yW8gqd
+mbgJvj26N44d+3t+fnV1NUPdVqtVr9cfPXz419jYxw8fch9bHBZLtVrtXKHw
+6fXrYrG4srKSoYWtrS3Hca6Oj+c9tGRYLJXL5TMnT8rQzc3NSVFt9eVXTkJp
+6dHduzqGF4fF0szMjHyNS2fPVp4/lwcZcvdkaUlWNBM3wWRpcXFRvsan16//
+9+CBPJB/qrYw5Qb/8JYLlIbRJcBiaXNzM8jLvXv/Xr6czdLFEydOFwoahpYM
+1zVucnJyenpavr28cP68qqXv29vS7Y1r1/QMLQEuS/IiNTEx8fbOnVPHj29s
+bNArNpvN21NToyMjCwsL+oa3B8bPNMlLW+3Vq6rrqlaUbybXlpdlbHWMKhH2
+T36p3tMZu3eLwm5J9Z7O2L1bFHZLqvd0xu7dorBbEiqhY4mbsMMSPXQscRN2
+WKKHjiVuwg5LghY6rrgJayxRQscVN2GNJUrouOImrLEkBoWOMW7CJkv7h44x
+bsImS/uHjjFuwiZLIj10vHETlllKCx1v3IRxS4b3Q+aFeUsm99bmBSxRgCUK
+sEQBlijAEgVYogBLFGyzlOGrUYbQUoavs4AlWIKlNKiWVL4aZQgtZfhqlCG0
+lKHAEizBUhqwRAGWKMASBViiAEsUYIkC/h93hIElCrBEAZYowBIFWKIASxRg
+iQIsUYAlCrBEAZYowBIFWKIASxRgiQIsUYhaQkkrPUtgf5A1In8AvssXGg==
+
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, PlotRange -> {{0, 98}, {0, 142}}], 
+         Graphics[
+          Raster[CompressedData["
+1:eJztnDFoG1cYxw9ChmSJO0VoUpPFS4xLQjDCNBpTCMWIjCXIhmhpkhqShgwB
+00lLsC+TcSloCV0CUSnlNLSgoVBDCKibCRo0ZHAggzoUNLTw+u5Unc+6k/Td
+6Xvf96R8P56NkO6ePv/8/u+k4959uvVNeeuM4zi7+mdL//iPlWA7HbfoDKl6
+3NXYj1d1nKLb4S7Ddvxh9REOJ390hPw/TOIJG25VdN1qOJhGN/NOXoo+Ttx3
+zvBilcdT5T8zsBWIGbyYuFncUuK+c0fMUjxT+pmTTYbbJ0QvyVLivvNHoqUI
+2sRYS6c3+6gsnZ5SgkfjEpewWWQeG320UIlT0XEyzNTwmTGzdygkeD16IBi3
+75xBmYJFStxivBcuYkkQBEFg5u/+v9Kmtl+EaQws6d/cI9pexBIEsQRBLEEQ
+SxDEEgSxBEEsQRBLEMQSBLEEYY4s/fX2K0Nt6lvDLTEWGRag1Bv0hm6Jq0j2
+AsSSWBJLYilzAeFVZVXPCksdd8W/hqG4ElzK8LAzfLLoNlIVjDyWvLL/dl7Z
+cVbcDr8lLUHX47saKhqxBCwY2VLnYbH6fFDeSSW8Y8mv53nVKXvDoRW5hLIB
+LBh7Xmq4xZWq1/D/O8G781oK/PiDZDCoEsYSrGD02duvIZgHgFOT8dlbj5Zg
+agrNnLYEKhj/GAceRUSWMApGtxQcNfxJYF4sQQqWz0tYRbIXIJbEkljSrd3+
+sdU6gLder0Vsqd//I1WFh4d1dEul0lUnDboMYkvd7s+pKiwU8pI4lsSJJUgB
+KOcliC0l1mzUEsp5CWJLiTUbH0szn5dgGEuRmgksoZyXIJ+XEmo2bAnhvATD
+7B2r2bilqW3aeYmFP8ZB2tTzEmIJqwCxJJZYLBlqi2RpFn578uT3Wm3GThj/
+TTSW3h0e/rC2Zq7/nyqVdr1urn+ya+HcQqHX7Zro+Z9+/1ku1+/1THQ+gMwS
+SugS6TSbL27eNNFzCJklc6EzHTdFe/WpidARxE3RWjIROoK4KVpLJkJHEDdF
+fr03buho4qbILeGGjiZuitwSbuho4qY4Vljo0P366tXs/ZDFTZFb6vV6uQsX
+nm1urq6uttvtbJ10u91areY4ztWLFzN3kgpiS/V6Xf91+9evb29vFwqFzP3s
+7+/rfnbv30esbQLElnZ2dvRf920+/+LgwJnhLscP7t3Tu//5+jVibRMgtjRI
+ynfl8svHj/WDSqWSrZ/Pr107f/Ysbm0TILZ0dHSk5Xx9544+0i0tLZVKpWz9
+fHLu3JXLl3FrmwD9MW55eXljY0Mf6dbX1rJZ+vD+vVZ9d3MTvbZx0FtqNpu5
+XM579OizS5f0HJ52d32Au3Xjhra0t7dnorxEWFakNhqN3adPv8jnj4+PM+z+
+/e3bX66vt1ot7LrGwrhuN9t3OsoPkyGMlrJ9pyP77haF0VK273Rk392i8K6U
+Txs6lrgpbktpQ8cSN8VtKW3oWOKmuC2pNKHjipuywBI8dFxxUxZYgoeOK27K
+AksKFjrGuCk7LEFCxxg3ZYclSOgY46bssKSmhY43bsoaS5NDxxs3xWrJ9BWG
+iPBaMnq1KiJiCYJYgiCWIIglCFZZwlpAio5VlrAWkKJjlyWkBaTo2GUJaQEp
+OpZZwllAio5tllAWkKJjmyWUBaTo2GZJPi+NIJYgiCUIYglC3NLIja3Ekkqy
+NHJjK7GkJHEwxBKEuCXIfa7EEuQ+V2IJcp8rsQS5z5VY8tu0+1yJJTnGxRFL
+EMQSBLEEQa45WTDEEgSxBEEsQRBLEMQSBLEEQSxBEEsQxBIEsQQhaknauBZa
+EiYjWQPyH4MsBMw=
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, 
+          PlotRange -> {{0, 98}, {0, 142}}]}, $CellContext`toCWFraction[
+         Pattern[$CellContext`i, 
+          Blank[Integer]]] := 
+       Module[{$CellContext`w = 
+          BitLength[$CellContext`i], $CellContext`t = {1, 1}}, 
+         Scan[If[# == 0, $CellContext`t = {
+              First[$CellContext`t], 
+              Apply[Plus, $CellContext`t]}, $CellContext`t = {
+              Apply[Plus, $CellContext`t], 
+              Last[$CellContext`t]}]& , 
+           
+           IntegerDigits[$CellContext`i - 2^($CellContext`w - 1), 
+            2, $CellContext`w - 1]]; DisplayForm[
+           Apply[FractionBox, $CellContext`t]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->174796822,ExpressionUUID->"b46fbc76-44c3-4451-8802-b6b51eb147b8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection",ExpressionUUID->"a4aa8da3-1455-4e03-81d7-50ff168b54bb"],
+
+Cell["\<\
+The Calkin-Wilf tree contains all positive fractions in reduced form.  Click \
+the buttons to move down to the left or right or to move up. The fraction's \
+index is shown in decimal and binary notation to highlight the connections \
+between the binary expansion of the index and the position in the tree.\
+\>", "ManipulateCaption",
+ CellChangeTimes->{{3.5461379381739345`*^9, 
+  3.546138032578374*^9}},ExpressionUUID->"57f6ffe1-fb30-4f2f-bf50-\
+8800a9de0ee1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection",ExpressionUUID->"67890dd4-dea1-4b9f-8935-94c4c0e34321"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`levels$$ = 
+    3, $CellContext`mode$$ = $CellContext`toCWFraction, $CellContext`start$$ =
+     1, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`levels$$], 3}, {1, 2, 3, 4, 5, 6}}, {{
+       Hold[$CellContext`mode$$], $CellContext`toCWFraction}, {
+      Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+       ControlPlacement -> Top}}, {
+      Hold[$CellContext`start$$], 1, 
+      DirectedInfinity[1], 1}}, Typeset`size$$ = {
+    405., {156.17529296875, 160.82470703125}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`levels$$ = 
+        3, $CellContext`mode$$ = $CellContext`toCWFraction, \
+$CellContext`start$$ = 1}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Text[
+        Pane[
+         Column[{
+           Style[
+            Row[{"index: ", $CellContext`start$$, " = ", 
+              Subscript[
+               StringJoin[
+                Map[ToString, 
+                 IntegerDigits[$CellContext`start$$, 2]]], 2]}], "Menu"], 
+           Row[{
+             Style["traverse tree: ", "Menu"], 
+             Button["(0)\[LowerLeftArrow]", 
+              TimesBy[$CellContext`start$$, 2]], 
+             Button[
+             "\[LowerRightArrow](1)", $CellContext`start$$ = 
+              2 $CellContext`start$$ + 1], 
+             Button["\[UpArrow]", $CellContext`start$$ = Max[1, 
+                Quotient[$CellContext`start$$, 2]]], 
+             Button[
+             "random", $CellContext`start$$ = RandomInteger[{1, 10^10}]], 
+             Button["reset", $CellContext`start$$ = 1], 
+             Style[
+              Row[{"  (level: ", 
+                BitLength[$CellContext`start$$], ")"}], "Menu"]}], 
+           TreePlot[
+            $CellContext`tree[$CellContext`start$$, $CellContext`mode$$, \
+$CellContext`levels$$], VertexLabeling -> 
+            If[$CellContext`levels$$ < 5, True, Tooltip], DirectedEdges -> 
+            True, AspectRatio -> 0.7, BaseStyle -> {Bold, Larger}, 
+            ImageSize -> {540, 380}, Epilog -> Inset[
+              Part[$CellContext`label, 
+               If[$CellContext`mode$$ === Identity, 1, 2]], {Right, Top}, {
+              Right, Top}]]}], ImageSize -> {540, 420}]], 
+      "Specifications" :> {{{$CellContext`levels$$, 3}, {1, 2, 3, 4, 5, 6}, 
+         ControlType -> SetterBar, ControlPlacement -> 
+         Top}, {{$CellContext`mode$$, $CellContext`toCWFraction}, {
+         Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+          ControlPlacement -> Top}}, {$CellContext`start$$, 1, 
+         DirectedInfinity[1], 1, ControlType -> None}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{441., {200.015869140625, 203.984130859375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`tree[
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`mode, 
+          Blank[]], 
+         Pattern[$CellContext`level, 
+          Blank[]]] := ReplaceAll[
+         Rest[
+          Flatten[
+           
+           NestList[$CellContext`children, {
+            0 -> $CellContext`n}, $CellContext`level]]], (
+          Pattern[$CellContext`a, 
+            Blank[]] -> Pattern[$CellContext`b, 
+            Blank[]]) :> {
+           Map[$CellContext`mode, $CellContext`a -> $CellContext`b], 
+           Mod[$CellContext`b, 2]}], $CellContext`children[
+        Pattern[$CellContext`x, 
+           Blank[]] -> Pattern[$CellContext`n, 
+           Blank[]]] := {$CellContext`n -> 2 $CellContext`n, $CellContext`n -> 
+         2 $CellContext`n + 1}, $CellContext`children[
+         Pattern[$CellContext`l, 
+          Blank[List]]] := Flatten[
+         Map[$CellContext`children, $CellContext`l]], $CellContext`label = {
+         Graphics[
+          Raster[CompressedData["
+1:eJztnE9oE0scxxdKoRcl/iUHFXvryXPZg+jt9aCWnDwo1ApLwIOFgvQhUrBP
+VBBNvPTw4NVbEIRcZHssgp4sFPFQJIceU/AQQSEHH4yz2SbddHeb32x35jdt
+vh+mZZvs/MmH+c5m6STjs/dLsyOO47yUP7PyJzgWwHYaFdfp4vnco7Ef33Mc
+t9LgHobtBNNqCKdTMDt67EyTeMK6Z7mVitebTHtP83efih4n1j1k+LGRx1MV
+PBLa6ogJn0w8LW4pse6hI2Ypnin5yO4p3fMTopdkKbHu4SPRUgRpItVS/2lD
+Zal/SekcpSUu4bTIOrb36EglTkTnSTdT3UdSVu+ekM7z0QtBWt1DhskUHKXE
+HY2+8gWWAAAAMPOr/T/KwPIeDCK0JH9zz2h7gSUKsEQBlijAEgVYogBLFGCJ
+AixRgCUKsEQBlijAEgVYogBLFGCJAixRGGjpx7dbXMV87wexJMS6+dKzZLhH
+WIIlWIIlWIIlWIIlfZb6PifglHyx3qhc2tk/6pW6u0brB7Gk2kXwrFfdbaEx
+7/ZXZ5lLkVdxqdKQj9Q7+4vnG+FBbGAZ5pJSF3stiej5PHOpU6rezqiqvq/F
+klIXtlpaF37J8+NDytESoQu/5MToVrHDUjCMMAvdIQXRSB1bFkvkLuydS+HS
+0RnbztLqljxXbekeZInahYWWfC8MVNVLuoKolpRrnFoXFlrqWw1UwqUwl3Lo
+gtvS7ruX3qKRt6WDdlH10g3jvTe9R1iCJViCJVgaKktcxXzvmS3lyD9jY9tf
+vuhoud1qPR4d/d1u62hcmLX0vlz+vLyso+Wvtdq7mzd1tBxi0tLW2tqbK1d0
+tCwVSVE6Wg4xvJviRbH4s9nMt00ZtGeFgr64CeOWdIROd9yEcUs6Qqc7boJj
+/1K+oTMQN8FhKd/QGYib4LCUb+gMxE0w7RjMK3Rm4iaYLOUVOjNxE0yW8gqd
+mbgJvj26N44d+3t+fnV1NUPdVqtVr9cfPXz419jYxw8fch9bHBZLtVrtXKHw
+6fXrYrG4srKSoYWtrS3Hca6Oj+c9tGRYLJXL5TMnT8rQzc3NSVFt9eVXTkJp
+6dHduzqGF4fF0szMjHyNS2fPVp4/lwcZcvdkaUlWNBM3wWRpcXFRvsan16//
+9+CBPJB/qrYw5Qb/8JYLlIbRJcBiaXNzM8jLvXv/Xr6czdLFEydOFwoahpYM
+1zVucnJyenpavr28cP68qqXv29vS7Y1r1/QMLQEuS/IiNTEx8fbOnVPHj29s
+bNArNpvN21NToyMjCwsL+oa3B8bPNMlLW+3Vq6rrqlaUbybXlpdlbHWMKhH2
+T36p3tMZu3eLwm5J9Z7O2L1bFHZLqvd0xu7dorBbEiqhY4mbsMMSPXQscRN2
+WKKHjiVuwg5LghY6rrgJayxRQscVN2GNJUrouOImrLEkBoWOMW7CJkv7h44x
+bsImS/uHjjFuwiZLIj10vHETlllKCx1v3IRxS4b3Q+aFeUsm99bmBSxRgCUK
+sEQBlijAEgVYogBLFGyzlOGrUYbQUoavs4AlWIKlNKiWVL4aZQgtZfhqlCG0
+lKHAEizBUhqwRAGWKMASBViiAEsUYIkC/h93hIElCrBEAZYowBIFWKIASxRg
+iQIsUYAlCrBEAZYowBIFWKIASxRgiQIsUYhaQkkrPUtgf5A1In8AvssXGg==
+
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, PlotRange -> {{0, 98}, {0, 142}}], 
+         Graphics[
+          Raster[CompressedData["
+1:eJztnDFoG1cYxw9ChmSJO0VoUpPFS4xLQjDCNBpTCMWIjCXIhmhpkhqShgwB
+00lLsC+TcSloCV0CUSnlNLSgoVBDCKibCRo0ZHAggzoUNLTw+u5Unc+6k/Td
+6Xvf96R8P56NkO6ePv/8/u+k4959uvVNeeuM4zi7+mdL//iPlWA7HbfoDKl6
+3NXYj1d1nKLb4S7Ddvxh9REOJ390hPw/TOIJG25VdN1qOJhGN/NOXoo+Ttx3
+zvBilcdT5T8zsBWIGbyYuFncUuK+c0fMUjxT+pmTTYbbJ0QvyVLivvNHoqUI
+2sRYS6c3+6gsnZ5SgkfjEpewWWQeG320UIlT0XEyzNTwmTGzdygkeD16IBi3
+75xBmYJFStxivBcuYkkQBEFg5u/+v9Kmtl+EaQws6d/cI9pexBIEsQRBLEEQ
+SxDEEgSxBEEsQRBLEMQSBLEEYY4s/fX2K0Nt6lvDLTEWGRag1Bv0hm6Jq0j2
+AsSSWBJLYilzAeFVZVXPCksdd8W/hqG4ElzK8LAzfLLoNlIVjDyWvLL/dl7Z
+cVbcDr8lLUHX47saKhqxBCwY2VLnYbH6fFDeSSW8Y8mv53nVKXvDoRW5hLIB
+LBh7Xmq4xZWq1/D/O8G781oK/PiDZDCoEsYSrGD02duvIZgHgFOT8dlbj5Zg
+agrNnLYEKhj/GAceRUSWMApGtxQcNfxJYF4sQQqWz0tYRbIXIJbEkljSrd3+
+sdU6gLder0Vsqd//I1WFh4d1dEul0lUnDboMYkvd7s+pKiwU8pI4lsSJJUgB
+KOcliC0l1mzUEsp5CWJLiTUbH0szn5dgGEuRmgksoZyXIJ+XEmo2bAnhvATD
+7B2r2bilqW3aeYmFP8ZB2tTzEmIJqwCxJJZYLBlqi2RpFn578uT3Wm3GThj/
+TTSW3h0e/rC2Zq7/nyqVdr1urn+ya+HcQqHX7Zro+Z9+/1ku1+/1THQ+gMwS
+SugS6TSbL27eNNFzCJklc6EzHTdFe/WpidARxE3RWjIROoK4KVpLJkJHEDdF
+fr03buho4qbILeGGjiZuitwSbuho4qY4Vljo0P366tXs/ZDFTZFb6vV6uQsX
+nm1urq6uttvtbJ10u91areY4ztWLFzN3kgpiS/V6Xf91+9evb29vFwqFzP3s
+7+/rfnbv30esbQLElnZ2dvRf920+/+LgwJnhLscP7t3Tu//5+jVibRMgtjRI
+ynfl8svHj/WDSqWSrZ/Pr107f/Ysbm0TILZ0dHSk5Xx9544+0i0tLZVKpWz9
+fHLu3JXLl3FrmwD9MW55eXljY0Mf6dbX1rJZ+vD+vVZ9d3MTvbZx0FtqNpu5
+XM579OizS5f0HJ52d32Au3Xjhra0t7dnorxEWFakNhqN3adPv8jnj4+PM+z+
+/e3bX66vt1ot7LrGwrhuN9t3OsoPkyGMlrJ9pyP77haF0VK273Rk392i8K6U
+Txs6lrgpbktpQ8cSN8VtKW3oWOKmuC2pNKHjipuywBI8dFxxUxZYgoeOK27K
+AksKFjrGuCk7LEFCxxg3ZYclSOgY46bssKSmhY43bsoaS5NDxxs3xWrJ9BWG
+iPBaMnq1KiJiCYJYgiCWIIglCFZZwlpAio5VlrAWkKJjlyWkBaTo2GUJaQEp
+OpZZwllAio5tllAWkKJjmyWUBaTo2GZJPi+NIJYgiCUIYglC3NLIja3Ekkqy
+NHJjK7GkJHEwxBKEuCXIfa7EEuQ+V2IJcp8rsQS5z5VY8tu0+1yJJTnGxRFL
+EMQSBLEEQa45WTDEEgSxBEEsQRBLEMQSBLEEQSxBEEsQxBIEsQQhaknauBZa
+EiYjWQPyH4MsBMw=
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, 
+          PlotRange -> {{0, 98}, {0, 142}}]}, $CellContext`toCWFraction[
+         Pattern[$CellContext`i, 
+          Blank[Integer]]] := 
+       Module[{$CellContext`w = 
+          BitLength[$CellContext`i], $CellContext`t = {1, 1}}, 
+         Scan[If[# == 0, $CellContext`t = {
+              First[$CellContext`t], 
+              Apply[Plus, $CellContext`t]}, $CellContext`t = {
+              Apply[Plus, $CellContext`t], 
+              Last[$CellContext`t]}]& , 
+           
+           IntegerDigits[$CellContext`i - 2^($CellContext`w - 1), 
+            2, $CellContext`w - 1]]; DisplayForm[
+           Apply[FractionBox, $CellContext`t]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->2644274,ExpressionUUID->"db033138-3b42-4dbe-8fb6-a5c5e1d8c03b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection",ExpressionUUID->"2865eeeb-f47f-43c3-a0e5-3fe2c37bbc76"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`levels$$ = 1, $CellContext`mode$$ = 
+    Identity, $CellContext`start$$ = 54, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`levels$$], 1}, {1, 2, 3, 4, 5, 6}}, {{
+       Hold[$CellContext`mode$$], Identity}, {
+      Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+       ControlPlacement -> Top}}, {{
+       Hold[$CellContext`start$$], 54}, 1, 
+      DirectedInfinity[1], 1}}, Typeset`size$$ = {
+    405., {156.17529296875, 160.82470703125}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`levels$$ = 1, $CellContext`mode$$ = 
+        Identity, $CellContext`start$$ = 54}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Text[
+        Pane[
+         Column[{
+           Style[
+            Row[{"index: ", $CellContext`start$$, " = ", 
+              Subscript[
+               StringJoin[
+                Map[ToString, 
+                 IntegerDigits[$CellContext`start$$, 2]]], 2]}], "Menu"], 
+           Row[{
+             Style["traverse tree: ", "Menu"], 
+             Button["(0)\[LowerLeftArrow]", 
+              TimesBy[$CellContext`start$$, 2]], 
+             Button[
+             "\[LowerRightArrow](1)", $CellContext`start$$ = 
+              2 $CellContext`start$$ + 1], 
+             Button["\[UpArrow]", $CellContext`start$$ = Max[1, 
+                Quotient[$CellContext`start$$, 2]]], 
+             Button[
+             "random", $CellContext`start$$ = RandomInteger[{1, 10^10}]], 
+             Button["reset", $CellContext`start$$ = 1], 
+             Style[
+              Row[{"  (level: ", 
+                BitLength[$CellContext`start$$], ")"}], "Menu"]}], 
+           TreePlot[
+            $CellContext`tree[$CellContext`start$$, $CellContext`mode$$, \
+$CellContext`levels$$], VertexLabeling -> 
+            If[$CellContext`levels$$ < 5, True, Tooltip], DirectedEdges -> 
+            True, AspectRatio -> 0.7, BaseStyle -> {Bold, Larger}, 
+            ImageSize -> {540, 380}, Epilog -> Inset[
+              Part[$CellContext`label, 
+               If[$CellContext`mode$$ === Identity, 1, 2]], {Right, Top}, {
+              Right, Top}]]}], ImageSize -> {540, 420}]], 
+      "Specifications" :> {{{$CellContext`levels$$, 1}, {1, 2, 3, 4, 5, 6}, 
+         ControlType -> SetterBar, ControlPlacement -> 
+         Top}, {{$CellContext`mode$$, Identity}, {
+         Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+          ControlPlacement -> Top}}, {{$CellContext`start$$, 54}, 1, 
+         DirectedInfinity[1], 1, ControlType -> None}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{441., {200.015869140625, 203.984130859375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`tree[
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`mode, 
+          Blank[]], 
+         Pattern[$CellContext`level, 
+          Blank[]]] := ReplaceAll[
+         Rest[
+          Flatten[
+           
+           NestList[$CellContext`children, {
+            0 -> $CellContext`n}, $CellContext`level]]], (
+          Pattern[$CellContext`a, 
+            Blank[]] -> Pattern[$CellContext`b, 
+            Blank[]]) :> {
+           Map[$CellContext`mode, $CellContext`a -> $CellContext`b], 
+           Mod[$CellContext`b, 2]}], $CellContext`children[
+        Pattern[$CellContext`x, 
+           Blank[]] -> Pattern[$CellContext`n, 
+           Blank[]]] := {$CellContext`n -> 2 $CellContext`n, $CellContext`n -> 
+         2 $CellContext`n + 1}, $CellContext`children[
+         Pattern[$CellContext`l, 
+          Blank[List]]] := Flatten[
+         Map[$CellContext`children, $CellContext`l]], $CellContext`label = {
+         Graphics[
+          Raster[CompressedData["
+1:eJztnE9oE0scxxdKoRcl/iUHFXvryXPZg+jt9aCWnDwo1ApLwIOFgvQhUrBP
+VBBNvPTw4NVbEIRcZHssgp4sFPFQJIceU/AQQSEHH4yz2SbddHeb32x35jdt
+vh+mZZvs/MmH+c5m6STjs/dLsyOO47yUP7PyJzgWwHYaFdfp4vnco7Ef33Mc
+t9LgHobtBNNqCKdTMDt67EyTeMK6Z7mVitebTHtP83efih4n1j1k+LGRx1MV
+PBLa6ogJn0w8LW4pse6hI2Ypnin5yO4p3fMTopdkKbHu4SPRUgRpItVS/2lD
+Zal/SekcpSUu4bTIOrb36EglTkTnSTdT3UdSVu+ekM7z0QtBWt1DhskUHKXE
+HY2+8gWWAAAAMPOr/T/KwPIeDCK0JH9zz2h7gSUKsEQBlijAEgVYogBLFGCJ
+AixRgCUKsEQBlijAEgVYogBLFGCJAixRGGjpx7dbXMV87wexJMS6+dKzZLhH
+WIIlWIIlWIIlWIIlfZb6PifglHyx3qhc2tk/6pW6u0brB7Gk2kXwrFfdbaEx
+7/ZXZ5lLkVdxqdKQj9Q7+4vnG+FBbGAZ5pJSF3stiej5PHOpU6rezqiqvq/F
+klIXtlpaF37J8+NDytESoQu/5MToVrHDUjCMMAvdIQXRSB1bFkvkLuydS+HS
+0RnbztLqljxXbekeZInahYWWfC8MVNVLuoKolpRrnFoXFlrqWw1UwqUwl3Lo
+gtvS7ruX3qKRt6WDdlH10g3jvTe9R1iCJViCJVgaKktcxXzvmS3lyD9jY9tf
+vuhoud1qPR4d/d1u62hcmLX0vlz+vLyso+Wvtdq7mzd1tBxi0tLW2tqbK1d0
+tCwVSVE6Wg4xvJviRbH4s9nMt00ZtGeFgr64CeOWdIROd9yEcUs6Qqc7boJj
+/1K+oTMQN8FhKd/QGYib4LCUb+gMxE0w7RjMK3Rm4iaYLOUVOjNxE0yW8gqd
+mbgJvj26N44d+3t+fnV1NUPdVqtVr9cfPXz419jYxw8fch9bHBZLtVrtXKHw
+6fXrYrG4srKSoYWtrS3Hca6Oj+c9tGRYLJXL5TMnT8rQzc3NSVFt9eVXTkJp
+6dHduzqGF4fF0szMjHyNS2fPVp4/lwcZcvdkaUlWNBM3wWRpcXFRvsan16//
+9+CBPJB/qrYw5Qb/8JYLlIbRJcBiaXNzM8jLvXv/Xr6czdLFEydOFwoahpYM
+1zVucnJyenpavr28cP68qqXv29vS7Y1r1/QMLQEuS/IiNTEx8fbOnVPHj29s
+bNArNpvN21NToyMjCwsL+oa3B8bPNMlLW+3Vq6rrqlaUbybXlpdlbHWMKhH2
+T36p3tMZu3eLwm5J9Z7O2L1bFHZLqvd0xu7dorBbEiqhY4mbsMMSPXQscRN2
+WKKHjiVuwg5LghY6rrgJayxRQscVN2GNJUrouOImrLEkBoWOMW7CJkv7h44x
+bsImS/uHjjFuwiZLIj10vHETlllKCx1v3IRxS4b3Q+aFeUsm99bmBSxRgCUK
+sEQBlijAEgVYogBLFGyzlOGrUYbQUoavs4AlWIKlNKiWVL4aZQgtZfhqlCG0
+lKHAEizBUhqwRAGWKMASBViiAEsUYIkC/h93hIElCrBEAZYowBIFWKIASxRg
+iQIsUYAlCrBEAZYowBIFWKIASxRgiQIsUYhaQkkrPUtgf5A1In8AvssXGg==
+
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, PlotRange -> {{0, 98}, {0, 142}}], 
+         Graphics[
+          Raster[CompressedData["
+1:eJztnDFoG1cYxw9ChmSJO0VoUpPFS4xLQjDCNBpTCMWIjCXIhmhpkhqShgwB
+00lLsC+TcSloCV0CUSnlNLSgoVBDCKibCRo0ZHAggzoUNLTw+u5Unc+6k/Td
+6Xvf96R8P56NkO6ePv/8/u+k4959uvVNeeuM4zi7+mdL//iPlWA7HbfoDKl6
+3NXYj1d1nKLb4S7Ddvxh9REOJ390hPw/TOIJG25VdN1qOJhGN/NOXoo+Ttx3
+zvBilcdT5T8zsBWIGbyYuFncUuK+c0fMUjxT+pmTTYbbJ0QvyVLivvNHoqUI
+2sRYS6c3+6gsnZ5SgkfjEpewWWQeG320UIlT0XEyzNTwmTGzdygkeD16IBi3
+75xBmYJFStxivBcuYkkQBEFg5u/+v9Kmtl+EaQws6d/cI9pexBIEsQRBLEEQ
+SxDEEgSxBEEsQRBLEMQSBLEEYY4s/fX2K0Nt6lvDLTEWGRag1Bv0hm6Jq0j2
+AsSSWBJLYilzAeFVZVXPCksdd8W/hqG4ElzK8LAzfLLoNlIVjDyWvLL/dl7Z
+cVbcDr8lLUHX47saKhqxBCwY2VLnYbH6fFDeSSW8Y8mv53nVKXvDoRW5hLIB
+LBh7Xmq4xZWq1/D/O8G781oK/PiDZDCoEsYSrGD02duvIZgHgFOT8dlbj5Zg
+agrNnLYEKhj/GAceRUSWMApGtxQcNfxJYF4sQQqWz0tYRbIXIJbEkljSrd3+
+sdU6gLder0Vsqd//I1WFh4d1dEul0lUnDboMYkvd7s+pKiwU8pI4lsSJJUgB
+KOcliC0l1mzUEsp5CWJLiTUbH0szn5dgGEuRmgksoZyXIJ+XEmo2bAnhvATD
+7B2r2bilqW3aeYmFP8ZB2tTzEmIJqwCxJJZYLBlqi2RpFn578uT3Wm3GThj/
+TTSW3h0e/rC2Zq7/nyqVdr1urn+ya+HcQqHX7Zro+Z9+/1ku1+/1THQ+gMwS
+SugS6TSbL27eNNFzCJklc6EzHTdFe/WpidARxE3RWjIROoK4KVpLJkJHEDdF
+fr03buho4qbILeGGjiZuitwSbuho4qY4Vljo0P366tXs/ZDFTZFb6vV6uQsX
+nm1urq6uttvtbJ10u91areY4ztWLFzN3kgpiS/V6Xf91+9evb29vFwqFzP3s
+7+/rfnbv30esbQLElnZ2dvRf920+/+LgwJnhLscP7t3Tu//5+jVibRMgtjRI
+ynfl8svHj/WDSqWSrZ/Pr107f/Ysbm0TILZ0dHSk5Xx9544+0i0tLZVKpWz9
+fHLu3JXLl3FrmwD9MW55eXljY0Mf6dbX1rJZ+vD+vVZ9d3MTvbZx0FtqNpu5
+XM579OizS5f0HJ52d32Au3Xjhra0t7dnorxEWFakNhqN3adPv8jnj4+PM+z+
+/e3bX66vt1ot7LrGwrhuN9t3OsoPkyGMlrJ9pyP77haF0VK273Rk392i8K6U
+Txs6lrgpbktpQ8cSN8VtKW3oWOKmuC2pNKHjipuywBI8dFxxUxZYgoeOK27K
+AksKFjrGuCk7LEFCxxg3ZYclSOgY46bssKSmhY43bsoaS5NDxxs3xWrJ9BWG
+iPBaMnq1KiJiCYJYgiCWIIglCFZZwlpAio5VlrAWkKJjlyWkBaTo2GUJaQEp
+OpZZwllAio5tllAWkKJjmyWUBaTo2GZJPi+NIJYgiCUIYglC3NLIja3Ekkqy
+NHJjK7GkJHEwxBKEuCXIfa7EEuQ+V2IJcp8rsQS5z5VY8tu0+1yJJTnGxRFL
+EMQSBLEEQa45WTDEEgSxBEEsQRBLEMQSBLEEQSxBEEsQxBIEsQQhaknauBZa
+EiYjWQPyH4MsBMw=
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, 
+          PlotRange -> {{0, 98}, {0, 142}}]}, $CellContext`toCWFraction[
+         Pattern[$CellContext`i, 
+          Blank[Integer]]] := 
+       Module[{$CellContext`w = 
+          BitLength[$CellContext`i], $CellContext`t = {1, 1}}, 
+         Scan[If[# == 0, $CellContext`t = {
+              First[$CellContext`t], 
+              Apply[Plus, $CellContext`t]}, $CellContext`t = {
+              Apply[Plus, $CellContext`t], 
+              Last[$CellContext`t]}]& , 
+           
+           IntegerDigits[$CellContext`i - 2^($CellContext`w - 1), 
+            2, $CellContext`w - 1]]; DisplayForm[
+           Apply[FractionBox, $CellContext`t]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->93897557,ExpressionUUID->"2f452d4c-293a-484c-b957-4ace68531f05"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`levels$$ = 
+    1, $CellContext`mode$$ = $CellContext`toCWFraction, $CellContext`start$$ =
+     54, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`levels$$], 1}, {1, 2, 3, 4, 5, 6}}, {{
+       Hold[$CellContext`mode$$], $CellContext`toCWFraction}, {
+      Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+       ControlPlacement -> Top}}, {{
+       Hold[$CellContext`start$$], 54}, 1, 
+      DirectedInfinity[1], 1}}, Typeset`size$$ = {
+    405., {156.17529296875, 160.82470703125}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`levels$$ = 
+        1, $CellContext`mode$$ = $CellContext`toCWFraction, \
+$CellContext`start$$ = 54}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Text[
+        Pane[
+         Column[{
+           Style[
+            Row[{"index: ", $CellContext`start$$, " = ", 
+              Subscript[
+               StringJoin[
+                Map[ToString, 
+                 IntegerDigits[$CellContext`start$$, 2]]], 2]}], "Menu"], 
+           Row[{
+             Style["traverse tree: ", "Menu"], 
+             Button["(0)\[LowerLeftArrow]", 
+              TimesBy[$CellContext`start$$, 2]], 
+             Button[
+             "\[LowerRightArrow](1)", $CellContext`start$$ = 
+              2 $CellContext`start$$ + 1], 
+             Button["\[UpArrow]", $CellContext`start$$ = Max[1, 
+                Quotient[$CellContext`start$$, 2]]], 
+             Button[
+             "random", $CellContext`start$$ = RandomInteger[{1, 10^10}]], 
+             Button["reset", $CellContext`start$$ = 1], 
+             Style[
+              Row[{"  (level: ", 
+                BitLength[$CellContext`start$$], ")"}], "Menu"]}], 
+           TreePlot[
+            $CellContext`tree[$CellContext`start$$, $CellContext`mode$$, \
+$CellContext`levels$$], VertexLabeling -> 
+            If[$CellContext`levels$$ < 5, True, Tooltip], DirectedEdges -> 
+            True, AspectRatio -> 0.7, BaseStyle -> {Bold, Larger}, 
+            ImageSize -> {540, 380}, Epilog -> Inset[
+              Part[$CellContext`label, 
+               If[$CellContext`mode$$ === Identity, 1, 2]], {Right, Top}, {
+              Right, Top}]]}], ImageSize -> {540, 420}]], 
+      "Specifications" :> {{{$CellContext`levels$$, 1}, {1, 2, 3, 4, 5, 6}, 
+         ControlType -> SetterBar, ControlPlacement -> 
+         Top}, {{$CellContext`mode$$, $CellContext`toCWFraction}, {
+         Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+          ControlPlacement -> Top}}, {{$CellContext`start$$, 54}, 1, 
+         DirectedInfinity[1], 1, ControlType -> None}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{441., {200.015869140625, 203.984130859375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`tree[
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`mode, 
+          Blank[]], 
+         Pattern[$CellContext`level, 
+          Blank[]]] := ReplaceAll[
+         Rest[
+          Flatten[
+           
+           NestList[$CellContext`children, {
+            0 -> $CellContext`n}, $CellContext`level]]], (
+          Pattern[$CellContext`a, 
+            Blank[]] -> Pattern[$CellContext`b, 
+            Blank[]]) :> {
+           Map[$CellContext`mode, $CellContext`a -> $CellContext`b], 
+           Mod[$CellContext`b, 2]}], $CellContext`children[
+        Pattern[$CellContext`x, 
+           Blank[]] -> Pattern[$CellContext`n, 
+           Blank[]]] := {$CellContext`n -> 2 $CellContext`n, $CellContext`n -> 
+         2 $CellContext`n + 1}, $CellContext`children[
+         Pattern[$CellContext`l, 
+          Blank[List]]] := Flatten[
+         Map[$CellContext`children, $CellContext`l]], $CellContext`label = {
+         Graphics[
+          Raster[CompressedData["
+1:eJztnE9oE0scxxdKoRcl/iUHFXvryXPZg+jt9aCWnDwo1ApLwIOFgvQhUrBP
+VBBNvPTw4NVbEIRcZHssgp4sFPFQJIceU/AQQSEHH4yz2SbddHeb32x35jdt
+vh+mZZvs/MmH+c5m6STjs/dLsyOO47yUP7PyJzgWwHYaFdfp4vnco7Ef33Mc
+t9LgHobtBNNqCKdTMDt67EyTeMK6Z7mVitebTHtP83efih4n1j1k+LGRx1MV
+PBLa6ogJn0w8LW4pse6hI2Ypnin5yO4p3fMTopdkKbHu4SPRUgRpItVS/2lD
+Zal/SekcpSUu4bTIOrb36EglTkTnSTdT3UdSVu+ekM7z0QtBWt1DhskUHKXE
+HY2+8gWWAAAAMPOr/T/KwPIeDCK0JH9zz2h7gSUKsEQBlijAEgVYogBLFGCJ
+AixRgCUKsEQBlijAEgVYogBLFGCJAixRGGjpx7dbXMV87wexJMS6+dKzZLhH
+WIIlWIIlWIIlWIIlfZb6PifglHyx3qhc2tk/6pW6u0brB7Gk2kXwrFfdbaEx
+7/ZXZ5lLkVdxqdKQj9Q7+4vnG+FBbGAZ5pJSF3stiej5PHOpU6rezqiqvq/F
+klIXtlpaF37J8+NDytESoQu/5MToVrHDUjCMMAvdIQXRSB1bFkvkLuydS+HS
+0RnbztLqljxXbekeZInahYWWfC8MVNVLuoKolpRrnFoXFlrqWw1UwqUwl3Lo
+gtvS7ruX3qKRt6WDdlH10g3jvTe9R1iCJViCJVgaKktcxXzvmS3lyD9jY9tf
+vuhoud1qPR4d/d1u62hcmLX0vlz+vLyso+Wvtdq7mzd1tBxi0tLW2tqbK1d0
+tCwVSVE6Wg4xvJviRbH4s9nMt00ZtGeFgr64CeOWdIROd9yEcUs6Qqc7boJj
+/1K+oTMQN8FhKd/QGYib4LCUb+gMxE0w7RjMK3Rm4iaYLOUVOjNxE0yW8gqd
+mbgJvj26N44d+3t+fnV1NUPdVqtVr9cfPXz419jYxw8fch9bHBZLtVrtXKHw
+6fXrYrG4srKSoYWtrS3Hca6Oj+c9tGRYLJXL5TMnT8rQzc3NSVFt9eVXTkJp
+6dHduzqGF4fF0szMjHyNS2fPVp4/lwcZcvdkaUlWNBM3wWRpcXFRvsan16//
+9+CBPJB/qrYw5Qb/8JYLlIbRJcBiaXNzM8jLvXv/Xr6czdLFEydOFwoahpYM
+1zVucnJyenpavr28cP68qqXv29vS7Y1r1/QMLQEuS/IiNTEx8fbOnVPHj29s
+bNArNpvN21NToyMjCwsL+oa3B8bPNMlLW+3Vq6rrqlaUbybXlpdlbHWMKhH2
+T36p3tMZu3eLwm5J9Z7O2L1bFHZLqvd0xu7dorBbEiqhY4mbsMMSPXQscRN2
+WKKHjiVuwg5LghY6rrgJayxRQscVN2GNJUrouOImrLEkBoWOMW7CJkv7h44x
+bsImS/uHjjFuwiZLIj10vHETlllKCx1v3IRxS4b3Q+aFeUsm99bmBSxRgCUK
+sEQBlijAEgVYogBLFGyzlOGrUYbQUoavs4AlWIKlNKiWVL4aZQgtZfhqlCG0
+lKHAEizBUhqwRAGWKMASBViiAEsUYIkC/h93hIElCrBEAZYowBIFWKIASxRg
+iQIsUYAlCrBEAZYowBIFWKIASxRgiQIsUYhaQkkrPUtgf5A1In8AvssXGg==
+
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, PlotRange -> {{0, 98}, {0, 142}}], 
+         Graphics[
+          Raster[CompressedData["
+1:eJztnDFoG1cYxw9ChmSJO0VoUpPFS4xLQjDCNBpTCMWIjCXIhmhpkhqShgwB
+00lLsC+TcSloCV0CUSnlNLSgoVBDCKibCRo0ZHAggzoUNLTw+u5Unc+6k/Td
+6Xvf96R8P56NkO6ePv/8/u+k4959uvVNeeuM4zi7+mdL//iPlWA7HbfoDKl6
+3NXYj1d1nKLb4S7Ddvxh9REOJ390hPw/TOIJG25VdN1qOJhGN/NOXoo+Ttx3
+zvBilcdT5T8zsBWIGbyYuFncUuK+c0fMUjxT+pmTTYbbJ0QvyVLivvNHoqUI
+2sRYS6c3+6gsnZ5SgkfjEpewWWQeG320UIlT0XEyzNTwmTGzdygkeD16IBi3
+75xBmYJFStxivBcuYkkQBEFg5u/+v9Kmtl+EaQws6d/cI9pexBIEsQRBLEEQ
+SxDEEgSxBEEsQRBLEMQSBLEEYY4s/fX2K0Nt6lvDLTEWGRag1Bv0hm6Jq0j2
+AsSSWBJLYilzAeFVZVXPCksdd8W/hqG4ElzK8LAzfLLoNlIVjDyWvLL/dl7Z
+cVbcDr8lLUHX47saKhqxBCwY2VLnYbH6fFDeSSW8Y8mv53nVKXvDoRW5hLIB
+LBh7Xmq4xZWq1/D/O8G781oK/PiDZDCoEsYSrGD02duvIZgHgFOT8dlbj5Zg
+agrNnLYEKhj/GAceRUSWMApGtxQcNfxJYF4sQQqWz0tYRbIXIJbEkljSrd3+
+sdU6gLder0Vsqd//I1WFh4d1dEul0lUnDboMYkvd7s+pKiwU8pI4lsSJJUgB
+KOcliC0l1mzUEsp5CWJLiTUbH0szn5dgGEuRmgksoZyXIJ+XEmo2bAnhvATD
+7B2r2bilqW3aeYmFP8ZB2tTzEmIJqwCxJJZYLBlqi2RpFn578uT3Wm3GThj/
+TTSW3h0e/rC2Zq7/nyqVdr1urn+ya+HcQqHX7Zro+Z9+/1ku1+/1THQ+gMwS
+SugS6TSbL27eNNFzCJklc6EzHTdFe/WpidARxE3RWjIROoK4KVpLJkJHEDdF
+fr03buho4qbILeGGjiZuitwSbuho4qY4Vljo0P366tXs/ZDFTZFb6vV6uQsX
+nm1urq6uttvtbJ10u91areY4ztWLFzN3kgpiS/V6Xf91+9evb29vFwqFzP3s
+7+/rfnbv30esbQLElnZ2dvRf920+/+LgwJnhLscP7t3Tu//5+jVibRMgtjRI
+ynfl8svHj/WDSqWSrZ/Pr107f/Ysbm0TILZ0dHSk5Xx9544+0i0tLZVKpWz9
+fHLu3JXLl3FrmwD9MW55eXljY0Mf6dbX1rJZ+vD+vVZ9d3MTvbZx0FtqNpu5
+XM579OizS5f0HJ52d32Au3Xjhra0t7dnorxEWFakNhqN3adPv8jnj4+PM+z+
+/e3bX66vt1ot7LrGwrhuN9t3OsoPkyGMlrJ9pyP77haF0VK273Rk392i8K6U
+Txs6lrgpbktpQ8cSN8VtKW3oWOKmuC2pNKHjipuywBI8dFxxUxZYgoeOK27K
+AksKFjrGuCk7LEFCxxg3ZYclSOgY46bssKSmhY43bsoaS5NDxxs3xWrJ9BWG
+iPBaMnq1KiJiCYJYgiCWIIglCFZZwlpAio5VlrAWkKJjlyWkBaTo2GUJaQEp
+OpZZwllAio5tllAWkKJjmyWUBaTo2GZJPi+NIJYgiCUIYglC3NLIja3Ekkqy
+NHJjK7GkJHEwxBKEuCXIfa7EEuQ+V2IJcp8rsQS5z5VY8tu0+1yJJTnGxRFL
+EMQSBLEEQa45WTDEEgSxBEEsQRBLEMQSBLEEQSxBEEsQxBIEsQQhaknauBZa
+EiYjWQPyH4MsBMw=
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, 
+          PlotRange -> {{0, 98}, {0, 142}}]}, $CellContext`toCWFraction[
+         Pattern[$CellContext`i, 
+          Blank[Integer]]] := 
+       Module[{$CellContext`w = 
+          BitLength[$CellContext`i], $CellContext`t = {1, 1}}, 
+         Scan[If[# == 0, $CellContext`t = {
+              First[$CellContext`t], 
+              Apply[Plus, $CellContext`t]}, $CellContext`t = {
+              Apply[Plus, $CellContext`t], 
+              Last[$CellContext`t]}]& , 
+           
+           IntegerDigits[$CellContext`i - 2^($CellContext`w - 1), 
+            2, $CellContext`w - 1]]; DisplayForm[
+           Apply[FractionBox, $CellContext`t]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->375698618,ExpressionUUID->"264719d0-1079-4a2c-973e-d768de52e211"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`levels$$ = 
+    4, $CellContext`mode$$ = $CellContext`toCWFraction, $CellContext`start$$ =
+     1, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`levels$$], 4}, {1, 2, 3, 4, 5, 6}}, {{
+       Hold[$CellContext`mode$$], $CellContext`toCWFraction}, {
+      Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+       ControlPlacement -> Top}}, {{
+       Hold[$CellContext`start$$], 10}, 1, 
+      DirectedInfinity[1], 1}}, Typeset`size$$ = {
+    405., {156.17529296875, 160.82470703125}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`levels$$ = 
+        4, $CellContext`mode$$ = $CellContext`toCWFraction, \
+$CellContext`start$$ = 10}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Text[
+        Pane[
+         Column[{
+           Style[
+            Row[{"index: ", $CellContext`start$$, " = ", 
+              Subscript[
+               StringJoin[
+                Map[ToString, 
+                 IntegerDigits[$CellContext`start$$, 2]]], 2]}], "Menu"], 
+           Row[{
+             Style["traverse tree: ", "Menu"], 
+             Button["(0)\[LowerLeftArrow]", 
+              TimesBy[$CellContext`start$$, 2]], 
+             Button[
+             "\[LowerRightArrow](1)", $CellContext`start$$ = 
+              2 $CellContext`start$$ + 1], 
+             Button["\[UpArrow]", $CellContext`start$$ = Max[1, 
+                Quotient[$CellContext`start$$, 2]]], 
+             Button[
+             "random", $CellContext`start$$ = RandomInteger[{1, 10^10}]], 
+             Button["reset", $CellContext`start$$ = 1], 
+             Style[
+              Row[{"  (level: ", 
+                BitLength[$CellContext`start$$], ")"}], "Menu"]}], 
+           TreePlot[
+            $CellContext`tree[$CellContext`start$$, $CellContext`mode$$, \
+$CellContext`levels$$], VertexLabeling -> 
+            If[$CellContext`levels$$ < 5, True, Tooltip], DirectedEdges -> 
+            True, AspectRatio -> 0.7, BaseStyle -> {Bold, Larger}, 
+            ImageSize -> {540, 380}, Epilog -> Inset[
+              Part[$CellContext`label, 
+               If[$CellContext`mode$$ === Identity, 1, 2]], {Right, Top}, {
+              Right, Top}]]}], ImageSize -> {540, 420}]], 
+      "Specifications" :> {{{$CellContext`levels$$, 4}, {1, 2, 3, 4, 5, 6}, 
+         ControlType -> SetterBar, ControlPlacement -> 
+         Top}, {{$CellContext`mode$$, $CellContext`toCWFraction}, {
+         Identity -> "index", $CellContext`toCWFraction -> "fraction", 
+          ControlPlacement -> Top}}, {{$CellContext`start$$, 10}, 1, 
+         DirectedInfinity[1], 1, ControlType -> None}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{441., {200.015869140625, 203.984130859375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`tree[
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`mode, 
+          Blank[]], 
+         Pattern[$CellContext`level, 
+          Blank[]]] := ReplaceAll[
+         Rest[
+          Flatten[
+           
+           NestList[$CellContext`children, {
+            0 -> $CellContext`n}, $CellContext`level]]], (
+          Pattern[$CellContext`a, 
+            Blank[]] -> Pattern[$CellContext`b, 
+            Blank[]]) :> {
+           Map[$CellContext`mode, $CellContext`a -> $CellContext`b], 
+           Mod[$CellContext`b, 2]}], $CellContext`children[
+        Pattern[$CellContext`x, 
+           Blank[]] -> Pattern[$CellContext`n, 
+           Blank[]]] := {$CellContext`n -> 2 $CellContext`n, $CellContext`n -> 
+         2 $CellContext`n + 1}, $CellContext`children[
+         Pattern[$CellContext`l, 
+          Blank[List]]] := Flatten[
+         Map[$CellContext`children, $CellContext`l]], $CellContext`label = {
+         Graphics[
+          Raster[CompressedData["
+1:eJztnE9oE0scxxdKoRcl/iUHFXvryXPZg+jt9aCWnDwo1ApLwIOFgvQhUrBP
+VBBNvPTw4NVbEIRcZHssgp4sFPFQJIceU/AQQSEHH4yz2SbddHeb32x35jdt
+vh+mZZvs/MmH+c5m6STjs/dLsyOO47yUP7PyJzgWwHYaFdfp4vnco7Ef33Mc
+t9LgHobtBNNqCKdTMDt67EyTeMK6Z7mVitebTHtP83efih4n1j1k+LGRx1MV
+PBLa6ogJn0w8LW4pse6hI2Ypnin5yO4p3fMTopdkKbHu4SPRUgRpItVS/2lD
+Zal/SekcpSUu4bTIOrb36EglTkTnSTdT3UdSVu+ekM7z0QtBWt1DhskUHKXE
+HY2+8gWWAAAAMPOr/T/KwPIeDCK0JH9zz2h7gSUKsEQBlijAEgVYogBLFGCJ
+AixRgCUKsEQBlijAEgVYogBLFGCJAixRGGjpx7dbXMV87wexJMS6+dKzZLhH
+WIIlWIIlWIIlWIIlfZb6PifglHyx3qhc2tk/6pW6u0brB7Gk2kXwrFfdbaEx
+7/ZXZ5lLkVdxqdKQj9Q7+4vnG+FBbGAZ5pJSF3stiej5PHOpU6rezqiqvq/F
+klIXtlpaF37J8+NDytESoQu/5MToVrHDUjCMMAvdIQXRSB1bFkvkLuydS+HS
+0RnbztLqljxXbekeZInahYWWfC8MVNVLuoKolpRrnFoXFlrqWw1UwqUwl3Lo
+gtvS7ruX3qKRt6WDdlH10g3jvTe9R1iCJViCJVgaKktcxXzvmS3lyD9jY9tf
+vuhoud1qPR4d/d1u62hcmLX0vlz+vLyso+Wvtdq7mzd1tBxi0tLW2tqbK1d0
+tCwVSVE6Wg4xvJviRbH4s9nMt00ZtGeFgr64CeOWdIROd9yEcUs6Qqc7boJj
+/1K+oTMQN8FhKd/QGYib4LCUb+gMxE0w7RjMK3Rm4iaYLOUVOjNxE0yW8gqd
+mbgJvj26N44d+3t+fnV1NUPdVqtVr9cfPXz419jYxw8fch9bHBZLtVrtXKHw
+6fXrYrG4srKSoYWtrS3Hca6Oj+c9tGRYLJXL5TMnT8rQzc3NSVFt9eVXTkJp
+6dHduzqGF4fF0szMjHyNS2fPVp4/lwcZcvdkaUlWNBM3wWRpcXFRvsan16//
+9+CBPJB/qrYw5Qb/8JYLlIbRJcBiaXNzM8jLvXv/Xr6czdLFEydOFwoahpYM
+1zVucnJyenpavr28cP68qqXv29vS7Y1r1/QMLQEuS/IiNTEx8fbOnVPHj29s
+bNArNpvN21NToyMjCwsL+oa3B8bPNMlLW+3Vq6rrqlaUbybXlpdlbHWMKhH2
+T36p3tMZu3eLwm5J9Z7O2L1bFHZLqvd0xu7dorBbEiqhY4mbsMMSPXQscRN2
+WKKHjiVuwg5LghY6rrgJayxRQscVN2GNJUrouOImrLEkBoWOMW7CJkv7h44x
+bsImS/uHjjFuwiZLIj10vHETlllKCx1v3IRxS4b3Q+aFeUsm99bmBSxRgCUK
+sEQBlijAEgVYogBLFGyzlOGrUYbQUoavs4AlWIKlNKiWVL4aZQgtZfhqlCG0
+lKHAEizBUhqwRAGWKMASBViiAEsUYIkC/h93hIElCrBEAZYowBIFWKIASxRg
+iQIsUYAlCrBEAZYowBIFWKIASxRgiQIsUYhaQkkrPUtgf5A1In8AvssXGg==
+
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, PlotRange -> {{0, 98}, {0, 142}}], 
+         Graphics[
+          Raster[CompressedData["
+1:eJztnDFoG1cYxw9ChmSJO0VoUpPFS4xLQjDCNBpTCMWIjCXIhmhpkhqShgwB
+00lLsC+TcSloCV0CUSnlNLSgoVBDCKibCRo0ZHAggzoUNLTw+u5Unc+6k/Td
+6Xvf96R8P56NkO6ePv/8/u+k4959uvVNeeuM4zi7+mdL//iPlWA7HbfoDKl6
+3NXYj1d1nKLb4S7Ddvxh9REOJ390hPw/TOIJG25VdN1qOJhGN/NOXoo+Ttx3
+zvBilcdT5T8zsBWIGbyYuFncUuK+c0fMUjxT+pmTTYbbJ0QvyVLivvNHoqUI
+2sRYS6c3+6gsnZ5SgkfjEpewWWQeG320UIlT0XEyzNTwmTGzdygkeD16IBi3
+75xBmYJFStxivBcuYkkQBEFg5u/+v9Kmtl+EaQws6d/cI9pexBIEsQRBLEEQ
+SxDEEgSxBEEsQRBLEMQSBLEEYY4s/fX2K0Nt6lvDLTEWGRag1Bv0hm6Jq0j2
+AsSSWBJLYilzAeFVZVXPCksdd8W/hqG4ElzK8LAzfLLoNlIVjDyWvLL/dl7Z
+cVbcDr8lLUHX47saKhqxBCwY2VLnYbH6fFDeSSW8Y8mv53nVKXvDoRW5hLIB
+LBh7Xmq4xZWq1/D/O8G781oK/PiDZDCoEsYSrGD02duvIZgHgFOT8dlbj5Zg
+agrNnLYEKhj/GAceRUSWMApGtxQcNfxJYF4sQQqWz0tYRbIXIJbEkljSrd3+
+sdU6gLder0Vsqd//I1WFh4d1dEul0lUnDboMYkvd7s+pKiwU8pI4lsSJJUgB
+KOcliC0l1mzUEsp5CWJLiTUbH0szn5dgGEuRmgksoZyXIJ+XEmo2bAnhvATD
+7B2r2bilqW3aeYmFP8ZB2tTzEmIJqwCxJJZYLBlqi2RpFn578uT3Wm3GThj/
+TTSW3h0e/rC2Zq7/nyqVdr1urn+ya+HcQqHX7Zro+Z9+/1ku1+/1THQ+gMwS
+SugS6TSbL27eNNFzCJklc6EzHTdFe/WpidARxE3RWjIROoK4KVpLJkJHEDdF
+fr03buho4qbILeGGjiZuitwSbuho4qY4Vljo0P366tXs/ZDFTZFb6vV6uQsX
+nm1urq6uttvtbJ10u91areY4ztWLFzN3kgpiS/V6Xf91+9evb29vFwqFzP3s
+7+/rfnbv30esbQLElnZ2dvRf920+/+LgwJnhLscP7t3Tu//5+jVibRMgtjRI
+ynfl8svHj/WDSqWSrZ/Pr107f/Ysbm0TILZ0dHSk5Xx9544+0i0tLZVKpWz9
+fHLu3JXLl3FrmwD9MW55eXljY0Mf6dbX1rJZ+vD+vVZ9d3MTvbZx0FtqNpu5
+XM579OizS5f0HJ52d32Au3Xjhra0t7dnorxEWFakNhqN3adPv8jnj4+PM+z+
+/e3bX66vt1ot7LrGwrhuN9t3OsoPkyGMlrJ9pyP77haF0VK273Rk392i8K6U
+Txs6lrgpbktpQ8cSN8VtKW3oWOKmuC2pNKHjipuywBI8dFxxUxZYgoeOK27K
+AksKFjrGuCk7LEFCxxg3ZYclSOgY46bssKSmhY43bsoaS5NDxxs3xWrJ9BWG
+iPBaMnq1KiJiCYJYgiCWIIglCFZZwlpAio5VlrAWkKJjlyWkBaTo2GUJaQEp
+OpZZwllAio5tllAWkKJjmyWUBaTo2GZJPi+NIJYgiCUIYglC3NLIja3Ekkqy
+NHJjK7GkJHEwxBKEuCXIfa7EEuQ+V2IJcp8rsQS5z5VY8tu0+1yJJTnGxRFL
+EMQSBLEEQa45WTDEEgSxBEEsQRBLEMQSBLEEQSxBEEsQxBIEsQQhaknauBZa
+EiYjWQPyH4MsBMw=
+           "], {{0, 0}, {98, 142}}, {0, 255}, ColorFunction -> RGBColor], 
+          ImageSize -> {98, 142}, 
+          PlotRange -> {{0, 98}, {0, 142}}]}, $CellContext`toCWFraction[
+         Pattern[$CellContext`i, 
+          Blank[Integer]]] := 
+       Module[{$CellContext`w = 
+          BitLength[$CellContext`i], $CellContext`t = {1, 1}}, 
+         Scan[If[# == 0, $CellContext`t = {
+              First[$CellContext`t], 
+              Apply[Plus, $CellContext`t]}, $CellContext`t = {
+              Apply[Plus, $CellContext`t], 
+              Last[$CellContext`t]}]& , 
+           
+           IntegerDigits[$CellContext`i - 2^($CellContext`w - 1), 
+            2, $CellContext`w - 1]]; DisplayForm[
+           Apply[FractionBox, $CellContext`t]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->702541011,ExpressionUUID->"b9e0e2a5-3bc8-497e-aac2-073325a35fb6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection",ExpressionUUID->"2c8b9340-982c-4ade-8fd6-7b856785c6f9"],
+
+Cell["\<\
+The rank or index assigned to a fraction can be thought of as its address in \
+the Calkin-Wilf tree. Since the tree is binary, movement from one node to \
+another is accomplished in three ways: moving down to the left child node, \
+down to the right child node, or up to the parent node. You can also move to \
+a randomly selected point in the tree or reset the visible part of the tree \
+to the root position.\
+\>", "DetailNotes",
+ CellChangeTimes->{{3.544778051932783*^9, 3.54477863317902*^9}, {
+   3.5447787068784876`*^9, 3.544778733261037*^9}, {3.544780546914237*^9, 
+   3.5447805474372897`*^9}, {3.5448006025558147`*^9, 
+   3.5448006146260214`*^9}, {3.5448009399115696`*^9, 
+   3.5448009561584425`*^9}, {3.544822083391397*^9, 3.544822086294281*^9}, {
+   3.5448225026299763`*^9, 3.544822503144359*^9}, 3.5448225409329987`*^9, {
+   3.544822589640868*^9, 3.544822605510728*^9}, {3.546138268875001*^9, 
+   3.5461383641375265`*^9}, {3.546140085463642*^9, 3.5461400998020754`*^9}},
+ CellID->184166306,ExpressionUUID->"f1988aa8-1cef-4298-bf3a-9d9709070b43"],
+
+Cell["\<\
+In fraction mode, the left button adds the numerator to the denominator and \
+the right button adds the denominator to the numerator (leaving the other \
+unchanged in both cases), while the up button replaces the larger of the two \
+by their difference.\
+\>", "DetailNotes",
+ CellChangeTimes->{{3.544778051932783*^9, 3.5447786331660147`*^9}, {
+  3.544778748735224*^9, 3.5447788179065337`*^9}, {3.5447792152840877`*^9, 
+  3.544779315838142*^9}, {3.5447798025908127`*^9, 3.5447798855511074`*^9}, {
+  3.5447806769552402`*^9, 3.5447806771152563`*^9}, {3.5448220883793983`*^9, 
+  3.544822090129991*^9}, {3.5461383808201947`*^9, 3.5461384842795396`*^9}, {
+  3.5461385387429857`*^9, 3.5461386478738976`*^9}, {3.546138696068716*^9, 
+  3.5461387409232016`*^9}},
+ CellID->116482403,ExpressionUUID->"6f596355-8a5e-48da-b7d0-a9ed506eadfb"],
+
+Cell[TextData[{
+ "In index mode, the left and right children of node ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]], "InlineMath",ExpressionUUID->
+  "ddc29e15-fb52-4b03-91d9-97a243d033d4"],
+ " have indices ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", "n"}], TraditionalForm]], "InlineMath",ExpressionUUID->
+  "6e499ab3-2b74-4c1f-889e-e73ce8cd4971"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"2", "n"}], "+", "1"}], TraditionalForm]], "InlineMath",
+  ExpressionUUID->"b0f52e36-ebeb-4bf9-b1d2-845201373e0c"],
+ ", respectively. Both modes show the binary representation of the index code \
+of the node at the top of the displayed subtree, starting with a 1 and \
+continuing with precisely the bits (0 or 1) indicated by pushing the buttons. \
+ The bits of the index thus provide a \"breadcrumb trail\" for the path down \
+the tree. Moving back up the tree corresponds to lopping off the last bit, or \
+dividing the index by 2, discarding the remainder."
+}], "DetailNotes",
+ CellChangeTimes->{{3.5447793318727455`*^9, 3.544779664943049*^9}, 
+   3.544780692314776*^9, {3.544780732967841*^9, 3.544780772986842*^9}, {
+   3.5448220911348667`*^9, 3.544822092902116*^9}, {3.5461387579719057`*^9, 
+   3.5461387583259416`*^9}, 3.546140167054722*^9, {3.5461402064388437`*^9, 
+   3.5461402200661173`*^9}},
+ CellID->269328997,ExpressionUUID->"90e1ac25-49a2-4dde-b2a0-29d63fd7c391"],
+
+Cell["\<\
+The Calkin-Wilf enumeration provides a 1-1 mapping of the postive rationals \
+onto the positive integers, thus demonstrating that the set of rational \
+numbers is countably infinite.  The Stern-Brocot tree gives an alternative, \
+related enumeration.\
+\>", "DetailNotes",
+ CellChangeTimes->{{3.544779684275982*^9, 3.5447797948780413`*^9}, {
+   3.5447799355661087`*^9, 3.5447801220267525`*^9}, {3.5447801599755473`*^9, 
+   3.5447802561641655`*^9}, {3.5447802987804265`*^9, 3.544780470562603*^9}, {
+   3.544780841717715*^9, 3.5447808688264256`*^9}, {3.5447809465761995`*^9, 
+   3.544781022251766*^9}, 3.544822771951585*^9, {3.5461387945385623`*^9, 
+   3.5461388797280807`*^9}, {3.5461389521923265`*^9, 3.546138996912798*^9}},
+ CellID->33896532,ExpressionUUID->"575aa334-e923-4aef-aea0-cbd337024339"],
+
+Cell["For more details, see:", "DetailNotes",
+ CellChangeTimes->{{3.546139413836486*^9, 3.5461394203531375`*^9}},
+ CellID->160566423,ExpressionUUID->"3972f73a-1de4-4506-9d0d-f2813fb4df2a"],
+
+Cell["\<\
+N. Calkin, H. S. Wilf, \"Recounting the Rationals,\" The American \
+Mathematical Monthly, 107(4), 2000 pp. 360-363. DOI: \
+dx.doi.org/10.2307/2589182\
+\>", "DetailNotes",
+ CellChangeTimes->{3.54613942118122*^9},
+ CellID->42564470,ExpressionUUID->"55e33a50-87ff-426c-aa63-4e09186dc3f4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection",ExpressionUUID->"7a00ce70-c970-4cb0-b6f0-77eedc8655f7"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Resize Images",ExpressionUUID->"986a2e77-7e7a-4de3-baa8-c0596a2e97ca"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "ResizeImages",ExpressionUUID->"457c1d02-ac74-4549-942e-adcff5dc9cd9"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Rotate and Zoom in 3D",ExpressionUUID->
+    "370b6ff9-f1c9-4b67-ae52-ab6c8d30906e"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "RotateAndZoomIn3D",ExpressionUUID->"1d4dd2cf-8ef5-4821-980d-735cf86a44b3"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Drag Locators",ExpressionUUID->"d91139c8-d183-4cdb-a645-94b6e14d9f47"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "DragLocators",ExpressionUUID->"dd9c59ec-ab1a-4a3c-ae42-19d47879023a"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Create and Delete Locators",ExpressionUUID->
+    "443ad63e-8725-4f24-9295-ee4484d92451"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "CreateAndDeleteLocators",ExpressionUUID->"94d40759-531b-404e-a200-\
+fcd5686ebf01"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Slider Zoom",ExpressionUUID->"98a5b41e-2620-4aad-a041-9e811e617207"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "SliderZoom",ExpressionUUID->"4eb0faae-dbae-49d9-bf9e-ad17cd14739b"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Gamepad Controls",ExpressionUUID->
+    "8b38e746-4596-4633-a46f-aabbb6abaadb"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->
+  "GamepadControls",ExpressionUUID->"0f8dc945-7bf1-4b72-8afa-c1de406ea3a5"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[
+   " Automatic Animation",ExpressionUUID->
+    "58670bac-1536-4e5e-a803-7aecfe8cc1d9"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.5461382512152357`*^9},
+ FontFamily->"Verdana",
+ CellTags->
+  "AutomaticAnimation",ExpressionUUID->"93f289fa-152e-4b11-a734-de081bb109f5"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Bookmark Animation",ExpressionUUID->
+    "c64d6e9f-06ed-4ac0-987c-bbed30984b90"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "BookmarkAnimation",ExpressionUUID->"e075adf5-aac3-420b-89dc-cfa8c48a578c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection",ExpressionUUID->"af2386c6-bfdc-496a-9408-818b203b3f39"],
+
+Cell["enumeration", "SearchTerms",
+ CellChangeTimes->{{3.546138906545762*^9, 3.5461389080099087`*^9}},
+ CellID->442410176,ExpressionUUID->"2b9393d9-66b8-4bb8-8315-93eabeef532b"],
+
+Cell["fraction", "SearchTerms",
+ CellChangeTimes->{{3.546138912847392*^9, 3.546138924374545*^9}},
+ CellID->56155636,ExpressionUUID->"61b5a459-9d21-4f64-8d9a-e55b1a7f0e94"],
+
+Cell["rational", "SearchTerms",
+ CellChangeTimes->{{3.546138925569664*^9, 3.546138927673875*^9}},
+ CellID->784797559,ExpressionUUID->"74fb1761-08c5-4f6c-b4f9-60d45cae0e53"],
+
+Cell["Calkin-Wilf", "SearchTerms",
+ CellChangeTimes->{{3.5461389293190393`*^9, 3.5461389331204195`*^9}},
+ CellID->884927840,ExpressionUUID->"fc6934a0-d47b-4b68-be32-ff6c1c8f1a87"],
+
+Cell["Stern-Brocot", "SearchTerms",
+ CellChangeTimes->{{3.546138933789486*^9, 3.5461389367827854`*^9}},
+ CellID->1457342,ExpressionUUID->"c3c7af2d-4137-4d7f-8622-ab730d351325"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection",ExpressionUUID->"26c4bdcd-b40e-422b-9577-416204a5208c"],
+
+Cell[TextData[ButtonBox["Indexing Strings and Rulesets",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://www.mathematica-journal.com/2011/05/indexing-strings-and-\
+rulesets/"], None},
+ ButtonNote->
+  "http://www.mathematica-journal.com/2011/05/indexing-strings-and-rulesets/"]\
+], "RelatedLinks",
+ CellID->717139533,ExpressionUUID->"79e80efc-89c3-4901-8268-ff54f4c50670"],
+
+Cell[TextData[ButtonBox["The Tree of All Fractions",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/TheTreeOfAllFractions/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/TheTreeOfAllFractions/"]], "RelatedLinks",
+ CellID->514962947,ExpressionUUID->"bbe81693-0185-4100-9189-d9d2ad3c3169"],
+
+Cell[TextData[ButtonBox["Calkin-Wilf Tree",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://mathworld.wolfram.com/Calkin-WilfTree.html"], None},
+ ButtonNote->
+  "http://mathworld.wolfram.com/Calkin-WilfTree.html"]], "RelatedLinks",
+ CellID->54041967,ExpressionUUID->"884da8cf-9941-4d7f-82ed-503537c0fc2c"],
+
+Cell[TextData[ButtonBox["Stern-Brocot Tree",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/SternBrocotTree/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/SternBrocotTree/"]], "RelatedLinks",
+ CellID->986141345,ExpressionUUID->"7e64914c-5f75-4fe3-802c-db8167fcaa62"],
+
+Cell[TextData[ButtonBox["Fraction Tree and Continued Fractions",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/FractionTreeAndContinuedFractions/"]\
+, None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/FractionTreeAndContinuedFractions/"]], \
+"RelatedLinks",
+ CellID->1010614098,ExpressionUUID->"16d66fad-cc0d-40f7-828e-1a37992037f6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection",ExpressionUUID->"9251bad3-4173-45c8-a086-3441f490e284"],
+
+Cell["Contributed by: Ken Caviness", "Author",
+ CellChangeTimes->{{3.546138901972305*^9, 
+  3.546138903347442*^9}},ExpressionUUID->"25a7f843-b275-4954-9b89-\
+6ae8b8b74c26"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{949, 471},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>0.75 Inherited,
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"41b2ddc1-d08e-48a5-9dde-0c0cd0167c4e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[66093, 1413, 429, 10, 19, "ControlSuggestions",ExpressionUUID->"457c1d02-ac74-4549-942e-adcff5dc9cd9",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[66525, 1425, 800, 19, 19, "ControlSuggestions",ExpressionUUID->"1d4dd2cf-8ef5-4821-980d-735cf86a44b3",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[67328, 1446, 457, 13, 19, "ControlSuggestions",ExpressionUUID->"dd9c59ec-ab1a-4a3c-ae42-19d47879023a",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[67788, 1461, 761, 19, 19, "ControlSuggestions",ExpressionUUID->"94d40759-531b-404e-a200-fcd5686ebf01",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[68552, 1482, 961, 23, 19, "ControlSuggestions",ExpressionUUID->"4eb0faae-dbae-49d9-bf9e-ad17cd14739b",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[69516, 1507, 491, 12, 19, "ControlSuggestions",ExpressionUUID->"0f8dc945-7bf1-4b72-8afa-c1de406ea3a5",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[70010, 1521, 1629, 35, 19, "ControlSuggestions",ExpressionUUID->"93f289fa-152e-4b11-a734-de081bb109f5",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[71642, 1558, 1030, 24, 19, "ControlSuggestions",ExpressionUUID->"e075adf5-aac3-420b-89dc-cfa8c48a578c",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 76313, 1683},
+ {"RotateAndZoomIn3D", 76478, 1686},
+ {"DragLocators", 76643, 1689},
+ {"CreateAndDeleteLocators", 76814, 1692},
+ {"SliderZoom", 76983, 1695},
+ {"GamepadControls", 77144, 1698},
+ {"AutomaticAnimation", 77313, 1701},
+ {"BookmarkAnimation", 77485, 1704}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 166, 3, 56, "DemoTitle",ExpressionUUID->"ce26c03c-7b2d-4c36-acd4-6c10674f4a81"],
+Cell[CellGroupData[{
+Cell[770, 29, 88, 0, 224, "InitializationSection",ExpressionUUID->"dac54bd3-db05-445f-8509-b910fbaa5dca"],
+Cell[CellGroupData[{
+Cell[883, 33, 1195, 31, 107, "Input",ExpressionUUID->"e92017ca-3757-43e1-be72-0cc6597cd4dc",
+ InitializationCell->True,
+ CellID->509733037],
+Cell[2081, 66, 524, 11, 16, "Print",ExpressionUUID->"5143b560-5bf9-45ff-81b2-cb1463190709",
+ CellID->69933303],
+Cell[2608, 79, 260, 4, 16, "Print",ExpressionUUID->"5772c905-1faf-45c5-bf4b-478e351a5aca",
+ CellID->151169757],
+Cell[2871, 85, 353, 7, 19, "Output",ExpressionUUID->"d5345068-c6b3-4ef5-9fd2-e681a0634cb5",
+ CellID->162230386]
+}, Open  ]],
+Cell[3239, 95, 4580, 134, 178, "Input",ExpressionUUID->"0f9f7be6-7a12-4130-98b0-5088b893d987",
+ InitializationCell->True,
+ CellID->114692797]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7856, 234, 84, 0, 185, "ManipulateSection",ExpressionUUID->"84de33b4-a1d5-448c-95db-b29a792987a9"],
+Cell[CellGroupData[{
+Cell[7965, 238, 5625, 129, 292, "Input",ExpressionUUID->"902c29c2-609b-4242-ac00-94f439476fe1"],
+Cell[13593, 369, 9363, 182, 413, "Output",ExpressionUUID->"b46fbc76-44c3-4451-8802-b6b51eb147b8",
+ CellID->174796822]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23005, 557, 91, 0, 135, "ManipulateCaptionSection",ExpressionUUID->"a4aa8da3-1455-4e03-81d7-50ff168b54bb"],
+Cell[23099, 559, 470, 8, 28, "ManipulateCaption",ExpressionUUID->"57f6ffe1-fb30-4f2f-bf50-8800a9de0ee1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23606, 572, 83, 0, 135, "ThumbnailSection",ExpressionUUID->"67890dd4-dea1-4b9f-8935-94c4c0e34321"],
+Cell[23692, 574, 9361, 182, 413, "Output",ExpressionUUID->"db033138-3b42-4dbe-8fb6-a5c5e1d8c03b",
+ CellID->2644274]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33090, 761, 83, 0, 112, "SnapshotsSection",ExpressionUUID->"2865eeeb-f47f-43c3-a0e5-3fe2c37bbc76"],
+Cell[33176, 763, 9307, 181, 413, "Output",ExpressionUUID->"2f452d4c-293a-484c-b957-4ace68531f05",
+ CellID->93897557],
+Cell[42486, 946, 9378, 182, 413, "Output",ExpressionUUID->"264719d0-1079-4a2c-973e-d768de52e211",
+ CellID->375698618],
+Cell[51867, 1130, 9377, 182, 413, "Output",ExpressionUUID->"b9e0e2a5-3bc8-497e-aac2-073325a35fb6",
+ CellID->702541011]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61281, 1317, 81, 0, 267, "DetailsSection",ExpressionUUID->"2c8b9340-982c-4ade-8fd6-7b856785c6f9"],
+Cell[61365, 1319, 1065, 16, 40, "DetailNotes",ExpressionUUID->"f1988aa8-1cef-4298-bf3a-9d9709070b43",
+ CellID->184166306],
+Cell[62433, 1337, 837, 13, 28, "DetailNotes",ExpressionUUID->"6f596355-8a5e-48da-b7d0-a9ed506eadfb",
+ CellID->116482403],
+Cell[63273, 1352, 1389, 28, 40, "DetailNotes",ExpressionUUID->"90e1ac25-49a2-4dde-b2a0-29d63fd7c391",
+ CellID->269328997],
+Cell[64665, 1382, 807, 12, 28, "DetailNotes",ExpressionUUID->"575aa334-e923-4aef-aea0-cbd337024339",
+ CellID->33896532],
+Cell[65475, 1396, 188, 2, 18, "DetailNotes",ExpressionUUID->"3972f73a-1de4-4506-9d0d-f2813fb4df2a",
+ CellID->160566423],
+Cell[65666, 1400, 295, 6, 18, "DetailNotes",ExpressionUUID->"55e33a50-87ff-426c-aa63-4e09186dc3f4",
+ CellID->42564470]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65998, 1411, 92, 0, 99, "ControlSuggestionsSection",ExpressionUUID->"7a00ce70-c970-4cb0-b6f0-77eedc8655f7"],
+Cell[66093, 1413, 429, 10, 19, "ControlSuggestions",ExpressionUUID->"457c1d02-ac74-4549-942e-adcff5dc9cd9",
+ CellTags->"ResizeImages"],
+Cell[66525, 1425, 800, 19, 19, "ControlSuggestions",ExpressionUUID->"1d4dd2cf-8ef5-4821-980d-735cf86a44b3",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[67328, 1446, 457, 13, 19, "ControlSuggestions",ExpressionUUID->"dd9c59ec-ab1a-4a3c-ae42-19d47879023a",
+ CellTags->"DragLocators"],
+Cell[67788, 1461, 761, 19, 19, "ControlSuggestions",ExpressionUUID->"94d40759-531b-404e-a200-fcd5686ebf01",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[68552, 1482, 961, 23, 19, "ControlSuggestions",ExpressionUUID->"4eb0faae-dbae-49d9-bf9e-ad17cd14739b",
+ CellTags->"SliderZoom"],
+Cell[69516, 1507, 491, 12, 19, "ControlSuggestions",ExpressionUUID->"0f8dc945-7bf1-4b72-8afa-c1de406ea3a5",
+ CellTags->"GamepadControls"],
+Cell[70010, 1521, 1629, 35, 19, "ControlSuggestions",ExpressionUUID->"93f289fa-152e-4b11-a734-de081bb109f5",
+ CellTags->"AutomaticAnimation"],
+Cell[71642, 1558, 1030, 24, 19, "ControlSuggestions",ExpressionUUID->"e075adf5-aac3-420b-89dc-cfa8c48a578c",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72709, 1587, 85, 0, 123, "SearchTermsSection",ExpressionUUID->"af2386c6-bfdc-496a-9408-818b203b3f39"],
+Cell[72797, 1589, 177, 2, 18, "SearchTerms",ExpressionUUID->"2b9393d9-66b8-4bb8-8315-93eabeef532b",
+ CellID->442410176],
+Cell[72977, 1593, 171, 2, 18, "SearchTerms",ExpressionUUID->"61b5a459-9d21-4f64-8d9a-e55b1a7f0e94",
+ CellID->56155636],
+Cell[73151, 1597, 172, 2, 18, "SearchTerms",ExpressionUUID->"74fb1761-08c5-4f6c-b4f9-60d45cae0e53",
+ CellID->784797559],
+Cell[73326, 1601, 179, 2, 18, "SearchTerms",ExpressionUUID->"fc6934a0-d47b-4b68-be32-ff6c1c8f1a87",
+ CellID->884927840],
+Cell[73508, 1605, 176, 2, 18, "SearchTerms",ExpressionUUID->"c3c7af2d-4137-4d7f-8622-ab730d351325",
+ CellID->1457342]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73721, 1612, 86, 0, 111, "RelatedLinksSection",ExpressionUUID->"26c4bdcd-b40e-422b-9577-416204a5208c"],
+Cell[73810, 1614, 378, 8, 18, "RelatedLinks",ExpressionUUID->"79e80efc-89c3-4901-8268-ff54f4c50670",
+ CellID->717139533],
+Cell[74191, 1624, 336, 6, 18, "RelatedLinks",ExpressionUUID->"bbe81693-0185-4100-9189-d9d2ad3c3169",
+ CellID->514962947],
+Cell[74530, 1632, 312, 6, 18, "RelatedLinks",ExpressionUUID->"884da8cf-9941-4d7f-82ed-503537c0fc2c",
+ CellID->54041967],
+Cell[74845, 1640, 316, 6, 18, "RelatedLinks",ExpressionUUID->"7e64914c-5f75-4fe3-802c-db8167fcaa62",
+ CellID->986141345],
+Cell[75164, 1648, 377, 8, 18, "RelatedLinks",ExpressionUUID->"16d66fad-cc0d-40f7-828e-1a37992037f6",
+ CellID->1010614098]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75578, 1661, 80, 0, 111, "AuthorSection",ExpressionUUID->"9251bad3-4173-45c8-a086-3441f490e284"],
+Cell[75661, 1663, 172, 3, 18, "Author",ExpressionUUID->"25a7f843-b275-4954-9b89-6ae8b8b74c26"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
