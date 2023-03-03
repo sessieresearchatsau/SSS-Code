@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    118650,       2676]
-NotebookOptionsPosition[    106505,       2437]
-NotebookOutlinePosition[    110933,       2536]
-CellTagsIndexPosition[    110261,       2514]
+NotebookDataLength[    118516,       2648]
+NotebookOptionsPosition[    106372,       2409]
+NotebookOutlinePosition[    110799,       2508]
+CellTagsIndexPosition[    110127,       2486]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -534,19 +534,17 @@ Cell[BoxData[
                Range[$CellContext`n$$]]], $CellContext`zoom$$]]], AxesLabel -> 
           Switch[$CellContext`mode$$, 1, {"A", "B"}, 3, {"u", "v"}], 
           ImageSize -> {450, 275}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
-          Switch[$CellContext`mode$$, 1, 
-            " Primitive Pythagorean Triples {A,B,C}", 3, 
-            " Compliant Calkin-Wilf Pairs {u,v}"] <> ", zoom level: " <> 
+         Style[((("The first " <> ToString[$CellContext`n$$]) <> 
+            Switch[$CellContext`mode$$, 1, 
+              " Primitive Pythagorean Triples {A,B,C}", 3, 
+              " Compliant Calkin-Wilf Pairs {u,v}"]) <> ", zoom level: ") <> 
           ToString[$CellContext`zoom$$], "Label", Medium]], 2, 
         Panel[
          Pane[
           Map[$CellContext`fromIndexToPPT, 
            Range[$CellContext`n$$]], ImageSize -> {450, 275}, ImageSizeAction -> 
           "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]], 4, 
         Panel[
          Pane[
@@ -554,8 +552,7 @@ Cell[BoxData[
            $CellContext`cnn[
             Range[$CellContext`n$$]]], ImageSize -> {450, 275}, 
           ImageSizeAction -> "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " compliant Calkin-Wilf Pairs {u,v}", "Label", Medium]], 5, 
         Panel[
          Pane[
@@ -571,8 +568,7 @@ Cell[BoxData[
            Dividers -> {False, {False, True}}, 
            Spacings -> {{4, 1, 2, 2, 3}, 0.5}], ImageSize -> {450, 275}, 
           Scrollbars -> {False, Automatic}], 
-         Style[
-         "Derivation of first " <> ToString[$CellContext`n$$] <> 
+         Style[("Derivation of first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]]], 
       "Specifications" :> {{{$CellContext`n$$, 50}, 1, 1000, 1, Appearance -> 
          "Labeled", ControlPlacement -> 1}, {{$CellContext`mode$$, 1}, {
@@ -613,8 +609,8 @@ Cell[BoxData[
           Pattern[$CellContext`u, 
            Blank[]], 
           Pattern[$CellContext`v, 
-           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, 
-         2 $CellContext`u $CellContext`v, $CellContext`v^2 + \
+           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, (
+          2 $CellContext`u) $CellContext`v, $CellContext`v^2 + \
 $CellContext`u^2}, $CellContext`toCWPair[
          Pattern[$CellContext`i, 
           Blank[Integer]]] := Module[{$CellContext`b = Rest[
@@ -762,19 +758,17 @@ Cell[BoxData[
                Range[$CellContext`n$$]]], $CellContext`zoom$$]]], AxesLabel -> 
           Switch[$CellContext`mode$$, 1, {"A", "B"}, 3, {"u", "v"}], 
           ImageSize -> {450, 275}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
-          Switch[$CellContext`mode$$, 1, 
-            " Primitive Pythagorean Triples {A,B,C}", 3, 
-            " Compliant Calkin-Wilf Pairs {u,v}"] <> ", zoom level: " <> 
+         Style[((("The first " <> ToString[$CellContext`n$$]) <> 
+            Switch[$CellContext`mode$$, 1, 
+              " Primitive Pythagorean Triples {A,B,C}", 3, 
+              " Compliant Calkin-Wilf Pairs {u,v}"]) <> ", zoom level: ") <> 
           ToString[$CellContext`zoom$$], "Label", Medium]], 2, 
         Panel[
          Pane[
           Map[$CellContext`fromIndexToPPT, 
            Range[$CellContext`n$$]], ImageSize -> {450, 275}, ImageSizeAction -> 
           "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]], 4, 
         Panel[
          Pane[
@@ -782,8 +776,7 @@ Cell[BoxData[
            $CellContext`cnn[
             Range[$CellContext`n$$]]], ImageSize -> {450, 275}, 
           ImageSizeAction -> "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " compliant Calkin-Wilf Pairs {u,v}", "Label", Medium]], 5, 
         Panel[
          Pane[
@@ -799,8 +792,7 @@ Cell[BoxData[
            Dividers -> {False, {False, True}}, 
            Spacings -> {{4, 1, 2, 2, 3}, 0.5}], ImageSize -> {450, 275}, 
           Scrollbars -> {False, Automatic}], 
-         Style[
-         "Derivation of first " <> ToString[$CellContext`n$$] <> 
+         Style[("Derivation of first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]]], 
       "Specifications" :> {{{$CellContext`n$$, 1000}, 1, 1000, 1, Appearance -> 
          "Labeled", ControlPlacement -> 1}, {{$CellContext`mode$$, 1}, {
@@ -841,8 +833,8 @@ Cell[BoxData[
           Pattern[$CellContext`u, 
            Blank[]], 
           Pattern[$CellContext`v, 
-           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, 
-         2 $CellContext`u $CellContext`v, $CellContext`v^2 + \
+           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, (
+          2 $CellContext`u) $CellContext`v, $CellContext`v^2 + \
 $CellContext`u^2}, $CellContext`toCWPair[
          Pattern[$CellContext`i, 
           Blank[Integer]]] := Module[{$CellContext`b = Rest[
@@ -942,19 +934,17 @@ Cell[BoxData[
                Range[$CellContext`n$$]]], $CellContext`zoom$$]]], AxesLabel -> 
           Switch[$CellContext`mode$$, 1, {"A", "B"}, 3, {"u", "v"}], 
           ImageSize -> {450, 275}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
-          Switch[$CellContext`mode$$, 1, 
-            " Primitive Pythagorean Triples {A,B,C}", 3, 
-            " Compliant Calkin-Wilf Pairs {u,v}"] <> ", zoom level: " <> 
+         Style[((("The first " <> ToString[$CellContext`n$$]) <> 
+            Switch[$CellContext`mode$$, 1, 
+              " Primitive Pythagorean Triples {A,B,C}", 3, 
+              " Compliant Calkin-Wilf Pairs {u,v}"]) <> ", zoom level: ") <> 
           ToString[$CellContext`zoom$$], "Label", Medium]], 2, 
         Panel[
          Pane[
           Map[$CellContext`fromIndexToPPT, 
            Range[$CellContext`n$$]], ImageSize -> {450, 275}, ImageSizeAction -> 
           "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]], 4, 
         Panel[
          Pane[
@@ -962,8 +952,7 @@ Cell[BoxData[
            $CellContext`cnn[
             Range[$CellContext`n$$]]], ImageSize -> {450, 275}, 
           ImageSizeAction -> "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " compliant Calkin-Wilf Pairs {u,v}", "Label", Medium]], 5, 
         Panel[
          Pane[
@@ -979,8 +968,7 @@ Cell[BoxData[
            Dividers -> {False, {False, True}}, 
            Spacings -> {{4, 1, 2, 2, 3}, 0.5}], ImageSize -> {450, 275}, 
           Scrollbars -> {False, Automatic}], 
-         Style[
-         "Derivation of first " <> ToString[$CellContext`n$$] <> 
+         Style[("Derivation of first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]]], 
       "Specifications" :> {{{$CellContext`n$$, 1000}, 1, 1000, 1, Appearance -> 
          "Labeled", ControlPlacement -> 1}, {{$CellContext`mode$$, 1}, {
@@ -1021,8 +1009,8 @@ Cell[BoxData[
           Pattern[$CellContext`u, 
            Blank[]], 
           Pattern[$CellContext`v, 
-           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, 
-         2 $CellContext`u $CellContext`v, $CellContext`v^2 + \
+           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, (
+          2 $CellContext`u) $CellContext`v, $CellContext`v^2 + \
 $CellContext`u^2}, $CellContext`toCWPair[
          Pattern[$CellContext`i, 
           Blank[Integer]]] := Module[{$CellContext`b = Rest[
@@ -1095,19 +1083,17 @@ Cell[BoxData[
                Range[$CellContext`n$$]]], $CellContext`zoom$$]]], AxesLabel -> 
           Switch[$CellContext`mode$$, 1, {"A", "B"}, 3, {"u", "v"}], 
           ImageSize -> {450, 275}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
-          Switch[$CellContext`mode$$, 1, 
-            " Primitive Pythagorean Triples {A,B,C}", 3, 
-            " Compliant Calkin-Wilf Pairs {u,v}"] <> ", zoom level: " <> 
+         Style[((("The first " <> ToString[$CellContext`n$$]) <> 
+            Switch[$CellContext`mode$$, 1, 
+              " Primitive Pythagorean Triples {A,B,C}", 3, 
+              " Compliant Calkin-Wilf Pairs {u,v}"]) <> ", zoom level: ") <> 
           ToString[$CellContext`zoom$$], "Label", Medium]], 2, 
         Panel[
          Pane[
           Map[$CellContext`fromIndexToPPT, 
            Range[$CellContext`n$$]], ImageSize -> {450, 275}, ImageSizeAction -> 
           "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]], 4, 
         Panel[
          Pane[
@@ -1115,8 +1101,7 @@ Cell[BoxData[
            $CellContext`cnn[
             Range[$CellContext`n$$]]], ImageSize -> {450, 275}, 
           ImageSizeAction -> "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " compliant Calkin-Wilf Pairs {u,v}", "Label", Medium]], 5, 
         Panel[
          Pane[
@@ -1132,8 +1117,7 @@ Cell[BoxData[
            Dividers -> {False, {False, True}}, 
            Spacings -> {{4, 1, 2, 2, 3}, 0.5}], ImageSize -> {450, 275}, 
           Scrollbars -> {False, Automatic}], 
-         Style[
-         "Derivation of first " <> ToString[$CellContext`n$$] <> 
+         Style[("Derivation of first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]]], 
       "Specifications" :> {{{$CellContext`n$$, 100}, 1, 1000, 1, Appearance -> 
          "Labeled", ControlPlacement -> 1}, {{$CellContext`mode$$, 2}, {
@@ -1174,8 +1158,8 @@ Cell[BoxData[
           Pattern[$CellContext`u, 
            Blank[]], 
           Pattern[$CellContext`v, 
-           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, 
-         2 $CellContext`u $CellContext`v, $CellContext`v^2 + \
+           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, (
+          2 $CellContext`u) $CellContext`v, $CellContext`v^2 + \
 $CellContext`u^2}, $CellContext`toCWPair[
          Pattern[$CellContext`i, 
           Blank[Integer]]] := Module[{$CellContext`b = Rest[
@@ -1248,19 +1232,17 @@ Cell[BoxData[
                Range[$CellContext`n$$]]], $CellContext`zoom$$]]], AxesLabel -> 
           Switch[$CellContext`mode$$, 1, {"A", "B"}, 3, {"u", "v"}], 
           ImageSize -> {450, 275}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
-          Switch[$CellContext`mode$$, 1, 
-            " Primitive Pythagorean Triples {A,B,C}", 3, 
-            " Compliant Calkin-Wilf Pairs {u,v}"] <> ", zoom level: " <> 
+         Style[((("The first " <> ToString[$CellContext`n$$]) <> 
+            Switch[$CellContext`mode$$, 1, 
+              " Primitive Pythagorean Triples {A,B,C}", 3, 
+              " Compliant Calkin-Wilf Pairs {u,v}"]) <> ", zoom level: ") <> 
           ToString[$CellContext`zoom$$], "Label", Medium]], 2, 
         Panel[
          Pane[
           Map[$CellContext`fromIndexToPPT, 
            Range[$CellContext`n$$]], ImageSize -> {450, 275}, ImageSizeAction -> 
           "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]], 4, 
         Panel[
          Pane[
@@ -1268,8 +1250,7 @@ Cell[BoxData[
            $CellContext`cnn[
             Range[$CellContext`n$$]]], ImageSize -> {450, 275}, 
           ImageSizeAction -> "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " compliant Calkin-Wilf Pairs {u,v}", "Label", Medium]], 5, 
         Panel[
          Pane[
@@ -1285,8 +1266,7 @@ Cell[BoxData[
            Dividers -> {False, {False, True}}, 
            Spacings -> {{4, 1, 2, 2, 3}, 0.5}], ImageSize -> {450, 275}, 
           Scrollbars -> {False, Automatic}], 
-         Style[
-         "Derivation of first " <> ToString[$CellContext`n$$] <> 
+         Style[("Derivation of first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]]], 
       "Specifications" :> {{{$CellContext`n$$, 200}, 1, 1000, 1, Appearance -> 
          "Labeled", ControlPlacement -> 1}, {{$CellContext`mode$$, 3}, {
@@ -1327,8 +1307,8 @@ Cell[BoxData[
           Pattern[$CellContext`u, 
            Blank[]], 
           Pattern[$CellContext`v, 
-           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, 
-         2 $CellContext`u $CellContext`v, $CellContext`v^2 + \
+           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, (
+          2 $CellContext`u) $CellContext`v, $CellContext`v^2 + \
 $CellContext`u^2}, $CellContext`toCWPair[
          Pattern[$CellContext`i, 
           Blank[Integer]]] := Module[{$CellContext`b = Rest[
@@ -1401,19 +1381,17 @@ Cell[BoxData[
                Range[$CellContext`n$$]]], $CellContext`zoom$$]]], AxesLabel -> 
           Switch[$CellContext`mode$$, 1, {"A", "B"}, 3, {"u", "v"}], 
           ImageSize -> {450, 275}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
-          Switch[$CellContext`mode$$, 1, 
-            " Primitive Pythagorean Triples {A,B,C}", 3, 
-            " Compliant Calkin-Wilf Pairs {u,v}"] <> ", zoom level: " <> 
+         Style[((("The first " <> ToString[$CellContext`n$$]) <> 
+            Switch[$CellContext`mode$$, 1, 
+              " Primitive Pythagorean Triples {A,B,C}", 3, 
+              " Compliant Calkin-Wilf Pairs {u,v}"]) <> ", zoom level: ") <> 
           ToString[$CellContext`zoom$$], "Label", Medium]], 2, 
         Panel[
          Pane[
           Map[$CellContext`fromIndexToPPT, 
            Range[$CellContext`n$$]], ImageSize -> {450, 275}, ImageSizeAction -> 
           "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]], 4, 
         Panel[
          Pane[
@@ -1421,8 +1399,7 @@ Cell[BoxData[
            $CellContext`cnn[
             Range[$CellContext`n$$]]], ImageSize -> {450, 275}, 
           ImageSizeAction -> "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " compliant Calkin-Wilf Pairs {u,v}", "Label", Medium]], 5, 
         Panel[
          Pane[
@@ -1438,8 +1415,7 @@ Cell[BoxData[
            Dividers -> {False, {False, True}}, 
            Spacings -> {{4, 1, 2, 2, 3}, 0.5}], ImageSize -> {450, 275}, 
           Scrollbars -> {False, Automatic}], 
-         Style[
-         "Derivation of first " <> ToString[$CellContext`n$$] <> 
+         Style[("Derivation of first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]]], 
       "Specifications" :> {{{$CellContext`n$$, 50}, 1, 1000, 1, Appearance -> 
          "Labeled", ControlPlacement -> 1}, {{$CellContext`mode$$, 4}, {
@@ -1480,8 +1456,8 @@ Cell[BoxData[
           Pattern[$CellContext`u, 
            Blank[]], 
           Pattern[$CellContext`v, 
-           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, 
-         2 $CellContext`u $CellContext`v, $CellContext`v^2 + \
+           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, (
+          2 $CellContext`u) $CellContext`v, $CellContext`v^2 + \
 $CellContext`u^2}, $CellContext`toCWPair[
          Pattern[$CellContext`i, 
           Blank[Integer]]] := Module[{$CellContext`b = Rest[
@@ -1554,19 +1530,17 @@ Cell[BoxData[
                Range[$CellContext`n$$]]], $CellContext`zoom$$]]], AxesLabel -> 
           Switch[$CellContext`mode$$, 1, {"A", "B"}, 3, {"u", "v"}], 
           ImageSize -> {450, 275}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
-          Switch[$CellContext`mode$$, 1, 
-            " Primitive Pythagorean Triples {A,B,C}", 3, 
-            " Compliant Calkin-Wilf Pairs {u,v}"] <> ", zoom level: " <> 
+         Style[((("The first " <> ToString[$CellContext`n$$]) <> 
+            Switch[$CellContext`mode$$, 1, 
+              " Primitive Pythagorean Triples {A,B,C}", 3, 
+              " Compliant Calkin-Wilf Pairs {u,v}"]) <> ", zoom level: ") <> 
           ToString[$CellContext`zoom$$], "Label", Medium]], 2, 
         Panel[
          Pane[
           Map[$CellContext`fromIndexToPPT, 
            Range[$CellContext`n$$]], ImageSize -> {450, 275}, ImageSizeAction -> 
           "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]], 4, 
         Panel[
          Pane[
@@ -1574,8 +1548,7 @@ Cell[BoxData[
            $CellContext`cnn[
             Range[$CellContext`n$$]]], ImageSize -> {450, 275}, 
           ImageSizeAction -> "Scrollable", Scrollbars -> {False, Automatic}], 
-         Style[
-         "The first " <> ToString[$CellContext`n$$] <> 
+         Style[("The first " <> ToString[$CellContext`n$$]) <> 
           " compliant Calkin-Wilf Pairs {u,v}", "Label", Medium]], 5, 
         Panel[
          Pane[
@@ -1591,8 +1564,7 @@ Cell[BoxData[
            Dividers -> {False, {False, True}}, 
            Spacings -> {{4, 1, 2, 2, 3}, 0.5}], ImageSize -> {450, 275}, 
           Scrollbars -> {False, Automatic}], 
-         Style[
-         "Derivation of first " <> ToString[$CellContext`n$$] <> 
+         Style[("Derivation of first " <> ToString[$CellContext`n$$]) <> 
           " Primitive Pythagorean Triples {A,B,C}", "Label", Medium]]], 
       "Specifications" :> {{{$CellContext`n$$, 50}, 1, 1000, 1, Appearance -> 
          "Labeled", ControlPlacement -> 1}, {{$CellContext`mode$$, 5}, {
@@ -1633,8 +1605,8 @@ Cell[BoxData[
           Pattern[$CellContext`u, 
            Blank[]], 
           Pattern[$CellContext`v, 
-           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, 
-         2 $CellContext`u $CellContext`v, $CellContext`v^2 + \
+           Blank[]]}] := {$CellContext`v^2 - $CellContext`u^2, (
+          2 $CellContext`u) $CellContext`v, $CellContext`v^2 + \
 $CellContext`u^2}, $CellContext`toCWPair[
          Pattern[$CellContext`i, 
           Blank[Integer]]] := Module[{$CellContext`b = Rest[
@@ -2462,75 +2434,75 @@ CellTagsIndex->{
   Cell[7802, 217, 1524, 30, 67, "ManipulateSection",ExpressionUUID->"b7acceb9-ca4b-4965-b319-bd8a6214a587",
    CellTags->"Manipulate"]},
  "Caption"->{
-  Cell[27076, 644, 1138, 24, 67, "ManipulateCaptionSection",ExpressionUUID->"3ed78bfd-4459-4d2a-906f-3e9e6aba33a4",
+  Cell[27057, 640, 1138, 24, 67, "ManipulateCaptionSection",ExpressionUUID->"3ed78bfd-4459-4d2a-906f-3e9e6aba33a4",
    CellTags->"Caption"]},
  "Thumbnail"->{
-  Cell[29258, 691, 1005, 22, 67, "ThumbnailSection",ExpressionUUID->"401cc3c4-8319-4e19-82e7-df5fcb711a42",
+  Cell[29239, 687, 1005, 22, 67, "ThumbnailSection",ExpressionUUID->"401cc3c4-8319-4e19-82e7-df5fcb711a42",
    CellTags->"Thumbnail"]},
  "Snapshots"->{
-  Cell[37360, 871, 1018, 22, 67, "SnapshotsSection",ExpressionUUID->"96bb7a68-4496-4362-86d3-c2a0812907f2",
+  Cell[37322, 863, 1018, 22, 67, "SnapshotsSection",ExpressionUUID->"96bb7a68-4496-4362-86d3-c2a0812907f2",
    CellTags->"Snapshots"]},
  "Details"->{
-  Cell[73670, 1663, 1796, 36, 67, "DetailsSection",ExpressionUUID->"b9971572-9357-4ce2-a011-62ff9eede7fa",
+  Cell[73537, 1635, 1796, 36, 67, "DetailsSection",ExpressionUUID->"b9971572-9357-4ce2-a011-62ff9eede7fa",
    CellTags->"Details"]},
  "Control Suggestions"->{
-  Cell[92596, 2080, 1131, 28, 67, "ControlSuggestionsSection",ExpressionUUID->"af8a4061-fdd4-44d0-82cc-9fec786547ab",
+  Cell[92463, 2052, 1131, 28, 67, "ControlSuggestionsSection",ExpressionUUID->"af8a4061-fdd4-44d0-82cc-9fec786547ab",
    CellTags->"Control Suggestions"]},
  "ResizeImages"->{
-  Cell[93730, 2110, 407, 9, 25, "ControlSuggestions",ExpressionUUID->"ac542041-3d26-42bf-920d-b54a74785eef",
+  Cell[93597, 2082, 407, 9, 25, "ControlSuggestions",ExpressionUUID->"ac542041-3d26-42bf-920d-b54a74785eef",
    CellTags->"ResizeImages"]},
  "RotateAndZoomIn3D"->{
-  Cell[94140, 2121, 783, 19, 25, "ControlSuggestions",ExpressionUUID->"e14e98ed-7514-4081-99ea-c2ffb624df9b",
+  Cell[94007, 2093, 783, 19, 25, "ControlSuggestions",ExpressionUUID->"e14e98ed-7514-4081-99ea-c2ffb624df9b",
    CellTags->"RotateAndZoomIn3D"]},
  "DragLocators"->{
-  Cell[94926, 2142, 435, 12, 25, "ControlSuggestions",ExpressionUUID->"384b79dc-c11a-492d-87e1-2c4b84403891",
+  Cell[94793, 2114, 435, 12, 25, "ControlSuggestions",ExpressionUUID->"384b79dc-c11a-492d-87e1-2c4b84403891",
    CellTags->"DragLocators"]},
  "CreateAndDeleteLocators"->{
-  Cell[95364, 2156, 739, 18, 25, "ControlSuggestions",ExpressionUUID->"98a81657-e34e-4dab-ac86-717d7eff050a",
+  Cell[95231, 2128, 739, 18, 25, "ControlSuggestions",ExpressionUUID->"98a81657-e34e-4dab-ac86-717d7eff050a",
    CellTags->"CreateAndDeleteLocators"]},
  "SliderZoom"->{
-  Cell[96106, 2176, 1011, 24, 25, "ControlSuggestions",ExpressionUUID->"b84ac2ce-e422-4d4d-953e-073d63c15a9e",
+  Cell[95973, 2148, 1011, 24, 25, "ControlSuggestions",ExpressionUUID->"b84ac2ce-e422-4d4d-953e-073d63c15a9e",
    CellTags->"SliderZoom"]},
  "GamepadControls"->{
-  Cell[97120, 2202, 469, 11, 25, "ControlSuggestions",ExpressionUUID->"b4dbde82-29d9-4853-88cd-e053ae8d181c",
+  Cell[96987, 2174, 469, 11, 25, "ControlSuggestions",ExpressionUUID->"b4dbde82-29d9-4853-88cd-e053ae8d181c",
    CellTags->"GamepadControls"]},
  "AutomaticAnimation"->{
-  Cell[97592, 2215, 1564, 33, 25, "ControlSuggestions",ExpressionUUID->"6e84bbe0-7d8e-44ab-aac1-048973c18d4f",
+  Cell[97459, 2187, 1564, 33, 25, "ControlSuggestions",ExpressionUUID->"6e84bbe0-7d8e-44ab-aac1-048973c18d4f",
    CellTags->"AutomaticAnimation"]},
  "BookmarkAnimation"->{
-  Cell[99159, 2250, 1008, 23, 25, "ControlSuggestions",ExpressionUUID->"0cf5a50d-6c0e-4089-a29f-941bc4ca8891",
+  Cell[99026, 2222, 1008, 23, 25, "ControlSuggestions",ExpressionUUID->"0cf5a50d-6c0e-4089-a29f-941bc4ca8891",
    CellTags->"BookmarkAnimation"]},
  "Search Terms"->{
-  Cell[100204, 2278, 1073, 24, 196, "SearchTermsSection",ExpressionUUID->"a3a3a6a7-7876-4115-a51a-6d092bee139b",
+  Cell[100071, 2250, 1073, 24, 67, "SearchTermsSection",ExpressionUUID->"a3a3a6a7-7876-4115-a51a-6d092bee139b",
    CellTags->"Search Terms"]},
  "Related Links"->{
-  Cell[102331, 2329, 1191, 28, 67, "RelatedLinksSection",ExpressionUUID->"83b0243b-b7e3-4afb-8a4e-185fec8161fe",
+  Cell[102198, 2301, 1191, 28, 67, "RelatedLinksSection",ExpressionUUID->"83b0243b-b7e3-4afb-8a4e-185fec8161fe",
    CellTags->"Related Links"]},
  "Authoring Information"->{
-  Cell[104995, 2398, 1158, 28, 67, "AuthorSection",ExpressionUUID->"c2736cdb-c24c-4dd4-9a22-5bbef1a7a20a",
+  Cell[104862, 2370, 1158, 28, 67, "AuthorSection",ExpressionUUID->"c2736cdb-c24c-4dd4-9a22-5bbef1a7a20a",
    CellTags->"Authoring Information"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Initialization Code", 107306, 2457},
- {"Manipulate", 107471, 2460},
- {"Caption", 107622, 2463},
- {"Thumbnail", 107780, 2466},
- {"Snapshots", 107932, 2469},
- {"Details", 108082, 2472},
- {"Control Suggestions", 108241, 2475},
- {"ResizeImages", 108416, 2478},
- {"RotateAndZoomIn3D", 108580, 2481},
- {"DragLocators", 108745, 2484},
- {"CreateAndDeleteLocators", 108916, 2487},
- {"SliderZoom", 109085, 2490},
- {"GamepadControls", 109247, 2493},
- {"AutomaticAnimation", 109416, 2496},
- {"BookmarkAnimation", 109588, 2499},
- {"Search Terms", 109754, 2502},
- {"Related Links", 109918, 2505},
- {"Authoring Information", 110091, 2508}
+ {"Initialization Code", 107173, 2429},
+ {"Manipulate", 107338, 2432},
+ {"Caption", 107489, 2435},
+ {"Thumbnail", 107647, 2438},
+ {"Snapshots", 107799, 2441},
+ {"Details", 107949, 2444},
+ {"Control Suggestions", 108108, 2447},
+ {"ResizeImages", 108283, 2450},
+ {"RotateAndZoomIn3D", 108447, 2453},
+ {"DragLocators", 108612, 2456},
+ {"CreateAndDeleteLocators", 108783, 2459},
+ {"SliderZoom", 108952, 2462},
+ {"GamepadControls", 109114, 2465},
+ {"AutomaticAnimation", 109283, 2468},
+ {"BookmarkAnimation", 109455, 2471},
+ {"Search Terms", 109621, 2474},
+ {"Related Links", 109784, 2477},
+ {"Authoring Information", 109957, 2480}
  }
 *)
 (*NotebookFileOutline
@@ -2560,122 +2532,122 @@ Cell[CellGroupData[{
 Cell[7802, 217, 1524, 30, 67, "ManipulateSection",ExpressionUUID->"b7acceb9-ca4b-4965-b319-bd8a6214a587",
  CellTags->"Manipulate"],
 Cell[CellGroupData[{
-Cell[9351, 251, 10646, 234, 847, "Input",ExpressionUUID->"1c8a51fe-61b3-446f-b3f3-b27c622b6763"],
-Cell[20000, 487, 7027, 151, 425, "Output",ExpressionUUID->"82718db6-ed5a-4d42-871a-373992cff48f",
+Cell[9351, 251, 10646, 234, 935, "Input",ExpressionUUID->"1c8a51fe-61b3-446f-b3f3-b27c622b6763"],
+Cell[20000, 487, 7008, 147, 425, "Output",ExpressionUUID->"82718db6-ed5a-4d42-871a-373992cff48f",
  CellID->88357985]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27076, 644, 1138, 24, 67, "ManipulateCaptionSection",ExpressionUUID->"3ed78bfd-4459-4d2a-906f-3e9e6aba33a4",
+Cell[27057, 640, 1138, 24, 67, "ManipulateCaptionSection",ExpressionUUID->"3ed78bfd-4459-4d2a-906f-3e9e6aba33a4",
  CellTags->"Caption"],
-Cell[28217, 670, 1004, 16, 116, "ManipulateCaption",ExpressionUUID->"71921e4e-c8c2-4f05-96e3-4e3047349e9a"]
+Cell[28198, 666, 1004, 16, 119, "ManipulateCaption",ExpressionUUID->"71921e4e-c8c2-4f05-96e3-4e3047349e9a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29258, 691, 1005, 22, 67, "ThumbnailSection",ExpressionUUID->"401cc3c4-8319-4e19-82e7-df5fcb711a42",
+Cell[29239, 687, 1005, 22, 67, "ThumbnailSection",ExpressionUUID->"401cc3c4-8319-4e19-82e7-df5fcb711a42",
  CellTags->"Thumbnail"],
-Cell[30266, 715, 7057, 151, 425, "Output",ExpressionUUID->"7313e44c-1b98-42c3-8823-3b1025224e7c",
+Cell[30247, 711, 7038, 147, 425, "Output",ExpressionUUID->"7313e44c-1b98-42c3-8823-3b1025224e7c",
  CellID->3185777]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37360, 871, 1018, 22, 67, "SnapshotsSection",ExpressionUUID->"96bb7a68-4496-4362-86d3-c2a0812907f2",
+Cell[37322, 863, 1018, 22, 67, "SnapshotsSection",ExpressionUUID->"96bb7a68-4496-4362-86d3-c2a0812907f2",
  CellTags->"Snapshots"],
-Cell[38381, 895, 7058, 151, 425, "Output",ExpressionUUID->"3d8c2dec-1597-4638-8991-c989ffd7e182",
+Cell[38343, 887, 7039, 147, 425, "Output",ExpressionUUID->"3d8c2dec-1597-4638-8991-c989ffd7e182",
  CellID->55452108],
-Cell[45442, 1048, 7046, 151, 425, "Output",ExpressionUUID->"d4d00c20-535b-4cd4-9c18-3c32c7f23bfb",
+Cell[45385, 1036, 7027, 147, 425, "Output",ExpressionUUID->"d4d00c20-535b-4cd4-9c18-3c32c7f23bfb",
  CellID->40423632],
-Cell[52491, 1201, 7051, 151, 425, "Output",ExpressionUUID->"a2d26075-73f7-4934-b2f7-4a588c7768ea",
+Cell[52415, 1185, 7032, 147, 425, "Output",ExpressionUUID->"a2d26075-73f7-4934-b2f7-4a588c7768ea",
  CellID->228606804],
-Cell[59545, 1354, 7042, 151, 425, "Output",ExpressionUUID->"00c97f34-178d-43be-85aa-37dd3afbdbe4",
+Cell[59450, 1334, 7023, 147, 425, "Output",ExpressionUUID->"00c97f34-178d-43be-85aa-37dd3afbdbe4",
  CellID->56782795],
-Cell[66590, 1507, 7043, 151, 425, "Output",ExpressionUUID->"94f7e306-ebe0-4c80-b5b3-2efd716aad68",
+Cell[66476, 1483, 7024, 147, 425, "Output",ExpressionUUID->"94f7e306-ebe0-4c80-b5b3-2efd716aad68",
  CellID->616807292]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[73670, 1663, 1796, 36, 67, "DetailsSection",ExpressionUUID->"b9971572-9357-4ce2-a011-62ff9eede7fa",
+Cell[73537, 1635, 1796, 36, 67, "DetailsSection",ExpressionUUID->"b9971572-9357-4ce2-a011-62ff9eede7fa",
  CellTags->"Details"],
-Cell[75469, 1701, 2481, 60, 96, "DetailNotes",ExpressionUUID->"dee82c63-f72c-4fe4-968e-ce128b7f4a24",
+Cell[75336, 1673, 2481, 60, 128, "DetailNotes",ExpressionUUID->"dee82c63-f72c-4fe4-968e-ce128b7f4a24",
  CellID->343693113],
-Cell[77953, 1763, 616, 10, 39, "DetailNotes",ExpressionUUID->"0b0d242b-a2ac-4101-af6d-c894da33e108",
+Cell[77820, 1735, 616, 10, 55, "DetailNotes",ExpressionUUID->"0b0d242b-a2ac-4101-af6d-c894da33e108",
  CellID->314601451],
-Cell[78572, 1775, 1319, 29, 39, "DetailNotes",ExpressionUUID->"95387f06-494d-40d0-b015-ef67ea9d5443",
+Cell[78439, 1747, 1319, 29, 55, "DetailNotes",ExpressionUUID->"95387f06-494d-40d0-b015-ef67ea9d5443",
  CellID->6805076],
-Cell[79894, 1806, 417, 7, 23, "DetailNotes",ExpressionUUID->"f097d0a5-33ed-431d-b6e6-beb980979542",
+Cell[79761, 1778, 417, 7, 23, "DetailNotes",ExpressionUUID->"f097d0a5-33ed-431d-b6e6-beb980979542",
  CellID->43985999],
-Cell[80314, 1815, 1917, 46, 55, "DetailNotes",ExpressionUUID->"d6c4aa08-eff2-46a2-81a3-cd23c63f60d6",
+Cell[80181, 1787, 1917, 46, 71, "DetailNotes",ExpressionUUID->"d6c4aa08-eff2-46a2-81a3-cd23c63f60d6",
  CellID->8684602],
-Cell[82234, 1863, 442, 8, 23, "DetailNotes",ExpressionUUID->"c9cecee2-0b81-4db3-85a2-28865d06ff73",
+Cell[82101, 1835, 442, 8, 23, "DetailNotes",ExpressionUUID->"c9cecee2-0b81-4db3-85a2-28865d06ff73",
  CellID->590853663],
-Cell[82679, 1873, 590, 9, 39, "DetailNotes",ExpressionUUID->"5899e1e6-1369-47e6-9e9b-a9a827d0d5ac",
+Cell[82546, 1845, 590, 9, 39, "DetailNotes",ExpressionUUID->"5899e1e6-1369-47e6-9e9b-a9a827d0d5ac",
  CellID->822846522],
-Cell[83272, 1884, 2723, 52, 125, "DetailNotes",ExpressionUUID->"5edab835-5f2e-4552-96db-250fea702598",
+Cell[83139, 1856, 2723, 52, 173, "DetailNotes",ExpressionUUID->"5edab835-5f2e-4552-96db-250fea702598",
  CellID->48294347],
-Cell[85998, 1938, 228, 4, 23, "DetailNotes",ExpressionUUID->"79858127-de10-4455-86aa-8b1ceccc766e",
+Cell[85865, 1910, 228, 4, 23, "DetailNotes",ExpressionUUID->"79858127-de10-4455-86aa-8b1ceccc766e",
  CellID->49874601],
-Cell[86229, 1944, 819, 16, 23, "DetailNotes",ExpressionUUID->"8bd8a2e9-70d4-4ec5-99ba-78ba76796bfe",
+Cell[86096, 1916, 819, 16, 23, "DetailNotes",ExpressionUUID->"8bd8a2e9-70d4-4ec5-99ba-78ba76796bfe",
  CellID->487320490],
-Cell[87051, 1962, 907, 19, 23, "DetailNotes",ExpressionUUID->"af7f9075-9e0c-4f51-8f55-f0136348af28",
+Cell[86918, 1934, 907, 19, 23, "DetailNotes",ExpressionUUID->"af7f9075-9e0c-4f51-8f55-f0136348af28",
  CellID->22240415],
-Cell[87961, 1983, 861, 17, 23, "DetailNotes",ExpressionUUID->"54972a83-c479-4b33-9ed8-632d5c061ff2",
+Cell[87828, 1955, 861, 17, 23, "DetailNotes",ExpressionUUID->"54972a83-c479-4b33-9ed8-632d5c061ff2",
  CellID->3315346],
-Cell[88825, 2002, 609, 12, 23, "DetailNotes",ExpressionUUID->"93291def-bbaf-4e65-b426-0aee1361569c",
+Cell[88692, 1974, 609, 12, 39, "DetailNotes",ExpressionUUID->"93291def-bbaf-4e65-b426-0aee1361569c",
  CellID->32557373],
-Cell[89437, 2016, 776, 16, 23, "DetailNotes",ExpressionUUID->"8fc44a04-6652-4cd4-83e5-02e94d577650",
+Cell[89304, 1988, 776, 16, 23, "DetailNotes",ExpressionUUID->"8fc44a04-6652-4cd4-83e5-02e94d577650",
  CellID->203009953],
-Cell[90216, 2034, 1410, 23, 23, "DetailNotes",ExpressionUUID->"5f4f008b-08fc-45e9-8b75-73cd94954e2c",
+Cell[90083, 2006, 1410, 23, 39, "DetailNotes",ExpressionUUID->"5f4f008b-08fc-45e9-8b75-73cd94954e2c",
  CellID->44719486],
-Cell[91629, 2059, 930, 16, 23, "DetailNotes",ExpressionUUID->"d577a952-fa91-4cc7-ae1f-c3573378fb60",
+Cell[91496, 2031, 930, 16, 39, "DetailNotes",ExpressionUUID->"d577a952-fa91-4cc7-ae1f-c3573378fb60",
  CellID->645038598]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[92596, 2080, 1131, 28, 67, "ControlSuggestionsSection",ExpressionUUID->"af8a4061-fdd4-44d0-82cc-9fec786547ab",
+Cell[92463, 2052, 1131, 28, 67, "ControlSuggestionsSection",ExpressionUUID->"af8a4061-fdd4-44d0-82cc-9fec786547ab",
  CellTags->"Control Suggestions"],
-Cell[93730, 2110, 407, 9, 25, "ControlSuggestions",ExpressionUUID->"ac542041-3d26-42bf-920d-b54a74785eef",
+Cell[93597, 2082, 407, 9, 25, "ControlSuggestions",ExpressionUUID->"ac542041-3d26-42bf-920d-b54a74785eef",
  CellTags->"ResizeImages"],
-Cell[94140, 2121, 783, 19, 25, "ControlSuggestions",ExpressionUUID->"e14e98ed-7514-4081-99ea-c2ffb624df9b",
+Cell[94007, 2093, 783, 19, 25, "ControlSuggestions",ExpressionUUID->"e14e98ed-7514-4081-99ea-c2ffb624df9b",
  CellTags->"RotateAndZoomIn3D"],
-Cell[94926, 2142, 435, 12, 25, "ControlSuggestions",ExpressionUUID->"384b79dc-c11a-492d-87e1-2c4b84403891",
+Cell[94793, 2114, 435, 12, 25, "ControlSuggestions",ExpressionUUID->"384b79dc-c11a-492d-87e1-2c4b84403891",
  CellTags->"DragLocators"],
-Cell[95364, 2156, 739, 18, 25, "ControlSuggestions",ExpressionUUID->"98a81657-e34e-4dab-ac86-717d7eff050a",
+Cell[95231, 2128, 739, 18, 25, "ControlSuggestions",ExpressionUUID->"98a81657-e34e-4dab-ac86-717d7eff050a",
  CellTags->"CreateAndDeleteLocators"],
-Cell[96106, 2176, 1011, 24, 25, "ControlSuggestions",ExpressionUUID->"b84ac2ce-e422-4d4d-953e-073d63c15a9e",
+Cell[95973, 2148, 1011, 24, 25, "ControlSuggestions",ExpressionUUID->"b84ac2ce-e422-4d4d-953e-073d63c15a9e",
  CellTags->"SliderZoom"],
-Cell[97120, 2202, 469, 11, 25, "ControlSuggestions",ExpressionUUID->"b4dbde82-29d9-4853-88cd-e053ae8d181c",
+Cell[96987, 2174, 469, 11, 25, "ControlSuggestions",ExpressionUUID->"b4dbde82-29d9-4853-88cd-e053ae8d181c",
  CellTags->"GamepadControls"],
-Cell[97592, 2215, 1564, 33, 25, "ControlSuggestions",ExpressionUUID->"6e84bbe0-7d8e-44ab-aac1-048973c18d4f",
+Cell[97459, 2187, 1564, 33, 25, "ControlSuggestions",ExpressionUUID->"6e84bbe0-7d8e-44ab-aac1-048973c18d4f",
  CellTags->"AutomaticAnimation"],
-Cell[99159, 2250, 1008, 23, 25, "ControlSuggestions",ExpressionUUID->"0cf5a50d-6c0e-4089-a29f-941bc4ca8891",
+Cell[99026, 2222, 1008, 23, 25, "ControlSuggestions",ExpressionUUID->"0cf5a50d-6c0e-4089-a29f-941bc4ca8891",
  CellTags->"BookmarkAnimation"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[100204, 2278, 1073, 24, 196, "SearchTermsSection",ExpressionUUID->"a3a3a6a7-7876-4115-a51a-6d092bee139b",
+Cell[100071, 2250, 1073, 24, 67, "SearchTermsSection",ExpressionUUID->"a3a3a6a7-7876-4115-a51a-6d092bee139b",
  CellTags->"Search Terms"],
-Cell[101280, 2304, 236, 3, 23, "SearchTerms",ExpressionUUID->"ec9f2b94-db31-4fa7-bc80-5ea21013ef57",
+Cell[101147, 2276, 236, 3, 23, "SearchTerms",ExpressionUUID->"ec9f2b94-db31-4fa7-bc80-5ea21013ef57",
  CellID->430115073],
-Cell[101519, 2309, 249, 3, 23, "SearchTerms",ExpressionUUID->"e29e1ec9-4c91-4cd9-b327-25b86115e764",
+Cell[101386, 2281, 249, 3, 23, "SearchTerms",ExpressionUUID->"e29e1ec9-4c91-4cd9-b327-25b86115e764",
  CellID->273699666],
-Cell[101771, 2314, 166, 2, 23, "SearchTerms",ExpressionUUID->"e010e937-0305-4bbf-a9d1-2337f46c4ec3",
+Cell[101638, 2286, 166, 2, 23, "SearchTerms",ExpressionUUID->"e010e937-0305-4bbf-a9d1-2337f46c4ec3",
  CellID->25157473],
-Cell[101940, 2318, 175, 2, 23, "SearchTerms",ExpressionUUID->"5af92c3d-4f68-4211-b483-a3f99388941f",
+Cell[101807, 2290, 175, 2, 23, "SearchTerms",ExpressionUUID->"5af92c3d-4f68-4211-b483-a3f99388941f",
  CellID->60008375],
-Cell[102118, 2322, 176, 2, 23, "SearchTerms",ExpressionUUID->"b9eb4575-1e68-4295-a677-26fafeef9b8d",
+Cell[101985, 2294, 176, 2, 23, "SearchTerms",ExpressionUUID->"b9eb4575-1e68-4295-a677-26fafeef9b8d",
  CellID->36866142]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[102331, 2329, 1191, 28, 67, "RelatedLinksSection",ExpressionUUID->"83b0243b-b7e3-4afb-8a4e-185fec8161fe",
+Cell[102198, 2301, 1191, 28, 67, "RelatedLinksSection",ExpressionUUID->"83b0243b-b7e3-4afb-8a4e-185fec8161fe",
  CellTags->"Related Links"],
-Cell[103525, 2359, 321, 6, 23, "RelatedLinks",ExpressionUUID->"72afc484-71df-4c98-914c-6d113a81b58d",
+Cell[103392, 2331, 321, 6, 23, "RelatedLinks",ExpressionUUID->"72afc484-71df-4c98-914c-6d113a81b58d",
  CellID->452599111],
-Cell[103849, 2367, 350, 7, 23, "RelatedLinks",ExpressionUUID->"7557bda9-0075-46dc-8342-5f15b8714f73",
+Cell[103716, 2339, 350, 7, 23, "RelatedLinks",ExpressionUUID->"7557bda9-0075-46dc-8342-5f15b8714f73",
  CellID->54041967],
-Cell[104202, 2376, 339, 7, 23, "RelatedLinks",ExpressionUUID->"3cbdb236-3a10-40bf-aa2a-c02d983b723d",
+Cell[104069, 2348, 339, 7, 23, "RelatedLinks",ExpressionUUID->"3cbdb236-3a10-40bf-aa2a-c02d983b723d",
  CellID->193701773],
-Cell[104544, 2385, 414, 8, 23, "RelatedLinks",ExpressionUUID->"b1beb91d-21ca-4e8f-b95f-acb64fd927fa",
+Cell[104411, 2357, 414, 8, 23, "RelatedLinks",ExpressionUUID->"b1beb91d-21ca-4e8f-b95f-acb64fd927fa",
  CellID->514962947]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[104995, 2398, 1158, 28, 67, "AuthorSection",ExpressionUUID->"c2736cdb-c24c-4dd4-9a22-5bbef1a7a20a",
+Cell[104862, 2370, 1158, 28, 67, "AuthorSection",ExpressionUUID->"c2736cdb-c24c-4dd4-9a22-5bbef1a7a20a",
  CellTags->"Authoring Information"],
-Cell[106156, 2428, 321, 5, 23, "Author",ExpressionUUID->"e6a077c9-f528-4852-97e7-764f2f3a1895"]
+Cell[106023, 2400, 321, 5, 23, "Author",ExpressionUUID->"e6a077c9-f528-4852-97e7-764f2f3a1895"]
 }, Open  ]]
 }, Open  ]]
 }
