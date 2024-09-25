@@ -4796,7 +4796,7 @@ Caviness"], None},
    3.8873892874903946`*^9}},ExpressionUUID->"e6a077c9-f528-4852-97e7-\
 764f2f3a1895"]
 }, Open  ]]
-}, Open  ]]
+}, Closed]]
 }, Open  ]]
 },
 ScreenStyleEnvironment->"DemonstrationSource",
@@ -4814,89 +4814,89 @@ Magnification:>1.25 Inherited,
 FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 3, 2023)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
   CharacterEncoding -> "UTF-8"],
-ExpressionUUID->"a2e1d533-d7fc-47d5-894e-d7db183359d1"
+ExpressionUUID->"b6eceba4-f3ab-42c1-aebe-5531edd67ee7"
 ]
 (* End of Notebook Content *)
 
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "Initialization Code"->{
-  Cell[2777, 73, 1833, 39, 83, "InitializationSection",ExpressionUUID->"1d34a731-8c48-4189-8b6f-89ef5777db9f",
-   CellTags->"Initialization Code"]},
- "Manipulate"->{
-  Cell[64965, 1930, 1524, 30, 83, "ManipulateSection",ExpressionUUID->"b7acceb9-ca4b-4965-b319-bd8a6214a587",
-   CellTags->"Manipulate"]},
- "Caption"->{
-  Cell[129240, 3572, 1138, 24, 83, "ManipulateCaptionSection",ExpressionUUID->"3ed78bfd-4459-4d2a-906f-3e9e6aba33a4",
-   CellTags->"Caption"]},
- "Thumbnail"->{
-  Cell[132692, 3653, 1005, 22, 83, "ThumbnailSection",ExpressionUUID->"401cc3c4-8319-4e19-82e7-df5fcb711a42",
-   CellTags->"Thumbnail"]},
- "Snapshots"->{
-  Cell[142754, 3885, 1018, 22, 83, "SnapshotsSection",ExpressionUUID->"96bb7a68-4496-4362-86d3-c2a0812907f2",
-   CellTags->"Snapshots"]},
- "Details"->{
-  Cell[143797, 3911, 1796, 36, 83, "DetailsSection",ExpressionUUID->"b9971572-9357-4ce2-a011-62ff9eede7fa",
-   CellTags->"Details"]},
- "Control Suggestions"->{
-  Cell[167014, 4402, 1131, 28, 83, "ControlSuggestionsSection",ExpressionUUID->"af8a4061-fdd4-44d0-82cc-9fec786547ab",
-   CellTags->"Control Suggestions"]},
- "ResizeImages"->{
-  Cell[168148, 4432, 407, 9, 29, "ControlSuggestions",ExpressionUUID->"ac542041-3d26-42bf-920d-b54a74785eef",
-   CellTags->"ResizeImages"]},
- "RotateAndZoomIn3D"->{
-  Cell[168558, 4443, 783, 19, 29, "ControlSuggestions",ExpressionUUID->"e14e98ed-7514-4081-99ea-c2ffb624df9b",
-   CellTags->"RotateAndZoomIn3D"]},
- "DragLocators"->{
-  Cell[169344, 4464, 435, 12, 29, "ControlSuggestions",ExpressionUUID->"384b79dc-c11a-492d-87e1-2c4b84403891",
-   CellTags->"DragLocators"]},
- "CreateAndDeleteLocators"->{
-  Cell[169782, 4478, 739, 18, 29, "ControlSuggestions",ExpressionUUID->"98a81657-e34e-4dab-ac86-717d7eff050a",
-   CellTags->"CreateAndDeleteLocators"]},
- "SliderZoom"->{
-  Cell[170524, 4498, 1011, 24, 29, "ControlSuggestions",ExpressionUUID->"b84ac2ce-e422-4d4d-953e-073d63c15a9e",
-   CellTags->"SliderZoom"]},
- "GamepadControls"->{
-  Cell[171538, 4524, 469, 11, 31, "ControlSuggestions",ExpressionUUID->"b4dbde82-29d9-4853-88cd-e053ae8d181c",
-   CellTags->"GamepadControls"]},
+ "Authoring Information"->{
+  Cell[180288, 4742, 1158, 28, 83, "AuthorSection",ExpressionUUID->"c2736cdb-c24c-4dd4-9a22-5bbef1a7a20a",
+   CellTags->"Authoring Information"]},
  "AutomaticAnimation"->{
   Cell[172010, 4537, 1564, 33, 31, "ControlSuggestions",ExpressionUUID->"6e84bbe0-7d8e-44ab-aac1-048973c18d4f",
    CellTags->"AutomaticAnimation"]},
  "BookmarkAnimation"->{
   Cell[173577, 4572, 1008, 23, 31, "ControlSuggestions",ExpressionUUID->"0cf5a50d-6c0e-4089-a29f-941bc4ca8891",
    CellTags->"BookmarkAnimation"]},
- "Search Terms"->{
-  Cell[174622, 4600, 1073, 24, 83, "SearchTermsSection",ExpressionUUID->"a3a3a6a7-7876-4115-a51a-6d092bee139b",
-   CellTags->"Search Terms"]},
+ "Caption"->{
+  Cell[129240, 3572, 1138, 24, 83, "ManipulateCaptionSection",ExpressionUUID->"3ed78bfd-4459-4d2a-906f-3e9e6aba33a4",
+   CellTags->"Caption"]},
+ "Control Suggestions"->{
+  Cell[167014, 4402, 1131, 28, 83, "ControlSuggestionsSection",ExpressionUUID->"af8a4061-fdd4-44d0-82cc-9fec786547ab",
+   CellTags->"Control Suggestions"]},
+ "CreateAndDeleteLocators"->{
+  Cell[169782, 4478, 739, 18, 29, "ControlSuggestions",ExpressionUUID->"98a81657-e34e-4dab-ac86-717d7eff050a",
+   CellTags->"CreateAndDeleteLocators"]},
+ "Details"->{
+  Cell[143797, 3911, 1796, 36, 83, "DetailsSection",ExpressionUUID->"b9971572-9357-4ce2-a011-62ff9eede7fa",
+   CellTags->"Details"]},
+ "DragLocators"->{
+  Cell[169344, 4464, 435, 12, 29, "ControlSuggestions",ExpressionUUID->"384b79dc-c11a-492d-87e1-2c4b84403891",
+   CellTags->"DragLocators"]},
+ "GamepadControls"->{
+  Cell[171538, 4524, 469, 11, 31, "ControlSuggestions",ExpressionUUID->"b4dbde82-29d9-4853-88cd-e053ae8d181c",
+   CellTags->"GamepadControls"]},
+ "Initialization Code"->{
+  Cell[2777, 73, 1833, 39, 83, "InitializationSection",ExpressionUUID->"1d34a731-8c48-4189-8b6f-89ef5777db9f",
+   CellTags->"Initialization Code"]},
+ "Manipulate"->{
+  Cell[64965, 1930, 1524, 30, 83, "ManipulateSection",ExpressionUUID->"b7acceb9-ca4b-4965-b319-bd8a6214a587",
+   CellTags->"Manipulate"]},
  "Related Links"->{
   Cell[176749, 4651, 1191, 28, 83, "RelatedLinksSection",ExpressionUUID->"83b0243b-b7e3-4afb-8a4e-185fec8161fe",
    CellTags->"Related Links"]},
- "Authoring Information"->{
-  Cell[180288, 4742, 1158, 28, 83, "AuthorSection",ExpressionUUID->"c2736cdb-c24c-4dd4-9a22-5bbef1a7a20a",
-   CellTags->"Authoring Information"]}
+ "ResizeImages"->{
+  Cell[168148, 4432, 407, 9, 29, "ControlSuggestions",ExpressionUUID->"ac542041-3d26-42bf-920d-b54a74785eef",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[168558, 4443, 783, 19, 29, "ControlSuggestions",ExpressionUUID->"e14e98ed-7514-4081-99ea-c2ffb624df9b",
+   CellTags->"RotateAndZoomIn3D"]},
+ "Search Terms"->{
+  Cell[174622, 4600, 1073, 24, 83, "SearchTermsSection",ExpressionUUID->"a3a3a6a7-7876-4115-a51a-6d092bee139b",
+   CellTags->"Search Terms"]},
+ "SliderZoom"->{
+  Cell[170524, 4498, 1011, 24, 29, "ControlSuggestions",ExpressionUUID->"b84ac2ce-e422-4d4d-953e-073d63c15a9e",
+   CellTags->"SliderZoom"]},
+ "Snapshots"->{
+  Cell[142754, 3885, 1018, 22, 83, "SnapshotsSection",ExpressionUUID->"96bb7a68-4496-4362-86d3-c2a0812907f2",
+   CellTags->"Snapshots"]},
+ "Thumbnail"->{
+  Cell[132692, 3653, 1005, 22, 83, "ThumbnailSection",ExpressionUUID->"401cc3c4-8319-4e19-82e7-df5fcb711a42",
+   CellTags->"Thumbnail"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Initialization Code", 183311, 4823},
- {"Manipulate", 183477, 4826},
- {"Caption", 183630, 4829},
- {"Thumbnail", 183790, 4832},
- {"Snapshots", 183944, 4835},
- {"Details", 184096, 4838},
- {"Control Suggestions", 184256, 4841},
- {"ResizeImages", 184432, 4844},
- {"RotateAndZoomIn3D", 184597, 4847},
- {"DragLocators", 184763, 4850},
- {"CreateAndDeleteLocators", 184935, 4853},
- {"SliderZoom", 185105, 4856},
- {"GamepadControls", 185268, 4859},
- {"AutomaticAnimation", 185438, 4862},
- {"BookmarkAnimation", 185611, 4865},
- {"Search Terms", 185778, 4868},
- {"Related Links", 185941, 4871},
- {"Authoring Information", 186114, 4874}
+ {"Authoring Information", 183313, 4823},
+ {"AutomaticAnimation", 183485, 4826},
+ {"BookmarkAnimation", 183658, 4829},
+ {"Caption", 183820, 4832},
+ {"Control Suggestions", 183990, 4835},
+ {"CreateAndDeleteLocators", 184177, 4838},
+ {"Details", 184344, 4841},
+ {"DragLocators", 184497, 4844},
+ {"GamepadControls", 184661, 4847},
+ {"Initialization Code", 184832, 4850},
+ {"Manipulate", 184998, 4853},
+ {"Related Links", 185157, 4856},
+ {"ResizeImages", 185321, 4859},
+ {"RotateAndZoomIn3D", 185486, 4862},
+ {"Search Terms", 185652, 4865},
+ {"SliderZoom", 185812, 4868},
+ {"Snapshots", 185969, 4871},
+ {"Thumbnail", 186123, 4874}
  }
 *)
 (*NotebookFileOutline
@@ -4936,7 +4936,7 @@ Cell[9557, 262, 18264, 582, 426, "Output",ExpressionUUID->"fcb92d6f-defb-4940-9e
 Cell[CellGroupData[{
 Cell[27858, 849, 770, 19, 92, "Input",ExpressionUUID->"922adb2f-0fdd-4102-a261-67fd4ec7901d",
  CellID->429587394],
-Cell[28631, 870, 8938, 254, 329, "Output",ExpressionUUID->"c3c1cbd3-6fb1-468a-be20-fb68e6baee2d",
+Cell[28631, 870, 8938, 254, 301, "Output",ExpressionUUID->"c3c1cbd3-6fb1-468a-be20-fb68e6baee2d",
  CellID->242924006]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -5152,7 +5152,7 @@ Cell[180288, 4742, 1158, 28, 83, "AuthorSection",ExpressionUUID->"c2736cdb-c24c-
  CellTags->"Authoring Information"],
 Cell[181449, 4772, 935, 24, 29, "Author",ExpressionUUID->"e6a077c9-f528-4852-97e7-764f2f3a1895"]
 }, Open  ]]
-}, Open  ]]
+}, Closed]]
 }, Open  ]]
 }
 ]
